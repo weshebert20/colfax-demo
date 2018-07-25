@@ -1,0 +1,16 @@
+// Silicon Valley: Fonts
+//
+// body - Body Copy: Open Sans
+// heading - Headings: Montserrat
+// widget - Widget Titles: Montserrat
+// meta - Meta: Open Sans
+//
+// markup:
+// <div  class="font {$modifiers}">The quick brown fox jumps over the lazy dog</div>
+//
+// Styleguide 1.2
+
+$body: 'Open Sans', Helvetica, sans-serif;
+$heading: 'Montserrat', Helvetica, sans-serif;
+$widget: 'Montserrat', Helvetica, sans-serif;
+$meta: 'Open Sans', Helvetica, sans-serif;

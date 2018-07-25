@@ -1,0 +1,170 @@
+// Twin Cities: Two Cents
+//
+// Polling widget
+//
+// markup:
+// <div id="two-cents">
+// 	<h2 class="widget-title">Two Cents</h2>
+// 	<div class="content">
+//		<div class="pds-question">
+// 			<img src="http://lorempixel.com/640/360/cats" alt="Two Cents Image">
+// 			<div class="pds-question-top">Should the Minnesota Legislature hold a special session to help Mille Lacs area resorts cope with Walleye season shutdown?</div>
+// 		</div>
+// 		<form class="two-cents-vote">
+// 			<div class="poll-options">
+// 				<div class="form-group radio-group">
+// 					<input type="radio" id="yes" name="poll-vote" value="yes">
+// 					<label for="no">No</label>
+// 				</div>
+// 				<div class="form-group radio-group">
+// 					<input type="radio" id="no" name="poll-vote" value="no">
+// 					<label for="no">Yes</label>
+// 				</div>
+// 				<div class="form-group radio-group">
+// 					<input type="radio" id="not-sure" name="poll-vote" value="not-sure">
+// 					<label for="not-sure">Not Sure</label>
+// 				</div>
+// 			</div>
+//			<div class="pds-vote">
+// 				<input class="pds-vote-button" type="submit" value="vote!" />
+//			</div>
+// 		</form>
+// 	</div>
+// </div>
+//
+// Styleguide modules.two-cents
+
+#two-cents {
+	max-width: px-to-em(940);
+	margin: 0 auto;
+	border: 1px solid $gray-400;
+	clear: both;
+
+	h2 {
+		@extend %blue-block;
+	}
+}
+
+#two-cents,
+#two-cents .PDS_Poll {
+
+	.question,
+	.pds-question {
+		@include ai-span(8, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+	}
+
+	.poll-options,
+	.pds-answer,
+	.pds-vote {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(4, m, true);
+		@include ai-span(4, s, true);
+		@include ai-span(4, xs);
+	}
+}
+
+#two-cents,
+#two-cents .PDS_Poll,
+#page .PDS_Poll {
+
+	input[type="submit"], .pds-vote {
+		@include ai-breakpoint(l) {
+			float: right;
+		}
+	}
+
+	img {
+		float: left;
+		height: auto;
+		max-width: px-to-em(140);
+		margin-right: spacing(1.5);
+
+		@include ai-breakpoint(false, m) {
+			margin-bottom: 1em;
+		}
+	}
+
+	.content {
+		@extend %clearfix;
+		padding: px-to-em(20);
+
+		@include ai-breakpoint(false, xl) {
+			@include vertical-rhythm();
+		}
+
+		.pds-box {
+			width: auto;
+		}
+	}
+
+	.question,
+	.pds-question {
+
+		.pds-question-top {
+			@include font(20, 24, $heading, 600);
+		}
+	}
+
+	.pds-answer {
+
+		.pds-input-label,
+		.pds-other-label {
+			padding-left: px-to-em(25);
+		}
+	}
+
+	.two-cents-swap & {
+
+		.question,
+		.pds-question {
+
+			.pds-question-top {
+
+				@include ai-breakpoint(false, m) {
+					font-size: em-calc(16);
+				}
+			}
+		}
+	}
+}
+
+#page .body-copy {
+
+	.PDS_superContainer {
+		display: none;
+	}
+
+	.PDS_Poll {
+
+		.question,
+		.pds-question {
+			@include ai-span(8, xl);
+			@include ai-span(7, l);
+			@include ai-span(5, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+		}
+
+		.poll-options,
+		.pds-answer,
+		.pds-vote {
+			@include ai-span(8, xl, true);
+			@include ai-span(6, l, true);
+			@include ai-span(5, m, true);
+			@include ai-span(4, s, true);
+			@include ai-span(4, xs);
+		}
+
+		.pds-vote {
+
+			@include ai-breakpoint(s) {
+				float: right;
+			}
+		}
+	}
+}

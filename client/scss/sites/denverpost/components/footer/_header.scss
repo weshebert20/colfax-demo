@@ -1,0 +1,45 @@
+// Denver Post: Footer Header
+//
+// Header bar for site footer
+//
+// markup:
+// <header class="footer-header">
+// 	<div class="footer-header-wrapper">
+//		<ul class="footer-links">
+// 			<li href="#">Member Services</li>
+// 			<li href="#">News Alerts</li>
+//		</ul>
+//		<div data-huron-id="sharing-list" data-huron-type="template"></div>
+// 	</div>
+// </header>
+//
+// Styleguide footer.header
+
+.footer-header-wrapper {
+	padding-bottom: spacing(2);
+
+	@include ai-breakpoint(false, s) {
+		display: block;
+	}
+}
+
+.footer-links {
+
+	@include ai-breakpoint(false, s) {
+		justify-content: center;
+	}
+
+	a {
+		color: $primary;
+		line-height: 2;
+		margin-right: em-calc(20);
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		&:hover {
+			color: $gray-min;
+		}
+	}
+}

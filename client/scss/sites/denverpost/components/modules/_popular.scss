@@ -1,0 +1,99 @@
+// Denver Post: Most Popular
+//
+// Widget for most popular articles
+//
+// markup:
+// <section class="popular widget-popular-stories {$modifiers}">
+//	<h2 class="widget-title"><span>Most Popular</span></h2>
+// 	<ol>
+// 		<li>
+//			<a href="#"><span>Colorado's Tory Miller provides powerful post presence for Buffs</span></a>
+//		</li>
+// 		<li>
+//			<a href="#"><span>Denver Pioneers center Christian Mackey becomes force inside coming off bench</span></a>
+//		</li>
+// 		<li>
+//			<a href="#"><span>Nuggets win at Detroit, equaling last season's road win total of 11</span></a>
+//		</li>
+// 		<li>
+//			<a href="#"><span>Driver flees traffic stop, crashes near downtown Denver</span></a>
+//		</li>
+// 		<li>
+//			<a href="#"><span>FBI says it has surrounded last occupiers at Oregon refuge</span></a>
+//		</li>
+// 	</ol>
+// </section>
+//
+// Styleguide modules.popular
+
+.popular {
+	border: 1px solid $gray-500;
+	padding: em-calc(0 10 16);
+	text-align: center;
+
+	.widget-title {
+		font-size: em-calc(16);
+		width: 100%;
+
+		span {
+			background-color: $gray-min;
+			font-weight: 600;
+		}
+	}
+
+	li {
+		@include font(17, 22, $heading, 700);
+
+		a {
+
+			&:hover {
+
+				span {
+					color: $primary;
+				}
+
+				&::before {
+					content: "";
+				}
+
+				&::after {
+					margin-left: em-calc(-12, false, 26);
+				}
+			}
+
+			span {
+				display: inline-block;
+				width: 100%;
+			}
+
+			&::before {
+				background-color: $primary;
+				border-radius: em-calc(20, false, 17);
+				color: $gray-max;
+				content: counter(section);
+				display: inline-block;
+				font-size: px-to-em(20, false, 17);
+				font-weight: 600;
+				font-family: $widget;
+				height: em-calc(36, false, 20);
+				line-height: px-to-em(36, false, 20);
+				margin-bottom: em-calc(8, false, 20);
+				width: em-calc(36, false, 20);
+				vertical-align: middle;
+			}
+
+			&::after {
+				@extend %icon;
+				color: $gray-max;
+				content: "\e111";
+				display: inline-block;
+				font-size: px-to-em(26, false, 17);
+				left: 50%;
+				margin-left: em-calc(-36, false, 26);
+				position: absolute;
+				top: em-calc(5, false, 26);
+				transition: margin 125ms linear;
+			}
+		}
+	}
+}

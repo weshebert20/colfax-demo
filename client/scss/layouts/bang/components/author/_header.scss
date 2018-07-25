@@ -1,0 +1,43 @@
+// Mercury News: Author Header
+//
+// Author name, image, social, and title
+//
+// markup:
+// <header class="author-header">
+// 	<img src="http://lorempixel.com/80/80/cats" alt="author avatar">
+// 	<div class="author-meta">
+// 		<a href="#" class="title">Reporter</a>
+// 		<h3>Charlie Walters</h3>
+// 	</div>
+// 	<div data-huron-id="sharing-author" data-huron-type="template"></div>
+// </header>
+//
+// Styleguide author.header
+
+.author-header {
+	margin-top: 0;
+	padding-top: spacing();
+
+	img {
+		border-radius: 0;
+	}
+
+	.author-meta {
+		padding-left: em-calc(110);
+
+		@include ai-breakpoint(false, s) {
+			min-height: 0;
+		}
+
+		h1 {
+			@include font(32, 32, $heading, 600);
+			text-align: left;
+			text-transform: none;
+		}
+	}
+
+	.author-social {
+		margin-top: em-calc(16);
+		padding-left: px-to-em(110);
+	}
+}

@@ -1,0 +1,28 @@
+// Twincities: Buttons
+//
+// default - default button
+// social - social buttons
+// read-more - read more button
+// black - black button
+// load-more - load more button
+// vote - vote button
+//
+// markup: buttons.hbs
+//
+// data: buttons.json
+//
+// Styleguide utilities.buttons
+
+.load-more {
+	@include button($gray-500);
+	@include font(16, 16, $meta, 700);
+	color: $gray-max;
+	float: left;
+	text-transform: uppercase;
+	width: 100%;
+
+	&:hover {
+		background-color: $primary-light;
+		color: $gray-max;
+	}
+}

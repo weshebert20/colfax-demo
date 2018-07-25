@@ -1,0 +1,35 @@
+// Author Social
+//
+// Author profile and contact links
+
+.author-social {
+
+	li {
+		@include font(14, 16, $meta, 400);
+		display: inline-block;
+		margin-right: px-to-em(30);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	a {
+
+		&:hover {
+			color: $primary-light;
+		}
+	}
+
+	i {
+		display: inline-block;
+		margin-right: px-to-em(5);
+		font-size: px-to-em(26);
+		vertical-align: middle;
+	}
+
+	@include ai-breakpoint(s) {
+		width: 100%;
+		padding-left: px-to-em(95);
+	}
+}

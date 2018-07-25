@@ -1,0 +1,26 @@
+{
+	"banner": {
+		"classes": "banner",
+		"placeholder": "<img src='http://placehold.it/728x90?text=advertisement'>"
+	},
+	"box": {
+		"classes": "box",
+		"placeholder": "<img src='http://placehold.it/300x250?text=advertisement'>"
+	},
+	"house": {
+		"classes": "box house",
+		"placeholder": "<img src='http://placehold.it/300x250?text=advertisement'>"
+	},
+	"ndn": {
+		"classes": "box ndn",
+		"placeholder": "<img src='http://placehold.it/315x250?text=NDN%20video'>"
+	},
+	"portrait": {
+		"classes": "portrait",
+		"placeholder": "<img src='http://placehold.it/300x600?text=advertisement'>"
+	},
+	"promo": {
+		"classes": "promo dfp-Sponsorship_2",
+		"placeholder": "<p><strong>Horizontal</strong> Promotional Unit</p>"
+	}
+}

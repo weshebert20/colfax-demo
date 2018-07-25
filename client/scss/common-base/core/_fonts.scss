@@ -1,0 +1,25 @@
+// Fonts
+
+$body: 'Source Sans Pro', Helvetica, sans-serif !default;
+$heading: 'Hind', Helvetica, sans-serif !default;
+$widget: 'Oswald', Helvetica, sans-serif !default;
+$meta: 'Roboto Condensed', Helvetica, sans-serif !default;
+
+// styleguide:ignore:start
+// Build font shorthand
+@mixin font( $font-size: $base-unit, $line-height: $base-unit, $font-family: $body, $font-weight: 400, $font-style: normal ) {
+    font: $font-style $font-weight #{em-calc($font-size)}/#{($line-height / $font-size )} $font-family;
+}
+//styleguide:ignore:end
+
+%nav-hover-gray {
+
+    &:hover,
+    &.active {
+
+        > a {
+            background-color: $gray-600;
+            color: $primary-light;
+        }
+    }
+}

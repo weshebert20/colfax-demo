@@ -1,0 +1,52 @@
+// East Bay Times: Logo
+
+.logo {
+
+	a {
+		background-image: url('../../images/ebt-logo.svg');
+		background-size: 420px 55px;
+		height: 55px;
+		width: 420px;
+
+		@include ai-breakpoint(s, l) {
+			background-size: 300px 40px;
+			height: 40px;
+			width: 300px;
+		}
+
+		@include ai-breakpoint(false, s) {
+			background-size: 200px 26px;
+			height: 26px;
+			width: 200px;
+		}
+	}
+}
+
+// Sticky styles
+.headroom--not-top {
+
+	.logo {
+
+		a {
+			background-size: 170px 20px;
+			height: 20px;
+			width: 170px;
+
+			@include ai-breakpoint(l) {
+				background-image: url('../../images/ebt-logo-sm.svg');
+				background-size: 50px 39px;
+				height: 39px;
+				width: 50px;
+			}
+		}
+
+		&.custom-logo {
+
+			a {
+				@include ai-breakpoint(l) {
+					background-image: url('../../images/ebt-logo-sm.svg');
+				}
+			}
+		}
+	}
+}

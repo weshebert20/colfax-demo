@@ -1,0 +1,90 @@
+// Small Feature
+//
+// Small featured articles
+
+.feature-small {
+
+	figure {
+		width: px-to-em(140);
+		height: auto;
+	}
+
+	.busy &,
+	.slow & {
+
+		figure {
+			float: left;
+			margin: em-calc(0 20 0 0);
+
+			@include ai-breakpoint(l) {
+				width: px-to-em(240);
+			}
+		}
+
+		header {
+			float: left;
+
+			@include ai-breakpoint(false, l) {
+				width: calc(100% - 160px);
+			}
+
+			@include ai-breakpoint(l) {
+				width: calc(100% - 260px);
+			}
+		}
+	}
+
+	.takeover & {
+		@extend %header-float-small;
+	}
+
+	.feature-media & {
+
+		figure {
+
+			@include ai-breakpoint(false, l) {
+				max-width: none;
+			}
+		}
+
+		h5 {
+
+			@include ai-breakpoint(false, l) {
+				@include font(30, 32, $heading, 600);
+			}
+		}
+
+		.excerpt {
+
+			@include ai-breakpoint(l) {
+				display: none;
+			}
+
+			@include ai-breakpoint(m, l) {
+				display: block;
+			}
+
+			@include ai-breakpoint(false, m) {
+				display: none;
+			}
+		}
+
+		@include ai-breakpoint(false, l) {
+			border: none;
+			padding: 0;
+		}
+	}
+
+	.editors-picks & {
+		border: none;
+		padding: 0;
+
+		figure {
+
+			@include ai-breakpoint(false, s) {
+				max-width: none;
+				width: 100%;
+			}
+		}
+	}
+}

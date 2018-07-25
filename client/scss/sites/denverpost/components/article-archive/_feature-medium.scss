@@ -1,0 +1,53 @@
+// Denver Post: Medium Feature
+//
+// Medium featured articles
+//
+// markup:
+// <article class="archive-view feature-medium">
+// 	<figure>
+//		<div class="image-wrapper">
+// 			<a href="#"><img src="http://lorempixel.com/640/400/sports" alt="article-image"></a>
+//		</div>
+//		<span class="photo-credit">AAron Ontineroz, The Denver Post</span>
+// 	</figure>
+// 	<header>
+// 		<h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
+// 	</header>
+// 	<div class="excerpt">
+// 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloribus recusandae itaque iure quos dicta nostrum quibusdam, adipisci, sit officiis voluptates ipsam unde accusantium magnam odit voluptatem aliquid optio sunt!</p>
+// 	</div>
+// </article>
+//
+// Styleguide article-archive.feature-medium
+
+.feature-medium {
+	@extend %slideshow-video-alt;
+
+	.section-highlight & {
+		@include vertical-rhythm(0.5);
+	}
+
+	.landing-three-one & {
+
+		h4 {
+			@include font(33, 38, $heading, 700);
+		}
+
+		header,
+		.excerpt {
+			@include ai-span((16/3) * 2, xl, true);
+			@include ai-span(8, l, true);
+			@include ai-span(7, m, true);
+			@include ai-span(5, s, true);
+			@include ai-span(4, xs);
+		}
+
+		figure {
+			@include ai-span(16/3, xl);
+			@include ai-span(5, l);
+			@include ai-span(3, m);
+			@include ai-span(3, s);
+			@include ai-span(4, xs);
+		}
+	}
+}

@@ -1,0 +1,29 @@
+// Maintenance Mode Page
+//
+// Styles for Maintenance Mode Page
+
+.maintenance-message {
+	padding: em-calc(100 20);
+	text-align: center;
+
+	.logo {
+		display: inline-block;
+		margin-bottom: em-calc(40);
+		position: relative;
+		text-align: center;
+		top: 0;
+	}
+
+	.maintenance-message-primary-text {
+		margin-bottom: 10px;
+	}
+}
+
+.site-header,
+.status-bar,
+.site-footer {
+
+	.maintenance-mode & {
+		display: none;
+	}
+}

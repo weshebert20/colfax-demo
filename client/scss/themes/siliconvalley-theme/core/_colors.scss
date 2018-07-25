@@ -1,0 +1,63 @@
+// Silicon Valley: Colors
+//
+// text - Body Copy
+// primary - Brand Primary
+// secondary - Brand Secondary
+// secondary-light - Brand secondary light
+// tertiary - Brand Tertiary
+// primary-lighter - Lighter Primary shade
+// primary-light - Light Primary shade
+// primary-dark - Dark Primary shade
+// primary-darker - Darker Primary shade
+// brown-100 - Darkest brown
+// brown-200 - Second brown
+// brown-300 - Third brown
+// brown-400 - fourth brown
+// gray-min - Minimum Gray
+// gray-200 - First Gray
+// gray-300 - Second Gray
+// gray-400 - Third Gray
+// gray-500 - Fourth Gray
+// gray-max - Maximum Gray
+//
+// markup:
+// <div  class="color {$modifiers}"><span>{$modifiers}</span></div>
+//
+// Styleguide 1.1
+
+$primary: rgb(0, 176, 255); // #00B0FF
+$secondary: rgb(0, 230, 118); // #00E676
+$tertiary: rgb(255, 255, 0); // #FFFF00
+
+// Brand variations
+$primary-lighter: rgb(64, 196, 255); // #40C4FF
+$primary-light: rgb(64, 196, 255); // #40C4FF
+$primary-dark: rgb(0, 176, 255); // #00B0FF
+$primary-darker: rgb(0, 176, 255); // #00B0FF
+$secondary-light: rgb(93, 255, 176); // #5DFFB0
+
+// Grays
+$gray-min: rgb(30, 35, 38); // #1E2326
+$gray-100: rgb(43, 49, 54); // #2B3136
+$gray-200: rgb(53, 60, 66); // #353C42
+$gray-300: rgb(104, 118, 130); // #687682
+$gray-400: rgb(207, 216, 220); // #CFD8DC
+$gray-500: rgb(236, 239, 241); // #ECEFF1
+$gray-600: rgb(255, 255, 255); // #FFFFFF
+$gray-max: rgb(255, 255, 255); // #FFFFFF
+
+// Location colors
+$color-bg: $gray-max;
+$color-bg-offset: $gray-500;
+$text: $gray-min;
+$link-hover: $primary-light;
+$button: $primary;
+$pushnav-bg: $gray-100;
+$pushnav-border: $gray-100;
+$divider-alt: #F1EFEB;
+
+// Colors
+$brown-100: rgb(56, 50, 42); // #38322A
+$brown-200: rgb(125, 117, 105); // #7D7569
+$brown-300: rgb(234, 230, 225); // #EAE6E1
+$brown-400: rgb(251, 251, 251); // #FBFBFB

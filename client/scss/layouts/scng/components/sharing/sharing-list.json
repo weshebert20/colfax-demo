@@ -1,0 +1,8 @@
+{
+	"no-prompt": {
+		"prompt": false
+	},
+	"with-prompt": {
+		"prompt": "Follow Us"
+	}
+}

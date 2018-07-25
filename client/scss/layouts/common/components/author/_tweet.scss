@@ -1,0 +1,42 @@
+// Author Tweet
+//
+// Featured tweet from the author
+
+.author-tweet {
+	@extend %clearfix;
+	padding: em-calc(24 16);
+	border-radius: px-to-em(10);
+	background-color: $gray-200;
+
+	p {
+		@include font(26, 36, $widget, 400);
+		width: 100%;
+		margin-bottom: px-to-em(32, false, 26);
+		color: $gray-max;
+
+		@include ai-breakpoint(false, m) {
+			margin-bottom: px-to-em(10, false, 26);
+		}
+	}
+
+	.tweet-me {
+		float: right;
+
+		i {
+			display: inline-block;
+			margin-right: px-to-em(10, false, 32);
+			font-size: px-to-em(28);
+			vertical-align: middle;
+		}
+
+		a {
+			@include font(15, 32, $body, 400);
+			display: inline-block;
+			color: $gray-max;
+
+			&:hover {
+				color: $primary-light;
+			}
+		}
+	}
+}

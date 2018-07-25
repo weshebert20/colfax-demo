@@ -1,0 +1,59 @@
+// Mercury News: Author Instagram
+//
+// Featured instagram image from the author
+//
+// markup:
+// <div class="author-instagram">
+// 	<h2 class="widget-title"><a href="#"><i class="icon-instagram"></i>Instagram</a></h2>
+// 	<img src="http://lorempixel.com/230/230/cats">
+// 	<div class="responses">
+// 		<a href="#" class="comments"><i href="#" class="icon-comment"></i> <span>18</span></a>
+// 	</div>
+// </div>
+//
+// Styleguide author.instagram
+
+.author-instagram {
+	background-color: $gray-max;
+    border-left: 1px solid #F0F0F0;
+    border-top: 1px solid #F0F0F0;
+    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.13);
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+
+    	a,
+		.icon-instagram {
+			color: $gray-min;
+		}
+    }
+
+    img {
+    	width: 100%;
+    }
+
+    .responses {
+    	width: auto;
+    	padding-top: 0;
+    	margin: 0;
+
+    	.comments {
+    		align-items: center;
+    		display: flex;
+    		justify-content: flex-start;
+    	}
+
+    	a {
+    		font-size: px-to-em(22);
+    	}
+
+    	span {
+    		font-family: $meta;
+			font-size: em-calc(14, 22);
+			color: $gray-min;
+			margin: em-calc(4 0 0 5);
+			width: auto;
+		}
+    }
+}

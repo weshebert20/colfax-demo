@@ -1,0 +1,94 @@
+// Footer Instagram
+//
+// Footer instagram widget
+
+.instagram {
+	@extend %clearfix;
+	position: relative;
+	margin-top: 3em;
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.icon {
+		display: inline-block;
+		float: left;
+		text-align: center;
+		background-color: $primary;
+
+		.icon-instagram {
+			display: inline-block;
+			color: $gray-max;
+			vertical-align: middle;
+
+			@include ai-breakpoint(m) {
+				width: px-to-em(128, false, 48);
+				font-size: px-to-em(48);
+				line-height: 2.6;
+			}
+
+			@include ai-breakpoint(s, m) {
+				width: px-to-em(133, false, 60);
+				font-size: px-to-em(60);
+				line-height: 2.21;
+			}
+
+			@include ai-breakpoint(xs, s) {
+				width: px-to-em(106, false, 32);
+				font-size: px-to-em(32);
+				line-height: 3.3;
+			}
+		}
+	}
+
+	ul {
+		margin: 0 auto;
+		overflow: hidden;
+
+		li {
+			float: left;
+
+			@include ai-breakpoint(l) {
+				width: px-to-em(128);
+				height: px-to-em(128);
+			}
+
+			@include ai-breakpoint(s, l) {
+				width: px-to-em(133);
+				height: px-to-em(133);
+			}
+
+			@include ai-breakpoint(xs, s) {
+				width: px-to-em(106);
+				height: px-to-em(106);
+			}
+		}
+
+		@include ai-breakpoint(xl) {
+			width: px-to-em(1280);
+			height: px-to-em(128);
+		}
+
+		@include ai-breakpoint(l, xl) {
+			width: px-to-em(1024);
+			height: px-to-em(128);
+		}
+
+		@include ai-breakpoint(m, l) {
+			width: px-to-em(798);
+			height: px-to-em(133);
+		}
+
+		@include ai-breakpoint(s, m) {
+			width: px-to-em(532);
+			height: px-to-em(266);
+		}
+
+		@include ai-breakpoint(xs, s) {
+			width: px-to-em(318);
+			height: px-to-em(212);
+		}
+	}
+}

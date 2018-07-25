@@ -1,0 +1,192 @@
+// Silicon Valley: Busy Layout
+//
+// Primary featured area on a busy news day
+//
+// markup:
+// <section class="feature-primary busy">
+//	<div class="feature-wrapper">
+// 		<div class="feature-left">
+// 			<div class="feature-top">
+// 				<div data-huron-id="article-archive-feature-large" data-huron-type="template"></div>
+// 			</div>
+//  		<div class="feature-bottom">
+//				<div data-huron-id="article-archive-feature-small" data-huron-type="template"></div>
+//				<div data-huron-id="examples-feature-small" data-huron-modifier="one" data-huron-type="template"></div>
+// 			</div>
+// 		</div>
+//		<div class="headline-list">
+//			<h2 class="headline-list-title">
+//				<a href="#">SiliconBeat <span class="icon-arrow-right"></a>
+//			</h2>
+// 			<ul>
+// 				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 				<li class="social-links">
+// 					<div data-huron-id="modules-newsletter" data-huron-type="template"></div>
+//					<sg-insert>3.1.1</sg-insert>
+// 				</li>
+// 			</ul>
+//		</div>
+//	</div>
+// 	<div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+// 	<div data-huron-id="ad-samples-portrait" data-huron-type="template"></div>
+// </section>
+//
+// Styleguide features.busy
+
+.busy {
+	display: flex;
+	flex-wrap: wrap;
+
+	.feature-wrapper {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		justify-content: space-between;
+
+		@include ai-breakpoint(false, m) {
+			@include vertical-rhythm(2);
+			flex-direction: column;
+		}
+
+		@include ai-breakpoint(l) {
+			margin-bottom: spacing(2);
+		}
+	}
+
+	.feature-left {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		@include ai-breakpoint(false, l) {
+			flex-direction: column;
+		}
+
+		@include ai-breakpoint(l) {
+			border-right: 1px solid $gray-500;
+			padding-right: em-calc(20);
+		}
+	}
+
+	.feature-top {
+		margin-bottom: em-calc(20, true);
+	}
+
+	.feature-bottom {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		@include ai-breakpoint(m) {
+			margin: 0;
+		}
+
+		&::after {
+			display: none;
+		}
+
+		> * {
+			margin: 0;
+		}
+
+		.archive-view {
+			border-top: 1px solid $gray-500;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin-bottom: spacing();
+			padding-top: spacing();
+			position: relative;
+			width: 100%;
+
+			figure {
+				width: 33.33%;
+				margin-right: spacing();
+
+				@include ai-breakpoint(s) {
+					width: 25%;
+				}
+
+				@include ai-breakpoint(m) {
+					width: 33.33%;
+				}
+
+				@include ai-breakpoint(l) {
+					width: 42.67%;
+				}
+			}
+
+			.article-info {
+				width: 66.67%;
+
+				@include ai-breakpoint(s) {
+					width: 75%;
+				}
+
+				@include ai-breakpoint(m) {
+					width: 66.67%;
+				}
+
+				@include ai-breakpoint(l) {
+					width: 58.33%;
+				}
+			}
+
+			.disqus-comment-count {
+				display: none;
+			}
+		}
+	}
+
+	.archive-view {
+		flex-direction: column;
+	}
+
+	.headline-list {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		@include ai-span(4, m);
+
+		@include ai-breakpoint(false, s) {
+			max-width: em-calc(540);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@include ai-breakpoint(l) {
+			margin-right: em-calc(10, true);
+		}
+
+		.social-list {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.headline-only h6 {
+			font-weight: 400;
+		}
+	}
+
+	.social-links {
+		background-color: $color-bg-offset;
+		flex-direction: column;
+
+		> * {
+			padding: 1em;
+		}
+	}
+}

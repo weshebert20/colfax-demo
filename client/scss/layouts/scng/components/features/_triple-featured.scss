@@ -1,0 +1,161 @@
+// Triple Featured section with Sidebar
+.triple-featured-section {
+
+	.archive-view {
+		display: block;
+	}
+
+	.feature-top {
+		width: calc(50% - 0.63rem);
+		float: left;
+
+		.feature-large {
+			width: 100%;
+		}
+
+		@include ai-breakpoint(false, m) {
+			width: 100%;
+		}
+
+		figure,
+		.article-info {
+			/* stylelint-disable */
+			width: 100% !important;
+			display: block;
+			/* stylelint-enable */
+		}
+	}
+
+	.feature-section {
+		display: table;
+		content: "";
+		clear: both;
+		/* stylelint-disable */
+		min-height: 0 !important;
+		/* stylelint-enable */
+	}
+
+	.feature-right {
+		display: block;
+		float: left;
+		width: calc(50% - 10px);
+		padding: 1.5em;
+		margin-top: 0;
+
+		@include ai-breakpoint(false, m) {
+			width: 100%;
+			margin-top: 0;
+		}
+
+		.dfp-ad {
+			width: 100%;
+		}
+	}
+
+	.feature-right-flex {
+		float: right;
+		width: calc(50% - 0.63rem);
+
+		@include ai-breakpoint(false, m) {
+			width: 100%;
+		}
+	}
+	
+	// Headline list
+	.headline-list {
+		float: left;
+		margin-right: 1.25rem;
+		width: calc(50% - 10px);
+
+		@include ai-breakpoint(false, m) {
+			width: 100%;
+		}
+
+		&::before {
+			background-color: transparent;
+		}
+	}
+
+	// Most popular fix
+	.popular {
+		ol {
+			/* stylelint-disable */
+			column-count: auto !important;
+			/* stylelint-enable */
+		}
+
+		.widget-title::before {
+			border-bottom: none;
+		}
+
+		@include ai-breakpoint(false, m) {
+			width: 100%;
+		}
+	}
+
+	// sections fixes
+	.landing-item {
+
+		.section-feature {
+			float: left;
+			width: calc(66.66667% - 0.42rem);
+
+			.archive-view {
+				margin-right: 1em;
+
+				@include ai-breakpoint(false, m) {
+					margin-right: 0;
+				}
+			}
+
+			@include ai-breakpoint(false, m) {
+				width: 100%;
+			}
+			
+			figure {
+				width: calc(66.66667% - 0.42rem);
+				float: left;
+				margin-right: 1.25em;
+				display: block;
+				/* stylelint-disable */
+				position: relative !important;
+				/* stylelint-enable */
+
+				@include ai-breakpoint(false, m) {
+					width: 100%;
+				}
+			}
+
+			.archive-view .article-info {
+				width: calc(33.33333% - 0.84rem);
+
+				@include ai-breakpoint(false, m) {
+					/* stylelint-disable */
+					margin: 0 !important;
+					/* stylelint-enable */
+				}
+
+				@include ai-breakpoint(false, m) {
+					display: block;
+					margin: 1em;
+					width: 100%;
+				}
+
+				header,
+				.excerpt {
+					width: 100%;
+				}
+			}
+		}
+
+		.headline-list {
+			float: left;
+			width: calc(33.33333% - 0.84rem);
+			font-size: larger;
+
+			@include ai-breakpoint(false, m) {
+				width: 100%;
+			}
+		}
+	}
+}

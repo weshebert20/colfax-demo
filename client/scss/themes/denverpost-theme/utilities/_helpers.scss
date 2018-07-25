@@ -1,0 +1,15 @@
+// Denver Post: Helpers
+//
+// Helper mixins and extends specific to DP
+
+/* stylelint-disable */
+@mixin shadow-border($position: bottom) {
+    @if ($position == bottom) {
+        border-bottom: 1px solid $gray-500;
+        box-shadow: 0 2px 0 0 $gray-max;
+    } @else {
+        border-top: 2px solid $gray-max;
+        box-shadow: 0 -1px 0 0 $gray-500;
+    }
+}
+/* stylelint-enable */

@@ -1,0 +1,98 @@
+// Styleguide colors
+
+.prototype-styleguide {
+
+	.color {
+		height: 60px;
+		position: relative;
+
+		span {
+			color: $text;
+			position: absolute;
+			background-color: #fff;
+			border: 1px solid $text;
+			font-family: $meta;
+			font-size: 14px;
+			font-weight: 400;
+			left: 0;
+			padding: 5px 10px;
+			top: 0;
+		}
+
+		&.text {
+			background-color: $text;
+		}
+
+		&.primary {
+			background-color: $primary;
+		}
+
+		&.secondary {
+			background-color: $secondary;
+		}
+
+		&.secondary-light {
+			background-color: $secondary-light;
+		}
+
+		&.tertiary {
+			background-color: $tertiary;
+		}
+
+		&.primary-lighter {
+			background-color: $primary-lighter;
+		}
+
+		&.primary-light {
+			background-color: $primary-light;
+		}
+
+		&.primary-dark {
+			background-color: $primary-dark;
+		}
+
+		&.primary-darker {
+			background-color: $primary-darker;
+		}
+
+		&.brown-100 {
+			background-color: $brown-100;
+		}
+
+		&.brown-200 {
+			background-color: $brown-200;
+		}
+
+		&.brown-300 {
+			background-color: $brown-300;
+		}
+
+		&.brown-400 {
+			background-color: $brown-400;
+		}
+
+		&.gray-min {
+			background-color: $gray-min;
+		}
+
+		&.gray-200 {
+			background-color: $gray-200;
+		}
+
+		&.gray-300 {
+			background-color: $gray-300;
+		}
+
+		&.gray-400 {
+			background-color: $gray-400;
+		}
+
+		&.gray-500 {
+			background-color: $gray-500;
+		}
+
+		&.gray-max {
+			background-color: $gray-max;
+		}
+	}
+}

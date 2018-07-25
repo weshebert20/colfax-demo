@@ -1,0 +1,13 @@
+// Twin Cities: Simple Feature
+//
+// Featured area on a section or tag landing
+
+.takeover {
+
+	&.simple-featured {
+
+		.feature-bottom {
+			border-bottom: 1px solid $gray-400;
+		}
+	}
+}

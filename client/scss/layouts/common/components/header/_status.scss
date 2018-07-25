@@ -1,0 +1,42 @@
+// Status Bar
+//
+// Styles for status and log in bar located above primary header
+
+.status-bar {
+
+	ul {
+		float: right;
+
+		li {
+			@include font(14, 18, $meta, 400);
+			display: inline-block;
+		}
+
+		a {
+			text-decoration: none;
+			color: $text;
+
+			&:hover {
+				color: $primary-light;
+			}
+		}
+	}
+
+	.status-bar-wrapper {
+		@extend %container;
+	}
+
+	.expand {
+		@include border-arrow($gray-max);
+	}
+
+	@include ai-breakpoint(false, $header-primary-bp) {
+		display: none;
+	}
+
+	.today,
+	.subscribe {
+		margin-right: px-to-em(5);
+		padding-right: px-to-em(10);
+	}
+}

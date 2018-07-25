@@ -1,0 +1,49 @@
+// Silicon Valley: Footer Header
+//
+// Header bar for site footer
+//
+// markup:
+// <header class="footer-header">
+// 	<div class="footer-header-wrapper">
+// 		<ul class="footer-links">
+// 			<li href="#">Member Services</li>
+// 			<li href="#">News Alerts</li>
+// 		</ul>
+//		<div data-huron-id="sharing-list" data-huron-type="template"></div>
+// 	</div>
+// </header>
+//
+// Styleguide footer.header
+
+.footer-header {
+	border-top: 5px solid $gray-500;
+	border-bottom: 1px solid $gray-500;
+}
+
+.footer-header-wrapper {
+	padding: em-calc(10);
+}
+
+.footer-links {
+
+	a {
+		@include font(16, 17, $meta, 700);
+		color: $gray-min;
+		line-height: 2;
+		margin-right: em-calc(20);
+
+		@include ai-breakpoint(false, s) {
+			display: block;
+			font-size: em-calc(12);
+			width: 100%;
+		}
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		&:hover {
+			color: $gray-min;
+		}
+	}
+}

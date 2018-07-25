@@ -1,0 +1,26 @@
+// Generic reset
+// --------------
+
+h1 {
+	@include font(43, 46, $heading, 700);
+}
+
+h2 {
+	@include font(37, 38, $heading, 700);
+}
+
+h3 {
+	@include font(32, 28, $heading, 700);
+}
+
+h4 {
+	@include font(24, 24, $heading, 700);
+}
+
+h5 {
+	@include font(20, 22, $heading, 700);
+}
+
+h6 {
+	@include font(17, 22, $heading, 700);
+}

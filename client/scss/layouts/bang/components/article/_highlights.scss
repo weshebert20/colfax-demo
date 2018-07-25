@@ -1,0 +1,69 @@
+// Mercury News: Article highlights
+//
+// Highlights section above article text
+//
+// markup:
+// <section class="highlights">
+// 	<h2 class="widget-title">Highlights</h2>
+// 	<ul>
+// 		<li><a href="#">Nam eu porttitor nisl. Cras consequat ultricies dignissim. Aliquam aliquam ex ac vulputate convallis. Sed quam libero, aliquet vitae aliquam in, aliquam non elit. Vestibulum convallis maximus interdum.</a></li>
+// 		<li><a href="#">Ut sed turpis ac ipsum mollis gravida. Nulla varius risus arcu, sit amet aliquet nunc iaculis ut. Mauris et pretium neque.</a></li>
+// 		<li><a href="#">Fusce molestie ipsum quis ornare pellentesque. Mauris diam odio, fringilla sed ultrices at, pellentesque at metus. Phasellus orci risus, mattis at sem a, ultricies efficitur enim.</a></li>
+// 	</ul>
+// </section>
+//
+// Styleguide article.highlights
+
+.highlights {
+	background-color: $gray-max;
+    border: 1px solid #F0F0F0;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.15);
+    float: none;
+    margin: 0 auto;
+    max-width: em-calc(650);
+	padding: em-calc(12 16);
+
+	.icon-arrow-down {
+		display: none;
+	}
+
+	h2 {
+		background-color: transparent;
+		color: $primary;
+		cursor: pointer;
+		display: flex;
+		font-weight: 600;
+		padding-bottom: em-calc(20);
+
+		&::after {
+			content: '';
+			border-bottom: 7px solid transparent;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top: 7px solid $primary;
+			margin: em-calc(6 0 0 5, false, 20);
+		}
+	}
+
+	a {
+		font-family: $meta;
+	}
+
+	.icon-arrow-down {
+		display: none;
+	}
+
+	&.open {
+
+		h2 {
+
+			&::after {
+				border-top-color: transparent;
+				border-bottom-color: $gray-300;
+				margin: em-calc(-10 0 0 5, false, 20);
+				position: relative;
+				top: em-calc(-7);
+			}
+		}
+	}
+}

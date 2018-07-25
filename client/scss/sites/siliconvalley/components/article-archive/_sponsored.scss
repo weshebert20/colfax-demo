@@ -1,0 +1,42 @@
+// Silicon Valley: Sponsored Content
+//
+// Sponsored articles
+//
+// markup:
+// <article class="archive-view sponsored-content">
+// 	<figure>
+// 		<span class="sponsored-flag">sponsored content</span>
+// 		<a href="#"><img src="http://lorempixel.com/640/400/cats" alt="article-image"></a>
+// 	</figure>
+// 	<div class="article-info">
+// 		<header>
+// 			<time datetime="2015-08-10 18:00">8/10/15 6:00 PM ET</time>
+// 			<h2><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+// 		</header>
+// 		<div class="excerpt">
+// 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloribus recusandae itaque iure quos dicta nostrum quibusdam, adipisci, sit officiis voluptates ipsam unde accusantium magnam odit voluptatem aliquid optio sunt!</p>
+// 		</div>
+//	</div>
+// </article>
+//
+// Styleguide article-archive.sponsored
+
+.sponsored-content {
+
+	.sponsored-flag {
+		@include font(12, 12, $meta, 400);
+		background-color: $gray-min;
+		margin: 0;
+		max-width: em-calc(125);
+		padding: em-calc(5 8);
+	}
+
+	.headline-list & {
+
+		.sponsored-flag {
+			float: none;
+			margin-bottom: spacing(0.5);
+			position: relative;
+		}
+	}
+}

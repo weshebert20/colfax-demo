@@ -1,0 +1,234 @@
+// Mercury News: Section Highlight
+//
+// Highlight for a section on the homepage
+//
+// markup:
+// <section class="section-highlight">
+// 	<h2 class="widget-title"><a href="#">Section <i class="icon-arrow-right"></i></a></h2>
+//	<div class="section-highlight-content">
+// 		<div class="section-feature">
+// 			<div data-huron-id="article-archive-feature-medium" data-huron-type="template"></div>
+// 		</div>
+//		<div class="headline-list">
+// 			<ul>
+// 				<li><div data-huron-id="examples-feature-small" data-huron-modifier="six" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="examples-headline" data-huron-modifier="two" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="examples-feature-small" data-huron-modifier="eight" data-huron-type="template"></div></li>
+// 			</ul>
+//		</div>
+//	</div>
+// </section>
+//
+// Styleguide modules.section-highlight
+
+.section-highlight {
+	display: flex;
+	flex-direction: column;
+
+	> h2 {
+		@extend %section-highlight-alt;
+
+		a {
+			cursor: pointer;
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	.section-highlight-content {
+		display: flex;
+		justify-content: space-between;
+
+		@include ai-breakpoint(false, m) {
+			flex-direction: column;
+		}
+	}
+
+	.section-feature {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.landing-three-up &,
+	.landing-four-up &,
+	.three-one-multi & {
+
+		> h2 {
+			border-bottom: 3px solid $primary;
+		}
+	}
+
+	&.highlight-small {
+		@extend %offset-background;
+		position: relative;
+
+		&::before {
+			background-color: transparent;
+			border-bottom: 3px solid $primary;
+			height: em-calc(26);
+		}
+
+		> h2 {
+			@include font(16, 16, $meta, 700);
+			border: 0;
+			padding: 0;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 2;
+
+			a {
+				background-color: $primary;
+				color: $gray-max;
+				display: block;
+				padding: em-calc(5 10);
+
+				&:hover {
+					background-color: $primary-light;
+					color: $gray-max;
+				}
+			}
+		}
+
+		.section-highlight-content {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	&.highlight-offset {
+
+		.section-highlight-content {
+
+			@include ai-breakpoint(false, m) {
+				flex-direction: column
+			}
+
+			@include ai-breakpoint(m) {
+				flex-direction: row;
+			}
+		}
+
+		.section-feature {
+			@include ai-span(8, xl);
+			@include ai-span(6.5, l);
+			@include ai-span(5, m);
+		}
+
+		.headline-list {
+			@include ai-span(8, xl);
+			@include ai-span(6.5, l);
+			@include ai-span(5, m);
+			display: flex;
+			justify-content: space-between;
+
+			@include ai-breakpoint(false, l) {
+				flex-direction: column;
+				justify-content: flex-start;
+			}
+
+			li {
+				@include ai-span(16/3, xl);
+				@include ai-span(13/3, l);
+				@include ai-span(10, m);
+				@include ai-span(8, s);
+				@include ai-span(4, xs);
+			}
+
+			.archive-view {
+
+				@include ai-breakpoint(l) {
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	.landing-three-one &,
+	&.highlight-offset {
+
+		> h2 {
+			@extend %offset-background;
+			margin-bottom: spacing();
+
+			&::before {
+				background-color: transparent;
+				border-bottom: 3px solid $primary;
+			}
+		}
+	}
+
+	.three-one-multi & {
+
+		> h2 {
+
+			&::before {
+				content: none;
+			}
+		}
+
+		.section-highlight-content {
+			flex-direction: column;
+		}
+	}
+
+	.three-one-feature-left & {
+
+		.section-feature {
+			@include ai-span(10, xl);
+			@include ai-span(8, l);
+			@include ai-span(5, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+
+		.headline-list {
+			@include ai-span(6, xl);
+			@include ai-span(5, l);
+			@include ai-span(5, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+
+			@include ai-breakpoint(l) {
+				position: relative;
+				top: em-calc(-66);
+			}
+		}
+	}
+
+	.three-one-feature-right & {
+
+		.section-feature {
+			@include ai-span(7, xl);
+			@include ai-span(5, l);
+			@include ai-span(5, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			order: 1;
+
+			@include ai-breakpoint(false, m) {
+				order: 0;
+			}
+
+			@include ai-breakpoint(l) {
+				position: relative;
+				top: em-calc(-66);
+			}
+		}
+
+		.headline-list {
+			@include ai-span(9, xl);
+			@include ai-span(8, l);
+			@include ai-span(5, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+	}
+
+	.landing-four-up & {
+
+		.section-highlight-content {
+			flex-direction: column;
+		}
+	}
+}

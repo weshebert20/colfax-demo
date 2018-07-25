@@ -1,0 +1,174 @@
+// Slow Layout
+//
+// Primary featured area on a slow news day
+//
+// markup: slow.html
+//
+// Styleguide features.slow
+
+.slow {
+	@extend %clearfix;
+	@include vertical-rhythm();
+	position: relative;
+
+	.feature-top,
+	.feature-bottom {
+		@include vertical-rhythm();
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(false, m) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		@include ai-breakpoint(m) {
+			float: left;
+		}
+
+		> * {
+			margin-bottom: spacing();
+		}
+	}
+
+	.feature-top {
+
+		&::after {
+			content: none;
+		}
+
+		.feature-large,
+		.feature-large-top {
+			@include ai-span(11, xl);
+			@include ai-span(9, l);
+			@include ai-span(6, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			border-bottom: 0;
+
+			@include ai-breakpoint(m) {
+				float: left;
+			}
+
+			@include ai-breakpoint(l) {
+				min-height: 400px;
+			}
+		}
+
+		.feature-medium {
+			@include ai-span(5, xl);
+			@include ai-span(4, l);
+			@include ai-span(4, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+
+			@include ai-breakpoint(s) {
+				flex-direction: column;
+			}
+
+			@include ai-breakpoint(m) {
+				float: right;
+			}
+
+			figure {
+				width: 100%;
+
+				@include ai-breakpoint(false, s) {
+					width: em-calc(140);
+				}
+			}
+
+			.article-info {
+				width: 100%;
+
+				@include ai-breakpoint(false, s) {
+					width: calc(100% - #{em-calc(160)});
+				}
+			}
+
+			header {
+				width: 100%;
+			}
+		}
+	}
+
+	.feature-bottom {
+
+		@include ai-breakpoint(m) {
+			border-top: 1px solid $gray-500;
+			margin-top: spacing(2);
+			padding-top: spacing(2);
+		}
+
+		.feature-small {
+			@include ai-span(9, xl);
+			@include ai-offset(1, margin, xl);
+			@include ai-span(9, l);
+			@include ai-span(6, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			justify-content: space-between;
+
+			@include ai-breakpoint(s) {
+				flex-direction: row;
+			}
+
+			figure {
+				@include ai-span(6, xl);
+				@include ai-span(4, l);
+				@include ai-span(4, m);
+				margin: 0;
+			}
+
+			.article-info {
+				@include ai-span(10, xl);
+				@include ai-span(9, l);
+				@include ai-span(6, m);
+			}
+		}
+
+		.headline-list {
+			@include ai-span(5, xl);
+			@include ai-span(4, l);
+			@include ai-span(4, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			float: right;
+
+			li {
+				border-bottom: 1px solid $gray-500;
+				padding-bottom: spacing();
+
+				@include ai-breakpoint(m) {
+
+					&:last-child {
+						border: 0;
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.sidebar-ad-container,
+	.lazy-ad-unit {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		float: right;
+
+		@include ai-breakpoint(false, l) {
+			float: left;
+			margin: 0 auto;
+			width: 100%;
+		}
+	}
+
+	.feature-bottom,
+	.feature-top {
+		@extend %clearfix;
+	}
+}

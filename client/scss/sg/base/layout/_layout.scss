@@ -1,0 +1,177 @@
+// sg only start
+.prototype-styleguide {
+
+	.grid-span,
+	.padding {
+		height: 100px;
+	}
+
+	.grid-span {
+		@include ai-span(1, xl);
+		@include ai-span(1, l);
+		@include ai-span(1, m);
+		@include ai-span(1, s);
+		@include ai-span(1, xs);
+		background-color: #8dd7f7;
+
+		&.last {
+			margin-right: 0;
+		}
+	}
+
+	.padding {
+		background-color: #8bd19b;
+		float: left;
+		position: absolute;
+		top: 0;
+		width: 10px;
+
+		&:first-child {
+			left: 0px;
+		}
+
+		&:last-child {
+			right: 0;
+		}
+	}
+
+	.container {
+		@extend %container;
+
+		@include ai-breakpoint(l, xl) {
+
+			.grid-span {
+
+				&:nth-child(14),
+				&:nth-child(15),
+				&:nth-child(16) {
+					display: none;
+				}
+			}
+		}
+
+		@include ai-breakpoint(m, l) {
+
+			.grid-span {
+
+				&:nth-child(11),
+				&:nth-child(12),
+				&:nth-child(13),
+				&:nth-child(14),
+				&:nth-child(15),
+				&:nth-child(16) {
+					display: none;
+				}
+			}
+		}
+
+		@include ai-breakpoint(s, m) {
+
+			.grid-span {
+
+				&:nth-child(9),
+				&:nth-child(10),
+				&:nth-child(11),
+				&:nth-child(12),
+				&:nth-child(13),
+				&:nth-child(14),
+				&:nth-child(15),
+				&:nth-child(16) {
+					display: none;
+				}
+			}
+		}
+
+		@include ai-breakpoint(xs, s) {
+
+			.grid-span {
+
+				&:nth-child(5),
+				&:nth-child(6),
+				&:nth-child(7),
+				&:nth-child(8),
+				&:nth-child(9),
+				&:nth-child(10),
+				&:nth-child(11),
+				&:nth-child(12),
+				&:nth-child(13),
+				&:nth-child(14),
+				&:nth-child(15),
+				&:nth-child(16) {
+					display: none;
+				}
+			}
+		}
+	}
+}
+// sg only end
+
+// sg only start
+.prototype-styleguide {
+
+	.container {
+		@extend %container;
+		position: relative;
+	}
+
+	.grid-offset,
+	.margin-illustrator {
+		height: 100px;
+	}
+
+	.margin-illustrator {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(8, m);
+		@include ai-span(6, s);
+		@include ai-span(2, xs);
+		left: 10px;
+		padding: 10px;
+		position: absolute;
+		top: 0;
+
+		&.position {
+			background-color: #dddddd;
+		}
+
+		&.margin {
+			background-color: #f9d9af;
+		}
+	}
+
+	.grid-offset {
+		@include ai-span(1, xl);
+		@include ai-span(1, l);
+		@include ai-span(1, m);
+		@include ai-span(1, s);
+		@include ai-span(1, xs);
+
+		background-color: #8dd7f7;
+
+		&.position {
+			@include ai-offset(12, position, xl);
+			@include ai-offset(9, position, l);
+			@include ai-offset(8, position, m);
+			@include ai-offset(6, position, s);
+			@include ai-offset(2, position, xs);
+		}
+
+		&.margin {
+			@include ai-offset(12, margin, xl);
+			@include ai-offset(9, margin, l);
+			@include ai-offset(8, margin, m);
+			@include ai-offset(6, margin, s);
+			@include ai-offset(2, margin, xs);
+		}
+	}
+}
+// sg only end
+
+.styleguide-mercurynews,
+.styleguide-siliconvalley {
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+}

@@ -1,0 +1,193 @@
+// Mercury News: Medium Feature
+//
+// Medium featured articles
+//
+// markup:
+// <article class="archive-view feature-medium has-comments">
+// 	<figure>
+//		<div class="image-wrapper">
+// 			<a href="#"><img src="http://lorempixel.com/400/300/sports" alt="article-image"></a>
+//		</div>
+// 	</figure>
+//	<div class="article-info">
+// 		<header>
+// 			<time datetime="2015-08-10 18:00" proto-skip>8/10/15 6:00 PM ET</time>
+// 			<h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
+//			<div class="disqus-comment-count">
+//				<a><span>51</span></a>
+//			</div>
+// 		</header>
+// 		<div class="excerpt">
+// 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloribus recusandae itaque iure quos dicta nostrum quibusdam, adipisci, sit officiis voluptates ipsam unde accusantium magnam odit voluptatem aliquid optio sunt!</p>
+// 		</div>
+//	</div>
+// </article>
+//
+// Styleguide article-archive.feature-medium
+
+.feature-medium {
+	@include slideshow-video-top();
+
+	figure {
+		order: 1;
+		margin: 0;
+	}
+
+	h4 {
+		@include font(23, 28, $heading, 700);
+		margin-bottom: em-calc(8, false, 23);
+	}
+
+	.excerpt {
+		margin-bottom: spacing(0.5);
+	}
+
+	.section-highlight & {
+		@extend %archive-box;
+	}
+
+	.highlight-small & {
+		padding-bottom: em-calc(28);
+
+		h4 {
+			@include font(18, 20, $heading, 700);
+		}
+
+		.article-info {
+			padding: em-calc(32 10 20);
+		}
+	}
+
+	.highlight-offset & {
+
+		@include ai-breakpoint(false, l) {
+			flex-direction: column;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		figure {
+			@include ai-span(8, xl);
+			@include ai-span(6, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+
+		.image-wrapper {
+			padding-bottom: 75%;
+		}
+
+		.article-info {
+			@include ai-span(8, xl);
+			@include ai-span(7, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+	}
+
+	.slow & {
+		@extend %archive-box;
+
+		@include ai-breakpoint(false, l) {
+			@include archive-horizontal();
+		}
+
+		@include ai-breakpoint(l) {
+			@include archive-vertical();
+		}
+	}
+
+	.landing-three-up &,
+	.landing-four-up &,
+	.three-one-multi & {
+		@include archive-vertical();
+	}
+
+	.three-one-feature-right &,
+	.three-one-feature-left & {
+
+		@include ai-breakpoint(false, s) {
+			flex-direction: column;
+		}
+
+		@include ai-breakpoint(s, m) {
+			flex-direction: row;
+		}
+
+		@include ai-breakpoint(m, l) {
+			flex-direction: column;
+		}
+
+		figure {
+
+			@include ai-breakpoint(false, s) {
+				width: 100%;
+			}
+		}
+	}
+
+	.three-one-feature-right & {
+
+		@include ai-breakpoint(l) {
+			flex-direction: column;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		figure {
+			@include ai-span(16, xl);
+			@include ai-span(13, l);
+			@include ai-span(10, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+		}
+
+		.article-info {
+			@include ai-span(16, xl);
+			@include ai-span(13, l);
+			@include ai-span(10, m);
+			@include ai-span(4, s);
+		}
+	}
+
+	.three-one-feature-left & {
+
+		@include ai-breakpoint(l) {
+			flex-direction: row;
+		}
+
+		figure {
+			@include ai-span(8, xl);
+			@include ai-span(13, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.image-wrapper {
+			padding-bottom: 75%;
+		}
+
+		.article-info {
+			@include ai-span(8, xl);
+			@include ai-span(13, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+
+		.primary-related {
+			margin-top: spacing();
+		}
+	}
+}

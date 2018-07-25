@@ -1,0 +1,15 @@
+.nc-console-container {
+	height: 360px;
+
+	@include ai-breakpoint(false, s) {
+		height: auto;
+	}
+
+	div.nc-employer-column {
+		position: relative;
+
+		.nc-row > a {
+			border-bottom-width: 0;
+		}
+	}
+}

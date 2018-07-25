@@ -1,0 +1,18 @@
+// Hacks
+//
+// Ugly hacks to fix ugly situations
+
+/* stylelint-disable */
+// Prevent NDN tracking pixels from messing up our pseudo-scroll setup
+div[id^="adaptvSpotDiv"] {
+	position: absolute !important;
+	top: -9999px !important;
+	left: -9999px !important;
+}
+
+.ndn_embed,
+.inform-embed,
+.inform-video {
+	display: none !important;
+}
+/* stylelint-enable */

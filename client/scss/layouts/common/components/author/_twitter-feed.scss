@@ -1,0 +1,64 @@
+// Twitter Feed
+//
+// Feed of tweets from the author
+
+.twitter-feed {
+	@extend %clearfix;
+	border: 1px solid $gray-400;
+
+	> h2 {
+		@extend %blue-block;
+	}
+
+	.feed-content-wrapper {
+		position: relative;
+		padding: px-to-em(24);
+
+		@include ai-breakpoint(false, m) {
+			padding: em-calc(24 40);
+		}
+	}
+
+	.feed-content {
+		@extend %clearfix;
+	}
+
+	.tweet {
+		@include ai-span(16/3, xl);
+		@include ai-span(13/3, l);
+		@include ai-span(10/3, m);
+
+		// Temporary (waiting for twitter markup)
+		div {
+			height: 135px;
+			padding: px-to-em(20);
+			background-color: $gray-500;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.icon-arrow-right,
+	.icon-arrow-left {
+
+		@include ai-breakpoint(m) {
+			display: none;
+		}
+	}
+
+	.icon-arrow-right {
+
+		@include ai-breakpoint(false, m) {
+			right: -10px;
+		}
+	}
+
+	.icon-arrow-left {
+
+		@include ai-breakpoint(false, m) {
+			left: -10px;
+		}
+	}
+}

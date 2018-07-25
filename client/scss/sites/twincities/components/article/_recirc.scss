@@ -1,0 +1,245 @@
+// Twin Cities: Recirculation Widgets
+//
+// Content recirculation widgets provided by Outbrain, etc.
+//
+// markup:
+// <div class="recirc">
+// 	<div class="OUTBRAIN">
+// 		<div class="external-features ob-strip-layout AR_1">
+// 			<div class="ob-widget-header">From Around the Web</div>
+// 			<ul class="ob-widget-items-container">
+// 				<li class="ob-dynamic-rec-container ob-recIdx-0">
+//					<article class="archive-view">
+//						<figure>
+//							<a href="#"><img src="http://lorempixel.com/380/214/cats" alt="article-image"></a>
+//						</figure>
+//						<header>
+//							<h6 class="ob-rec-text"><a href="#">Here's Why You Should Stop 'Googling' Names for Info</a></h6>
+// 							<a href="#" class="ob-rec-source">BeenVerified.com</a>
+//						</header>
+//					</article>
+//				</li>
+// 				<li class="ob-dynamic-rec-container ob-recIdx-1">
+//					<article class="archive-view">
+//						<figure>
+//							<a href="#"><img src="http://lorempixel.com/380/214/cats" alt="article-image"></a>
+//						</figure>
+//						<header>
+//							<h6 class="ob-rec-text"><a href="#">A 10 Warthog Attack Run</a></h6>
+// 							<a href="#" class="ob-rec-source">YouTube</a>
+//						</header>
+//					</article>
+//				</li>
+// 				<li class="ob-dynamic-rec-container ob-recIdx-2">
+//					<article class="archive-view">
+//						<figure>
+//							<a href="#"><img src="http://lorempixel.com/380/214/cats" alt="article-image"></a>
+//						</figure>
+//						<header>
+//							<h6 class="ob-rec-text"><a href="#">You'll Never Believe These 6 Facts About Bonnie and Clyde</a></h6>
+// 							<a href="#" class="ob-rec-source">Ancestry</a>
+//						</header>
+//					</article>
+//				</li>
+//			</ul>
+// 			<ul class="ob-widget-items-container">
+// 				<li class="ob-dynamic-rec-container ob-recIdx-3">
+//					<article class="archive-view">
+//						<figure>
+//							<a href="#"><img src="http://lorempixel.com/380/214/cats" alt="article-image"></a>
+//						</figure>
+//						<header>
+//							<h6 class="ob-rec-text"><a href="#">Here's Why You Should Stop 'Googling' Names for Info</a></h6>
+// 							<a href="#" class="ob-rec-source">BeenVerified.com</a>
+//						</header>
+//					</article>
+//				</li>
+// 				<li class="ob-dynamic-rec-container ob-recIdx-4">
+//					<article class="archive-view">
+//						<figure>
+//							<a href="#"><img src="http://lorempixel.com/380/214/cats" alt="article-image"></a>
+//						</figure>
+//						<header>
+//							<h6 class="ob-rec-text"><a href="#">A 10 Warthog Attack Run</a></h6>
+// 							<a href="#" class="ob-rec-source">YouTube</a>
+//						</header>
+//					</article>
+//				</li>
+// 				<li class="ob-dynamic-rec-container ob-recIdx-5">
+//					<article class="archive-view">
+//						<figure>
+//							<a href="#"><img src="http://lorempixel.com/380/214/cats" alt="article-image"></a>
+//						</figure>
+//						<header>
+//							<h6 class="ob-rec-text"><a href="#">You'll Never Believe These 6 Facts About Bonnie and Clyde</a></h6>
+// 							<a href="#" class="ob-rec-source">Ancestry</a>
+//						</header>
+//					</article>
+//				</li>
+//			</ul>
+//		</div>
+// 		<div class="ob-classic-layout AR_2">
+// 			<div class="ob-widget-section">
+// 				<div class="ob-widget-header">More From Section</div>
+// 				<ul class="ob-widget-items-container">
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">YouTube</a> <a href="#" class="ob-rec-source">YouTube</a></li>
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">Would You Step In?</a> <a href="#" class="ob-rec-source">YouTube</a></li>
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">Ever Googled Yourself? A Popular Website Reveals More Than Major Search Engines…</a> <a href="#" class="ob-rec-source">Instant Checkmate</a></li>
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">Helping Students with Emotional and Behavioral Disabilities Part 1</a> <a href="#" class="ob-rec-source">Pearson</a></li>
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">Identical twins who speak 9 languages and understand a dozen more!</a> <a href="#" class="ob-rec-source">Babbel</a></li>
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">I Hate the Open-Plan Kitchen—and Amazingly, I’m No Longer the Only One</a> <a href="#" class="ob-rec-source">Realtor.com</a></li>
+// 				</ul>
+// 			</div>
+// 			<div class="ob-widget-section ob-last">
+// 				<div class="ob-widget-header">You Might Also Like</div>
+//				<ul class="ob-widget-items-container">
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">New Ulm pastor arrested in prostitution sting</a></li>
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">Gophers basketball no longer in mix for center Chris Obekpa</a></li>
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">Wisconsinite, 21, severely injured in river jump near Red Wing</a></li>
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">Oakdale man gets 14 years for putting daughter in coma</a></li>
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">Bloomington SuperAmerica accuser wasn't in store that day, police say</a></li>
+//					<li class="ob-dynamic-rec-container"><a class="ob-rec-text" href="#">Bon Iver makes triumphant homecoming at Eaux Claires festival</a></li>
+//				</ul>
+// 			</div>
+// 		</div>
+// 	</div>
+// </div>
+//
+// Styleguide article.recirc
+
+.recirc {
+
+	.OUTBRAIN {
+
+		.AR_1,
+		.AR_2 {
+
+			&.ob-classic-layout,
+			&.ob-strip-layout {
+
+				.ob-widget-items-container {
+					width: 100%;
+				}
+
+				.ob-dynamic-rec-container {
+
+					&:hover {
+						text-decoration: none;
+
+						.ob-rec-text {
+							color: $primary-light;
+							text-decoration: none;
+						}
+
+						.ob-rec-source {
+							text-decoration: none;
+						}
+					}
+				}
+
+				.ob-rec-text {
+					@include font(14, 18, $heading, 600);
+					color: $text;
+				}
+
+				.ob-rec-source,
+				.ob-widget-header span {
+					color: $gray-300;
+					font-family: $meta;
+					font-size: px-to-em(13);
+					font-style: normal;
+					font-weight: 400;
+				}
+			}
+
+			// Layout with images
+			&.ob-strip-layout {
+				margin-bottom: spacing();
+
+				.ob-rec-text {
+					max-height: none;
+					overflow: visible;
+					padding-bottom: px-to-em(5);
+				}
+
+				.ob-widget-items-container {
+					@include vertical-rhythm();
+					@extend %clearfix;
+
+					@include ai-breakpoint(false, s) {
+						display: block;
+						float: none;
+
+						&::after {
+							display: none;
+						}
+					}
+				}
+
+				.ob-dynamic-rec-container {
+					@include ai-span(16/3, xl);
+					@include ai-span(13/3, l);
+					@include ai-span(10/3, m);
+					@include ai-span(8/3, s);
+					@include ai-span(2, xs);
+					margin-left: 0;
+					max-width: none;
+
+					@include ai-breakpoint(s) {
+
+						li {
+							margin-bottom: 0;
+						}
+
+						&.ob-recIdx-2,
+						&.ob-recIdx-5 {
+							margin-right: 0;
+						}
+					}
+
+					@include ai-breakpoint(false, s) {
+						margin-bottom: spacing(1.5);
+
+						&.ob-recIdx-1,
+						&.ob-recIdx-3,
+						&.ob-recIdx-5 {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+
+			// Layout with headline lists
+			&.ob-classic-layout {
+				float: left;
+				width: 100%;
+
+				.ob-widget-items-container {
+					@include vertical-rhythm(0.5);
+					list-style: disc outside none;
+					margin-left: px-to-em(17);
+
+					.ob-dynamic-rec-container {
+						display: list-item;
+					}
+				}
+
+				.ob-widget-section {
+					@include ai-span(8, xl);
+					@include ai-span(6.5, l);
+					@include ai-span(5, m);
+					@include ai-span(8, s);
+					@include ai-span(4, xs);
+
+					@include ai-breakpoint(false, m) {
+						margin-bottom: spacing(1.5);
+					}
+
+					&.ob-last {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}

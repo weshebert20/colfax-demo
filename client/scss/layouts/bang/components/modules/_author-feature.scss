@@ -1,0 +1,53 @@
+// Mercury News: Author Feature
+//
+// Widget for featured authors on section landings
+//
+// markup:
+// <div class="author-feature">
+//  <img src="http://lorempixel.com/85/85/people" alt="channel photo">
+//  <h3>Thoughts from Columnist Name</h3>
+// </div>
+//
+// Styleguide modules.author-feature
+
+.author-features {
+	display: flex;
+	justify-content: space-between;
+
+	@include ai-breakpoint(false, l) {
+		@include vertical-rhythm();
+		flex-direction: column;
+	}
+}
+
+.author-feature {
+	@include ai-span(16/3, xl);
+	@include ai-span(13/3, l);
+	@include ai-span(10, m);
+	@include ai-span(8, s);
+	@include ai-span(4, xs);
+	align-items: center;
+	background-color: $gray-max;
+	border: 1px solid #F0F0F0;
+	box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.15);
+	display: flex;
+	justify-content: space-between;
+
+	> a {
+		display: block;
+		width: em-calc(85);
+	}
+
+	img {
+		height: auto;
+		width: em-calc(85);
+	}
+
+	h3 {
+		@include font(21, 24, $widget, 700);
+		color: $primary;
+		text-align: left;
+		text-transform: none;
+		width: calc(100% - #{em-calc(100, false, 21)});
+	}
+}

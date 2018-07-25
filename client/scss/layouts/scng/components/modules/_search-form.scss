@@ -1,0 +1,15 @@
+// Search Form
+
+.search-form {
+
+	&.header-search {
+		margin-top: 0;
+
+		input[type="text"] {
+			border-color: $gray-500;
+			background-color: $gray-max;
+			font-size: em-calc(15);
+			padding: em-calc(12, 10);
+		}
+	}
+}

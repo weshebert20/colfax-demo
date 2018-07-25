@@ -1,0 +1,147 @@
+// Landing Slideshows
+//
+// Slideshows on landing pages
+
+%slideshow {
+	position: relative;
+
+	ul {
+		position: relative;
+	}
+
+	.slick-list {
+		width: 100%;
+		float: left;
+		overflow: hidden;
+
+		li {
+			float: left;
+			margin-right: 20px;
+
+			&.slick-active {
+				outline: none;
+			}
+		}
+	}
+
+	.slick-track {
+		position: relative;
+	}
+
+	.slick-dots {
+		/* stylelint-disable */
+		display: inline-block !important;
+		/* stylelint-enable */
+		height: 14px;
+		margin: spacing(1.5) 0 0;
+		text-align: center;
+		overflow: hidden;
+
+		li {
+			display: inline-block;
+			float: left;
+			margin-right: px-to-em(5);
+
+			&.slick-active {
+
+				button {
+					background-color: $primary;
+				}
+			}
+		}
+
+		button {
+			display: block;
+			width: px-to-em(14);
+			height: px-to-em(14);
+			padding: 0;
+			border: none;
+			border-radius: 50%;
+			outline: none;
+			text-indent: -9999px;
+			background-color: $gray-400;
+		}
+	}
+
+	> .icon-arrow-right,
+	> .icon-arrow-left,
+	.slick-slider > .slick-arrow {
+		position: absolute;
+		top: 50%;
+		font-size: px-to-em(60);
+		transform: translate(0, -50%);
+		color: $gray-400;
+		overflow: hidden;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	.slick-slider > .slick-next {
+		@extend .icon-arrow-right;
+	}
+
+	.slick-slider > .slick-prev {
+		@extend .icon-arrow-left;
+	}
+
+	> .icon-arrow-right,
+	.slick-slider > .slick-next {
+		right: 0;
+	}
+
+	> .icon-arrow-left,
+	.slick-slider > .slick-prev {
+		left: 0;
+	}
+
+	.body-copy & {
+
+		ul {
+			list-style: none;
+		}
+	}
+}
+
+%alt-arrows {
+
+	.slick-list {
+
+		li {
+			margin-right: 0;
+		}
+	}
+
+	> .icon-arrow-right,
+	> .icon-arrow-left,
+	.slick-slider > .slick-arrow {
+		width: px-to-em(40, false, 60);
+		height: px-to-em(60, false, 60);
+		text-align: center;
+		background-color: $gray-min;
+		color: $gray-max;
+		opacity: 0.75;
+		padding: 0;
+		text-indent: -9999px;
+		z-index: index($indices, slideshow-arrows);
+
+		&:hover {
+			color: $gray-max;
+			background-color: $gray-min;
+		}
+
+		&::before {
+			display: flex;
+			position: relative;
+			right: px-to-em(10, false, 60);
+			text-indent: 0;
+			width: 100%;
+		}
+	}
+}
+
+.slideshow-landing {
+	@extend %slideshow;
+}
+

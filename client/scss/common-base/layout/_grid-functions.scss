@@ -1,0 +1,414 @@
+/* styleguide:ignore:start */
+/* stylelint-disable */
+
+// Grid Functions
+// ---------------
+
+// Internal functions
+
+// Keep a register of extends and breakpoint strings for checking against later
+$extends: ();
+$breakpoints: ();
+
+// Defaults
+$auto-extend: true !default;
+$use-min: true !default;
+$use-calc: true !default;
+$flexbox: false !default;
+
+// Keep differently-named versions of global vars so we can compare local versions
+$global-column-width: $column-width;
+$global-gutter-width: $gutter-width;
+
+// Generate grid span placeholders (static if desired)
+// Once node-sass gets its shit together and @at-root works with interpolation
+// we will gernerate all these placeholders on the fly
+@mixin grid-spans() {
+
+	// Global container
+	%container {
+		@extend %clearfix;
+		max-width: px-to-em(($column-width * $columns-max) + ($container-padding * 2));
+		margin: 0 auto;
+		padding: em-calc(0 $container-padding, true, $base-unit);
+	}
+
+	// Global spans
+	@for $i from 1 through $columns-max {
+		%span-#{$i} {
+			@include build-span( $i, $columns-max );
+		}
+
+		%span-#{$i}-last {
+			@include build-span( $i, $columns-max, true );
+		}
+
+		%offset-#{$i}-margin {
+			@include build-offset( $i, $columns-max, margin );
+		}
+
+		%offset-#{$i}-position {
+			@include build-offset( $i, $columns-max, position );
+		}
+
+		@if ($auto-extend == true) {
+			$extends: append( $extends, 'span-' + $i ) !global;
+			$extends: append( $extends, 'span-' + $i + '-last' ) !global;
+			$extends: append( $extends, 'offset-' + $i + '-margin' ) !global;
+			$extends: append( $extends, 'offset-' + $i + '-position' ) !global;
+		}
+	}
+
+	// Breakpoint-specific spans
+	// Static container
+	@each $breakpoint, $columns-total in $columns-map {
+
+		// If you need a static site width, use a static container.
+		// Width is set per-breakpoint based on # of columns and column width
+		%container-#{$breakpoint}-static {
+			@extend %container;
+			@include breakpoints( $columns-total, $columns-total, $breakpoint, container );
+		}
+
+ 		@for $i from 1 through $columns-total {
+ 			%span-#{$breakpoint}-#{$i} {
+				@include breakpoints( $i, $columns-total, $breakpoint, span, false );
+			}
+
+			%span-#{$breakpoint}-#{$i}-last {
+				@include breakpoints( $i, $columns-total, $breakpoint, span, true );
+			}
+
+			%offset-#{$breakpoint}-#{$i}-margin {
+				@include breakpoints( $i, $columns-total, $breakpoint, offset, false, margin );
+			}
+
+			%offset-#{$breakpoint}-#{$i}-position {
+				@include breakpoints( $i, $columns-total, $breakpoint, offset, false, position );
+			}
+
+			@if ($auto-extend == true) {
+				$extends: append( $extends, 'span-' + $breakpoint + '-' + $i ) !global;
+				$extends: append( $extends, 'span-' + $breakpoint + '-' + $i + '-last' ) !global;
+				$extends: append( $extends, 'offset-' + $breakpoint + '-' + $i + '-margin' ) !global;
+				$extends: append( $extends, 'offset-' + $breakpoint + '-' + $i + '-position' ) !global;
+			}
+		}
+	}
+}
+
+// Calculate breakpoint sizes, build breakpoint strings, and delegate tasks based on breakpoints
+@mixin breakpoints( $columns, $columns-total, $breakpoint, $type, $last: false, $push-type: margin ) {
+	@if ( $columns <= map-get( $columns-map, $breakpoint ) ) {
+
+		// Remember, column width variable is set to include gutter b/c we are using calc(),
+		// making $cur-container value easy math.
+		$cur-container: $columns-total * $column-width;
+		$cur-breakpoint: $cur-container;
+		$prev-breakpoint: map-get-prev( $columns-map, map-index( $columns-map, $breakpoint ) ) * $column-width;
+		$breakpoint-string: null;
+
+		// Min-width only for largest breakpoint, min- and max-width for every other breakpoint.
+		// This means that in most cases your smallest grid size should calculate to 320px width
+		@if ( 1 == map-index( $columns-map, $breakpoint ) ) {
+			$breakpoint-string: '(min-width: ' + em-calc( $cur-breakpoint ) + ')';
+		} @else if ( length( map-keys( $columns-map ) ) == map-index( $columns-map, $breakpoint ) and true == $use-min ) {
+			$breakpoint-string: '(max-width: ' + em-calc( $cur-breakpoint ) + ')';
+		} @else if ( number == type-of( $prev-breakpoint ) ) {
+			$breakpoint-string: '(min-width: ' + em-calc( $cur-breakpoint ) + ') and ( max-width: ' + em-calc( $prev-breakpoint - 1 ) + ')';
+		}
+
+		@if ( null == map-get( $breakpoints, $breakpoint ) ) {
+			$breakpoints: map-merge( $breakpoints, ( $breakpoint: $breakpoint-string ) ) !global;
+		}
+
+		// Output calculated width for container, build the span for grid spans
+		@media #{$breakpoint-string} {
+			@if ( container == $type ) {
+				width: em-calc($columns-total * $column-width, true );
+			} @else if ( span == $type ) {
+				@include build-span( $columns, $columns-total, $last );
+			} @else if( offset == $type ) {
+				@include build-offset( $columns, $columns-total, $push-type );
+			}
+		}
+	}
+}
+
+// Build a span
+@mixin build-span( $columns: $columns-max, $columns-total: $columns-max, $last: false, $column-width: $global-column-width, $gutter-width: $global-gutter-width ) {
+	// Somebody is trying to use a fraction
+	@if ( $columns > 0 and $columns < 1 ) {
+		$columns: $columns-total * $columns;
+	}
+
+	// Gutter width includes a fraction of the final gutter, which should be omitted using $last
+	$gutter: $gutter-width - ( $gutter-width * ( $columns / $columns-total ) );
+	$width: percentage( $columns / $columns-total );
+	$nocalc-width: $columns * $column-width;
+	$rem: em-calc( $gutter, true );
+
+	$gutter: ceil( $gutter * 1px );
+	$rem: ceil( $rem * 100 ) * 0.01;
+
+	@if ($flexbox == false) {
+		float: left;
+	}
+
+	// Widths and margins
+	@if ( $columns < $columns-total ) {
+		@if ( false == $last and false == $flexbox ) {
+			@if ( true == $use-calc ) {
+				margin-right: em-calc( $gutter-width, true );
+			} @else {
+				margin-right: percentage( $gutter-width / ( $columns-total * $column-width ) );
+			}
+		}
+
+		@if ( true == $use-calc ) {
+			width: calc( #{ $width } - #{ ceil( $gutter ) } );
+			width: calc( #{ $width } - #{ $rem } );
+		} @else {
+			width: percentage( ( $nocalc-width - $gutter ) / ( $columns-total * $column-width ) );
+		}
+	} @else {
+		width: $width;
+	}
+}
+
+// Build an offset
+@mixin build-offset( $columns: $columns-max, $columns-total: $columns-max, $push-type: margin, $column-width: $global-column-width, $gutter-width: $global-gutter-width ) {
+	// Somebody is trying to use a fraction
+	@if ( $columns > -1 and $columns < 1 ) {
+		$columns: $columns-total * $columns;
+	}
+
+	$gutter: $gutter-width - ( $gutter-width * ( $columns / $columns-total ) );
+	$width: percentage( $columns / $columns-total );
+	$nocalc-width: $columns * $column-width;
+	$rem: em-calc( $gutter, true );
+
+	$gutter: ceil( $gutter * 1px );
+	$rem: ceil( $rem * 10 ) * 0.1;
+
+	@if ( position == $push-type ) {
+		position: relative;
+		@if ( true == $use-calc ) {
+			left: calc( #{ $width } - #{ $gutter } + #{ em-calc( $gutter-width ) } );
+			left: calc( #{ $width } - #{ $rem } + #{ em-calc( $gutter-width, true ) } );
+		} @else {
+			left: percentage( ( $nocalc-width - $gutter + $gutter-width ) / ( $columns-total * $column-width ) );
+		}
+	} @else if ( margin == $push-type ) {
+		@if ( true == $use-calc ) {
+			margin-left: calc( #{ $width } - #{ $gutter } + #{ em-calc( $gutter-width ) } );
+			margin-left: calc( #{ $width } - #{ $rem } + #{ em-calc( $gutter-width, true ) } );
+		} @else {
+			margin-left: percentage( ( $nocalc-width - $gutter + $gutter-width ) / ( $columns-total * $column-width ) );
+		}
+	} @else {
+		@error $push-type + "cannot be used with offsets. 'position' and 'margin' are the only available types";
+	}
+}
+
+// Get a map value by its index
+@function map-get-by-index( $map, $index ) {
+	@if ( number == type-of( $index ) ) and ( $index >= 1 ) and ( $index <= length( map-keys( $map ) ) ) {
+		@return map-get( $map, nth( nth( $map, $index ), 1 ) );
+	} @else {
+		@return 0;
+	}
+}
+
+// Get the previous value in a map
+@function map-get-prev( $map, $index: 1 ) {
+	@if ( number == type-of( $index ) ) and ( $index >= 1 ) {
+		@return map-get-by-index( $map, ( $index - 1 ) );
+	} @else {
+		@return false;
+	}
+}
+
+// Get the index of a map key
+@function map-index( $map, $key ) {
+	@return index( map-keys( $map ), $key );
+}
+
+// Get the map key of an index
+@function map-key( $map, $index ) {
+	@return nth( map-keys( $map ), $index );
+}
+
+// Convert a list of unitless values (or px) to rem or em
+//
+// $values: single value or list of values
+// $rem: should output be in rem units?
+// $base-value: font size from which calculations are made
+@function em-calc($values, $rem: false, $base-value: $base-unit) {
+    $max: length($values);
+    $em-values: ();
+    @if $max == 1 {
+        @return px-to-em(nth($values, 1), $rem, $base-value);
+    }
+    @for $i from 1 through $max {
+        $value: nth($values, $i);
+        // It's 'auto'
+        @if (string == type-of($value)) {
+             $em-values: append($em-values, $value);
+        } @else if (number == type-of($value)) {
+            $em-values: append($em-values, px-to-em(nth($values, $i), $rem, $base-value));
+        }
+    }
+    @return $em-values;
+}
+
+// Convert px to em or rem
+// Unitless values are assumed to be in px
+//
+// $px: pixel value, can be unitless
+// $rem: should output be in rem units?
+// $base-size: font size from which calculations are made
+@function px-to-em( $px, $rem: false, $base-size: $base-unit ) {
+    @if ( 'em' == unit( $px ) or 'rem' == unit( $px ) ) {
+        @return $px;
+    }
+    @if ( 'px' == unit( $px ) ) {
+        $px: $px / 1px;
+    }
+    @if $rem == true {
+        @return $px / $base-size * 1rem;
+    } @else {
+        @return $px / $base-size * 1em;
+    }
+}
+
+// Establish a vertical rhythm in a container
+@mixin vertical-rhythm( $multiplier: 1 ) {
+
+    > * {
+        margin-bottom: spacing($multiplier);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Generate span width styles. Can use this or directly @extend placeholders.
+//
+// $columns (required): number of columns to span. Can be any number, even a fraction.
+// $breakpoint: desired breakpoint.
+// $last: is this the last column in the row?
+// $column-width: custom column width
+// $gutter-width: custom gutter width
+@mixin ai-span( $columns: $columns-max, $breakpoint: false, $last: false, $column-width: $global-column-width, $gutter-width: $global-gutter-width ) {
+	$columns-total: $columns-max;
+
+	@if ( false != $breakpoint ) {
+		$columns-total: map-get( $columns-map, $breakpoint );
+	}
+
+	@if ( null != $columns-total ) {
+		$extend: 'span-';
+
+		@if ( false != $breakpoint ) {
+			$extend: $extend + $breakpoint + '-' + $columns;
+		} @else {
+			$extend: $extend + $columns;
+		}
+
+		@if ( false != $last ) {
+			$extend: $extend + '-last';
+		}
+
+		@if ( null != index( $extends, $extend ) and $global-column-width == $column-width and $global-gutter-width == $gutter-width ) {
+			@extend %#{$extend};
+		} @else {
+			@if ( false != $breakpoint ) {
+				$breakpoint-string: map-get($breakpoints, $breakpoint);
+				@media #{$breakpoint-string} {
+					@include build-span( $columns, $columns-total, $last, $column-width, $gutter-width );
+				}
+			} @else {
+				@include build-span( $columns, $columns-total, $last, $column-width, $gutter-width );
+			}
+		}
+	} @else {
+		@error "Breakpoint '#{$breakpoint}' doesn't exist or you forgot to fill out your $columns-map";
+	}
+}
+
+// Generate push styles. Can use this or directly @extend placeholders.
+//
+// $columns (required): number of columns to offset. Can be any number, even a fraction.
+// $push-type: use 'push' for a margin, 'offset' for a left position
+// $breakpoint: desired breakpoint
+// $output-breakpoint: should the breakpoint be output or just used for column calculations?
+// $column-width: custom column width
+// $gutter-width: custom gutter width
+@mixin ai-offset( $columns: $columns-max, $push-type: margin, $breakpoint: false, $column-width: $global-column-width, $gutter-width: $global-gutter-width ) {
+	$columns-total: $columns-max;
+
+	@if ( false != $breakpoint ) {
+		$columns-total: map-get( $columns-map, $breakpoint );
+	}
+
+	@if ( null != $columns-total ) {
+		$extend: 'offset-';
+
+		@if ( false != $breakpoint ) {
+			$extend: $extend + $breakpoint + '-' + $columns;
+		} @else {
+			$extend: $extend + $columns;
+		}
+
+		$extend: $extend + '-' + $push-type;
+
+		@if ( null != index( $extends, $extend ) and $global-column-width == $column-width and $global-gutter-width == $gutter-width ) {
+			@extend %#{$extend};
+		} @else {
+			@if ( false != $breakpoint ) {
+				$breakpoint-string: map-get($breakpoints, $breakpoint);
+				@media #{$breakpoint-string} {
+					@include build-offset( $columns, $columns-total, $push-type, $column-width, $gutter-width );
+				}
+			} @else {
+				@include build-offset( $columns, $columns-total, $push-type, $column-width, $gutter-width );
+			}
+		}
+	} @else {
+		@error "Breakpoint '#{$breakpoint}' doesn't exist or you forgot to fill out your $columns-map";
+	}
+}
+
+// Style based on a generated breakpoint
+// Note: use both $from-breakpoint and $to-breakpoint to do a min/max range
+//
+// $from-breakpoint: use only this to specify a minimum width
+// $to-breakpoint: use only this to specify a maximum width
+@mixin ai-breakpoint( $from-breakpoint, $to-breakpoint: false ) {
+	$breakpoint-string: '';
+
+	@if ( false == $to-breakpoint and false != $from-breakpoint ) {
+		$start: $column-width * map-get( $columns-map, $from-breakpoint );
+		$breakpoint-string: '(min-width: ' + px-to-em( $start ) ')';
+	} @else if ( false == $from-breakpoint and false != $to-breakpoint  ) {
+		$end: ( $column-width * map-get( $columns-map, $to-breakpoint ) ) - 1;
+		$breakpoint-string: '(max-width: ' + px-to-em( $end ) ')';
+	} @else {
+		$start: $column-width * map-get( $columns-map, $from-breakpoint );
+		$end: ( $column-width * map-get( $columns-map, $to-breakpoint ) ) - 1;
+		$breakpoint-string: '(min-width: ' + px-to-em( $start ) + ') and (max-width: ' + px-to-em( $end ) ')';
+	}
+
+	@if ( null != $breakpoint-string ) {
+		@media #{$breakpoint-string} {
+			@content;
+		}
+	} @else {
+		@error "Breakpoint '#{$breakpoint}' does not exist";
+	}
+}
+
+/* stylelint-enable */
+/* styleguide:ignore:end */

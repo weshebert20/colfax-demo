@@ -1,0 +1,35 @@
+// Inputs
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	border: 1px solid $gray-300;
+	border-radius: 0;
+	color: $text;
+	height: 30px;
+	padding: em-calc(8 10);
+	transition: border-color 250ms linear;
+
+	&:focus {
+		border: 1px solid $primary;
+		outline: none;
+
+		-webkit-appearance: none;
+	}
+}
+
+%form-icon {
+	position: relative;
+
+	[class^="icon-"] {
+		color: $primary;
+		font-size: px-to-em(16);
+		position: absolute;
+		right: px-to-em(5);
+		top: px-to-em(7);
+
+		&:hover {
+			color: $primary-light;
+		}
+	}
+}

@@ -1,0 +1,52 @@
+// Mercury News: Footer Colophon
+//
+// Logo, copyright, privacy, etc.
+//
+// markup:
+// <div class="colophon">
+// 	<ul id="primary-menu" class="menu">
+// 		<li><a target="_blank" href="http://www.digitalfirstmedia.com/">© 2016 Digital First Media</a></li>
+// 		<li><a target="_blank" href="#0">Site Map</a></li>
+// 		<li><a href="http://mercurynews.dfmdev.com/copyright/">Copyright</a></li>
+// 		<li><a href="http://mercurynews.dfmdev.com/privacy-policy/">Privacy Policy</a></li>
+// 		<li><a target="_blank" href="https://vip.wordpress.com/">Powered by WordPress.com VIP</a></li>
+// 		<li><a href="http://www.bayareanewsgroup.com">Bay Area News Group</a></li>
+// 	</ul>
+// </div>
+//
+// Styleguide footer.colophon
+
+.colophon {
+	background-color: $color-bg-offset;
+
+	ul {
+		margin: 0;
+		padding: em-calc(20 10);
+
+		@include ai-breakpoint(false, m) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	li {
+		margin-right: em-calc(16);
+
+		&:last-child {
+			margin: 0;
+		}
+
+		@include ai-breakpoint(false, m) {
+			margin: 0;
+			width: 100%;
+		}
+	}
+
+	a {
+		color: $gray-300;
+
+		&:hover {
+			color: $gray-min;
+		}
+	}
+}

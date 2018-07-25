@@ -1,0 +1,49 @@
+// Twin Cities: Colors
+//
+// text - Body Copy
+// primary - Brand Primary
+// secondary - Brand Secondary
+// primary-lighter - Lighter Primary shade
+// primary-light - Light Primary shade
+// primary-dark - Dark Primary shade
+// primary-darker - Darker Primary shade
+// gray-min - Minimum Gray
+// gray-200 - First Gray
+// gray-300 - Second Gray
+// gray-400 - Third Gray
+// gray-500 - Fourth Gray
+// gray-600 - Fiffth Gray
+// gray-max - Maximum Gray
+//
+// markup: colors.hbs
+//
+// data: colors.json
+//
+// Styleguide core.colors
+
+// Brand colors
+$primary: rgb(0, 111, 183); // #006fb7
+$secondary: rgb(215, 0, 0); // #d70000
+
+// Brand variations
+$primary-lighter: rgb(71, 182, 255); // #47b6ff
+$primary-light: rgb(0, 147, 245); // #0093f5
+$primary-dark: rgb(0, 86, 143); // #00568f
+$primary-darker: rgb(0, 61, 102); // #003d66
+
+// Grays
+$gray-min: rgb(0, 0, 0); // #000000
+$gray-100: rgb(51, 51, 51); // #333333
+$gray-200: rgb(102, 102, 102); // #666666
+$gray-300: rgb(168, 168, 168); // #999999
+$gray-400: rgb(184, 184, 184); // #b8b8b8
+$gray-500: rgb(204, 204, 204); // #cccccc
+$gray-600: rgb(238, 238, 238); // #eeeeee
+$gray-max: rgb(255, 255, 255); // #ffffff
+
+// Location colors
+$text: rgb(51, 51, 51);
+$link-hover: $primary-light;
+$button: $primary-lighter;
+$pushnav-bg: $primary-dark;
+$pushnav-border: $primary-darker;

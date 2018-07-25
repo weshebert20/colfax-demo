@@ -1,0 +1,141 @@
+// Body Copy
+//
+// Article body text
+//
+// markup: body-copy.html
+//
+// Styleguide article.body-copy
+
+.body-copy {
+	@extend %body-copy-four;
+
+	a {
+		border-bottom: 1px dotted $primary;
+		color: $primary;
+
+		&:hover {
+			border-bottom: 1px solid $primary-light;
+			color: $primary-light;
+		}
+	}
+
+	figcaption {
+		@include font(13, 16, $meta, 400);
+		display: block;
+		float: none;
+		font-family: $meta;
+		padding: em-calc(0 0 10);
+		width: 100%;
+		margin-top: em-calc(4);
+
+		.meta {
+			@include ai-breakpoint(false, m) {
+				padding: em-calc(10);
+			}
+		}
+	}
+
+	> h1 {
+		font-size: em-calc(29, true);
+	}
+
+	> h2 {
+		font-size: em-calc(25, true);
+	}
+
+	> h3 {
+		font-size: em-calc(21, true);
+	}
+
+	> h4 {
+		font-size: em-calc(19, true);
+	}
+
+	> h5 {
+		font-size: em-calc(17, true);
+	}
+
+	> h6 {
+		font-size: em-calc(17, true);
+		font-family: $body;
+	}
+
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+		margin: em-calc(32 0 20, true);
+	}
+
+	.photo-credit {
+		@include font(11, 13, $meta, 400);
+		display: block;
+		float: none;
+		width: 100%;
+		padding-top: em-calc(5);
+	}
+
+	.wp-caption {
+
+		img {
+			margin-bottom: em-calc(5);
+		}
+	}
+
+	.alignleft,
+	.alignright {
+
+		&.size-article_inline_half,
+		&.size-article_inline_third {
+
+			@include ai-breakpoint(false, s) {
+				width: 100%;
+			}
+		}
+	}
+
+	.alignleft {
+		@include ai-offset(-2, margin, xl);
+		@include ai-offset(-1, margin, l);
+		@include ai-offset(-1, margin, m);
+	}
+
+	.alignright {
+
+		@include ai-breakpoint(xl) {
+			margin-right: calc( #{percentage(-1.5/8)} + 20px );
+		}
+
+		@include ai-breakpoint(l, xl) {
+			margin-right: calc( #{percentage(-1/7)} + 20px );
+		}
+
+		@include ai-breakpoint(m, l) {
+			margin-right: calc( #{percentage(-1/8)} + 20px );
+		}
+	}
+
+	.size-article_fullbleed {
+		@include ai-span(22, xl);
+		@include ai-span(15.5, l);
+		@include ai-span(13, m);
+
+		figcaption {
+			padding: em-calc(10);
+		}
+
+		@include ai-breakpoint(xl) {
+			margin-left: calc( #{percentage( -2 / 12 )} - 10px );
+		}
+
+		@include ai-breakpoint(l, xl) {
+			margin-left: calc( #{percentage( -1 / 11 )} - 10px );
+		}
+
+		@include ai-breakpoint(m, l) {
+			margin-left: calc( #{percentage( -1 / 8 )} - 10px );
+		}
+	}
+}

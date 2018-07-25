@@ -1,0 +1,126 @@
+// Datepicker
+//
+// Styles for jQuery UI datepicker
+
+body {
+
+	// Prevent free-floating datepicker from displaying on page load
+	& > #ui-datepicker-div {
+		left: -9999px;
+		position: absolute;
+	}
+}
+
+.events .ui-datepicker {
+	border: none;
+	width: 100%;
+}
+
+.events .ui-datepicker,
+.dfm-datepicker .ui-datepicker,
+#ui-datepicker-div {
+	border-radius: 0;
+
+	table {
+		width: 100%;
+		margin: em-calc(10 0);
+		padding: em-calc(0 10);
+	}
+
+	td, th {
+		line-height: 1.75;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	th {
+
+		span {
+			@include font(14, 24, $meta, 700);
+		}
+	}
+
+	td {
+
+		a {
+			@include font(14, 24, $meta, 700);
+			background: none;
+			border: none;
+			display: inline-block;
+			position: relative;
+			text-align: center;
+			width: 24px;
+			height: 24px;
+		}
+
+		&:hover {
+			background-color: $primary-light;
+
+			a {
+				color: $gray-max;
+			}
+		}
+	}
+
+	.ui-datepicker-current-day {
+		background-color: $primary-light;
+
+		a {
+			color: $gray-max;
+		}
+	}
+
+	.ui-datepicker-header {
+		background: $primary-light;
+		border: none;
+		border-radius: 0;
+		padding: em-calc(5 10);
+		position: relative;
+	}
+
+	.ui-datepicker-title {
+		@include font(16, 22, $meta, 700);
+		color: $gray-max;
+		margin: 0;
+		text-align: center;
+		text-transform: uppercase;
+		width: 100%;
+
+		span {
+			display: inline-block;
+		}
+	}
+
+	.ui-datepicker-prev, .ui-datepicker-next {
+		border-radius: 0;
+		color: $gray-max;
+		font-size: px-to-em(18);
+		height: auto;
+		overflow: hidden;
+		position: absolute;
+		top: px-to-em(6);
+		width: auto;
+
+		span {
+			display: block;
+			visibility: hidden;
+			width: 0;
+			height: 0;
+		}
+
+		&:hover {
+			background: $primary-lighter;
+			border: none;
+		}
+	}
+
+	.ui-datepicker-prev {
+		left: px-to-em(5);
+		@extend .icon-arrow-left;
+	}
+
+	.ui-datepicker-next {
+		right: px-to-em(5);
+		@extend .icon-arrow-right;
+	}
+}

@@ -1,0 +1,30 @@
+// Featured Image
+//
+// Article featured image styles
+//
+// markup:
+// <div class="header-features">
+// 	<figure>
+// 		<img src="http://lorempixel.com/960/528/cats" alt="article featured image">
+// 		<figcaption class="caption">
+// 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc. Maecenas eu semper augue. Aliquam erat volutpat. Cras varius ex sed metus finibus convallis. Maecenas bibendum velit a nisl eleifend porttitor (Lorem Ipsum photo credit)
+// 		</figcaption>
+// 	</figure>
+// </div>
+//
+// Styleguide article.feature-image
+
+.header-features {
+
+	.caption,
+	figcaption {
+		@include vertical-rhythm(0.5);
+		padding: em-calc(15 0 10, false, 14);
+		position: relative;
+		color: $gray-200;
+		border-bottom: 3px solid $gray-500;
+		margin-bottom: em-calc(17);
+		font-size: em-calc(13);
+		line-height: 1.3;
+	}
+}

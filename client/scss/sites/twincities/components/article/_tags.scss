@@ -1,0 +1,34 @@
+// Twin Cities: Article Tags
+//
+// Article tags
+//
+// markup:
+// <ul class="tags">
+//	<li>Tags:&nbsp;</li>
+// 	<li><a href="#">Minnesota</a></li>
+// 	<li><a href="#">Minneapolis</a></li>
+// 	<li><a href="#">medical marijuana</a></li>
+// 	<li><a href="#">epilepsy</a></li>
+// 	<li><a href="#">chronic disease</a></li>
+// </ul>
+//
+// Styleguide article.tags
+
+.tags {
+	border-bottom: 1px solid $gray-500;
+
+	li {
+
+		&::after {
+			content: "";
+		}
+	}
+
+	a {
+		@include button();
+
+		&:hover {
+			color: white;
+		}
+	}
+}

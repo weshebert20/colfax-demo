@@ -1,0 +1,48 @@
+{
+	"busy-one": {
+		"title": "What resorts in San Bernardino, San Gabriel mountains are doing to prepare for ski season",
+		"image": "http://lorempixel.com/800/450/business/1",
+		"credit": "PHOTO CREDIT",
+		"classes": "feature-small",
+		"headerTag": "h4"
+	},
+	"busy-two": {
+		"title": "Get those tickets; Powerball lottery jackpot grows to $217 million",
+		"image": "http://lorempixel.com/800/450/business/2",
+		"classes": "feature-small",
+		"headerTag": "h4"
+	},
+	"busy-three": {
+		"title": "Can’t make it to Pechanga? App offers your favorite games at your fingertips",
+		"image": "http://lorempixel.com/800/450/business/3",
+		"credit": "PHOTO CREDIT",
+		"classes": "feature-small",
+		"headerTag": "h4"
+	},
+	"busy-four": {
+		"title": "Motorist collides with car on I-15, slows southbound traffic near Temecula",
+		"image": "http://lorempixel.com/800/450/business/4",
+		"classes": "feature-small",
+		"headerTag": "h4"
+	},
+	"media-one": {
+		"title": "Photos of the Riverside Mariachi Festival at Fairmount Park",
+		"image": "http://lorempixel.com/800/450/business/5",
+		"video": true,
+		"classes": "feature-small",
+		"headerTag": "h4"
+	},
+	"media-two": {
+		"title": "Photos of the Soboba Inter-Tribal Pow Wow",
+		"image": "http://lorempixel.com/800/450/business/6",
+		"slideshow": true,
+		"classes": "feature-small",
+		"headerTag": "h4"
+	},
+	"styleguide": {
+		"title": "Photos of the Soboba Inter-Tribal Pow Wow",
+		"image": "http://lorempixel.com/800/450/business/6",
+		"classes": "feature-small",
+		"headerTag": "h4"
+	}
+}

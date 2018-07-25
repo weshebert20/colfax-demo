@@ -1,0 +1,64 @@
+{
+	"one": {
+		"classes" : "has-comments",
+		"image": "http://lorempixel.com/400/300/sports",
+		"title" : "Study: Sierra Nevada forests shifting to higher elevations as temperatures warm",
+		"comments" : "51"
+	},
+	"two": {
+		"classes": "has-comments",
+		"image": "http://lorempixel.com/800/450/sports",
+		"title": "Roadshow: A driver's plea to loosen Proposition 13",
+		"comments": "51"
+	},
+	"three": {
+		"classes": "has-comments",
+		"image": "http://lorempixel.com/800/450/sports",
+		"title" : "TV Tonight: 'Nashville' bids farewell; 'Wayward Pines' returns",
+		"comments": "51"
+	},
+	"four": {
+		"image": "http://lorempixel.com/800/450/cats",
+		"time": {
+			"type" : "duration",
+			"value": "3:05"
+		},
+		"title" : "“Son of Saul” review with Lisa Kennedy"
+	},
+	"five": {
+		"image": "http://lorempixel.com/800/450/cats",
+		"title" : "Girls basektball, Lakewood vs. Dakota Ridge",
+		"time": {
+			"type" : "duration",
+			"value": "8:20"
+		}
+	},
+	"six": {
+		"image": "http://lorempixel.com/800/450/cats",
+		"time": {
+			"value": "<span class='icon-slideshow'></span> 14",
+			"type": "slide-count"
+		},
+		"title": "Ishmail Terry: American Graduate Champion"
+	},
+	"seven": {
+		"classes" : "sponsored-content",
+		"image" : "http://lorempixel.com/200/250/sports",
+		"title": "Lorem Ipsum dolor sit amet adipscing elit"
+	},
+	"eight": {
+		"image": "http://lorempixel.com/800/450/cats",
+		"title": "Lorem Ipsum dolor sit amet adipscing elit"
+	},
+	"nine": {
+		"classes": "tag-search-view sponsored-content",
+		"image": "http://lorempixel.com/800/450/cats",
+		"sponsored" : true,
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloribus recusandae itaque iure quos dicta nostrum quibusdam."
+	},
+	"ten": {
+		"title": "TV Tonight: 'Nashville' bids farewell; 'Wayward Pines' returns",
+		"classes": "has-comments headline-only",
+		"comments": "51"
+	}
+}

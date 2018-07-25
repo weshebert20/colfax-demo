@@ -1,0 +1,157 @@
+// Article Single
+//
+// Styles for article layout
+
+.full-view {
+	@extend %clearfix;
+	@include vertical-rhythm(2);
+
+	.article-footer {
+		@include vertical-rhythm(2);
+
+		@include ai-breakpoint(false, l) {
+			margin-bottom: spacing(3);
+		}
+
+		@include ai-breakpoint(l) {
+			margin-bottom: spacing(2);
+		}
+
+		.footer-meta-content {
+			@include vertical-rhythm(2);
+		}
+	}
+
+	> header {
+		@extend %clearfix;
+		@include vertical-rhythm(1);
+		@include ai-span(16, xl);
+		@include ai-span(13, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		h1 {
+			margin-bottom: px-to-em(16, false, 36);
+		}
+
+		.header-title-area {
+
+			h1 {
+				width: 100%;
+				margin-bottom: px-to-em(8, false, 30);
+				clear: both;
+			}
+		}
+	}
+
+	.header-title-area,
+	.article-body {
+		@include vertical-rhythm(1);
+	}
+
+	// Default featured image width
+	.header-features {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.article-body {
+		@include ai-span(8, xl);
+		@include ai-offset(2, margin, xl);
+		@include ai-span(7, l);
+		@include ai-offset(1, margin, l);
+		@include ai-span(8, m);
+		@include ai-offset(1, margin, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.article-sidebar {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		float: right;
+		position: relative;
+
+		.widget-popular-stories {
+			@include ai-span(5, m);
+			@include ai-span(4, s);
+		}
+
+		.lower-ad {
+			@include ai-span(5, m, last);
+			@include ai-span(4, s, last);
+
+			@include ai-breakpoint(s, l) {
+				float: right;
+			}
+		}
+
+		.sidebar-bottom {
+			position: relative;
+		}
+	}
+
+	.more-news {
+		@include ai-span(16, xl, true);
+		@include ai-span(13, l, true);
+		@include ai-span(10, m, true);
+		@include ai-span(8, s, true);
+		@include ai-span(4, xs, true);
+	}
+
+	+ .more-news {
+		@include ai-breakpoint(false, m) {
+			display: none;
+		}
+	}
+
+	// prototype only
+	.prototype & {
+
+		.ad-mobile {
+
+			@include ai-breakpoint(m) {
+				display: none;
+			}
+		}
+	}
+}
+
+.rounded-button-center {
+	@include font(32, 32, $widget, 700);
+	background-color: $primary-light;
+	border: none;
+	border-radius: 3px;
+	color: $gray-max;
+	cursor: pointer;
+	display: inline-block;
+	min-width: em-calc(300, false, 32);
+	outline: none;
+	padding: em-calc(15 20, false, 32);
+	text-align: center;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $primary-lighter;
+		color: $gray-max;
+	}
+
+	& .button-small-text {
+		font-size: 50%;
+		line-height: normal;
+		display: block;
+	}
+}
+
+.button-center-wrapper {
+	float: left;
+	text-align: center;
+	width: 100%;
+}

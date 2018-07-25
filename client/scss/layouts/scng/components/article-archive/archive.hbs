@@ -1,0 +1,87 @@
+{{#each wrappers}}
+	<div class="{{ this }}">
+{{/each}}
+<article class="archive-view {{ classes }}">
+	<figure>
+		{{#if sponsored}}
+			<span class="sponsored-flag">Sponsored</span>
+		{{/if}}
+		{{#if image}}
+			<a href="#">
+				<div class="image-wrapper">
+					<img src="{{ image }}" alt="article-image">
+				</div>
+			</a>
+		{{/if}}
+		{{#if video}}
+			<span class="icon-play-arrow"></span>
+		{{/if}}
+		{{#if slideshow}}
+			<span class="icon-slideshow"></span>
+		{{/if}}
+		{{#if credit}}
+			<span class="photo-credit">PHOTO CREDIT</span>
+		{{/if}}
+	</figure>
+	<div class="article-info">
+		<header>
+			<{{ headerTag }} class="entry-title"><a href="#">{{ title }}</a></{{ headerTag }}>
+			{{#if invertImage}}
+				<figure>
+					{{#if sponsored}}
+						<span class="sponsored-flag">Sponsored</span>
+					{{/if}}
+					{{#if image}}
+						<a href="#">
+							<div class="image-wrapper">
+								<img src="{{ image }}" alt="article-image">
+							</div>
+						</a>
+					{{/if}}
+					{{#if video}}
+						<span class="icon-play-arrow"></span>
+					{{/if}}
+					{{#if slideshow}}
+						<span class="icon-slideshow"></span>
+					{{/if}}
+					{{#if credit}}
+						<span class="photo-credit">PHOTO CREDIT</span>
+					{{/if}}
+				</figure>
+			{{/if}}
+			{{#if excerpt}}
+				<div class="excerpt">{{ excerpt }}</div>
+			{{/if}}
+			{{#unless hideMeta}}
+				<div class="entry-meta">
+					{{#if time}}
+						<time class="{{time.type}}">{{{time.value}}}</time>
+					{{/if}}
+					{{#if sponsoredBy}}
+						<div class="byline">
+							<span>{{ sponsoredBy.name }}</span>
+							<img src="{{ sponsoredBy.image }}" alt="{{ sponsoredBy.name }}">
+						</div>
+					{{/if}}
+				</div>
+			{{/unless}}
+		</header>
+		{{#if includeRelated}}
+			<h2 class="primary-related-title">Related</h2>
+			<ul class="primary-related">
+ 				<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy-related-one" data-huron-type="template"></div></li>
+	 			<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy-related-two" data-huron-type="template"></div></li>
+	 			<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy-related-three" data-huron-type="template"></div></li>
+			</ul>
+		{{/if}}
+		{{#if readmore }}
+			<a href="#" class="read-story">
+				<span class="read-story-text">Read Article</span>
+				<span class="icon-arrow-right"></span>
+			</a>
+		{{/if}}
+	</div>
+</article>
+{{#each wrappers}}
+	</div>
+{{/each}}

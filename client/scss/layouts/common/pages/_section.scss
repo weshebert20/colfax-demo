@@ -1,0 +1,65 @@
+// Section
+//
+// Styles for section landing layout
+
+.section {
+	@include vertical-rhythm(2);
+
+	.newsletter-middle {
+		width: 100%;
+		margin: em-calc(0 0 32);
+		float: right;
+
+		@include ai-breakpoint(false, m) {
+			display: none;
+		}
+
+		@include ai-breakpoint(l) {
+			display: none;
+		}
+	}
+
+	.author-features {
+		@extend %clearfix;
+
+		@include ai-breakpoint(false, m) {
+			@include vertical-rhythm();
+		}
+	}
+
+	.author-feature {
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+}
+
+// Minor adjustments for triple featured section
+section.triple-featured-section {
+
+	@include ai-breakpoint(false, m) {
+		text-align: center;
+
+		.widget-popular-stories {
+			width: 100%;
+			text-align: left;
+		}
+		.dfp-Cube3_RRail_lower {
+			display: inline-block;
+		}
+	}
+
+	.triple-feature-right article {
+		margin-bottom: 20px;
+	}
+
+	.triple-featured-sidebar {
+		min-width: 300px;
+
+		.widget-popular-stories {
+			padding-top: 2em;
+		}
+	}
+}

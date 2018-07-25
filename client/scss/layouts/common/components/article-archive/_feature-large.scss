@@ -1,0 +1,33 @@
+// Large Feature
+//
+// Large featured articles
+
+.feature-large,
+.feature-large-top {
+
+	figure {
+		margin-bottom: px-to-em(8);
+		width: 100%;
+	}
+
+	.feature-media & {
+
+		.excerpt {
+
+			@include ai-breakpoint(false, m) {
+				display: none;
+			}
+		}
+	}
+
+	.landing-three-one .section-highlight & {
+
+		figure {
+			@include ai-span((16/3) * 2, xl);
+		}
+
+		header, .excerpt {
+			@include ai-span(16/3, xl, true);
+		}
+	}
+}

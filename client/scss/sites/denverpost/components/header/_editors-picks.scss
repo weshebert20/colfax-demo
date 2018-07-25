@@ -1,0 +1,62 @@
+// Denver Post: Editors Picks Carousel
+//
+// Styles for editors picks flyout
+//
+// markup:
+// <div class="editors-picks-flyout-wrapper editors-picks" >
+//	<div class="editors-picks-flyout editors-picks">
+// 		<div class="editors-picks-inner slideshow-landing">
+// 			<a href="#" class="icon-arrow-left"></a>
+// 			<ul class="articles">
+//				<div aria-live="polite" class="slick-list draggable">
+//					<div class="slick-track" role="listbox">
+//						<li class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide01">
+//							<div data-huron-id="article-archive-feature-small" data-huron-type="template"></div>
+//						</li>
+//						<li class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02">
+//							<div data-huron-id="article-archive-feature-small" data-huron-type="template"></div>
+//						</li>
+//						<li class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" tabindex="-1">
+//							<div data-huron-id="article-archive-feature-small" data-huron-type="template"></div>
+//						</li>
+//					</div>
+//				</div>
+//				<ul class="slick-dots" role="tablist" style="display: block;">
+//					<li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation00" id="slick-slide00">
+//						<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">1</button>
+//					</li>
+//					<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation01" id="slick-slide01">
+//						<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">2</button>
+//					</li>
+//					<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation02" id="slick-slide02">
+//						<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">3</button>
+//					</li>
+//					<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation03" id="slick-slide03">
+//						<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">4</button>
+//					</li>
+//					<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation04" id="slick-slide04">
+//						<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">5</button>
+//					</li>
+//					<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation05" id="slick-slide05">
+//						<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">6</button>
+//					</li>
+//					<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation06" id="slick-slide06">
+//						<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">7</button>
+//					</li>
+//					<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation07" id="slick-slide07">
+//						<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">8</button>
+//					</li>
+//					<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation08" id="slick-slide08">
+//						<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">9</button>
+//					</li>
+//					<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation09" id="slick-slide09">
+//						<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">10</button>
+//					</li>
+//				</ul>
+//			</ul>
+//			<a href="#" class="icon-arrow-right"></a>
+// 		</div>
+// 	</div>
+// </div>
+//
+// Styleguide header.editors-picks

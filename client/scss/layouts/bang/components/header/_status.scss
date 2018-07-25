@@ -1,0 +1,51 @@
+// Mercury News: Status Bar
+//
+// Styles for status and log in bar located above primary header
+//
+// markup:
+// <div class="status-bar">
+// 	<div class="status-bar-wrapper">
+// 		<ul>
+// 			<li><a href="#" class="today">Today</a></li>
+// 			<li><a href="#" class="subscribe">Subscribe</a></li>
+// 			<li><a href="#" class="login">Newsletter</a></li>
+// 		</ul>
+// 	</div>
+// </div>
+//
+// Styleguide header.status-bar
+
+.status-bar {
+	height: em-calc(80);
+	left: em-calc(445);
+	padding: em-calc(5 10);
+	position: absolute;
+	top: em-calc(-85);
+	z-index: index($indices, pushnav);
+
+	ul {
+		border-left: 1px solid $gray-400;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding-left: em-calc(10);
+
+		li {
+			@include font(11, 16, $meta, 400);
+			text-transform: uppercase;
+		}
+	}
+
+	a {
+		padding: em-calc(10, false, 14);
+	}
+
+	ul,
+	.status-bar-wrapper {
+		height: 100%;
+	}
+
+	.headroom--not-top & {
+		display: none;
+	}
+}

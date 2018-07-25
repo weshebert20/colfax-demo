@@ -1,0 +1,39 @@
+{
+	"busy-feature": {
+		"title": "Trump supporters plan to watch California polling places",
+		"excerpt": "Voting rights groups, elections officials mobilize to fight any voter intimidation.",
+		"image": "http://lorempixel.com/680/510/business",
+		"includeRelated": true,
+		"invertImage": true,
+		"classes": "feature-large",
+		"headerTag": "h2"
+	},
+	"section-feature": {
+		"title": "Trump supporters plan to watch California polling places",
+		"excerpt": "Voting rights groups, elections officials mobilize to fight any voter intimidation.",
+		"image": "http://lorempixel.com/680/510/business",
+		"includeRelated": true,
+		"invertImage": true,
+		"classes": "feature-large",
+		"headerTag": "h2"
+	},
+	"media-feature": {
+		"title": "Photos of the Morongo Thunder & Lightning Powwow",
+		"excerpt": "Some thought Noosa yoghurt would lose street its charm after being taken over by a private equity firm, but instead its maintaing its grassroots approach while expanding to 25,000 retail outlets.",
+		"image": "http://lorempixel.com/680/382/business",
+		"video": true,
+		"readmore": true,
+		"classes": "feature-large",
+		"headerTag": "h2"
+	},
+	"styleguide": {
+		"title": "Trump supporters plan to watch California polling places",
+		"excerpt": "Voting rights groups, elections officials mobilize to fight any voter intimidation.",
+		"image": "http://lorempixel.com/680/510/business",
+		"includeRelated": true,
+		"invertImage": true,
+		"classes": "feature-large",
+		"headerTag": "h2",
+		"wrappers": ["feature-primary busy"]
+	}
+}

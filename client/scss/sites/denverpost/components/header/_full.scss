@@ -1,0 +1,93 @@
+// Denver Post: Full Header
+//
+// Styles for site header as a whole
+//
+// .default.headroom--top - static header styles
+// .headroom--not-top.headroom--pinned - sticky header styles
+//
+// markup:
+// <div data-huron-id="header-status-bar" data-huron-type="template"></div>
+// <header class="site-header default headroom--top">
+//	<form class="search-form slide-search">
+//		<input type="text" placeholder="Search">
+//		<input type="submit" value="submit">
+//		<a href="#" class="icon-search"></a>
+//	</form>
+// 	<div class="nav-wrapper">
+//		<div data-huron-id="header-nav" data-huron-type="template"></div>
+// 		<div data-huron-id="header-trending" data-huron-type="template"></div>
+// 		<h4>Paige: Peyton Manning's legacy will need to be told by others</h4>
+// 		<div data-huron-id="sharing-article" data-huron-type="template"></div>
+// 	</div>
+// 	<div data-huron-id="header-editors-picks" data-huron-type="template"></div>
+// </header>
+//
+// Styleguide header.full
+
+.header-placeholder {
+	display: none;
+
+	@include ai-breakpoint(false, s) {
+		height: 64px;
+	}
+
+	@include ai-breakpoint(s, l) {
+		height: 79px;
+	}
+
+	@include ai-breakpoint(l) {
+		height: 154px;
+	}
+}
+
+.site-header {
+	background-color: $color-bg;
+	margin-bottom: 0;
+
+	@include ai-breakpoint(false, s) {
+		padding-top: 0;
+		height: em-calc(64);
+	}
+
+	@include ai-breakpoint(s, l) {
+		padding-top: 0;
+		height: em-calc(80);
+	}
+
+	@include ai-breakpoint(l) {
+		padding-top: px-to-em(60);
+	}
+
+	&.headroom--not-top {
+		background-color: $gray-max;
+
+		@include ai-breakpoint(false, l) {
+			height: em-calc(50);
+		}
+	}
+
+	&.headroom--top {
+
+		&.search-open {
+
+			@include ai-breakpoint(false, s) {
+				height: em-calc(124);
+			}
+
+			@include ai-breakpoint(s, l) {
+				height: em-calc(140);
+			}
+		}
+	}
+
+	// Sticky header
+	&.headroom--not-top {
+
+		&.search-open {
+
+			@include ai-breakpoint(false, l) {
+				height: em-calc(110);
+			}
+		}
+	}
+}

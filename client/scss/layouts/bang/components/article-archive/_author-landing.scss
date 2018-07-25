@@ -1,0 +1,46 @@
+// Mercury News: Author Article
+//
+// Articles appearing on author landing pages
+//
+// markup:
+// <article class="archive-view author-view">
+// 	<figure>
+// 		<a href="#"><img src="http://lorempixel.com/640/400/cats" alt="article-image"></a>
+// 	</figure>
+//	<div class="article-info">
+// 		<header>
+// 			<h5><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h5>
+// 			<time datetime="2015-08-10 18:00">8/10/15 6:00 PM ET</time>
+// 		</header>
+//	</div>
+// </article>
+//
+// sg-wrapper:
+// <div class="author-stories-feed">
+//	<sg-wrapper-content/>
+// </div>
+//
+// Styleguide article-archive.author-landing
+
+.author-view {
+
+	.author-stories-feed & {
+		border-bottom-color: $divider-alt;
+		justify-content: flex-start;
+
+		time {
+			color: $gray-400;
+			margin-top: em-calc(3);
+			text-transform: none;
+		}
+	}
+
+	.article-info {
+		width: calc(100% - #{em-calc(140)});
+	}
+
+	.author-featured-stories & {
+		@extend %archive-box;
+		@include archive-vertical();
+	}
+}

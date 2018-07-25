@@ -1,0 +1,26 @@
+{{#each wrappers}}
+	<div class="{{ this }}">
+{{/each}}
+<article class="archive-view headline-only {{ classes }}">
+	<div class="article-info">
+		<header>
+			<h6 class="entry-title"><a href="#">{{ title }}</a></h6>
+			{{#unless hideMeta}}
+				<div class="entry-meta">
+					{{#if time}}
+						<time datetime="{{time.datetime}}">{{{time.ago}}}</time>
+					{{/if}}
+					{{#if sponsoredBy}}
+						<div class="byline">
+							<span>{{ sponsoredBy.name }}</span>
+							<img src="{{ sponsoredBy.image }}" alt="{{ sponsoredBy.name }}">
+						</div>
+					{{/if}}
+				</div>
+			{{/unless}}
+		</header>
+	</div>
+</article>
+{{#each wrappers}}
+	</div>
+{{/each}}

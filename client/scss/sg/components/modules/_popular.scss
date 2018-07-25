@@ -1,0 +1,13 @@
+.popular {
+
+	.prototype-styleguide & {
+
+		&.default,
+		&.section {
+
+			img {
+				display: none;
+			}
+		}
+	}
+}

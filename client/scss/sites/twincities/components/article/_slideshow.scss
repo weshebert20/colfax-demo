@@ -1,0 +1,20 @@
+// Twin Cities: Article Slideshow
+//
+// Style for slideshows appearing on article pages
+//
+// markup: slideshow.hbs
+//
+// Styleguide article.slideshow
+
+.article-slideshow {
+
+	&.fullscreen {
+
+		.caption {
+
+			.slide-count {
+				font-size: 14px;
+			}
+		}
+	}
+}

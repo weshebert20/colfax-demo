@@ -1,0 +1,154 @@
+// Silicon Valley: Body Copy
+//
+// Article body text
+//
+// markup:
+// <div class="body-copy">
+// 	<p>Venture capitalists raised more money last quarter than they have in 10 years, even as they pulled back on what was once a whirlwind of spending.</p>
+//	<div class="alignleft">
+//		<div data-huron-id="modules-related" data-huron-type="template"></div>
+//	</div>
+// 	<p><a href="#">Donec cursus metus sit amet lorem commodo tempor</a> vel ac risus. Aenean laoreet metus a rhoncus tempor. Proin molestie diam eu imperdiet ullamcorper. Praesent efficitur, nulla non commodo semper, magna velit scelerisque elit, at ornare urna justo eu libero. Donec ac lectus ante. Quisque vulputate rutrum quam eu semper. Proin sit amet tortor nec ligula rutrum viverra auctor eget leo. Donec hendrerit purus pharetra odio fringilla, malesuada pretium tellus vehicula. Quisque laoreet a lectus in vulputate. Aliquam in mattis ante. Curabitur ut semper justo.</p>
+// 	<ol>
+// 		<li>This is another inline list</li>
+// 		<li>It happens to be an ordered list</p>
+// 		<li>It's also mighty fancy</li>
+// 	</ol>
+// 	<p>Donec pellentesque augue tortor. Praesent convallis finibus orci. Proin nec congue odio. Duis massa erat, tristique id orci eget, consectetur posuere turpis. Aliquam vitae rhoncus tellus, vel commodo diam. Nunc eu egestas nulla, euismod accumsan orci. Integer nec turpis faucibus, dignissim nulla id, auctor lorem. Fusce efficitur eros vel diam convallis, ut fringilla enim dapibus. Vivamus et commodo risus, eu rutrum nisl. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis at scelerisque mi, vel vehicula tortor.</p>
+// 	<p>Aliquam magna magna, finibus pretium tempor in, molestie sit amet libero. Cras lacinia ante ullamcorper cursus faucibus. Vivamus hendrerit interdum sem vitae rhoncus. Integer sit amet pretium lacus, non ultricies justo. Fusce eu tincidunt mauris. Proin luctus magna ipsum, nec aliquet sapien cursus at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Cras condimentum enim nec lacus posuere elementum eget bibendum lacus. Cras nec enim nec tortor facilisis cursus id ac quam. Etiam semper nibh eu est eleifend, in pulvinar felis auctor. Fusce condimentum consequat nulla. Suspendisse non ipsum mauris. Quisque non dictum odio. Mauris eget cursus odio.</p>
+//	<div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+// 	<figure class="alignleft size-article_inline_half">
+//		<img src="http://lorempixel.com/1280/720/business">
+//		<div class="photo-credit">Photo Credit</div>
+// 		<figcaption>
+// 			<p>Lorem ipsum dolor sit amet this is a caption for a fullbleed image</p>
+// 		</figcaption>
+// 	</figure>
+// 	<p>Aliquam magna magna, finibus pretium tempor in, molestie sit amet libero. Cras lacinia ante ullamcorper cursus faucibus. Vivamus hendrerit interdum sem vitae rhoncus. Integer sit amet pretium lacus, non ultricies justo. Fusce eu tincidunt mauris. Proin luctus magna ipsum, nec aliquet sapien cursus at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Cras condimentum enim nec lacus posuere elementum eget bibendum lacus. Cras nec enim nec tortor facilisis cursus id ac quam. Etiam semper nibh eu est eleifend, in pulvinar felis auctor. Fusce condimentum consequat nulla. Suspendisse non ipsum mauris. Quisque non dictum odio. Mauris eget cursus odio.</p>
+// 	<p>Aliquam magna magna, finibus pretium tempor in, molestie sit amet libero. Cras lacinia ante ullamcorper cursus faucibus. Vivamus hendrerit interdum sem vitae rhoncus. Integer sit amet pretium lacus, non ultricies justo. Fusce eu tincidunt mauris. Proin luctus magna ipsum, nec aliquet sapien cursus at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Cras condimentum enim nec lacus posuere elementum eget bibendum lacus. Cras nec enim nec tortor facilisis cursus id ac quam. Etiam semper nibh eu est eleifend, in pulvinar felis auctor. Fusce condimentum consequat nulla. Suspendisse non ipsum mauris. Quisque non dictum odio. Mauris eget cursus odio.</p>
+// 	<ul>
+// 		<li>This is an inline list</li>
+// 		<li>It happens to be an unordered list</p>
+// 		<li>It's mighty fancy</li>
+// 	</ul>
+//	<div data-huron-id="modules-poll" data-huron-type="template"></div>
+// 	<p>Aliquam magna magna, finibus pretium tempor in, molestie sit amet libero. Cras lacinia ante ullamcorper cursus faucibus. Vivamus hendrerit interdum sem vitae rhoncus. Integer sit amet pretium lacus, non ultricies justo. Fusce eu tincidunt mauris. Proin luctus magna ipsum, nec aliquet sapien cursus at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Cras condimentum enim nec lacus posuere elementum eget bibendum lacus. Cras nec enim nec tortor facilisis cursus id ac quam. Etiam semper nibh eu est eleifend, in pulvinar felis auctor. Fusce condimentum consequat nulla. Suspendisse non ipsum mauris. Quisque non dictum odio. Mauris eget cursus odio.</p>
+// 	<p>Aliquam magna magna, finibus pretium tempor in, molestie sit amet libero. Cras lacinia ante ullamcorper cursus faucibus. Vivamus hendrerit interdum sem vitae rhoncus. Integer sit amet pretium lacus, non ultricies justo. Fusce eu tincidunt mauris. Proin luctus magna ipsum, nec aliquet sapien cursus at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Cras condimentum enim nec lacus posuere elementum eget bibendum lacus. Cras nec enim nec tortor facilisis cursus id ac quam. Etiam semper nibh eu est eleifend, in pulvinar felis auctor. Fusce condimentum consequat nulla. Suspendisse non ipsum mauris. Quisque non dictum odio. Mauris eget cursus odio.</p>
+//	<div data-huron-id="article-pullquote" data-huron-type="template"></div>
+// 	<figure class="size-article_fullbleed">
+//		<img src="http://lorempixel.com/1280/720/business">
+//		<div class="photo-credit">Photo Credit</div>
+// 		<figcaption>
+// 			<p>Lorem ipsum dolor sit amet this is a caption for a fullbleed image</p>
+// 		</figcaption>
+// 	</figure>
+// 	<p>Aliquam magna magna, finibus pretium tempor in, molestie sit amet libero. Cras lacinia ante ullamcorper cursus faucibus. Vivamus hendrerit interdum sem vitae rhoncus. Integer sit amet pretium lacus, non ultricies justo. Fusce eu tincidunt mauris. Proin luctus magna ipsum, nec aliquet sapien cursus at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Cras condimentum enim nec lacus posuere elementum eget bibendum lacus. Cras nec enim nec tortor facilisis cursus id ac quam. Etiam semper nibh eu est eleifend, in pulvinar felis auctor. Fusce condimentum consequat nulla. Suspendisse non ipsum mauris. Quisque non dictum odio. Mauris eget cursus odio.</p>
+// </div>
+//
+// Styleguide article.body-copy
+
+.body-copy {
+	@extend %body-copy-four;
+
+	a {
+		border-bottom: 1px dotted $primary;
+		color: $primary;
+
+		&:hover {
+			border-bottom: 1px solid $primary-light;
+			color: $primary-light;
+		}
+	}
+
+	figcaption {
+		@include font(16, 18, $meta, 400);
+		display: block;
+		float: none;
+		font-family: $meta;
+		padding: em-calc(0 0 10);
+		width: 100%;
+		margin-top: em-calc(4);
+
+		.meta {
+
+			@include ai-breakpoint(false, m) {
+				padding: em-calc(10);
+			}
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: em-calc(30, false, 18);
+		margin-bottom: em-calc(24, false, 30);
+	}
+
+	.photo-credit {
+		@include font(13, 16, $meta, 400);
+		display: block;
+		float: none;
+		width: 100%;
+	}
+
+	.wp-caption {
+
+		img {
+			margin-bottom: em-calc(5);
+		}
+	}
+
+	.alignleft,
+	.alignright {
+
+		&.size-article_inline_half,
+		&.size-article_inline_third {
+
+			@include ai-breakpoint(false, s) {
+				width: 100%;
+			}
+		}
+	}
+
+	.alignleft {
+		@include ai-offset(-2, margin, xl);
+		@include ai-offset(-1, margin, l);
+		@include ai-offset(-1, margin, m);
+	}
+
+	.alignright {
+
+		@include ai-breakpoint(xl) {
+			margin-right: calc( #{percentage(-1.5/8)} + 20px );
+		}
+
+		@include ai-breakpoint(l, xl) {
+			margin-right: calc( #{percentage(-1/7)} + 20px );
+		}
+
+		@include ai-breakpoint(m, l) {
+			margin-right: calc( #{percentage(-1/8)} + 20px );
+		}
+	}
+
+	.size-article_fullbleed {
+		@include ai-span(22, xl);
+		@include ai-span(15.5, l);
+		@include ai-span(13, m);
+
+		@include ai-breakpoint(xl) {
+			margin-left: calc( #{percentage( ( 2 / 12 ) * -1 )} - 20px );
+		}
+
+		@include ai-breakpoint(l, xl) {
+			margin-left: calc( #{percentage( ( 1 / 11 ) * -1 )} - 10px );
+		}
+
+		@include ai-breakpoint(m, l) {
+			margin-left: calc( #{percentage( ( 1 / 8 ) * -1 )} - 10px );
+		}
+	}
+}

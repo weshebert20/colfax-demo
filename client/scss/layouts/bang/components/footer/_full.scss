@@ -1,0 +1,23 @@
+// Mercury News: Full Footer
+//
+// Styles for site footer as a whole
+//
+// markup:
+// <footer class="site-footer">
+//	<div data-huron-id="footer-header" data-huron-type="template"></div>
+//	<div class="footer-menus-wrapper">
+// 		<ul class="footer-menus">
+//			<div data-huron-id="footer-menu" data-huron-type="template"></div>
+// 		</ul>
+//	</div>
+// 	<div data-huron-id="footer-colophon" data-huron-type="template"></div>
+// </footer>
+//
+// Styleguide footer.full
+
+.site-footer {
+	background-color: $gray-max;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0;
+}

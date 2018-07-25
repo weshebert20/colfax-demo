@@ -1,0 +1,25 @@
+// Tag
+//
+// Styles for tag landing pages
+
+.tag {
+	@extend %clearfix;
+
+	.prototype & {
+
+		.banner {
+			margin-bottom: em-calc(32);
+
+			@include ai-breakpoint(false, m) {
+				display: none;
+			}
+		}
+
+		.box {
+
+			@include ai-breakpoint(m) {
+				display: none;
+			}
+		}
+	}
+}

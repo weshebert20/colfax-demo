@@ -1,0 +1,18 @@
+{
+	"body": {
+		"name": "Body Copy",
+		"stack": "'Slabo', Helvetica, sans-serif"
+	},
+	"heading": {
+		"name": "Headings",
+		"stack": "'Poppins', Helvetica, sans-serif"
+	},
+	"widget": {
+		"name": "Widget Titles",
+		"stack": "'Poppins', Helvetica, sans-serif"
+	},
+	"meta-data": {
+		"name": "Meta",
+		"stack": "'Slabo', Georgia, serif"
+	}
+}

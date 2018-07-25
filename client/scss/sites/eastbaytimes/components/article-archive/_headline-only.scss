@@ -1,0 +1,27 @@
+// East Bay Times: Headline Only
+//
+// markup:
+// <article class="archive-view headline-only">
+// 	<header class="article-info">
+// 		<h6><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h6>
+// 	</header>
+// </article>
+//
+// Styleguide article-archive.headline-only
+
+.feature-primary {
+    margin-bottom: em-calc(-40);
+
+    &::before {
+        height: 100%;
+    }
+
+    > ul {
+        position: relative;
+        top: em-calc(-32);
+    }
+
+    .headline-list-info {
+        padding-top: em-calc(48);
+    }
+}

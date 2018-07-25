@@ -1,0 +1,266 @@
+// Silicon Valley: Headline Only
+//
+// markup:
+// <article class="archive-view headline-only">
+// 	<header class="article-info">
+// 		<h6><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h6>
+// 	</header>
+// </article>
+//
+// Styleguide article-archive.headline-only
+
+.headline-list {
+	border-top: 4px solid $gray-300;
+
+	> ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-align: left;
+
+		> li {
+			border-bottom: 1px solid $gray-400;
+
+			&:last-child {
+				border-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	&::before {
+		top: em-calc(55);
+		height: calc(100% - #{em-calc(55)});
+	}
+
+	.more-headlines {
+		@extend %border-button;
+		@include font(16, 16, 400, $heading);
+		display: block;
+		margin: em-calc(0 auto 32);
+		min-width: em-calc(300);
+		padding: em-calc(14 18 12);
+		position: relative;
+	}
+
+	.section-highlight & {
+
+		li {
+			border-bottom: 1px solid $gray-400;
+
+			&:last-child {
+				border: 0;
+			}
+		}
+
+		.entry-title {
+			@include font(16, 21.6, $heading, 400);
+			letter-spacing: -0.018em;
+
+			@include ai-breakpoint(m) {
+				font-size: em-calc(18, true);
+				letter-spacing: -0.023em;
+				line-height: 1.3;
+			}
+		}
+	}
+
+	.slow & {
+
+		li {
+			border-bottom: 1px solid $gray-400;
+			padding-top: spacing();
+		}
+	}
+
+	.landing-secondary-main &,
+	.landing-secondary-left &,
+	.feature-section & {
+
+		h2,
+		> ul {
+			margin: 0 auto;
+		}
+
+		h2 {
+			margin-bottom: spacing();
+			border-top: 0;
+		}
+
+		li {
+			padding-bottom: spacing();
+		}
+	}
+
+	.section-highlight & {
+		border-top: 0;
+	}
+}
+
+.headline-list-title {
+	@extend %section-highlight-border;
+
+	a,
+	span {
+		color: $gray-300;
+		cursor: pointer;
+		display: flex;
+
+		&:hover {
+			color: $text;
+		}
+	}
+
+	.feature-primary &,
+	.langin-secondary-main & {
+		border-top: 0;
+	}
+
+	.feature-primary & {
+
+		a {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+}
+
+.headline-only {
+	flex-direction: column;
+
+	.article-info {
+		display: block;
+	}
+
+	.icon-play-arrow {
+		border: 1px solid $primary;
+		border-radius: 50%;
+	}
+
+	.icon-slideshow {
+		font-size: em-calc(20);
+	}
+
+	.icon-slideshow,
+	.icon-play-arrow {
+		color: $primary;
+	}
+
+	&:hover {
+
+		.icon-slideshow,
+		.icon-play-arrow {
+			background-color: transparent;
+		}
+	}
+
+	&.video,
+	&.slideshow {
+
+		h5, h6 {
+			padding-left: px-to-em(5);
+		}
+	}
+
+	.feature-primary & {
+		text-align: center;
+	}
+
+	.section-highlight & {
+
+		.icon-slideshow,
+		.icon-play-arrow {
+			display: inline;
+		}
+
+		h6,
+		.entry-meta,
+		.article-comments,
+		.article-comments a {
+			display: inline;
+		}
+	}
+
+	.landing-secondary-main & {
+
+		h6 {
+			@include font(21, 26, $heading, 700);
+			letter-spacing: -0.04em;
+			margin-bottom: spacing(0.5);
+		}
+
+		.article-info {
+			margin-bottom: 0;
+		}
+	}
+
+	.landing-four-up & {
+
+		.entry-title {
+			@include font(16, 21.6, $heading, 400);
+			letter-spacing: -0.018em;
+
+			@include ai-breakpoint(xl) {
+				font-size: em-calc(18, true);
+				letter-spacing: -0.032em;
+				line-height: 1.2;
+			}
+		}
+	}
+
+	.feature-primary &,
+	.feature-section & {
+
+		h6 {
+
+			@include ai-breakpoint(false, s) {
+				@include font(16, 21, $heading, 700);
+				letter-spacing: -0.014em;
+			}
+
+			@include ai-breakpoint(s, m) {
+				@include font(18, 23, $heading, 700);
+				letter-spacing: -0.023em;
+			}
+
+			@include ai-breakpoint(m) {
+				@include font(14, 19, $heading, 700);
+				letter-spacing: -0.01em;
+			}
+		}
+	}
+
+	.related & {
+
+		h6 {
+			@include font(15, 19, $heading, 700);
+			letter-spacing: -0.015em;
+		}
+
+		header {
+			margin: 0;
+		}
+	}
+
+	.breaking-bar & {
+		padding: em-calc(10 0 10);
+
+		@include ai-breakpoint(false, m) {
+			padding: em-calc(8 40 8 0);
+			margin: 0;
+		}
+
+		h6 {
+			@include font(17, 18, $meta, 400);
+			padding-right: em-calc(20);
+
+			@include ai-breakpoint(false, m) {
+				font-size: em-calc(14);
+			}
+
+			a {
+				color: $gray-min;
+			}
+		}
+	}
+}

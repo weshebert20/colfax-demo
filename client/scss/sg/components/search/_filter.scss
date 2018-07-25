@@ -1,0 +1,11 @@
+.filter-expand {
+
+	.styleguide-twincities &,
+	.styleguide-denverpost & {
+		color: $primary-light;
+
+		&:hover {
+			color: $primary-light;
+		}
+	}
+}

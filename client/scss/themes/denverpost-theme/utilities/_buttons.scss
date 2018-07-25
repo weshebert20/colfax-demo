@@ -1,0 +1,44 @@
+// Denver Post: Buttons
+//
+// .default - default button
+// .social - social buttons
+// .read-more - read more button
+// .black - black button
+// .load-more - load more button
+// .vote - vote button
+//
+// markup:
+// <a  href="#" class="button {$modifiers}"><span>{$modifiers}</span></a>
+//
+// Styleguide utilities.buttons
+
+.show-more-videos,
+.load-more {
+	@include shadow-border(top);
+	@include font(16, 16, $meta, 700);
+	color: $primary;
+	cursor: pointer;
+	display: inline-block;
+	padding: em-calc(30 0);
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+
+	&:hover {
+		color: $gray-min;
+	}
+
+	&::before {
+		content: "";
+		background-color: $color-bg;
+		border-bottom: 1px solid $gray-500;
+		border-left: 1px solid $gray-500;
+		height: em-calc(20);
+		left: 50%;
+		position: absolute;
+		top: em-calc(-5);
+		transform: rotate(-45deg) translateY(-50%);
+		width: em-calc(20);
+	}
+}

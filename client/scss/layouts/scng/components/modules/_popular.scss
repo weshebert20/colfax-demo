@@ -1,0 +1,145 @@
+// Most Popular
+//
+// Widget for most popular articles
+//
+// styleguide - modifier for use with styleguide
+//
+// markup: popular.hbs
+//
+// data: popular.json
+//
+// Styleguide modules.popular
+
+.popular {
+
+	.widget-title {
+		@extend %scng-section-headline;
+
+		span {
+			background-color: transparent;
+			color: $primary;
+			padding: 0;
+		}
+	}
+
+	ol {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		padding: em-calc(10 0);
+	}
+
+	li {
+		margin-right: em-calc(20);
+
+		&:nth-child(even) {
+			margin-right: em-calc(20);
+		}
+
+		a {
+			display: -ms-flexbox;
+			display: flex;
+			justify-content: flex-start;
+
+			&:hover {
+
+				span {
+					color: $primary;
+				}
+			}
+
+			&::before {
+				@include font(21, 21, $meta, 600);
+				align-items: center;
+				background-color: $primary;
+				border-radius: 50%;
+				color: $gray-max;
+				content: counter(section);
+				display: -ms-flexbox;
+				display: flex;
+				-ms-flex: 0 0 auto;
+				flex: 0 0 em-calc(32, true);
+				font-family: $widget;
+				height: em-calc(32, true);
+				justify-content: center;
+				line-height: em-calc(32, true);
+				margin-right: em-calc(10, true);
+				max-width: 100%;
+				width: em-calc(32, true);
+			}
+		}
+
+		span {
+			display: inline-flex;
+			align-items: center;
+			max-width: 100%;
+			width: 100%;
+
+			@include ai-breakpoint(false, l) {
+				@include font(15, 19, $heading, 600);
+			}
+
+			@include ai-breakpoint(l) {
+				@include font(17, 21, $widget, 600);
+				letter-spacing: -0.015em;
+			}
+		}
+	}
+
+	&.section {
+		background-color: transparent;
+
+		ol {
+			padding: em-calc(10 0);
+		}
+	}
+
+	.full-view & {
+
+		.widget-title {
+			margin-bottom: spacing();
+
+			&::before {
+				content: none;
+			}
+		}
+
+		ol {
+
+			@include ai-breakpoint(m) {
+				column-count: auto;
+			}
+
+			&::before {
+				content: none;
+			}
+		}
+
+		li {
+			font-size: em-calc(15);
+			line-height: 1.3;
+			max-width: 90%;
+			width: 90%;
+		}
+	}
+
+	.landing & {
+
+		ol {
+			@include ai-breakpoint(s) {
+				columns: 2;
+				display: block;
+			}
+		}
+
+		li {
+			max-width: 100%;
+			width: 100%;
+			
+			@include ai-breakpoint(s) {
+				display: inline-block;
+			}
+		}
+	}
+}

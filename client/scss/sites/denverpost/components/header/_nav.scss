@@ -1,0 +1,182 @@
+// Denver Post: Primary Navigation
+//
+// Styles for primary nav, logo and search
+//
+// markup:
+// <div class="nav-primary">
+//	<div class="navigation-inner">
+// 		<a class="icon-hamburger"></a>
+// 		<h1 class="logo"><a href="/"></a></h1>
+//		<form class="search-form header-search">
+//			<input type="text" placeholder="Search">
+//			<input type="submit" value="submit">
+//		</form>
+//		<a class="icon-search"></a>
+// 		<nav class="menu-main-navigation-container">
+// 			<ul class="menu">
+// 				<li class="menu-item-has-children">
+//					<a href="#">News</a>
+//					<ul href="#">
+//						<li><a href="#">Example Link 1</a></li>
+//						<li><a href="#">Example Link 2</a></li>
+//						<li><a href="#">Example Link 3</a></li>
+//					</ul>
+//				</li>
+// 				<li class="menu-item-has-children">
+//					<a href="#">Sports</a>
+//					<ul>
+//						<li><a href="#">Denver Broncos</a></li>
+//						<li><a href="#">Colorado Rockies</a></li>
+//						<li><a href="#">Denver Nuggets</a></li>
+//						<li><a href="#">Colorado Rapids</a></li>
+//						<li><a href="#">Colorado State Rams</a></li>
+//						<li><a href="#">Colorado Buffaloes</a></li>
+//						<li><a href="#">Denver Pioneers</a></li>
+//						<li><a href="#">Air Force Falcons</a></li>
+//					</ul>
+//				</li>
+// 				<li class="menu-large"><a href="#">Business</a></li>
+// 				<li class="menu-large"><a href="#">Entertainment</a></li>
+// 				<li class="menu-large"><a href="#">Lifestyle</a></li>
+// 				<li class="menu-large"><a href="#">Opinion</a></li>
+//				<li class="menu-large"><a href="#">Politics</a></li>
+// 			</ul>
+// 		</nav>
+//	</div>
+// </div>
+//
+// Styleguide header.nav
+
+.nav-primary {
+	border-bottom: 1px solid $gray-500;
+	max-width: none;
+
+	@include ai-breakpoint(l) {
+		border-top: 5px solid $secondary;
+		padding: 0;
+		text-align: left;
+	}
+
+	.navigation-inner {
+		@extend %container;
+		position: relative;
+	}
+
+	.menu-main-navigation-container {
+		height: em-calc(45);
+
+		@include ai-breakpoint(false, l) {
+			display: none;
+		}
+	}
+
+	.menu {
+
+		@include ai-breakpoint(l) {
+			margin-left: em-calc(-10);
+		}
+
+		.menu-item-has-children.submenu-open,
+		.menu-item-has-children.submenu-open > a {
+			height: 100%;
+		}
+
+		> li {
+			margin: 0;
+
+			> a {
+				align-items: center;
+				display: flex;
+				@include font(18, 22, $meta, 700);
+
+				@include ai-breakpoint(l, xl) {
+					font-size: em-calc(15);
+				}
+
+				@include ai-breakpoint(l) {
+					padding: em-calc(0 10, false, 18);
+				}
+			}
+
+			&:hover,
+		    &.active {
+
+		        > a {
+		            background-color: transparent;
+		            color: $primary;
+		        }
+		    }
+		}
+	}
+
+	.icon-hamburger,
+	.icon-search {
+
+		@include ai-breakpoint(s, l) {
+			top: em-calc(25, false, 32);
+		}
+	}
+
+	.icon-search {
+
+		@include ai-breakpoint($header-primary-bp) {
+			color: $primary;
+			display: block;
+			position: absolute;
+			right: em-calc(15, false, 24);
+			top: em-calc(10, false, 24);
+		}
+	}
+
+	.headroom--not-top & {
+
+		@include ai-breakpoint(l) {
+			border: 0;
+		}
+
+		.menu-main-navigation-container {
+
+			@include ai-breakpoint(l) {
+				display: inline-block;
+				float: left;
+				height: em-calc(52);
+				padding: 0;
+				top: em-calc(-2);
+				width: auto;
+			}
+		}
+
+		.menu {
+
+			@include ai-breakpoint(l) {
+				margin-left: 0;
+			}
+
+			> li {
+
+				> a {
+
+					@include ai-breakpoint(l) {
+						font-size: em-calc(15);
+						font-weight: 600;
+						padding: em-calc(0 7, false, 15);
+					}
+				}
+			}
+		}
+
+		.search-link {
+
+			@include ai-breakpoint(l) {
+				display: inline-block;
+			}
+		}
+
+		.icon-search {
+
+			@include ai-breakpoint($header-primary-bp) {
+				top: em-calc(15, false, 24);
+			}
+		}
+	}
+}

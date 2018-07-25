@@ -1,0 +1,95 @@
+// Silicon Valley: Logo
+
+.logo {
+
+	@include ai-breakpoint(false, $header-primary-bp) {
+		margin-left: em-calc(10);
+	}
+
+	@include ai-breakpoint(l) {
+		margin-bottom: 0;
+		position: absolute;
+		text-align: left;
+		top: -70px;
+		width: 100%;
+	}
+
+	a {
+		background-image: url('../../images/sv-logo.svg');
+		background-size: 295px 55px;
+		display: inline-block;
+		height: 55px;
+		margin: em-calc(0 10);
+	    width: 295px;
+
+		@include ai-breakpoint(s, l) {
+			background-size: 285px 40px;
+			height: 40px;
+			margin: em-calc(18 0);
+			width: 285px;
+		}
+
+		@include ai-breakpoint(false, s) {
+			background-size: 158px 22px;
+			height: 22px;
+			margin: em-calc(14 0 10 0);
+			width: 158px;
+		}
+	}
+}
+
+// Sticky styles
+.headroom--not-top {
+
+	.logo {
+		height: em-calc(50);
+		padding: em-calc(13 0);
+
+		@include ai-breakpoint(false, l) {
+			margin: 0;
+		}
+
+		@include ai-breakpoint(l) {
+			border-right: 1px solid $gray-500;
+			margin-right: em-calc(10);
+			padding: em-calc(8 10 8 0);
+			position: static;
+			width: auto;
+		}
+
+		a {
+			background-size: 158px 22px;
+			height: 22px;
+			margin: 0;
+			width: 158px;
+
+			@include ai-breakpoint(l) {
+				background-image: url('../../images/sv-logo-sm.svg');
+				background-size: 50px 39px;
+				height: 39px;
+				width: 50px;
+			}
+		}
+
+		.single-post & {
+			padding: em-calc(17 0);
+		}
+
+		&.custom-logo {
+
+			a {
+				@include ai-breakpoint(l) {
+					background-image: url('../../images/sv-logo-sm.svg');
+				}
+			}
+
+			img {
+				@include ai-breakpoint(l) {
+					display: none;
+				}
+			}
+
+		}
+
+	}
+}

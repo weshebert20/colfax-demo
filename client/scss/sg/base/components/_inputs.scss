@@ -1,0 +1,62 @@
+// Styleguide input styles
+
+.prototype-styleguide {
+
+	.styleguide-form {
+		width: 200px;
+
+		input {
+			width: 200px;
+		}
+
+		.icon-search,
+		.icon-calendar {
+			display: none;
+		}
+
+		&.datepicker {
+			@extend %form-icon;
+			float: left;
+
+			.icon-calendar {
+				display: block;
+				color: $gray-400;
+
+				&:hover {
+					color: $gray-400;
+				}
+			}
+		}
+
+		&.search-form,
+		&.search-form.large {
+
+			.icon-search {
+				display: block;
+			}
+		}
+
+		&.search-form.large {
+			width: 400px;
+		}
+	}
+
+	.pseudo-class-focus {
+
+		input {
+			border: 1px solid $primary;
+			outline: none;
+
+			-webkit-appearance: none;
+		}
+	}
+}
+
+.styleguide-mercurynews,
+.styleguide-siliconvalley {
+
+	> .search-form.header-search {
+		position: relative;
+		width: auto;
+	}
+}

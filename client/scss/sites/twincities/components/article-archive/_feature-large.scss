@@ -1,0 +1,71 @@
+// Twin Cities: Large Feature
+//
+// Large featured articles
+//
+// styleguide - modifer for use with styleguide
+//
+// markup: archive.hbs
+//
+// data: feature-large.json
+//
+// Styleguide article-archive.feature-large
+
+.feature-large,
+.feature-large-top {
+	@extend %slideshow-video-large;
+
+	.section-highlight & {
+
+		header {
+
+			@include ai-breakpoint(false, m) {
+				margin-bottom: 0;
+			}
+		}
+
+		.excerpt {
+
+			@include ai-breakpoint(false, m) {
+				display: none;
+			}
+		}
+	}
+
+	.hp-sections-a .section-highlight &,
+	.landing-three-one .section-highlight & {
+
+		figure {
+			@include ai-span(6, m);
+		}
+
+		header, .excerpt {
+			@include ai-span(4, m, true);
+		}
+	}
+
+	.landing-two-up .section-highlight & {
+
+		figure {
+			@include ai-span(8, xl);
+			@include ai-span(6, l);
+		}
+
+		header, .excerpt {
+			@include ai-span(8, xl, true);
+			@include ai-span(7, l, true);
+		}
+	}
+
+	.landing-bundle .section-highlight & {
+
+		figure {
+			@include ai-span(8, xl);
+			@include ai-span(5, m);
+		}
+
+		header, .excerpt {
+			@include ai-span(8, xl, true);
+			@include ai-span(5, m, true);
+		}
+	}
+}

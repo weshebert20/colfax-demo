@@ -1,0 +1,85 @@
+// Archive Article
+//
+// Generic styles for article archive view
+//
+// styleguide - modifier for styleguide
+//
+// markup: archive.hbs
+//
+// data: archive.json
+//
+// Styleguide article-archive.archive-article
+
+.archive-view {
+	display: flex;
+	font-size: em-calc(16, true);
+	justify-content: space-between;
+	position: relative;
+
+	header {
+		width: 100%;
+	}
+
+	.article-info {
+		display: inline-block;
+		margin-bottom: 0;
+	}
+
+	.entry-meta {
+		display: inline;
+	}
+
+	.article-comments {
+		align-items: center;
+		display: flex;
+		margin-top: spacing(0.5);
+		width: 100%;
+	}
+
+	.excerpt {
+		font: 400 #{em-calc(15, true)}/1.4 $body;
+		margin-bottom: spacing(0.5);
+		color: $gray-100;
+	}
+
+	.duration {
+		bottom: em-calc(5, false, 14);
+		font-size: em-calc(14);
+		right: em-calc(5, false, 14);
+	}
+
+	.duration {
+		background-color: $gray-min;
+		border-radius: em-calc(3);
+		color: $gray-max;
+		font-family: $meta;
+		padding: em-calc(2 5);
+		position: absolute;
+		text-transform: uppercase;
+
+		[class^="icon-"] {
+			background-color: transparent;
+			border: none;
+			display: inline-block;
+			height: auto;
+			position: static;
+			vertical-align: middle;
+			width: auto;
+		}
+	}
+
+	.photo-credit {
+		@include font(11, 18, $widget, 400);
+		text-transform: uppercase;
+		display: none;
+	}
+
+	&:hover {
+
+		.icon-play-arrow,
+		.icon-slideshow {
+			background-color: $primary;
+			border-color: $link-hover;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+// Denver Post: Homepage
+//
+// Styles for homepage layout
+
+.homepage {
+
+	.landing-bundle {
+
+		.feature-media {
+			@include ai-span(11, xl);
+			@include ai-span(9, l);
+		}
+
+		.newsletter-simple,
+		#two-cents {
+			@include ai-span(5, xl, true);
+			@include ai-span(4, l, true);
+			@include ai-span(5, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+		}
+
+		#two-cents {
+
+			@include ai-breakpoint(l) {
+				margin-bottom: spacing(2);
+			}
+		}
+
+		.newsletter-simple {
+
+			@include ai-breakpoint(s, l) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.dfm-sidebar-top-flex-container {
+		clear: both;
+		@include ai-breakpoint(m) {
+			clear: none;
+			float: right;
+		}
+	}
+}

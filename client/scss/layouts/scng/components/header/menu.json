@@ -1,0 +1,411 @@
+{
+	"default" : {
+		"menus" : [
+			{
+				"name": "Most Popular",
+				"class": "popular-nav",
+				"link": "#"
+			},
+			{
+				"name": "News",
+				"link": "#",
+				"child-menu": [
+					{
+						"link" : "#",
+						"text" : "Crime"
+					},
+					{
+						"link" : "#",
+						"text" : "Business"
+					},
+					{
+						"link" : "#",
+						"text" : "Politics"
+					}
+				]
+			},
+			{
+				"name": "Local",
+				"link": "#",
+				"child-menu": [
+					{
+						"link" : "#",
+						"text" : "Temecula"
+					},
+					{
+						"link" : "#",
+						"text" : "Riverside"
+					},
+					{
+						"link" : "#",
+						"text" : "San Bernardino"
+					},
+					{
+						"link" : "#",
+						"text" : "Moreno Valley"
+					},
+					{
+						"link" : "#",
+						"text" : "Corona"
+					},
+					{
+						"link" : "#",
+						"text" : "Lake Elsinore"
+					},
+					{
+						"link" : "#",
+						"text" : "Murrieta"
+					},
+					{
+						"link" : "#",
+						"text" : "Riverside County"
+					},
+					{
+						"link" : "#",
+						"text" : "Hemet"
+					}
+				]
+			},
+			{
+				"name": "Sports",
+				"link": "#",
+				"child-menu": [
+					{
+						"link" : "#",
+						"text" : "High School Sports"
+					},
+					{
+						"link" : "#",
+						"text" : "Rams"
+					},
+					{
+						"link" : "#",
+						"text" : "Chargers"
+					},
+					{
+						"link" : "#",
+						"text" : "Lakers"
+					},
+					{
+						"link" : "#",
+						"text" : "Clippers"
+					},
+					{
+						"link" : "#",
+						"text" : "Dodgers"
+					},
+					{
+						"link" : "#",
+						"text" : "Angels"
+					},
+					{
+						"link" : "#",
+						"text" : "USC"
+					},
+					{
+						"link" : "#",
+						"text" : "Angels"
+					},
+					{
+						"link" : "#",
+						"text" : "USC"
+					},
+					{
+						"link" : "#",
+						"text" : "UCLA"
+					},
+					{
+						"link" : "#",
+						"text" : "College Sports"
+					},
+					{
+						"link" : "#",
+						"text" : "Kings"
+					},
+					{
+						"link" : "#",
+						"text" : "Ducks"
+					},
+					{
+						"link" : "#",
+						"text" : "MMA + Boxing"
+					},
+					{
+						"link" : "#",
+						"text" : "Soccer"
+					}
+				]
+			},
+			{
+				"name" : "Things to Do",
+				"child-menu" : [
+					{
+						"link" : "#",
+						"text" : "Restaurant Reviews + Food"
+					},
+					{
+						"link" : "#",
+						"text" : "Casinos"
+					},
+					{
+						"link" : "#",
+						"text" : "Music + Concerts"
+					},
+					{
+						"link" : "#",
+						"text" : "Movies + TV"
+					},
+					{
+						"link" : "#",
+						"text" : "Theater"
+					},
+					{
+						"link" : "#",
+						"text" : "Events"
+					},
+					{
+						"link" : "#",
+						"text" : "Home + Garden"
+					},
+					{
+						"link" : "#",
+						"text" : "Travel"
+					},
+					{
+						"link" : "#",
+						"text" : "Comics"
+					},
+					{
+						"link" : "#",
+						"text" : "Games"
+					},
+					{
+						"link" : "#",
+						"text" : "Horoscopes"
+					}
+				]
+			},
+			{
+				"name" : "Obituaries",
+				"link" : "#",
+				"child-menu": [
+					{
+						"link" : "#",
+						"text" : "Place an Obituary"
+					}
+				]
+			},
+			{
+				"name" : "Opinion",
+				"link" : "#"
+			}
+		]
+	},
+	"styleguide" : {
+		"wrappers": [
+			"nav-primary",
+			"navigation-inner",
+			"menu-main-navigation-container"
+		],
+		"menus" : [
+			{
+				"name": "Most Popular",
+				"class": "popular-nav",
+				"link": "#"
+			},
+			{
+				"name": "News",
+				"link": "#",
+				"child-menu": [
+					{
+						"link" : "#",
+						"text" : "Crime"
+					},
+					{
+						"link" : "#",
+						"text" : "Business"
+					},
+					{
+						"link" : "#",
+						"text" : "Politics"
+					}
+				]
+			},
+			{
+				"name": "Local",
+				"link": "#",
+				"child-menu": [
+					{
+						"link" : "#",
+						"text" : "Temecula"
+					},
+					{
+						"link" : "#",
+						"text" : "Riverside"
+					},
+					{
+						"link" : "#",
+						"text" : "San Bernardino"
+					},
+					{
+						"link" : "#",
+						"text" : "Moreno Valley"
+					},
+					{
+						"link" : "#",
+						"text" : "Corona"
+					},
+					{
+						"link" : "#",
+						"text" : "Lake Elsinore"
+					},
+					{
+						"link" : "#",
+						"text" : "Murrieta"
+					},
+					{
+						"link" : "#",
+						"text" : "Riverside County"
+					},
+					{
+						"link" : "#",
+						"text" : "Hemet"
+					}
+				]
+			},
+			{
+				"name": "Sports",
+				"link": "#",
+				"child-menu": [
+					{
+						"link" : "#",
+						"text" : "High School Sports"
+					},
+					{
+						"link" : "#",
+						"text" : "Rams"
+					},
+					{
+						"link" : "#",
+						"text" : "Chargers"
+					},
+					{
+						"link" : "#",
+						"text" : "Lakers"
+					},
+					{
+						"link" : "#",
+						"text" : "Clippers"
+					},
+					{
+						"link" : "#",
+						"text" : "Dodgers"
+					},
+					{
+						"link" : "#",
+						"text" : "Angels"
+					},
+					{
+						"link" : "#",
+						"text" : "USC"
+					},
+					{
+						"link" : "#",
+						"text" : "Angels"
+					},
+					{
+						"link" : "#",
+						"text" : "USC"
+					},
+					{
+						"link" : "#",
+						"text" : "UCLA"
+					},
+					{
+						"link" : "#",
+						"text" : "College Sports"
+					},
+					{
+						"link" : "#",
+						"text" : "Kings"
+					},
+					{
+						"link" : "#",
+						"text" : "Ducks"
+					},
+					{
+						"link" : "#",
+						"text" : "MMA + Boxing"
+					},
+					{
+						"link" : "#",
+						"text" : "Soccer"
+					}
+				]
+			},
+			{
+				"name" : "Things to Do",
+				"child-menu" : [
+					{
+						"link" : "#",
+						"text" : "Restaurant Reviews + Food"
+					},
+					{
+						"link" : "#",
+						"text" : "Casinos"
+					},
+					{
+						"link" : "#",
+						"text" : "Music + Concerts"
+					},
+					{
+						"link" : "#",
+						"text" : "Movies + TV"
+					},
+					{
+						"link" : "#",
+						"text" : "Theater"
+					},
+					{
+						"link" : "#",
+						"text" : "Events"
+					},
+					{
+						"link" : "#",
+						"text" : "Home + Garden"
+					},
+					{
+						"link" : "#",
+						"text" : "Travel"
+					},
+					{
+						"link" : "#",
+						"text" : "Comics"
+					},
+					{
+						"link" : "#",
+						"text" : "Games"
+					},
+					{
+						"link" : "#",
+						"text" : "Horoscopes"
+					}
+				]
+			},
+			{
+				"name" : "Obituaries",
+				"link" : "#",
+				"child-menu": [
+					{
+						"link" : "#",
+						"text" : "Place an Obituary"
+					}
+				]
+			},
+			{
+				"name" : "Opinion",
+				"link" : "#"
+			}
+		]
+	}
+}

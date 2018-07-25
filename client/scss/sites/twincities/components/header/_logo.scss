@@ -1,0 +1,51 @@
+// Twin Cities: Logo
+
+.logo {
+	height: 55px;
+	width: 165px;
+
+	@include ai-breakpoint(false, m) {
+		margin: em-calc(0 0 10);
+	}
+
+	@include ai-breakpoint(m) {
+		left: 0;
+		padding: em-calc(10 10);
+		position: absolute;
+		top: -75px;
+	}
+
+	a {
+		background-image: url('../../images/twincities-logo.png');
+		background-size: 165px 55px;
+		display: inline-block;
+		height: 55px;
+		width: 165px;
+	}
+}
+
+// Sticky styles
+.headroom--not-top {
+
+	.logo {
+		height: 33px;
+		width: 100px;
+
+		@include ai-breakpoint(false, l) {
+			position: relative;
+			margin: em-calc(7 auto);
+		}
+
+		@include ai-breakpoint(l) {
+			top: em-calc(10);
+		}
+
+		a {
+			position: relative;
+			z-index: 20;
+			background-size: 100px 33px;
+			height: 33px;
+			width: 100px;
+		}
+	}
+}

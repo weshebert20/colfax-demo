@@ -1,0 +1,228 @@
+// Silicon Valley: Footer Menu
+//
+// Menu section for footer
+//
+// markup:
+// <li class="menu-item-has-children">
+// 	<a href="#">Subscribe</a>
+// 	<span class="expander"><a class="icon-arrow-down"></a></span>
+// 	<ul class="footer-menu">
+// 		<li><a href="#">Manage Your Subscription</a></li>
+// 		<li><a href="#">All Access Subscription</a></li>
+// 		<li><a href="#">Today's e-Edition</a></li>
+// 		<li><a href="#">Newsletter Sign-Up</a></li>
+// 		<li><a href="#">Mobile Apps</a></li>
+//	</ul>
+// </li>
+// <li class="menu-item-has-children">
+// 	<a href="#">Contact Us</a>
+// 	<span class="expander"><a class="icon-arrow-down"></a></span>
+// 	<ul class="footer-menu">
+// 		<li><a href="#">Corrections</a></li>
+// 		<li><a href="#">Reprints & Permissions</a></li>
+// 		<li><a href="#">Archive Search</a></li>
+// 		<li><a href="#">Lottery</a></li>
+//	</ul>
+// </li>
+// <li class="menu-item-has-children">
+// 	<a href="#">Classifieds</a>
+// 	<span class="expander"><a class="icon-arrow-down"></a></span>
+// 	<ul class="footer-menu">
+// 		<li><a href="#">Autos</a></li>
+// 		<li><a href="#">Jobs</a></li>
+// 		<li><a href="#">Real Estate</a></li>
+// 		<li><a href="#">Place an Obituary</a></li>
+// 		<li><a href="#">Place a Legal Ad</a></li>
+//	</ul>
+// </li>
+// <li class="menu-item-has-children">
+// 	<a href="#">Advertise With Us</a>
+// 	<span class="expander"><a class="icon-arrow-down"></a></span>
+// 	<ul class="footer-menu">
+// 		<li><a href="#">Today's Ads</a></li>
+// 		<li><a href="#">Weekly Ads</a></li>
+// 		<li><a href="#">Local Guide</a></li>
+// 		<li><a href="#">Fry's Ad</a></li>
+// 		<li><a href="#">Public Notices</a></li>
+//	</ul>
+// </li>
+//
+// sg-wrapper:
+// <footer class="site-footer">
+//	<div class="footer-menus-wrapper">
+// 	 <sg-wrapper-content/>
+// 	</div>
+// </footer>
+//
+// Styleguide footer.menu
+
+.site-footer {
+
+	.footer-menus-wrapper {
+		border-bottom: 1px solid $gray-500;
+	}
+
+	.footer-menus {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		@include ai-breakpoint(false, s) {
+			display: block;
+		}
+
+		@include ai-breakpoint(s) {
+			padding: em-calc(16 10);
+		}
+	}
+
+	.footer-menu,
+	.menu-item-has-children {
+		align-items: flex-start;
+		display: flex;
+		justify-content: flex-start;
+		overflow: visible;
+		width: 100%;
+
+		@include ai-breakpoint(s) {
+			width: auto;
+		}
+	}
+
+	.footer-menu {
+		padding: em-calc(0 10);
+
+		@include ai-breakpoint(false, s) {
+			border-bottom: 1px solid $gray-500;
+		}
+
+		@include ai-breakpoint(s) {
+			flex-wrap: wrap;
+		}
+
+		li {
+
+			@include ai-breakpoint(false, s) {
+				margin: em-calc(10 0);
+				width: 100%;
+			}
+		}
+
+		@include ai-breakpoint(false, s) {
+			align-items: flex-start;
+			flex-direction: column;
+			width: 100%;
+		}
+	}
+
+	.menu-item-has-children {
+		background-color: transparent;
+		margin: em-calc(0 0 16);
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		@include ai-breakpoint(false, s) {
+			flex-wrap: wrap;
+
+			&:last-child {
+
+				.footer-menu {
+					border: 0;
+				}
+			}
+		}
+
+		> a,
+		li {
+			width: auto;
+		}
+
+		> a {
+			margin-left: em-calc(10);
+			white-space: nowrap;
+
+			@include ai-breakpoint(s) {
+				margin: em-calc(0 15 0 0);
+			}
+
+			@include ai-breakpoint(false, s) {
+				padding: em-calc(16 0);
+			}
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		> ul {
+			margin: 0;
+		}
+
+		li {
+
+			@include ai-breakpoint(s) {
+				margin: em-calc(0 15 0 0);
+			}
+		}
+
+		> a,
+		.expander > a {
+
+			&:hover {
+				color: $gray-min;
+			}
+		}
+
+		> ul {
+
+			a {
+
+				&:hover {
+					color: $gray-min;
+				}
+			}
+		}
+
+		.expander {
+			position: static;
+
+			a {
+				align-items: center;
+				display: flex;
+				height: 100%;
+				justify-content: center;
+
+				&::before {
+					display: none;
+				}
+
+				&::after {
+					content: '';
+					border-bottom: 7px solid transparent;
+					border-left: 5px solid transparent;
+					border-right: 5px solid transparent;
+					border-top: 7px solid $gray-400;
+					margin: em-calc(6 0 0 5, false, 20);
+				}
+			}
+		}
+
+		&.open {
+
+			.expander {
+
+				a {
+
+					&::after {
+						content: '';
+						border-top-color: transparent;
+						border-bottom-color: $gray-300;
+						margin: em-calc(-10 0 0 5, false, 20);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,95 @@
+// Sharing List
+//
+// List of sharing links
+//
+// markup: sharing-list.hbs
+//
+// no-prompt - sharing list without prompt
+// with-prompt - sharing list with prompt
+//
+// data: sharing-list.json
+//
+// Styleguide sharing.list
+
+.sharing,
+.sharedaddy {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+
+	@include ai-breakpoint(false, s) {
+		float: none;
+		margin-top: em-calc(10);
+	}
+
+	ul {
+		align-items: center;
+		display: flex;
+	}
+
+	li {
+		margin: em-calc(0 5 0 0);
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	.footer-header & {
+		height: em-calc(34);
+		margin-left: auto;
+
+		@include ai-breakpoint(false, s) {
+			margin-left: 0;
+		}
+	}
+
+	.headline-list & {
+		z-index: 1;
+	}
+
+	.icon-instagram,
+	.icon-feed {
+		@include sharing-button();
+	}
+
+	.icon-facebook {
+		@include sharing-button($facebook);
+	}
+
+	.icon-twitter {
+		@include sharing-button($twitter);
+	}
+}
+
+.share-with-prompt {
+	align-items: center;
+	display: flex;
+
+	@include ai-breakpoint(false, l) {
+		justify-content: space-between;
+	}
+
+	@include ai-breakpoint(l) {
+		justify-content: center;
+	}
+
+	.prompt {
+		@include font(16, 21, $widget, 600);
+		letter-spacing: -0.01em;
+	}
+
+	.feature-primary &,
+	.full-view & {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.article-sidebar .sign-up-follow & {
+		flex-direction: column;
+
+		.sharing {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+// SCNG Measured Vibrant: Colors
+//
+// text - Body Copy
+// primary - Brand Primary
+// secondary - Brand Secondary
+// tertiary - Brand Tertiary
+// gray-min - Minimum Gray
+// gray-200 - First Gray
+// gray-300 - Second Gray
+// gray-400 - Third Gray
+// gray-500 - Fourth Gray
+// gray-600 - Fiffth Gray
+// gray-max - Maximum Gray
+//
+// markup: colors.hbs
+//
+// data: colors.json
+//
+// Styleguide core.colors
+
+// Brand colors
+$primary: rgb(63, 81, 181) !default; // #D84315
+$secondary: rgb(238, 255, 65) !default; // #EEFF41
+$tertiary: rgb(48, 63, 159) !default; // #FF5722
+$primary-light: lighten($primary, 10%) !default;
+
+// Grays
+$gray-min: rgb(31, 30, 28) !default; //#141414
+$gray-100: rgb(72, 70, 66) !default; // #1F1E1E
+$gray-200: rgb(117, 114, 106) !default; // #5D5B5A
+$gray-300: rgb(157, 154, 152) !default; // #9D9A98
+$gray-400: rgb(200, 196, 192) !default; // #C8C4C0
+$gray-500: rgb(200, 196, 192) !default; // #F5F3F0
+$gray-600: rgb(245, 243, 240) !default; // #F5F3F0
+$gray-max: rgb(255, 255, 255) !default; // #ffffff
+
+// Location colors
+$text: $gray-min;
+$link-hover: $primary !default;
+$button: $primary !default;
+$pushnav-bg: $gray-min !default;
+$pushnav-border: $gray-100 !default;
+$divider: $gray-500 !default;
+$divider-alt: #F1EFEB !default;
+$background: #fbfbfb !default;

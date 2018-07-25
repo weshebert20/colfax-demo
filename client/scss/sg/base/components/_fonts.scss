@@ -1,0 +1,23 @@
+// Styleguide font styles
+
+.prototype-styleguide {
+
+    .font {
+
+    	&.body {
+    		font-family: $body;
+    	}
+
+        &.heading {
+            font-family: $heading;
+        }
+
+        &.widget {
+            font-family: $widget;
+        }
+
+        &.meta-data {
+            font-family: $meta;
+        }
+    }
+}

@@ -1,0 +1,1 @@
+The BANG layout currently contains the Mercury News styles, but should be refactored for use on all three BANG sites

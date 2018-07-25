@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "PRODUCTION=true ENTRY=all webpack --config client/config/webpack.config.js -p"
   },
   "devDependencies": {
     "autoprefixer": "^9.0.1",
@@ -23,8 +23,12 @@
     "postcss-loader": "^2.1.6",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
+    "stylelint": "7.1.0",
+    "stylelint-webpack-plugin": "^0.3.1",
     "webpack": "^4.16.2",
     "webpack-cli": "^3.1.0",
-    "webpack-md5-hash": "0.0.6"
+    "webpack-livereload-plugin": "^2.1.1",
+    "webpack-md5-hash": "0.0.6",
+    "webpack-stats-plugin": "^0.2.1"
   }
 }

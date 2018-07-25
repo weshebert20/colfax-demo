@@ -1,0 +1,7 @@
+// Common: Primary Loader
+
+@import '../common-base/loader'; 	// Even when loaded by entries/[entry],
+									// the other components in this loader
+									// want this loaded first.
+@import 'components/loader';
+@import 'pages/loader';

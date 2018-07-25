@@ -1,0 +1,152 @@
+// Mercury News: Busy Layout
+//
+// Primary featured area on a busy news day
+//
+// markup:
+// <section class="feature-primary busy">
+//	<div class="feature-wrapper">
+// 		<div class="feature-left">
+// 			<div class="feature-top">
+// 				<div data-huron-id="article-archive-feature-large" data-huron-type="template"></div>
+// 			</div>
+//			<div class="dfp-ad dfp-Sponsorship_1_mobile">
+//				<img src="http://placehold.it/300x50?text=Fry%27s%20Sponsorship" />
+//			</div>
+//  		<div class="feature-bottom">
+//				<div data-huron-id="examples-headline" data-huron-modifier="two" data-huron-type="template"></div>
+//				<div data-huron-id="article-archive-headline-only" data-huron-type="template"></div>
+// 			</div>
+// 		</div>
+//		<div class="headline-list">
+//			<h2 class="headline-list-title"><span>Latest Headlines</span></h2>
+// 			<ul>
+//				<li class="headline-list-info">
+//					<div data-huron-id="modules-newsletter" data-huron-type="template"></div>
+//					<div data-huron-id="sharing-list-with-label" data-huron-type="template"></div>
+//				</li>
+// 				<li><div data-huron-id="examples-feature-small" data-huron-modifier="one" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="examples-headline" data-huron-modifier="two" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="examples-feature-small" data-huron-modifier="two" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="examples-feature-small" data-huron-modifier="three" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="examples-feature-small" data-huron-modifier="one" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="examples-feature-small" data-huron-modifier="two" data-huron-type="template"></div></li>
+// 				<li><div data-huron-id="examples-feature-small" data-huron-modifier="three" data-huron-type="template"></div></li>
+// 			</ul>
+//			<button class="more-headlines">Show More Headlines</button>
+//		</div>
+//	</div>
+// 	<div data-huron-id="ad-samples-portrait" data-huron-type="template"></div>
+//  <div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+// </section>
+//
+// Styleguide features.busy
+
+.busy {
+	display: flex;
+	flex-wrap: wrap;
+
+	.feature-wrapper {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		margin-bottom: spacing(2);
+	}
+
+	.feature-left {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: spacing(2);
+		width: 100%;
+
+		@include ai-breakpoint(false, l) {
+			@include vertical-rhythm();
+			flex-direction: column;
+		}
+	}
+
+	.feature-top {
+		@extend %archive-box;
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(l) {
+			margin: 0;
+			min-height: em-calc(200);
+		}
+	}
+
+	.feature-bottom {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@include ai-breakpoint(l) {
+			margin: 0;
+		}
+
+		.archive-view {
+
+			@include ai-breakpoint(l) {
+				flex: 1 1 50%;
+
+				&:first-child {
+					margin-bottom: em-calc(20);
+				}
+			}
+		}
+	}
+
+	.dfp-Sponsorship_1_mobile {
+		display: flex;
+		justify-content: center;
+
+		@include ai-breakpoint(l) {
+			display: none;
+		}
+	}
+
+	.dfp-ad {
+
+		@include ai-breakpoint(false, l) {
+			float: none;
+			width: auto;
+		}
+	}
+
+	.dfp-ad,
+	.more-headlines {
+		z-index: 1;
+	}
+
+	.headline-list {
+		order: 1;
+		width: 100%;
+	}
+
+	.prototype & {
+
+		@include ai-breakpoint(false, m) {
+
+			.portrait {
+				display: none;
+			}
+		}
+
+		@include ai-breakpoint(m) {
+
+			.box {
+				display: none;
+			}
+		}
+	}
+}

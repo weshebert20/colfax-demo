@@ -1,0 +1,36 @@
+// Silicon Valley: Landing Secondary Right
+//
+// Landing Sidebar Columnists
+//
+// markup:
+// <div class="landing-secondary-right">
+// 	<sg-insert>12.1.5</sg-insert>
+// 	<div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+//	<div class="swappable" data-swap-location=".author-features" data-swap-method="after">
+// 		<div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+//	</div>
+// </div>
+//
+// Styleguide article-archive.landing-secondary.right
+
+.landing-secondary {
+
+	.swappable {
+		@include ai-breakpoint(false, m) {
+			content: "swap";
+		}
+	}
+}
+
+.landing-secondary-right {
+	align-content: space-between;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: spacing();
+
+	> div {
+		// Collapses empty ads gracefully.
+		width: 100%;
+	}
+}

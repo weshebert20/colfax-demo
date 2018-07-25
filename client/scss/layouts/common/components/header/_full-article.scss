@@ -1,0 +1,87 @@
+// Full Header - Article version
+//
+// Styles for site header on article pages (sticky only)
+
+.site-header {
+
+	&.headroom--not-top {
+
+		.single-post &,
+		&.article.longform {
+			height: em-calc(50);
+
+			@include ai-breakpoint(false, s) {
+
+				.push-from-right &,
+				.push-from-left & {
+					overflow-x: hidden;
+				}
+			}
+
+			.header-search {
+				display: none;
+			}
+
+			.article-share,
+			h4 {
+				display: block;
+			}
+
+			h4 {
+				height: px-to-em(50, false, 20);
+				overflow: hidden;
+				padding: em-calc(0 235 0 125, false, 20);
+				position: relative;
+				top: px-to-em(15, false, 20);
+				width: 100%;
+
+				@include ai-breakpoint(false, l) {
+					display: none;
+				}
+			}
+
+			.trending-bar {
+				display: none;
+			}
+
+			.nav-primary {
+				@extend %clearfix;
+				height: 100%;
+
+				@include ai-breakpoint(false, l) {
+					text-align: left;
+				}
+
+				nav {
+					display: none;
+				}
+
+				.slide-search {
+					display: none;
+				}
+
+				.logo {
+
+					@include ai-breakpoint(false, l) {
+						margin-left: em-calc(40);
+					}
+
+					@include ai-breakpoint(l) {
+						position: absolute;
+						top: px-to-em(10);
+						margin: 0;
+						z-index: 1;
+					}
+				}
+
+				.icon-hamburger {
+					margin: em-calc(0 20 0 0, false, 32);
+				}
+
+				.icon-search {
+					display: none;
+				}
+			}
+		}
+	}
+}

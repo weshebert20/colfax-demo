@@ -1,0 +1,14 @@
+// Silicon Valley:  Section
+//
+// Styles for section landing layout
+
+.section {
+
+	.feature-section {
+		margin-top: spacing(2);
+	}
+
+	.landing-four-up {
+		@include vertical-rhythm(2);
+	}
+}

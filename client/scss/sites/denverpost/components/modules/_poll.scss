@@ -1,0 +1,148 @@
+// Denver Post: Poll
+//
+// Polling widget
+//
+// markup:
+// <div id="two-cents">
+// 	<h2 class="widget-title">Poll: Aurora Police</h2>
+// 	<div class="content">
+//		<div class="pds-question">
+// 			<img src="http://lorempixel.com/640/360/cats" alt="Two Cents Image">
+// 			<div class="pds-question-top">Do you agree with the Aurora Police Department's <a href="#">change in policy</a> that allows police to shoot at moving vehicles under certain circumstances?</div>
+// 		</div>
+// 		<form class="two-cents-vote">
+// 			<div class="poll-options">
+// 				<div class="form-group radio-group">
+// 					<input type="radio" id="yes" name="poll-vote" value="yes">
+// 					<label for="no">No</label>
+// 				</div>
+// 				<div class="form-group radio-group">
+// 					<input type="radio" id="no" name="poll-vote" value="no">
+// 					<label for="no">Yes</label>
+// 				</div>
+// 			</div>
+//			<div class="pds-vote">
+// 				<input class="pds-vote-button" type="submit" value="vote" />
+//			</div>
+// 		</form>
+// 	</div>
+// </div>
+//
+// Styleguide modules.poll
+
+#two-cents {
+	@extend %white-bg;
+}
+
+#two-cents,
+.PDS_Poll {
+
+	> h2 {
+		@extend %section-highlight-alt;
+	}
+}
+
+#two-cents,
+#two-cents .PDS_Poll,
+#page .PDS_Poll {
+
+	img {
+		height: auto;
+		margin-bottom: spacing();
+		width: 100%;
+	}
+
+	.content {
+		@include vertical-rhythm();
+	}
+
+	.pds-answer-group {
+		background-color: $color-bg;
+		padding: em-calc(5);
+		margin: em-calc(10 0);
+		width: 100%;
+
+		.pds-input-label,
+		.pds-other-label {
+
+			span {
+				font-size: em-calc(14);
+				font-weight: 700;
+			}
+		}
+
+		.pds-answer-input {
+			left: 0;
+			position: relative;
+		}
+	}
+
+	.pds-question {
+
+		a {
+			border-bottom: 1px dotted $secondary;
+			color: $secondary;
+			display: inline-block;
+
+			&:hover {
+				color: $primary;
+				border-bottom-color: $primary;
+			}
+		}
+
+		.pds-question-top {
+			@include font(17, 23, $body, 400);
+		}
+	}
+
+	.pds-vote {
+		text-align: center;
+		width: 100%;
+	}
+
+	.pds-vote-button {
+		font-size: em-calc(14);
+		display: inline-block;
+		padding: em-calc(12 20, false, 14);
+		transition: background 125ms linear;
+
+		&:hover {
+			background-color: $gray-min;
+		}
+	}
+
+	.pds-feedback-group {
+
+		.pds-answer-feedback-bar {
+			background: $primary;
+		}
+	}
+
+	.pds-total-votes {
+		@include font(16, 20, $meta, 700);
+		text-transform: uppercase;
+
+		span {
+			color: $primary;
+		}
+	}
+
+	.pds-view-results {
+		border-bottom: 1px dotted $text;
+		padding: 0;
+
+		&:hover {
+			border-bottom: 1px solid $primary;
+			text-decoration: none;
+		}
+	}
+}
+
+#page .body-copy {
+
+	.PDS_Poll {
+		@extend %white-bg;
+		padding: em-calc(16);
+		position: relative;
+	}
+}

@@ -1,0 +1,17 @@
+{{#if wrapper}}
+	<div class="{{ wrapper }}">
+{{/if}}
+{{#each menus}}
+	<li class="menu-item-has-children">
+		<a href="#">{{name}}</a>
+		<span class="expander"><a class="icon-arrow-down"></a></span>
+		<ul class="footer-menu">
+			{{#each items}}
+			<li><a href="{{link}}">{{text}}</a></li>
+			{{/each}}
+		</ul>
+	</li>
+{{/each}}
+{{#if wrapper}}
+	</div>
+{{/if}}

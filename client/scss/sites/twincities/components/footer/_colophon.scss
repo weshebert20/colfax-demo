@@ -1,0 +1,36 @@
+// Twin Cities: Footer Colophon
+//
+// Logo, copyright, privacy, etc.
+//
+// markup:
+// <div class="colophon">
+// 	<div class="footer-logo"><a href="/"></a></div>
+// 	<ul>
+// 		<li class="copyright">Copyright &copy; 2016 Digital First Media</li>
+// 		<li><a href="#">Privacy Policy</a></li>
+// 		<li><a href="#">Terms and Conditions</a></li>
+// 	</ul>
+// </div>
+//
+// Styleguide footer.colophon
+
+.colophon {
+
+	li {
+		font-family: $meta;
+		font-size: px-to-em(14);
+
+		@include ai-breakpoint(m) {
+			margin-right: px-to-em(5);
+			padding-right: px-to-em(10);
+		}
+	}
+
+	.footer-logo a {
+		display: inline-block;
+		width: 183px;
+		height: 60px;
+		background-image: url('../../images/twincities-logo.png');
+		background-size: 183px 60px;
+	}
+}

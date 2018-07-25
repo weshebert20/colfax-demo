@@ -1,0 +1,19 @@
+// Silicon Valley: Inputs
+//
+// .default - default button
+// :focus - focus styles
+// .search-form.header-search - search styles
+// .search-form.large - large form on search landing
+// .datepicker - date select field
+//
+// markup:
+// <input  type="text" class="input" placeholder="{$modifiers}">
+// <a href="#" class="icon-search"></a>
+// <a href="#" class="icon-calendar"></a>
+//
+// sg-wrapper:
+// <form class="styleguide-form {$modifiers}">
+// 	 <sg-wrapper-content/>
+// </form>
+//
+// Styleguide 1.7

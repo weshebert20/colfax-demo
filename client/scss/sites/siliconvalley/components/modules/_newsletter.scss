@@ -1,0 +1,79 @@
+// Silicon Valley: Simple Sign Up
+//
+// Simple newsletter sign up prompt
+//
+// markup:
+// <div class="newsletter-simple">
+//	<div class="newsletter-item">
+//		<p class="prompt">Get the latest news delivered daily</p>
+//		<a href="#">Subscribe</a>
+//	</div>
+// </div>
+//
+// Styleguide modules.newsletter
+
+.newsletter-simple {
+
+	a {
+		@extend %border-button;
+		display: inline-block;
+
+		&:hover {
+			background-color: $primary-light;
+			color: $gray-max;
+		}
+	}
+
+	.newsletter-item {
+		border-bottom: 1px solid $gray-400;
+		padding-bottom: spacing();
+
+		@include ai-breakpoint(false, l) {
+			padding: em-calc(16 0);
+		}
+	}
+
+	.feature-primary & {
+		text-align: center;
+		margin-bottom: spacing();
+	}
+
+	.article-sidebar & {
+		text-align: center;
+
+		.newsletter-item {
+			justify-content: center;
+		}
+	}
+
+	.feature-section & {
+		margin-bottom: 0;
+
+		.newsletter-item {
+			align-items: center;
+			border-bottom: 0;
+			display: flex;
+
+			@include ai-breakpoint(false, l) {
+				justify-content: space-between;
+			}
+
+			@include ai-breakpoint(l) {
+				justify-content: center;
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+.prompt {
+	@include font(16, 16, $widget, 700);
+	color: $gray-200;
+	margin-bottom: em-calc(12);
+	position: relative;
+	width: 100%;
+
+	&:hover {
+		color: $primary;
+	}
+}

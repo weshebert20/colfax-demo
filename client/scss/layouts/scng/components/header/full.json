@@ -1,0 +1,10 @@
+{
+	"default": {},
+	"sticky": {
+		"classes": "headroom--not-top"
+	},
+	"article": {
+		"classes": "headroom--not-top",
+		"wrapper": "single-post"
+	}
+}

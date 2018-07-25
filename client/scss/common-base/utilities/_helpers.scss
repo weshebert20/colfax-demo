@@ -1,0 +1,322 @@
+// Utility mixins, placeholders and functions
+// -------------------------------------------
+// styleguide:ignore:start
+
+// Used as a catalogue of global-scope z-indices to ensure that no element overlaps another element unintentionally.
+$indices: slideshow-arrows,
+    filters,
+    filter-more,
+    expand-navs,
+    expand-nav-items,
+    editors-picks,
+    trending,
+    header,
+    editors-picks-nav,
+    pushnav,
+    slideshow,
+    daily-deals;
+
+$z-max: 2147483647;
+
+%clearfix {
+
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+// Hide text for screen readers
+%hide {
+    display: inline-block;
+    height: 0;
+    position: fixed;
+    visibility: hidden;
+    width: 0;
+}
+
+// Center element horizontally and vertically
+%center {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Center element horizontally
+%center-hor {
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+}
+
+%center-vert {
+    top: 50%;
+    position: absolute;
+    transform: translate(0, -50%);
+}
+
+// Wrapper styles for intrinsic ratio
+// Mostly used by other extends
+%intrinsic-wrapper {
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+// 1:1 aspect ratio for intrinsic sizing
+%intrinsic-square {
+    @extend %intrinsic-wrapper;
+    padding-bottom: 100%;
+}
+
+// 16:9 aspect ratio for intrinsic sizing
+%intrinsic-16-9 {
+    @extend %intrinsic-wrapper;
+    padding-bottom: 56.25%;
+}
+
+// 4:3 aspect ratio for intrinsic sizing
+%intrinsic-4-3 {
+    @extend %intrinsic-wrapper;
+    padding-bottom: 75%;
+}
+
+// 3:4 aspect ratio for intrinsic sizing
+%intrinsic-3-4 {
+    @extend %intrinsic-wrapper;
+    padding-bottom: 133.33%;
+}
+
+// 1:3 aspect ratio for intrinsic sizing
+%intrinsic-1-3 {
+    @extend %intrinsic-wrapper;
+    padding-bottom: 33.33%;
+}
+
+// Content styles for intrinsic ratio sizing method
+%intrinsic-content {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+// Function to return spacer values
+@function spacing( $multiplier: 1 ) {
+    @return px-to-em($base-unit) * $multiplier;
+}
+
+// styleguide:ignore:end
+
+// Module with a white background
+%white-bg {
+    background-color: $gray-max;
+    border: 1px solid rgba(0, 0, 0, 0.085);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.05);
+    padding: em-calc(0 20 20);
+}
+
+// Archive article in box form
+%archive-box {
+    background-color: $gray-max;
+    border-left: 1px solid #F0F0F0;
+    border-top: 1px solid #F0F0F0;
+    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.13);
+
+    .article-info {
+        padding: em-calc(7 10);
+    }
+
+    .disqus-comment-count {
+        bottom: em-calc(8);
+        left: em-calc(10);
+        position: absolute;
+    }
+
+    figure {
+        order: 1;
+    }
+
+    time {
+        color: $gray-300;
+    }
+
+    &.has-comments {
+        padding-bottom: em-calc(32);
+
+        .article-title {
+            margin-bottom: spacing(0.5);
+        }
+    }
+}
+
+// Special helper mixins for archive view
+// To be used with %archive-box
+@mixin archive-horizontal() {
+    flex-direction: row;
+
+    figure {
+        width: em-calc(100);
+    }
+
+    time {
+        line-height: em-calc(25);
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .image-wrapper {
+        display: block;
+        height: auto;
+        overflow: visible;
+        padding-bottom: 0;
+
+        img {
+            position: relative;
+        }
+    }
+
+    &.has-image {
+
+        .article-info {
+            width: calc(100% - #{em-calc(110)});
+        }
+    }
+
+    &.no-image {
+
+        figure {
+            display: none;
+        }
+    }
+}
+
+@mixin archive-vertical() {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: em-calc(30);
+
+    time {
+        bottom: 0;
+        margin: em-calc(8 8 8 0);
+        position: absolute;
+        right: 0;
+    }
+
+    figure {
+        margin-top: auto;
+    }
+
+    figure,
+    header,
+    .article-info {
+        width: 100%;
+    }
+
+    figure,
+    img {
+        margin-bottom: 0;
+    }
+
+    .article-info {
+        width: 100%;
+    }
+}
+
+// Icon helpers
+@mixin icon-round($size, $font-size) {
+    border-radius: 50%;
+    font-size: em-calc($font-size);
+    height: em-calc($size, false, $font-size);
+    width: em-calc($size, false, $font-size);
+}
+
+@mixin slideshow-video-icon($size, $font-size, $icon-only: false) {
+    background-color: $gray-min;
+    border: 1px solid $gray-max;
+    border-radius: 50%;
+    color: $gray-max;
+    cursor: pointer;
+    font-size: em-calc($font-size);
+    height: em-calc($size, false, $font-size);
+    position: absolute;
+    width: em-calc($size, false, $font-size);
+
+    @if (false == $icon-only) {
+        bottom: em-calc(5, false, $font-size);
+        left: em-calc(5, false, $font-size);
+    }
+
+    &:hover {
+        background-color: $link-hover;
+        border-color: $link-hover;
+    }
+}
+
+@mixin slideshow-video-top() {
+
+    .icon-play-arrow {
+        @include slideshow-video-icon(24, 16);
+    }
+
+    .icon-slideshow {
+        @include slideshow-video-icon(24, 12);
+    }
+
+    .icon-play-arrow,
+    .icon-slideshow {
+        opacity: 0.85;
+        right: em-calc(5);
+        top: em-calc(5);
+    }
+}
+
+%slideshow-video-large {
+
+    .icon-play-arrow {
+        @include slideshow-video-icon(61, 40);
+        bottom: em-calc(10, false, 40);
+        left: em-calc(10, false, 40);
+    }
+
+    .icon-slideshow {
+        @include slideshow-video-icon(61, 30);
+        bottom: em-calc(10, false, 30);
+        left: em-calc(10, false, 30);
+    }
+}
+
+%slideshow-video-small {
+
+    .icon-play-arrow {
+        @include slideshow-video-icon(33, 24);
+    }
+
+    .icon-slideshow {
+        @include slideshow-video-icon(33, 16);
+    }
+}
+
+%slideshow-video-alt {
+
+    .icon-play-arrow {
+        @include slideshow-video-icon(33, 24);
+    }
+
+    .icon-slideshow {
+        @include slideshow-video-icon(33, 16);
+    }
+
+    .icon-play-arrow,
+    .icon-slideshow {
+        left: auto;
+        opacity: 0.85;
+        right: em-calc(5);
+    }
+}

@@ -1,0 +1,55 @@
+// Status Bar
+//
+// Styles for status and log in bar located above primary header
+//
+// markup: status.hbs
+//
+// Styleguide header.status
+
+.status-bar {
+	height: em-calc(80);
+	left: em-calc(445);
+	padding: em-calc(10 5);
+	position: absolute;
+	top: em-calc(-85);
+	z-index: index($indices, pushnav);
+
+	ul {
+		border-left: 1px solid $gray-400;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding-left: em-calc(10);
+
+		li {
+			@include font(11, 16, $meta, 400);
+			line-height: 1;
+			text-transform: uppercase;
+
+			&:last-child {
+				a {
+					padding-bottom: 0;
+				}
+			}
+
+			a {
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	a {
+		padding: em-calc(10, false, 14);
+	}
+
+	ul,
+	.status-bar-wrapper {
+		height: 100%;
+	}
+
+	.headroom--not-top & {
+		display: none;
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"styleguide": {
+		"title": "Explicabo rerum temporibus fuga! Ea sed eligendi deleniti voluptates.",
+		"excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo rerum temporibus fuga! Ea sed eligendi deleniti voluptates.",
+		"image": "http://lorempixel.com/680/510/business",
+		"classes": "feature-large"
+	},
+	"busy-feature": {
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo rerum temporibus fuga! Ea sed eligendi deleniti voluptates.",
+		"image": "http://lorempixel.com/680/510/business",
+		"classes": "feature-large"
+	},
+	"media-feature": {
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo rerum temporibus fuga! Ea sed eligendi deleniti voluptates.",
+		"image": "http://lorempixel.com/680/382/business",
+		"video": true,
+		"classes": "feature-large"
+	}
+}

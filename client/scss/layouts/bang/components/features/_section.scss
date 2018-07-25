@@ -1,0 +1,259 @@
+// Mercury News: Section Feature
+//
+// Featured area on a section landing page
+//
+// markup:
+// <section class="feature-section">
+//	<div class="feature-wrapper">
+//		<h2 class="section-title">Business</h2>
+//		<div class="feature-left">
+//			<ul class="feature-section-list">
+//				<li><a href="#">SiliconBeat <span class="icon-arrow-right"></span></a></li>
+//				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//			</ul>
+//		</div>
+//		<div class="feature-right">
+//			<div class="feature-top">
+// 				<div data-huron-id="article-archive-feature-large" data-huron-type="template"></div>
+//			</div>
+//			<div class="feature-bottom">
+//				<div data-huron-id="examples-headline" data-huron-modifier="two" data-huron-type="template"></div>
+// 				<div data-huron-id="examples-feature-small" data-huron-modifier="ten" data-huron-type="template"></div>
+//			</div>
+//		</div>
+//		<div class="headline-list">
+// 			<ul>
+//				<li class="headline-list-info">
+//					<span class="headline-list-title"><span>Latest Headlines</span></span>
+//					<div data-huron-id="examples-feature-small" data-huron-modifier="one" data-huron-type="template"></div>
+//				</li>
+//				<li><div data-huron-id="examples-headline" data-huron-modifier="two" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="examples-feature-small" data-huron-modifier="two" data-huron-type="template"></div></li>
+//				<li><div data-huron-id="examples-feature-small" data-huron-modifier="three" data-huron-type="template"></div></li>
+// 			</ul>
+//			<button class="more-headlines">Show More Headlines</button>
+//			<div class="headline-list-footer">
+//				<div data-huron-id="modules-newsletter" data-huron-type="template"></div>
+//				<div data-huron-id="sharing-list-with-label" data-huron-type="template"></div>
+//			</div>
+//		</div>
+//		<div class="author-features">
+//			<div data-huron-id="modules-author-feature" data-huron-type="template"></div>
+//			<div data-huron-id="modules-author-feature" data-huron-type="template"></div>
+//			<div data-huron-id="modules-author-feature" data-huron-type="template"></div>
+//		</div>
+//	</div>
+//	<div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+// </section>
+//
+// Styleguide features.section
+
+.feature-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	@include ai-breakpoint(false, m) {
+		flex-direction: column;
+	}
+
+	.section-title {
+		@extend %offset-background;
+		@include font(32, 32, $meta, 700);
+		color: $primary;
+		font-weight: 700;
+		margin-bottom: em-calc(16, false, 32);
+		padding: em-calc(16 0, false, 32);
+		text-align: left;
+		text-transform: uppercase;
+
+		@include ai-breakpoint(l) {
+			width: 25%;
+			margin-right: 75%;
+		}
+
+		&::before {
+			background-color: transparent;
+			border-bottom: 3px solid $primary;
+		}
+	}
+
+	.feature-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.feature-wrapper {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		margin-bottom: spacing(2);
+	}
+
+	.feature-top,
+	.feature-bottom {
+		width: 100%;
+	}
+
+	.feature-top {
+		@extend %archive-box;
+		margin-bottom: spacing(1.5);
+
+		@include ai-breakpoint(l) {
+			position: relative;
+			top: em-calc(16);
+		}
+	}
+
+	.feature-bottom {
+		display: flex;
+		justify-content: space-between;
+
+		.headline-only,
+		.feature-small {
+			@extend %archive-box;
+			@include ai-span(8, xl);
+			@include ai-span(6.5, l);
+			@include ai-span(5, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+
+		@include ai-breakpoint(false, m) {
+			flex-direction: column;
+		}
+	}
+
+	.feature-right {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		flex-direction: column;
+		min-height: 0;
+
+		@include ai-breakpoint(false, l) {
+			margin-bottom: em-calc(32);
+			order: 0;
+		}
+
+		@include ai-breakpoint(l) {
+			margin-bottom: em-calc(-32);
+			position: relative;
+			top: em-calc(-80);
+		}
+	}
+
+	.feature-left {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		flex-direction: column;
+
+		@include ai-breakpoint(false, l) {
+			order: 1;
+		}
+	}
+
+	.dfp-ad {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(4, m, true);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		position: relative;
+		z-index: 1;
+
+		@include ai-breakpoint(m) {
+			position: relative;
+			padding: em-calc(20) 0;
+		}
+	}
+
+	.headline-list {
+		margin-bottom: spacing(2);
+		width: 100%;
+
+		@include ai-breakpoint(false, l) {
+			order: 2;
+		}
+	}
+
+	.feature-section-list {
+		display: flex;
+		flex-direction: column;
+
+		li {
+			border-bottom: 1px solid $gray-400;
+			margin-bottom: spacing();
+
+			&:first-child {
+				@extend %section-highlight-alt;
+				margin-bottom: spacing();
+				padding-top: 0;
+				text-transform: none;
+
+				a {
+					display: flex;
+				}
+			}
+
+			&:last-child {
+				border: 0;
+			}
+		}
+
+		h6 {
+			font-size: em-calc(14);
+		}
+	}
+
+	.author-features {
+		width: 100%;
+		z-index: 1;
+
+		@include ai-breakpoint(false, l) {
+			order: 3;
+		}
+	}
+
+	&.no-feed {
+
+		.feature-right {
+
+			@include ai-breakpoint(l) {
+				margin-bottom: em-calc(-64);
+			}
+		}
+
+		.feature-top {
+			display: flex;
+			flex: 1 1 auto;
+			height: auto;
+			margin-bottom: 0;
+		}
+
+		.feature-left {
+			min-height: em-calc(225);
+
+			.feature-small {
+				flex: 1 1 50%;
+
+				&:first-child {
+					margin-bottom: em-calc(20);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+.feature-medium {
+
+	.prototype-styleguide .feature-primary &,
+	.prototype-styleguide .feature-media & {
+
+		time {
+			display: none;
+		}
+	}
+}

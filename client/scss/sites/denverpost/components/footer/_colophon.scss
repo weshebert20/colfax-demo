@@ -1,0 +1,39 @@
+// Denver Post: Footer Colophon
+//
+// Logo, copyright, privacy, etc.
+//
+// markup:
+// <div class="colophon">
+// 	<ul>
+// 		<li><a href="#">Terms of Use</a></li>
+// 		<li><a href="#">Copyright</a></li>
+// 		<li><a href="#">Privacy Policy</a></li>
+// 		<li><a href="#">Site Map</a></li>
+// 		<li><a href="#">Ethics Policy</a></li>
+// 	</ul>
+// </div>
+//
+// Styleguide footer.colophon
+
+.colophon {
+	margin-top: spacing(2);
+
+	@include ai-breakpoint(m) {
+
+		li {
+			margin-right: em-calc(16);
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	a {
+		color: $footer-gray;
+
+		&:hover {
+			color: $gray-min;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+// Mercury News: Author Tweet
+//
+// Featured tweet from the author
+//
+// markup:
+// <div class="author-tweet">
+// 	<p class="tweet-text">Twins wins vs. losses - what do you predict will be this coming season’s final tally?</p>
+// 	<div class="tweet-me">
+// 		<a href="#"><i class="icon-twitter"></i>Tweet me @Charley_Walters</a>
+//		<a href="#">#twinswins</a>
+// 	</div>
+// </div>
+//
+// Styleguide author.tweet
+
+.author-tweet {
+	background-color: $brown-300;
+	border-radius: 0;
+	padding: em-calc(16);
+
+	.tweet-text {
+		@include font(26, 36, $heading, 700);
+		color: $gray-300;
+	}
+
+	.tweet-me {
+
+		i {
+			color: $twitter;
+			font-size: em-calc(20);
+		}
+
+		a {
+			@include font(14, 22, $meta, 400);
+			color: $gray-min;
+		}
+	}
+}

@@ -1,0 +1,100 @@
+// Denver Post: Page
+//
+// Styles for miscellaneous pages
+
+/* stylelint-disable declaration-no-important */
+.page {
+
+	// This is non-standard (large block of breakpoint-specific styles),
+	// but these pages only require overrides for mobile
+	@include ai-breakpoint(false, m) {
+
+		// www.denverpost.com/comics
+		.large-centered {
+			padding: 0;
+		}
+
+		.ck-widget {
+			width: 100%;
+
+			.ck-logo {
+				position: static;
+				width: 100%;
+			}
+
+			.ck-region {
+				margin: 0;
+			}
+
+			.ck-nav-action {
+				position: static;
+				line-height: 1.25 !important;
+			}
+
+			.ck-block-full-menu {
+
+				.ck-main-menu {
+					float: left;
+				}
+			}
+
+			.ck-region-pre-content {
+
+				#btc-widget-bground {
+					margin: 0 auto;
+				}
+
+				&.ck-col-2 {
+
+					.ck-block {
+						margin: 0;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		// www.denverpost.com/classifieds
+		&.page-template-page-classifieds {
+
+			#hostFrame {
+				width: 100%;
+			}
+		}
+
+		// www.denverpost.com/horoscopes
+		.horoscopes {
+			width: 100% !important;
+
+			table, tbody, tr, td {
+				width: 100%;
+			}
+
+			[align="middle"] {
+
+				td {
+					padding-bottom: 15px;
+					width: auto;
+				}
+			}
+		}
+
+		// www.denverpost.com/arcade
+		&.page-template-arcade {
+
+			tr, td {
+				display: inline-block;
+				width: 100%;
+
+				img {
+					width: 100%;
+
+					&[src*="spacer"] {
+						width: auto;
+					}
+				}
+			}
+		}
+	}
+}
+/* stylelint-enable */

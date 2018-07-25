@@ -1,0 +1,170 @@
+// Mercury News: Featured Photos and Videos
+//
+// Styles for primary featured area on the homepage
+//
+// markup:
+// <section class="feature-media feature-video slideshow-landing">
+//	<div class="media-content">
+// 		<h2 class="widget-title"><a href="#"><span>Videos & Photos <i class="icon-arrow-right"></i></span></a></h2>
+// 		<ul class="media-articles">
+// 			<li class="media-feature-primary"><div data-huron-id="examples-feature-large" data-huron-type="template"></div></li>
+// 			<li class="media-feature-secondary"><div data-huron-id="examples-feature-small" data-huron-modifier="four" data-huron-type="template"></div></li>
+//			<li class="media-feature-secondary"><div data-huron-id="examples-feature-small" data-huron-modifier="five" data-huron-type="template"></div></li>
+//			<li class="media-feature-secondary"><div data-huron-id="examples-feature-small" data-huron-modifier="six" data-huron-type="template"></div></li>
+// 		</ul>
+//	 </div>
+//	<button class="show-more-videos">Show More Videos</button>
+// </section>
+//
+// Styleguide features.media
+
+.feature-media {
+	margin-bottom: spacing(2);
+	min-height: 0;
+
+	.widget-title {
+		@include ai-span(16/5, xl);
+		@include ai-span(13/5, l);
+		@include ai-span(2.5, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		a {
+			color: $gray-max;
+			padding: em-calc(10 0);
+
+			&::before {
+				border-bottom: 3px solid $color-bg;
+			}
+
+			&:hover {
+				color: $primary;
+			}
+
+			span {
+				position: relative;
+				z-index: 1;
+			}
+
+			.icon-arrow-right {
+				color: $gray-max;
+			}
+		}
+	}
+
+	.media-articles {
+		@include ai-span((16/5) * 4, xl);
+		@include ai-span((13/5) * 4, l);
+		@include ai-span(7.5, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		padding-bottom: spacing(2);
+		position: relative;
+		top: spacing();
+
+		li {
+			@include ai-span(4, xl);
+			@include ai-span(13/4, l);
+			@include ai-span(5, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+			margin-bottom: spacing();
+
+			@include ai-breakpoint(false, s) {
+				width: 100%;
+			}
+		}
+	}
+
+	.media-articles,
+	.media-content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.widget-title a {
+		@extend %offset-background;
+
+		&::before {
+			background-color: $brown-100;
+		}
+	}
+
+	.media-content {
+		@extend %offset-background;
+
+		&::before {
+			background-color: $brown-100;
+		}
+
+		@include ai-breakpoint(false, m) {
+			flex-direction: column;
+		}
+	}
+
+	.widget-title {
+		@extend %section-highlight-alt;
+		@extend %section-highlight-arrow;
+	}
+
+	.more-videos {
+		display: none;
+	}
+
+	.media-more {
+		@extend %offset-background;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+
+		&::before {
+			background-color: $brown-100;
+		}
+
+		li {
+			@include ai-span(16/5, xl);
+			@include ai-span(13/5, l);
+			@include ai-span(10/3, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+			margin: em-calc(0 20 16 0);
+
+			@include ai-breakpoint(false, s) {
+				margin-bottom: spacing();
+				width: 100%;
+			}
+
+			@include ai-breakpoint(l) {
+
+				&:nth-child(5n) {
+					margin-right: 0;
+				}
+			}
+
+			@include ai-breakpoint(m, l) {
+
+				&:nth-child(3n) {
+					margin-right: 0;
+				}
+			}
+
+			@include ai-breakpoint(s, m) {
+
+				&:nth-child(even) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	.show-more-videos {
+		left: em-calc(-12, false, 18);
+		width: calc(100% + #{em-calc(24)});
+
+		@include ai-breakpoint(xl) {
+            left: calc((100vw - #{em-calc(1260, true)}) / -2);
+            width: calc(100vw + #{em-calc(20)});
+        }
+	}
+}

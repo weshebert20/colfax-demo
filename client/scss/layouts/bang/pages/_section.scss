@@ -1,0 +1,18 @@
+// Mercury News:  Section
+//
+// Styles for section landing layout
+
+.section {
+
+	#content {
+		@include vertical-rhythm(2);
+	}
+
+	.feature-section {
+		margin-top: spacing(2);
+	}
+
+	.landing-four-up {
+		@include vertical-rhythm(2);
+	}
+}

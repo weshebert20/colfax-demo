@@ -1,0 +1,19 @@
+//	Placeholder selectors
+
+%mobile-subscriptions {
+	@include ai-breakpoint(false, m) {
+		display: inline-flex;
+		align-items: center;
+		overflow: hidden;
+		text-indent: -9999px;
+		white-space: nowrap;
+
+		&::after {
+			display: inline-block;
+			content: 'Subscriptions';
+			float: left;
+			margin: 0;
+			text-indent: 0;
+		}
+	}
+}

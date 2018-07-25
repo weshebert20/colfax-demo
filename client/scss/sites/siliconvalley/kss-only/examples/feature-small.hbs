@@ -1,0 +1,32 @@
+<article class="archive-view feature-small {{classes}}">
+	<figure>
+		<a href="#">
+			<div class="image-wrapper">
+				<img src="{{image}}" alt="article-image">
+			</div>
+		</a>
+	</figure>
+	<div class="article-info">
+		<header>
+			{{#if sponsored}}
+			<span class="sponsored-flag">Sponsored</span>
+			{{/if}}
+
+			<h5>
+				<a href="#">
+					{{title}}
+				</a>
+			</h5>
+
+
+			{{#if comments}}
+			<div class="article-comments">
+				{{#if time}}
+				<time class="{{time.type}}">{{{time.value}}}</time>
+				{{/if}}
+				<a href="#" class="icon-comment"><span>{{comments}}</span></a>
+			</div>
+			{{/if}}
+		</header>
+	</div>
+</article>

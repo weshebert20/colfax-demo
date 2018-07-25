@@ -1,0 +1,287 @@
+// Silicon Valley: Small Feature
+//
+// Small featured articles
+//
+// markup:
+// <article class="archive-view feature-small">
+// 	<figure>
+//		<div class="image-wrapper">
+// 			<a href="#"><img src="http://lorempixel.com/640/400/cats" alt="article-image"></a>
+//		</div>
+// 	</figure>
+// 	<div class="article-info">
+// 		<header>
+// 			<time datetime="2015-08-10 18:00" proto-skip>8/10/15 6:00 PM ET</time>
+// 			<h5><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h5>
+// 		</header>
+//	</div>
+// </article>
+//
+// Styleguide article-archive.feature-small
+
+.feature-small {
+	@include slideshow-video-top();
+
+	time {
+		display: none;
+
+		.home & {
+			padding: 0;
+			display: inline-block;
+		}
+	}
+
+	.headline-list & {
+
+		&.no-image {
+
+			figure {
+				display: none;
+			}
+
+			.article-info {
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+	}
+
+	.feature-primary &,
+	.feature-section & {
+
+		h5 {
+			@include font(24, 29, $heading, 700);
+			letter-spacing: -0.028em;
+		}
+
+		time {
+			@include font(14, 14, $meta, 400);
+		}
+
+		header {
+			width: 100%;
+		}
+	}
+
+	.slow & {
+		border-bottom: 1px solid $gray-400;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-bottom: spacing();
+
+		figure {
+			margin-right: 0;
+		}
+	}
+
+	.takeover &,
+	.slow & {
+		text-align: left;
+
+		h5 {
+			@include font(21, 26, $heading, 700);
+			letter-spacing: -0.04em;
+		}
+
+		figure {
+			order: 1;
+			width: em-calc(140);
+		}
+
+		.article-info {
+			width: calc(100% - #{em-calc(160)});
+		}
+	}
+
+	.busy &,
+	.landing-freeform & {
+
+		figure,
+		img {
+
+			@include ai-breakpoint(s) {
+				float: none;
+				max-width: none;
+				width: 100%;
+			}
+		}
+
+		figure {
+
+			@include ai-breakpoint(s) {
+				margin: em-calc(0 0 8 0);
+			}
+		}
+	}
+
+	.landing-freeform & {
+
+		@include ai-breakpoint(m) {
+			@include archive-vertical();
+		}
+
+		h5 {
+			@include font(16, 21.6, $heading, 700);
+			letter-spacing: -0.018em;
+
+			@include ai-breakpoint(s) {
+				font-size: em-calc(20, true);
+				letter-spacing: -0.023em;
+				line-height: 1.2;
+			}
+
+			@include ai-breakpoint(m) {
+				font-size: em-calc(22, true);
+				letter-spacing: -0.028em;
+			}
+
+			@include ai-breakpoint(l) {
+				font-size: em-calc(15, true);
+				letter-spacing: -0.035em;
+				line-height: 21/16;
+			}
+
+		}
+
+		figure {
+			order: 1;
+			width: 33.33%;
+
+			@include ai-breakpoint(s) {
+				width: 25%;
+			}
+
+			@include ai-breakpoint(m) {
+				width: 100%;
+			}
+		}
+
+		.article-info {
+			flex-grow: 1;
+		}
+	}
+
+	.feature-section .feature-right & {
+
+		@include ai-breakpoint(false, s) {
+			border-top: 1px solid $gray-400;
+			padding-top: spacing();
+		}
+
+		@include ai-breakpoint(s) {
+			@include archive-vertical();
+		}
+
+		figure {
+			margin-bottom: spacing(0.5);
+
+			@include ai-breakpoint(false, s) {
+				order: 1;
+				width: em-calc(120);
+			}
+		}
+
+		.article-info {
+
+			@include ai-breakpoint(false, s) {
+				width: calc(100% - #{em-calc(140)});
+			}
+		}
+	}
+
+	.feature-media & {
+		@include archive-vertical();
+
+		h5 {
+			@include font(17, 22, $heading, 700);
+
+			a {
+				color: $gray-max;
+			}
+		}
+	}
+
+	.landing-secondary-main & {
+		text-align: left;
+
+		h5 {
+			@include font(16, 21.6, $heading, 700);
+			letter-spacing: -0.026em;
+			margin-bottom: em-calc(10, true);
+
+			@include ai-breakpoint(s) {
+				font-size: em-calc(20, true);
+				letter-spacing: -0.023em;
+				line-height: 1.15;
+			}
+
+			@include ai-breakpoint(l) {
+				font-size: em-calc(20, true);
+				line-height: 1.2;
+			}
+
+			@include ai-breakpoint(xl) {
+				font-size: em-calc(22, true);
+				letter-spacing: -0.028em;
+			}
+
+			.home & {
+
+				@include ai-breakpoint(l) {
+					font-size: em-calc(22, true);
+					line-height: 1.2;
+				}
+
+				@include ai-breakpoint(xl) {
+					font-size: em-calc(24, true);
+				}
+			}
+		}
+
+		figure {
+			order: 1;
+			width: 33.33%;
+
+			@include ai-breakpoint(s) {
+				width: 25%;
+			}
+
+			@include ai-breakpoint(m) {
+				width: 33.33%;
+			}
+
+			@include ai-breakpoint(l) {
+				width: 41.67%;
+			}
+		}
+
+		.article-info {
+
+			@include ai-breakpoint(false, m) {
+				width: calc(100% - #{em-calc(140)});
+			}
+
+			@include ai-breakpoint(m) {
+				width: calc(100% - #{em-calc(240)});
+			}
+
+			margin-right: em-calc(20);
+		}
+
+		.article-comments {
+			margin-top: spacing();
+		}
+	}
+
+	.more-news & {
+
+		figure {
+			width: auto;
+			margin-bottom: spacing(0.5);
+		}
+
+		.excerpt {
+			@include font(14, 18, $body, 400);
+		}
+	}
+}

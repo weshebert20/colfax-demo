@@ -1,0 +1,39 @@
+// Imported from wp-mason
+
+.widget {
+	display: block;
+}
+.widget-area .widget_search {
+	overflow: hidden;
+	input {
+		float: left;
+	}
+}
+
+.subscribe-image {
+	display: inline-block;
+}
+
+.dfm-sidebar-top-flex-container {
+	> * {
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0;
+		
+		img {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+.dfm-sidebar-bottom-flex-container {
+	img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.dfm-featured-bottom-flex-container {
+	clear: both;
+}

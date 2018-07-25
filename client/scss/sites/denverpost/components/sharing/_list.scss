@@ -1,0 +1,63 @@
+// Denver Post: Sharing List
+//
+// List of sharing links
+//
+// markup:
+// <ul class="sharing">
+// 	<li><a href="#" class="icon-facebook"><span class="label">Facebook</span></a></li>
+// 	<li><a href="#" class="icon-twitter"><span class="label">Twitter</span></a></li>
+// 	<li><a href="#" class="icon-instagram"><span class="label">Instagram</span></a></li>
+// 	<li><a href="#" class="icon-feed"><span class="label">RSS</span></a></li>
+// </ul>
+//
+// Styleguide sharing.list
+
+.sharing,
+.sharedaddy {
+	align-items: center;
+	display: flex;
+
+	ul {
+		align-items: center;
+		display: flex;
+	}
+
+	.footer-header & {
+		height: em-calc(34);
+	}
+
+	.footer-header &
+	.full-view & {
+
+		@include ai-breakpoint(false, s) {
+			float: none;
+			margin-top: em-calc(10);
+		}
+
+		li {
+			margin-right: em-calc(10);
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+
+		[class^="icon"] {
+			@include icon-round(38, 24);
+			background-color: $color-bg;
+			border: 1px solid $gray-500;
+			position: static;
+
+			&::before {
+				color: $gray-min;
+			}
+
+			&:hover {
+
+				&::before {
+					color: $primary;
+				}
+			}
+		}
+	}
+}

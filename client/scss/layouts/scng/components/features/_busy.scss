@@ -1,0 +1,155 @@
+// Busy Layout
+//
+// Primary featured area on a busy news day
+//
+// markup: busy.html
+//
+// Styleguide features.busy
+
+.busy {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	.feature-wrapper {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		@include ai-breakpoint(false, m) {
+			@include vertical-rhythm(2);
+			flex-direction: column;
+		}
+
+		@include ai-breakpoint(l) {
+			margin-bottom: spacing(2);
+		}
+	}
+
+	.feature-left {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		@include ai-breakpoint(false, l) {
+			flex-direction: column;
+		}
+	}
+
+	.feature-top {
+		margin-bottom: em-calc(20, true);
+	}
+
+	.feature-bottom {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.headline-list {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		@include ai-span(4, m);
+
+		@include ai-breakpoint(false, s) {
+			max-width: em-calc(540);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		> ul {
+
+			> li {
+				border-top: 1px solid $gray-500;
+				margin: em-calc(12 0 0 0);
+				padding-top: spacing(1);
+
+				&:first-child {
+					border-top: 0;
+					margin-top: 0;
+					padding-top: 0;
+				}
+
+				&:last-child {
+					border-top: 0;
+				}
+			}
+		}
+
+		.social-list {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.headline-list-title {
+		@extend %scng-section-headline;
+	}
+
+	.headline-only {
+
+		header {
+			margin: 0;
+		}
+
+		time {
+			@include font(13, 23, $meta, 400);
+			color: $gray-400;
+			display: inline;
+		}
+
+		.entry-title {
+			@include font(15, 19, $heading, 600);
+			display: inline;
+		}
+	}
+
+	.social-links {
+		background-color: $gray-600;
+		flex-direction: column;
+
+		> * {
+			padding: 1em;
+		}
+	}
+
+	.newsletter-simple {
+		border-bottom: 1px solid $gray-max;
+
+		.newsletter-item {
+			border: none;
+			padding: 0;
+		}
+	}
+
+	.swappable {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		@include ai-span(4, m);
+	}
+
+	.sidebar-ad-container {
+		@include ai-span(4, l);
+		@include ai-span(10, m);
+	}
+
+	.prototype & {
+
+		.dfp-ad {
+
+			@include ai-breakpoint(false, l) {
+				max-height: 250px;
+			}
+		}
+	}
+}

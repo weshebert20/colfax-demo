@@ -1,0 +1,78 @@
+// Most Popular
+//
+// Widget for most popular articles
+
+.popular {
+	@extend %clearfix;
+	counter-reset: popular;
+
+	ol {
+		@include vertical-rhythm();
+		list-style: none;
+	}
+
+	li {
+		counter-increment: section;
+		position: relative;
+
+		a {
+
+			&:hover {
+				color: $primary-light;
+			}
+		}
+	}
+
+	.widget-title {
+		width: 100%;
+		margin-bottom: spacing();
+		line-height: 1;
+
+		span {
+			@extend %blue-block;
+		}
+	}
+
+	&.images {
+
+		ol {
+			@include vertical-rhythm(2);
+		}
+
+		li {
+			@include font(16, 20, $heading, 600);
+			position: relative;
+			min-height: px-to-em(50);
+			padding-top: 0;
+			float: left;
+			clear: both;
+		}
+
+		img {
+			position: absolute;
+			left: px-to-em(34);
+		}
+
+		a {
+			padding-left: px-to-em(110);
+			float: left;
+		}
+
+		@include ai-breakpoint(false, l) {
+			@include ai-span(6, m);
+
+		}
+	}
+
+	&.section {
+		background-color: $gray-600;
+
+		> h2 {
+			border-top: none;
+		}
+
+		ol {
+			padding: em-calc(0 20 30);
+		}
+	}
+}

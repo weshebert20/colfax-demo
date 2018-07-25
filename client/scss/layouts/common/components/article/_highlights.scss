@@ -1,0 +1,77 @@
+// Article highlights
+//
+// Highlights section above article text
+
+.highlights {
+	@include vertical-rhythm(0.5);
+	border-bottom: 1px solid $gray-500;
+	border-top: 1px solid $gray-500;
+	float: left;
+	overflow: hidden;
+	padding: em-calc(10 0);
+	position: relative;
+	width: 100%;
+	transition: height 250ms ease-in-out;
+
+	.highlights-content {
+		padding-top: px-to-em(10);
+		
+		@include ai-breakpoint(false, l) {
+			display: none;
+		}
+	}
+
+	h2 {
+		background-color: $gray-max;
+		color: $primary-light;
+		margin-bottom: 0;
+		position: relative;
+		text-transform: uppercase;
+		z-index: 1;
+	}
+
+	ul {
+		@include vertical-rhythm(0.5);
+		list-style: disc outside none;
+		margin-left: px-to-em(17);
+		padding-top: 0.25em;
+	}
+
+	p {
+		@include font(16, 20, $body, 400);
+	}
+
+	li {
+		@include font(16, 20, $body, 400);
+	}
+
+	a {
+		color: $primary;
+		text-decoration: underline;
+		cursor: pointer;
+		
+		&:hover {
+			color: $link-hover;
+		}
+	}
+
+	.icon-arrow-down {
+		color: $gray-300;
+		display: inline-block;
+		font-size: px-to-em(32);
+		line-height: 0.68;
+		transition: transform 250ms linear;
+		vertical-align: top;
+
+		@include ai-breakpoint(l) {
+			display: none;
+		}
+	}
+
+	&.open {
+
+		.icon-arrow-down {
+			transform: rotate(-180deg);
+		}
+	}
+}

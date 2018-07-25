@@ -1,0 +1,18 @@
+// 404 Page
+//
+// Styles for "No content" page
+
+.error-404 {
+	clear: both;
+	overflow: hidden;
+
+	header {
+		display: inline-block;
+		margin: em-calc(64 0);
+		width: 100%;
+	}
+
+	.search-form.large {
+		@extend %top-search-form;
+	}
+}

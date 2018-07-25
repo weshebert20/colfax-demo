@@ -1,0 +1,20 @@
+%scng-section-headline {
+	@include font(17, 19, $meta, 700);
+	color: $primary;
+	display: flex;
+	letter-spacing: 0.035em;
+	margin-bottom: spacing();
+	padding-bottom: spacing(0.5);
+	text-transform: uppercase;
+
+	a,
+	span {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	.icon-arrow-right {
+		font-size: em-calc(20);
+		line-height: em-calc(19, true);
+	}
+}

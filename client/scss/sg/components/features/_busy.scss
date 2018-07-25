@@ -1,0 +1,38 @@
+.busy {
+
+	.styleguide-denverpost &,
+	.styleguide-twincities & {
+
+		.box {
+
+			@include ai-breakpoint(xl) {
+				display: none;
+			}
+		}
+
+		.portrait {
+
+			@include ai-breakpoint(false, xl) {
+				display: none;
+			}
+		}
+	}
+
+	.styleguide-mercurynews &,
+	.styleguide-siliconvalley & {
+
+		.box {
+
+			@include ai-breakpoint(m) {
+				display: none;
+			}
+		}
+
+		.portrait {
+
+			@include ai-breakpoint(false, m) {
+				display: none;
+			}
+		}
+	}
+}

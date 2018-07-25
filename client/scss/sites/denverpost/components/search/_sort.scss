@@ -1,0 +1,26 @@
+// Denver Post: Search Sort
+//
+// Sort search results
+//
+// markup:
+// <div class="sort">
+//	<span>Sort By:</span> <a href="#">Relevance<a> | <a href="#" class="deselected">Date</a></span>
+// </div>
+//
+// Styleguide search.sort
+
+.sort {
+
+	> span {
+		color: $gray-400;
+	}
+
+	> span,
+	a {
+		background-color: $color-bg;
+		margin: 0;
+		padding-right: em-calc(10);
+		position: relative;
+		right: em-calc(-10);
+	}
+}

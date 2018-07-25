@@ -1,0 +1,45 @@
+// Author Bio
+//
+// Author biography/description
+
+.author-bio {
+	@extend %clearfix;
+	@include font(18, 25, $body, 400);
+
+	figure {
+		position: relative;
+		float: left;
+		margin: em-calc(10 20 10 0);
+	}
+}
+
+.author-full-bio {
+	@include vertical-rhythm(2);
+}
+
+.read-full {
+	@include font(14, 14, $meta, 700);
+	width: 100%;
+	height: 1px;
+	margin: em-calc(38 0);
+	text-align: center;
+	background-color: $gray-500;
+
+	a {
+		position: relative;
+		display: inline-block;
+		top: -18px;
+		padding: em-calc(11 15, false, 14);
+		width: px-to-em(150, false, 14);
+		text-transform: uppercase;
+		color: $gray-max;
+		background-color: $gray-500;
+	}
+
+	&:hover {
+
+		a {
+			background-color: $primary-light;
+		}
+	}
+}

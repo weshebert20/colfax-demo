@@ -1,0 +1,46 @@
+{
+	"one": {
+		"videoTime": "22:56",
+		"title": "Greg Moore discusses the political leanings of the paper",
+		"image": "http://lorempixel.com/800/450/cats"
+	},
+	"two": {
+		"videoTime": "12:30",
+		"title": "Warrior Wellness Program at Air Force Academy",
+		"image": "http://lorempixel.com/800/450/cats"
+	},
+	"three": {
+		"videoTime": "10:15",
+		"title": "Colorado Avalanche defeats Montreal Candiens",
+		"image": "http://lorempixel.com/800/450/cats"
+	},
+	"four": {
+		"videoTime": "3:05",
+		"title": "“Son of Saul” review with Lisa Kennedy",
+		"image": "http://lorempixel.com/800/450/cats"
+	},
+	"five": {
+		"videoTime": "2:55",
+		"title": "Ishmail Terry: American Graduate Champion",
+		"image": "http://lorempixel.com/800/450/cats"
+	},
+	"six": {
+		"videoTime": "8:20",
+		"title": "Lorem Ipsum dolor sit amet adipscing elit",
+		"image": "http://lorempixel.com/800/450/cats"
+	},
+	"seven": {
+		"sponsored": true,
+		"title": "Lorem Ipsum dolor sit amet adipscing elit",
+		"classes": "sponsored-content no-image"
+	},
+	"eight": {
+		"title": "Lorem Ipsum dolor sit amet adipscing elit",
+		"excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloribus recusandae itaque iure quos dicta nostrum quibusdam.",
+		"image": "http://lorempixel.com/800/450/cats"
+	},
+	"nine": {
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloribus recusandae itaque iure quos dicta nostrum quibusdam.",
+		"image": "http://lorempixel.com/800/450/cats"
+	}
+}

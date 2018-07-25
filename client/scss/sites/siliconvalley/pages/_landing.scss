@@ -1,0 +1,236 @@
+// Silicon Valley:  Landing Layout
+
+.tag-name,
+.search-title {
+	@include font(32, 32, $meta, 600);
+	margin-top: spacing();
+}
+
+.author-header {
+	margin-top: spacing(2);
+}
+
+.search,
+.author.landing {
+	@extend %clearfix;
+	margin-bottom: spacing(3);
+}
+
+.feature-primary {
+	margin-top: spacing(2);
+}
+
+.landing-three-one,
+.landing-three-up,
+.landing-four-up {
+	display: flex;
+	justify-content: space-between;
+}
+
+.landing-three-one,
+.landing-four-up {
+	flex-wrap: wrap;
+}
+
+.landing-three-one {
+
+	.three-one-right {
+		order: 1;
+		position: relative;
+		z-index: 1;
+
+		@include ai-breakpoint(false, l) {
+			margin: em-calc(32 0 16 0);
+		}
+
+		@include ai-breakpoint(l) {
+			top: em-calc(66);
+		}
+	}
+
+	.landing-item {
+		border-bottom: 1px solid $gray-400;
+		margin-bottom: spacing(2);
+	}
+
+	&.three-one-multi {
+
+		.three-one-right {
+
+			@include ai-breakpoint(l) {
+				top: em-calc(42);
+			}
+		}
+	}
+
+	.swappable {
+		width: 100%;
+
+		@include ai-breakpoint(m) {
+			width: auto;
+			margin: 0 auto;
+		}
+	}
+}
+
+.landing-secondary {
+	clear: both;
+	display: flex;
+	justify-content: space-between;
+	padding: em-calc(40) em-calc(10);
+
+	@include ai-breakpoint(false, l) {
+		flex-wrap: wrap;
+	}
+
+	.landing-secondary-left {
+		@include ai-span(4, xl);
+		@include ai-span(3, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(false, l) {
+			order: 2;
+		}
+
+		@include ai-breakpoint(l) {
+			max-width: em-calc(224);
+		}
+	}
+
+	.landing-secondary-main {
+		@include ai-span(8, xl);
+		@include ai-span(6, l);
+		@include ai-span(5, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(m, l) {
+			flex-grow: 1;
+		}
+
+		@include ai-breakpoint(false, m) {
+			max-width: em-calc(540);
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.landing-secondary-right {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		// @include ai-span(5, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(m, l) {
+			order: 1;
+			margin-left: spacing(1);
+			width: em-calc(315);
+		}
+
+		@include ai-breakpoint(false, m) {
+			order: 1;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@include ai-breakpoint(l) {
+			max-width: em-calc(300);
+		}
+	}
+}
+
+.landing-secondary-main {
+
+	@include ai-breakpoint(false, l) {
+		order: 0;
+	}
+
+	@include ai-breakpoint(l) {
+		flex-grow: 1;
+		padding-right: em-calc(20);
+	}
+}
+
+.landing-secondary-left {
+
+	@include ai-breakpoint(false, l) {
+		order: 2;
+	}
+
+	@include ai-breakpoint(l) {
+		border-right: 1px solid $gray-400;
+		margin-right: em-calc(20);
+		max-width: em-calc(224);
+		padding-right: em-calc(20);
+	}
+
+	@include ai-breakpoint(m, l) {
+
+		.landing-freeform {
+			width: calc((100%/3) - 1em);
+			max-width: 300px;
+		}
+
+		.dfp-ad {
+			width: 100%;
+		}
+	}
+
+	@include ai-breakpoint(false, m) {
+
+		.landing-freeform {
+			width: 100%;
+			max-width: 540px;
+			margin: 0 auto;
+		}
+	}
+
+	.dfp-ad {
+		width: 100%;
+	}
+}
+
+.primary-related {
+	list-style: none;
+
+	li {
+		margin-bottom: em-calc(8);
+		padding-left: em-calc(20);
+		position: relative;
+
+		&::before {
+			content: "•";
+			height: em-calc(20, false, 20);
+			font-size: em-calc(20);
+			margin-left: em-calc(-20, false, 20);
+			position: absolute;
+		}
+
+		a {
+			@include font(14, 17, $heading, 400);
+			letter-spacing: -0.01em;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+
+		a,
+		time {
+			display: inline;
+		}
+	}
+
+	time {
+		@include font(12, 18, $meta);
+		color: $gray-400;
+		margin-left: em-calc(10, false, 12);
+	}
+
+	.section-highlight & {
+		display: none;
+	}
+}

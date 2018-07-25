@@ -1,0 +1,114 @@
+// Denver Post: Footer Menu
+//
+// Menu section for footer
+//
+// markup:
+// <li class="menu-item-has-children">
+// 	<a href="#">Subscribe</a>
+// 	<span class="expander"><a class="icon-arrow-down"></a></span>
+// 	<ul class="footer-menu">
+// 		<li><a href="#">Become a Member / Subscribe</a></li>
+// 		<li><a href="#">Place a Hold</a></li>
+// 		<li><a href="#">Denver Post Store</a></li>
+//	</ul>
+// </li>
+// <li class="menu-item-has-children">
+// 	<a href="#">Classifieds</a>
+// 	<span class="expander"><a class="icon-arrow-down"></a></span>
+// 	<ul class="footer-menu">
+// 		<li><a href="#">Autos</a></li>
+// 		<li><a href="#">Real Estate</a></li>
+// 		<li><a href="#">Jobs</a></li>
+// 		<li><a href="#">Today's Ads</a></li>
+// 		<li><a href="#">Weekly Ads</a></li>
+// 		<li><a href="#">Daily Ads</a></li>
+// 		<li><a href="#">Special Sections</a></li>
+// 		<li><a href="#">Legal Noticies</a></li>
+//	</ul>
+// </li>
+// <li class="menu-item-has-children">
+// 	<a href="#">Contact Us</a>
+// 	<span class="expander"><a class="icon-arrow-down"></a></span>
+// 	<ul class="footer-menu">
+// 		<li><a href="#">Submit a Newstip</a></li>
+// 		<li><a href="#">Member Services</a></li>
+// 		<li><a href="#">Advertise With Us</a></li>
+// 		<li><a href="#">Careers</a></li>
+// 		<li><a href="#">Place an Obituary</a></li>
+//	</ul>
+// </li>
+// <li class="menu-item-has-children">
+// 	<a href="#">Today's Front Page</a>
+// 	<span class="expander"><a class="icon-arrow-down"></a></span>
+// 	<ul class="footer-menu">
+// 		<li><a href="#">Back Issues</a></li>
+// 		<li><a href="#">Mobile Apps</a></li>
+// 		<li><a href="#">Mobile Apps</a></li>
+// 		<li><a href="#">Archives</a></li>
+//	</ul>
+// </li>
+//
+// sg-wrapper:
+// <footer class="site-footer">
+// 	 <sg-wrapper-content/>
+// </footer>
+//
+// Styleguide footer.menu
+
+.site-footer {
+
+	.menu-item-has-children {
+		border-top: 1px solid $gray-500;
+
+		> a {
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+			@include ai-breakpoint(false, s) {
+				background-color: $gray-max;
+			}
+
+			@include ai-breakpoint(m) {
+				margin: em-calc(16 0);
+			}
+
+			@include ai-breakpoint(false, m) {
+				margin: 0;
+				padding: em-calc(16 0);
+			}
+		}
+
+		> a,
+		.expander > a {
+
+			&:hover {
+				color: $gray-min;
+			}
+		}
+
+		li {
+			margin-bottom: spacing();
+		}
+
+		> ul {
+
+			a {
+				color: $footer-gray;
+
+				&:hover {
+					color: $gray-min;
+				}
+			}
+		}
+
+		.expander {
+
+			a {
+				font-size: em-calc(24);
+				line-height: 2;
+			}
+		}
+	}
+}

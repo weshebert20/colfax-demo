@@ -1,0 +1,45 @@
+// SCNG Bold Coastal: Colors
+//
+// text - Body Copy
+// primary - Brand Primary
+// secondary - Brand Secondary
+// tertiary - Brand Tertiary
+// gray-min - Minimum Gray
+// gray-200 - First Gray
+// gray-300 - Second Gray
+// gray-400 - Third Gray
+// gray-500 - Fourth Gray
+// gray-600 - Fiffth Gray
+// gray-max - Maximum Gray
+//
+// markup: colors.hbs
+//
+// data: colors.json
+//
+// Styleguide core.colors
+
+// Brand colors
+$primary: rgb(0, 151, 167); // #D84315
+$secondary: rgb(255, 234, 0); // #FFEA00
+$tertiary: rgb(0, 188, 212); // #00BCD4
+$primary-light: $tertiary;
+
+// Grays
+$gray-min: rgb(10, 9, 8); //#141414
+$gray-100: rgb(56, 50, 42); // #1F1E1E
+$gray-200: rgb(93, 91, 90); // #5D5B5A
+$gray-300: rgb(157, 154, 152); // #9D9A98
+$gray-400: rgb(170, 167, 164); // #AAA7A4
+$gray-500: rgb(215, 214, 210); // #ddd8d5
+$gray-600: rgb(241, 239, 235); // #ecede7
+$gray-max: rgb(255, 255, 255); // #ffffff
+
+// Location colors
+$text: $gray-min;
+$link-hover: $primary;
+$button: $primary;
+$pushnav-bg: $gray-min;
+$pushnav-border: $gray-100;
+$divider: $gray-500;
+$divider-alt: #F1EFEB;
+$background: #ffffff;

@@ -1,0 +1,18 @@
+.styleguide-denverpost,
+.styleguide-twincities {
+
+	.section-highlight {
+
+		h2 {
+			@include font(24, 28, $heading, 600);
+		}
+	}
+}
+
+.styleguide-siliconvalley {
+
+	.section-highlight {
+		margin: 0 auto;
+		max-width: 500px;
+	}
+}

@@ -1,0 +1,36 @@
+// Generic reset
+// --------------
+
+h1 {
+    @include font(42, 44, $heading, 700);
+    letter-spacing: -0.032em;
+}
+
+h2 {
+    @include font(36, 40, $heading, 700);
+    letter-spacing: -0.03em;
+}
+
+h3 {
+    @include font(32, 37, $heading, 700);
+}
+
+h4 {
+    @include font(24, 27.6, $heading, 700);
+
+    @include ai-breakpoint(m, l) {
+        font-size: em-calc(21, true);
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+    }
+}
+
+h5 {
+    @include font(17, 20.5, $heading, 700);
+    letter-spacing: -0.01em;
+}
+
+h6 {
+    @include font(21, 26, $heading, 700);
+    letter-spacing: -0.03em;
+}

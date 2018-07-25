@@ -1,0 +1,73 @@
+// Tag/Search Article
+//
+// Articles appearing on tag landing or search pages
+
+.tag-search-view {
+	@extend %slideshow-video-small;
+	@extend %header-float-small;
+	@extend %clearfix;
+	margin-bottom: spacing(1.5);
+	padding-bottom: spacing(1.5);
+	border-bottom: 1px solid $gray-400;
+	font-size: px-to-em(16, true);
+
+	figure {
+
+		@include ai-breakpoint(false, s) {
+			display: none;
+		}
+	}
+
+	header {
+
+		@include ai-breakpoint(false, s) {
+			width: auto;
+		}
+	}
+
+	h4 {
+		@include font(22, 26, $heading, 600);
+
+		clear: both;
+		overflow: hidden;
+	}
+
+	time {
+		font-size: px-to-em(12);
+	}
+
+	.image-wrapper {
+		width: px-to-em(140);
+		height: auto;
+	}
+
+	.byline {
+		@include font(14, 20, $meta, 400);
+		text-transform: uppercase;
+
+		a {
+
+			&:hover {
+				color: $primary-light;
+			}
+		}
+	}
+
+	.section-name {
+		@extend %section;
+		color: $primary-light;
+		display: inline-block;
+		float: left;
+		margin-bottom: px-to-em(5, false, 13);
+		width: 100%;
+
+		&:hover {
+			color: $primary-lighter;
+		}
+	}
+
+	&:last-of-type {
+		border: none;
+		padding-bottom: 0;
+	}
+}

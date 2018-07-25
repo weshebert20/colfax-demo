@@ -1,0 +1,50 @@
+.feature-small {
+
+	.styleguide-twincities,
+	.styleguide-denverpost & {
+
+		figure {
+
+			img {
+				width: 140px;
+			}
+		}
+
+		.excerpt {
+			display: none;
+		}
+
+		.icon-slideshow,
+		.icon-play-arrow {
+			display: none;
+		}
+
+		&.video {
+
+			.icon-play-arrow {
+				display: inline-block;
+			}
+		}
+
+		&.slideshow {
+
+			.icon-slideshow {
+				display: inline-block;
+			}
+		}
+	}
+
+	.prototype-styleguide .feature-primary &,
+	.prototype-styleguide .feature-media &,
+	.prototype-styleguide .feature-section & {
+
+		time {
+			display: none;
+		}
+	}
+
+	.styleguide-mercurynews &,
+	.styleguide-twincities & {
+		max-width: 400px;
+	}
+}

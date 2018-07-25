@@ -1,0 +1,19 @@
+.prototype-styleguide {
+
+	.body-copy {
+		margin: 0 auto;
+
+		@include ai-breakpoint(false, l) {
+			max-width: em-calc(640, true);
+		}
+
+		@include ai-breakpoint(l) {
+			max-width: em-calc(700, true);
+		}
+
+		blockquote {
+			left: 0;
+			width: auto;
+		}
+	}
+}

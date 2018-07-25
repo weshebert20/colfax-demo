@@ -1,0 +1,70 @@
+// Silicon Valley: Article Meta
+//
+// Article metadata, such a author name and date
+//
+// markup:
+// <div class="meta">
+// 	<a href="#" class="comments-link"><i class="icon-comment"></i>12 Comments</a>
+// 	<div class="byline">By <a class="author-name" href="#">Marisa Kendall</a> • <a href="mailto:mkendall@mercurynews.com">mkendall@mercurynews.com</a></div>
+// 	<div class="time"><time datetime="">April 15, 2016 6:16 AM PDT</time> •  UPDATED 5 days ago</div>
+// </div>
+//
+// Styleguide article.meta
+
+.meta {
+	border-top: 1px solid $gray-400;
+    border-bottom: 1px solid $gray-400;
+    color: $gray-300;
+    margin: 0;
+    padding: 1em 0;
+    position: relative;
+
+    @include ai-breakpoint(m) {
+
+    	&::before {
+	    	content: "";
+		    border-left: 1px solid $gray-400;
+		    position: absolute;
+		    height: 100%;
+		    top: 0;
+		    right: em-calc(165);
+	    }
+    }
+
+	.comments-link {
+		@extend %border-button;
+		align-items: center;
+		display: flex;
+		order: 1;
+
+		@include ai-breakpoint(false, m) {
+			float: left;
+			margin-bottom: px-to-em(16);
+		}
+
+		.icon-comment {
+			margin-right: em-calc(5);
+		}
+	}
+
+	.byline {
+
+		a,
+		.author-name {
+			color: $gray-min;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	.byline,
+	.time {
+
+		@include ai-breakpoint(false, m) {
+			display: inline-block;
+			width: 100%;
+		}
+	}
+}

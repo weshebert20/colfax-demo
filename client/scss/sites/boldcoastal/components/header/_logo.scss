@@ -1,0 +1,11 @@
+// Header logo
+//
+// The logos for the site
+//
+// markup: logo.hbs
+//
+// Styleguide header.logo
+
+.logo a .small {
+	padding-bottom: 63%; // Will change based on logo aspect ratio.
+}

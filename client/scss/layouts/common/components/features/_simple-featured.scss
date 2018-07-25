@@ -1,0 +1,56 @@
+// Simple Feature
+//
+// Featured area on a section or tag landing
+
+.takeover {
+
+	&.simple-featured {
+
+		.feature-bottom {
+			@include ai-span(12, xl);
+			@include ai-span(9, l);
+			@include ai-span(5, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			margin-bottom: spacing(2);
+			padding-bottom: spacing();
+
+			.feature-small {
+				@include ai-span(8, xl);
+				@include ai-span(6.5, l);
+				@include ai-span(10, m);
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+
+		aside {
+			float: right;
+
+			.dfp-ad {
+				float: left;
+				overflow: visible;
+			}
+
+		}
+
+		.dfp-ad {
+			@include ai-span(5, m, true);
+			@include ai-span(8, s);
+
+			@include ai-breakpoint(m) {
+				float: right;
+			}
+		}
+
+		.dfm-sidebar-top-flex-container {
+			clear: both;
+			@include ai-breakpoint(m) {
+				clear: none;
+				float: right;
+			}
+		}
+	}
+}

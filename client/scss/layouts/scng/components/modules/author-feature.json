@@ -1,0 +1,14 @@
+{
+    "one": {
+        "name": "Jane Doe",
+        "image": "http://lorempixel.com/85/85/people/1"
+    },
+    "two": {
+        "name": "John Smith",
+        "image": "http://lorempixel.com/85/85/people/2"
+    },
+    "three": {
+        "name": "Roberta Smalls",
+        "image": "http://lorempixel.com/85/85/people/3"
+    }
+}

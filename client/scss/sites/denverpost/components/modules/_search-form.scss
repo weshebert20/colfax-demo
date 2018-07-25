@@ -1,0 +1,39 @@
+// Denver Post: Search Form
+
+.search-form {
+
+	&.large,
+	&.slide-search {
+
+		input[type="text"] {
+			border: 1px solid $gray-500;
+			border-radius: 3px;
+		}
+	}
+
+	&.slide-search,
+	&.header-search {
+
+		input[type="text"] {
+
+			@include ai-breakpoint(m) {
+				border: 1px solid $gray-500;
+				border-radius: 3px;
+			}
+		}
+	}
+
+	&.header-search {
+
+		@include ai-breakpoint(l) {
+			margin-top: em-calc(2);
+		}
+	}
+
+	&.slide-search {
+
+		.headroom--not-top & {
+			top: em-calc(3);
+		}
+	}
+}

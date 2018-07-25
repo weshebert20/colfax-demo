@@ -1,0 +1,123 @@
+// Mercury News: Slow Layout
+//
+// Primary featured area on a slow news day
+//
+// markup:
+// <section class="feature-primary slow">
+//  <div class="feature-top">
+// 		<div data-huron-id="article-archive-feature-large" data-huron-type="template"></div>
+// 		<div data-huron-id="article-archive-feature-medium" data-huron-type="template"></div>
+//		<div data-huron-id="examples-feature-medium" data-huron-type="template"></div>
+// 	</div>
+//	<div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+// 	<div class="feature-bottom">
+// 		<ul class="headline-list">
+// 			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 		</ul>
+//		<div data-huron-id="article-archive-feature-small" data-huron-type="template"></div>
+// 		<div data-huron-id="article-archive-feature-small" data-huron-type="template"></div>
+// 		<div data-huron-id="article-archive-feature-small" data-huron-type="template"></div>
+// 	</div>
+// </section>
+//
+// Styleguide features.slow
+
+// Slow Layout
+//
+// Primary featured area on a slow news day
+
+.slow {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+
+	.feature-top,
+	.feature-bottom {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		> * {
+			margin-bottom: spacing();
+		}
+	}
+
+	.feature-top {
+
+		.feature-large,
+		.feature-large-top {
+			@include ai-span(16, xl);
+			@include ai-span(13, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+
+		.feature-medium {
+			@include ai-span(8, xl);
+			@include ai-span(6.5, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+	}
+
+	.feature-bottom {
+
+		.feature-small {
+			@include ai-span(16/3, xl);
+			@include ai-span(13/3, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+
+		.headline-list {
+			@include ai-span(16, xl);
+			@include ai-span(13, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			li {
+				@include ai-span(4, xl);
+				@include ai-span(6.5, l);
+				@include ai-span(5, m);
+				@include ai-span(4, s);
+				@include ai-span(4, xs);
+			}
+		}
+	}
+
+	.dfp-ad,
+	.lazy-ad-unit {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		@include ai-span(4, m);
+		float: right;
+
+		@include ai-breakpoint(false, m) {
+			float: left;
+			margin: 0 auto;
+			width: 100%;
+		}
+
+		@include ai-breakpoint(m) {
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 2;
+		}
+	}
+}

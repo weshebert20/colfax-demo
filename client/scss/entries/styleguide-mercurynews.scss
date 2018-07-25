@@ -1,0 +1,46 @@
+.sg {
+
+	.sg-header {
+
+		.sg-title {
+
+			/* stylelint-disable */
+			h1 {
+				background-image: url('../../images/mn-logo-sm.svg');
+				background-size: 50px 39px;
+				height: 39px;
+				left: -50px;
+				position: relative;
+				width: 50px;
+
+				&::before {
+					background-color: #555555;
+					content: "";
+					height: 100%;
+					position: absolute;
+					left: 65px;
+					transform: rotate(20deg);
+					width: 2px;
+				}
+
+				&::after {
+					background-image: url('../../images/ebt-logo-sm.svg');
+					background-size: 50px 39px;
+					content: "";
+					height: 39px;
+					left: 80px;
+					position: absolute;
+					top: 0;
+					width: 50px;
+				}
+			}
+			/* stylelint-enable */
+		}
+	}
+}
+
+@import '../common-base/loader';
+@import '../themes/mercurynews-theme/core/loader';
+@import '../themes/mercurynews-theme/layout/loader';
+@import '../themes/mercurynews-theme/utilities/loader';
+@import '../sg/loader';

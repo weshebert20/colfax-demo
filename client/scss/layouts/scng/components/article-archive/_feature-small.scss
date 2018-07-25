@@ -1,0 +1,101 @@
+// Small Feature
+//
+// Small featured articles
+//
+// styleguide - modifier for use with styleguide
+//
+// markup: archive.hbs
+//
+// data: feature-small.json
+//
+// Styleguide article-archive.feature-small
+
+.feature-small {
+
+	.busy &,
+	.slow &,
+	.takeover & {
+		@include ai-span(8, xl);
+		@include ai-span(13, l);
+		@include ai-span(5, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-bottom: spacing();
+		padding-bottom: spacing();
+
+		@include ai-breakpoint(l, xl) {
+			flex-direction: row;
+		}
+
+		@include ai-breakpoint(false, m) {
+			flex-direction: row;
+		}
+
+		figure {
+			@include ai-span(16, xl);
+			@include ai-span(3.25, l);
+			@include ai-span(10, m);
+			@include ai-span((1/3), s);
+			@include ai-span((1/3), xs);
+		}
+
+		.article-info {
+			@include ai-span(16, xl);
+			@include ai-span(9.75, l);
+			@include ai-span(10, m);
+			@include ai-span((2/3), s);
+			@include ai-span((2/3), xs);
+		}
+
+		header {
+			width: 100%;
+		}
+
+		figure {
+			max-width: 100%;
+			margin-bottom: spacing(0.5);
+
+			@include ai-breakpoint(l) {
+				width: 100%;
+			}
+		}
+
+		.entry-title {
+			font-weight: 700;
+
+			@include ai-breakpoint(s) {
+				font-size: em-calc(16);
+				line-height: 1.18;
+			}
+
+			@include ai-breakpoint(l) {
+				font-size: em-calc(18);
+				line-height: 1.2;
+			}
+
+			@include ai-breakpoint(xl) {
+				font-size: em-calc(20);
+				line-height: 1.18;
+				letter-spacing: -0.02em;
+			}
+		}
+	}
+
+	.icon-play-arrow {
+		@include slideshow-video-icon(20, 16);
+	}
+
+	.icon-slideshow {
+		@include slideshow-video-icon(20, 12);
+	}
+
+	.icon-play-arrow,
+	.icon-slideshow {
+		left: auto;
+		opacity: 0.85;
+		right: em-calc(5);
+	}
+}

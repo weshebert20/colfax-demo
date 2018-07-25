@@ -1,0 +1,102 @@
+// Footer Menu
+//
+// Menu section for footer
+
+.site-footer {
+
+	.menu-item-has-children {
+		@include ai-span(4, xl);
+		@include ai-span(3.25, l);
+		@include ai-span(2.5, m);
+		@include ai-span(2, s);
+		@include ai-span(4, xs);
+		background-color: $gray-max;
+		position: relative;
+		overflow: hidden;
+		transition: transform 250ms ease-in-out;
+		list-style: none;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		> a,
+		li {
+			display: inline-block;
+			width: 100%;
+			font-family: $meta;
+		}
+
+		> a {
+			position: relative;
+			font-weight: 700;
+			z-index: index($indices, expand-nav-items);
+		}
+
+		.expander {
+			position: absolute;
+			display: none;
+			top: px-to-em(0);
+			right: px-to-em(0);
+			width: px-to-em(47);
+			height: px-to-em(47);
+			text-align: center;
+			cursor: pointer;
+			z-index: index($indices, expand-nav-items);
+
+			a {
+				position: relative;
+				display: inline-block;
+				line-height: 3;
+				vertical-align: middle;
+			}
+
+			@include ai-breakpoint(false, s) {
+				display: block;
+			}
+		}
+
+		.footer-menu {
+			position: relative;
+			transition: transform 250ms ease-in-out;
+			z-index: index($indices, expand-navs);
+
+			@include ai-breakpoint(false, s) {
+				position: relative;
+				transform: translate(0, -100%);
+			}
+
+			li {
+				transition: opacity 250ms ease-in-out;
+
+				@include ai-breakpoint(false, s) {
+					opacity: 0;
+				}
+			}
+		}
+
+		&.open {
+
+			.footer-menu {
+
+				li {
+					opacity: 1;
+				}
+
+				// template only start
+				#page & {
+
+					@include ai-breakpoint(false, s) {
+						transform: translate(0, 0);
+					}
+				}
+				// template only end
+			}
+		}
+
+		@include ai-breakpoint(false, s) {
+			text-align: left;
+			margin: 0;
+		}
+	}
+}

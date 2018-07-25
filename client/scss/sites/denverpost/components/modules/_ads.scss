@@ -1,0 +1,99 @@
+// Denver Post: Advertisements
+//
+// Styles for ads
+
+/* stylelint-disable declaration-no-important */
+.dfp-ad {
+
+	&.dfp-top_leaderboard {
+		border-bottom: 1px solid $gray-500;
+	}
+
+	&.dfp-bottom_leaderboard {
+		border-top: 1px solid $gray-500;
+	}
+
+	&.dfp-top_leaderboard,
+	&.dfp-bottom_leaderboard {
+		@extend %clearfix;
+		background-color: $ad-bg-gray;
+		height: auto;
+		margin: em-calc(0 -10);
+		padding: em-calc(10 0);
+		width: 100vw !important; // need to override inline width for correct centering
+
+		@include ai-breakpoint(xl) {
+			margin-left: calc((#{em-calc(16 * $column-width)} - 100vw) / 2);
+		}
+
+		.dfp-ad {
+			margin: 0;
+		}
+	}
+
+	.category & {
+
+		&#div-gpt-ad-Cube3_RRail_lower {
+			z-index: 1;
+			@include ai-breakpoint(false, l) {
+				margin-bottom: spacing(2);
+			}
+
+			@include ai-breakpoint(l) {
+				margin: em-calc(24 0);
+				position: static;
+			}
+
+			&.stick {
+				position: fixed;
+
+				iframe {
+					display: block;
+				}
+			}
+		}
+	}
+
+	.article-sidebar,
+	.article-body & {
+
+		@include ai-breakpoint(false, s) {
+			float: none;
+			margin-left: em-calc(-26);
+			width: 100vw !important; // need to override inline width for correct centering
+		}
+	}
+
+	.article-footer & {
+
+		&.dfp-bottom_leaderboard {
+
+			@include ai-breakpoint(false, xl) {
+				margin-left: em-calc(-26);
+			}
+
+			@include ai-breakpoint(xl) {
+				left: em-calc(-16);
+			}
+		}
+	}
+}
+
+.tag,
+.category {
+
+	#wrapper-Cube1_RRail_ATF,
+	#wrapper-Cube2_RRail_mid,
+	#wrapper-Cube3_RRail_lower {
+
+		@include ai-breakpoint(false, l) {
+			margin-bottom: em-calc(24);
+		}
+
+		& .dfp-ad {
+			height: auto;
+		}
+
+	}
+}
+/* stylelint-enable */

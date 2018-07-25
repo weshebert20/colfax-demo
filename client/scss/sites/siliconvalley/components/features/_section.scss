@@ -1,0 +1,197 @@
+// Silicon Valley: Section Feature
+//
+// Featured area on a section landing page
+//
+// markup:
+// <section class="feature-section">
+//	<div class="feature-wrapper">
+//		<h2 class="section-title">Business</h2>
+//		<div class="feature-top">
+//			<div data-huron-id="article-archive-feature-large" data-huron-type="template"></div>
+//			<div class="feature-right">
+//				<div data-huron-id="examples-feature-small" data-huron-modifier="one" data-huron-type="template"></div>
+// 				<div data-huron-id="examples-feature-small" data-huron-modifier="two" data-huron-type="template"></div>
+//			</div>
+//		</div>
+//		<div class="feature-bottom">
+//			<div class="landing-secondary-left author-features">
+// 				<ul class="landing-page-list">
+//					<li class="columnists-header landing-page-list-title">
+//						<span>Columnists</span>
+//					</li>
+// 					<li class="landing-list-item">
+// 						<div data-huron-id="modules-author-feature" data-huron-type="template"></div>
+// 					</li>
+// 					<li class="landing-list-item">
+// 						<div data-huron-id="modules-author-feature" data-huron-type="template"></div>
+// 					</li>
+// 					<li class="landing-list-item columnist-item">
+// 						<div data-huron-id="modules-author-feature" data-huron-type="template"></div>
+// 					</li>
+// 				</ul>
+// 			</div>
+//			<div class="landing-secondary-main headline-list">
+//				<h2 class="headline-list-title">
+//					<a href="#">Latest Headlines <span class="icon-arrow-right"></span></a>
+//				</h2>
+// 				<ul>
+//					<li><div data-huron-id="examples-headline" data-huron-modifier="two" data-huron-type="template"></div></li>
+//					<li><div data-huron-id="examples-feature-small" data-huron-modifier="two" data-huron-type="template"></div></li>
+//					<li><div data-huron-id="examples-feature-small" data-huron-modifier="three" data-huron-type="template"></div></li>
+// 				</ul>
+//			</div>
+//		</div>
+//	</div>
+//	<div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+//	<div data-huron-id="ad-samples-portrait" data-huron-type="template"></div>
+// </section>
+//
+// Styleguide features.section
+
+.feature-section {
+	display: flex;
+	justify-content: space-between;
+
+	@include ai-breakpoint(false, m) {
+		flex-direction: column;
+	}
+
+	.section-title {
+		@extend %section-title-sv;
+		margin: 0;
+		padding: em-calc(16 0, false, 32);
+		margin-bottom: 0;
+		text-align: left;
+		width: 100%;
+	}
+
+	.feature-wrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-bottom: spacing(2);
+		width: 100%;
+	}
+
+	.feature-bottom {
+		width: 100%;
+	}
+
+	.feature-top {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: spacing(1.5);
+
+		@include ai-breakpoint(false, l) {
+			flex-direction: column;
+		}
+
+		.feature-large,
+		.feature-large-top {
+			@include ai-span(10, xl);
+			@include ai-span(8, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+	}
+
+	.feature-bottom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.feature-right {
+		@include ai-span(6, xl);
+		@include ai-span(5, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		justify-content: space-between;
+		min-height: 0;
+
+		@include ai-breakpoint(false, s) {
+			flex-direction: column;
+		}
+
+		@include ai-breakpoint(l) {
+			flex-direction: column;
+			padding: em-calc(0 16);
+		}
+
+		.feature-small {
+			width: 100%;
+
+			@include ai-breakpoint(s, l) {
+				width: calc(50% - #{em-calc(10)});
+			}
+		}
+	}
+
+	.dfp-ad {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		@include ai-span(4, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		margin-top: em-calc(60);
+		margin-left: auto;
+		margin-right: auto;
+
+		&.box {
+			display: none;
+		}
+
+		@include ai-breakpoint(false, m) {
+			&.portrait {
+				display: none;
+			}
+
+			&.box {
+				border-top: 1px solid $gray-400;
+				display: block;
+				margin-top: 0;
+				padding: em-calc(16 0);
+				width: 100%;
+			}
+		}
+	}
+
+	.swappable {
+		width: 100%;
+
+		@include ai-breakpoint(m) {
+			width: auto;
+			margin: 0 auto;
+		}
+	}
+
+	.landing-secondary-left {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.landing-secondary-main {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+}
+
+.landing .tag-name,
+.tag-name.tag-name-simple-featured {
+	@extend %section-title-sv;
+}

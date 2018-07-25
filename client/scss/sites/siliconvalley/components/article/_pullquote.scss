@@ -1,0 +1,34 @@
+// Silicon Valley: Article Pullquote
+//
+// Inline pullquote
+//
+// markup:
+// <blockquote>
+// 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc.
+// 	<cite>- Quote Source</cite>
+// </blockquote>
+//
+// Styleguide article.pullquote
+
+blockquote {
+	@include font(37, 44, $heading, 700);
+	font-size: em-calc(37, false, 20);
+	border-bottom: 1px solid $gray-400;
+	border-top: 4px solid $gray-300;
+	color: $gray-300;
+	letter-spacing: -0.035em;
+	padding: em-calc(20 0, false, 37);
+
+	@include ai-breakpoint(false, s) {
+		@include font(15, 17, $heading, 700);
+	}
+
+	cite {
+		display: inline-block;
+		font-size: em-calc(14, false, 37);
+		font-style: italic;
+		font-weight: 400;
+		text-align: right;
+		width: 100%;
+	}
+}

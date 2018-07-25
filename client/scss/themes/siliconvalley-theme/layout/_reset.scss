@@ -1,0 +1,28 @@
+// Generic reset
+// --------------
+
+h1 {
+	@include font(42, 44, $heading, 700);
+	letter-spacing: -0.032em;
+}
+
+h2 {
+	@include font(36, 40, $heading, 700);
+	letter-spacing: -0.03em;
+}
+
+h3 {
+	@include font(32, 37, $heading, 700);
+}
+
+h4 {
+	@include font(27, 32, $heading, 700);
+}
+
+h5 {
+	@include font(23, 28, $heading, 700);
+}
+
+h6 {
+	@include font(17, 22, $heading, 700);
+}

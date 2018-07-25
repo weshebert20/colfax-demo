@@ -1,0 +1,58 @@
+// Silicon Valley:  Search Form
+
+.search-form {
+
+	&.large,
+	&.slide-search {
+
+		input[type="text"] {
+			border: 1px solid $gray-500;
+			border-radius: 3px;
+		}
+	}
+
+	&.slide-search,
+	&.header-search {
+
+		input[type="text"] {
+
+			&::placeholder {
+				font-style: italic;
+			}
+
+			@include ai-breakpoint(m) {
+				border: none;
+				border-left: 1px solid $gray-500;
+			}
+		}
+	}
+
+	&.header-search {
+		position: static;
+		order: 2;
+
+		@include ai-breakpoint(false, xl) {
+			width: em-calc(225);
+		}
+
+		@include ai-breakpoint(l) {
+			margin-top: 0;
+		}
+
+		@include ai-breakpoint(xl) {
+			width: em-calc(300);
+		}
+
+		.headroom--not-top & {
+			margin-top: 0;
+		}
+	}
+
+	&.slide-search {
+
+		.icon-search {
+			top: em-calc(22);
+			right: em-calc(15);
+		}
+	}
+}

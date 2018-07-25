@@ -1,0 +1,21 @@
+{
+	"styleguide": {
+		"image": "http://lorempixel.com/800/600/news",
+		"title": "In provident quisquam cum, at ullam",
+		"excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In provident quisquam cum, at ullam, molestiae explicabo, necessitatibus sequi nulla iusto nisi maxime.",
+		"classes": "feature-medium"
+	},
+	"highlight-one": {
+		"image": "http://lorempixel.com/800/600/news",
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In provident quisquam cum, at ullam, molestiae explicabo, necessitatibus sequi nulla iusto nisi maxime.",
+		"classes": "feature-medium"
+	},
+	"more-news": {
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"excerpt": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In provident quisquam cum, at ullam, molestiae explicabo, necessitatibus sequi nulla iusto nisi maxime.",
+		"image": "http://lorempixel.com/300/200/business",
+		"classes": "feature-medium",
+		"readmore": true
+	}
+}

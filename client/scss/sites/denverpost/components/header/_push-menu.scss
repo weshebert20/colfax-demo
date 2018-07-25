@@ -1,0 +1,66 @@
+// Denver Post: Push Menu
+//
+// styles for push-out menu
+//
+// markup:
+// <nav class="pushnav">
+// 	<ul>
+// 		<li class="menu-item-has-children">
+//			<a href="#">News</a>
+//			<ul href="#">
+//				<li><a href="#">Example Link 1</a></li>
+//				<li><a href="#">Example Link 2</a></li>
+//				<li><a href="#">Example Link 3</a></li>
+//			</ul>
+//		</li>
+// 		<li class="menu-item-has-children">
+//			<a href="#">Sports</a>
+//			<ul>
+//				<li><a href="#">Denver Broncos</a></li>
+//				<li><a href="#">Colorado Rockies</a></li>
+//				<li><a href="#">Denver Nuggets</a></li>
+//				<li><a href="#">Colorado Rapids</a></li>
+//				<li><a href="#">Colorado State Rams</a></li>
+//				<li><a href="#">Colorado Buffaloes</a></li>
+//				<li><a href="#">Denver Pioneers</a></li>
+//				<li><a href="#">Air Force Falcons</a></li>
+//			</ul>
+//		</li>
+// 		<li><a href="#">Business</a></li>
+// 		<li><a href="#">Entertainment</a></li>
+// 		<li><a href="#">Lifestyle</a></li>
+// 		<li><a href="#">Opinion</a></li>
+//		<li><a href="#">Politics</a></li>
+//		<li class="menu-item-has-children nav-alt-links">
+//			<a href="#"></a>
+//			<ul>
+// 				<li><a href="#">Subscribe</a></li>
+//				<li><a href="#">Newsletter</a></li>
+//			</ul>
+//		</li>
+// 	</ul>
+// </nav>
+//
+// Styleguide header.push-menu
+
+.pushnav {
+
+	li > a {
+		@include font(18, 18, $meta, 700);
+	}
+
+	.menu-item-has-children:not(.nav-alt-links) {
+		height: em-calc(52);
+
+		> a {
+			height: em-calc(52, false, 18);
+		}
+
+		> ul {
+
+			a {
+				@include font(16, 16, $meta, 600);
+			}
+		}
+	}
+}

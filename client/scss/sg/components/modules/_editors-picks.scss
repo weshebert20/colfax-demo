@@ -1,0 +1,52 @@
+// Editors Picks Carousel
+//
+// Styles for editors picks flyout
+
+.editors-picks-flyout {
+
+	.articles {
+
+		.slick-track {
+
+			.prototype-styleguide & {
+
+				li {
+					@include ai-span(16/3, xl);
+					@include ai-span(4, l);
+					@include ai-span(10/3, m);
+					@include ai-span(4, s);
+					@include ai-span(4, xs);
+
+					@include ai-breakpoint(m) {
+
+						&:last-of-type {
+							margin-right: 0;
+						}
+					}
+
+					@include ai-breakpoint(false, m) {
+
+						&:nth-of-type(3) {
+							display: none;
+						}
+
+						&:nth-of-type(2) {
+							margin-right: 0;
+						}
+					}
+
+					@include ai-breakpoint(false, s) {
+
+						&:nth-of-type(2) {
+							display: none;
+						}
+
+						&:nth-of-type(1) {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

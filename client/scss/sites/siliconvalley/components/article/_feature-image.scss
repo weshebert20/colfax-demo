@@ -1,0 +1,44 @@
+// Silicon Valley: Featured Image
+//
+// Article featured image styles
+//
+// markup:
+// <figure>
+// 	<img src="http://lorempixel.com/940/528/cats" alt="article featured image">
+// 	<figcaption>
+// 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc. Maecenas eu semper augue. Aliquam erat volutpat. Cras varius ex sed metus finibus convallis. Maecenas bibendum velit a nisl eleifend porttitor (Lorem Ipsum photo credit)
+// 	</figcaption>
+// </figure>
+//
+// sg-wrapper:
+// <article class="{$modifiers}">
+//	<div class="header-features">
+// 	 <sg-wrapper-content/>
+//	</div>
+// </article>
+//
+// Styleguide article.feature-image
+
+.full-view {
+
+	figcaption {
+		font-family: $meta;
+		padding: em-calc(0 0 10);
+		width: 100%;
+	}
+
+	figure,
+	.wp-caption {
+
+		img {
+			margin-bottom: em-calc(5);
+		}
+	}
+}
+
+.header-features {
+
+	figcaption {
+		padding: em-calc(5 0 10);
+	}
+}

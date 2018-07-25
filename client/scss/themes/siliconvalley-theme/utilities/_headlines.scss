@@ -1,0 +1,30 @@
+// Silicon Valley: Headlines
+//
+// .h1 - h1 headlines, aricle headline
+// .h2 - h2 headlines, large features on archive pages
+// .h3 - h3 headlines, widget titles
+// .h4 - h4 headlines, medium features on archive pages
+// .h5 - h5 headlines, small features on archive pages
+// .h6 - h6 headlines, list-style headlines
+// .section-heading - headline for a section highlight on archive pages
+// .freeform-heading - headline used for lists and freeform modules
+// .freeform-no-link - freeform headline with no link
+// .tag-name - name of tag at top of tag landing
+// .breaking-headline - breaking news headline
+//
+// markup:
+// <h2  class="headline {$modifiers}"><a href="#">Lorem Ipsum Dolor Sit Amet</a></h2>
+//
+// Styleguide 1.3
+
+%section-title-sv {
+	@include font(26, 26, $heading, 700);
+	color: $primary;
+	font-weight: 700;
+	letter-spacing: 0;
+	text-transform: uppercase;
+
+	@include ai-breakpoint(s) {
+		font-size: em-calc(30, true);
+	}
+}

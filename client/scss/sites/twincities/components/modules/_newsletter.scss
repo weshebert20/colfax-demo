@@ -1,0 +1,55 @@
+// Twin Cities: Simple Sign Up
+//
+// Simple newsletter sign up prompt
+//
+// markup:
+// <div class="newsletter-simple">
+// 	<a href="#" class="icon-email"></a>
+//	<a href="#" class="widget-title">Sign up for newsletters and alerts</a>
+// </div>
+//
+// Styleguide modules.newsletter
+
+.newsletter-simple {
+	padding: em-calc(20 0);
+	border-top: 2px solid $gray-500;
+	border-bottom: 2px solid $gray-500;
+	text-align: center;
+
+	.widget-title {
+		display: inline-block;
+		padding-left: px-to-em(60);
+		font-weight: 400;
+		line-height: 1.4;
+		text-align: left;
+		text-transform: uppercase;
+		vertical-align: middle;
+
+		&:hover {
+			color: $primary-light;
+		}
+	}
+
+	.icon-email {
+		@include font(30, 0.6, 'icomoon');
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		display: inline-block;
+		margin-right: px-to-em(10, false, 30);
+		padding: px-to-em(10);
+		color: $primary-light;
+		vertical-align: middle;
+	}
+}
+
+.newsletter-swap {
+	overflow: hidden;
+
+	.section & {
+
+		@include ai-breakpoint(false, l) {
+			display: none;
+		}
+	}
+}

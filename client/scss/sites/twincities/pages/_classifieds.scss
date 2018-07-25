@@ -1,0 +1,26 @@
+// Twin Cities: Section
+//
+// Styles for section landing layout
+
+.classifieds {
+
+	.article-body-classifieds {
+		@include ai-span(8, xl);
+		@include ai-offset(2, margin, xl);
+		@include ai-span(7, l);
+		@include ai-offset(1, margin, l);
+		@include ai-span(8, m);
+		@include ai-offset(1, margin, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+	.article-sidebar-classifieds {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		float: right;
+		position: relative;
+	}
+}

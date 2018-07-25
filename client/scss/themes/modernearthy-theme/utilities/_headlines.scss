@@ -1,0 +1,16 @@
+%scng-section-headline {
+	@include font(21, 24, $body, 400);
+	border-bottom: 2px solid $primary;
+	color: $gray-200;
+	letter-spacing: 0.035em;
+	margin-bottom: spacing();
+	padding-bottom: em-calc(5);
+	text-transform: uppercase;
+
+	a,
+	span {
+		align-items: center;
+		display: flex;
+		justify-content: flex-start;
+	}
+}

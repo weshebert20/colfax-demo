@@ -1,0 +1,176 @@
+// Styleguide headline styles
+
+.prototype-styleguide {
+
+	.headline {
+
+		&.h1 {
+			@include font(36, 42, $heading, 600);
+		}
+
+		&.h2 {
+			@include font(30, 32, $heading, 600);
+		}
+
+		&.h3 {
+			@include font(24, 28, $heading, 600);
+		}
+
+		&.h4 {
+			@include font(20, 24, $heading, 600);
+		}
+
+		&.h5 {
+			@include font(18, 22, $heading, 600);
+		}
+
+		&.h6 {
+			@include font(16, 20, $heading, 600);
+		}
+
+		&.ex-small {
+			@extend %ex-small;
+		}
+
+		&.section-highlight {
+			@extend %section-highlight;
+		}
+
+		&.blue-block {
+			@include font(18, 18, $widget, 700);
+			@extend %blue-block;
+		}
+
+		&.top-border {
+			@include font(18, 18, $widget, 700);
+			@extend %top-border;
+			float: left;
+		}
+
+		&.sponsored-flag {
+			@extend %sponsored-flag;
+		}
+
+		&.breaking-headline {
+			@extend %breaking;
+		}
+	}
+}
+
+.styleguide-siliconvalley {
+
+	.headline {
+
+		a {
+			cursor: default;
+		}
+
+		&.section-heading {
+			@extend %section-highlight-border;
+		}
+
+		&.freeform-heading {
+			@include font(16, 16, $meta, 600);
+			margin: 0;
+			padding: em-calc(10 0);
+			text-transform: uppercase;
+
+			a {
+				color: $primary;
+				cursor: pointer;
+
+				&:hover {
+					color: $text;
+				}
+			}
+		}
+
+		&.freeform-no-link {
+			@include font(16, 16, $meta, 600);
+			margin: 0;
+			padding: em-calc(10 0);
+			text-transform: uppercase;
+
+			a {
+				color: $text;
+			}
+		}
+	}
+}
+
+.styleguide-mercurynews {
+
+	.headline {
+
+		a {
+			cursor: default;
+		}
+
+		&.border-headline {
+			@extend %header-border;
+			text-transform: uppercase;
+
+			&:hover {
+
+				a,
+				&::after {
+					color: $primary;
+				}
+			}
+		}
+
+		&.border-headline-small {
+			@extend %header-border;
+			@include font(17, 32, $meta, 600);
+			text-transform: uppercase;
+
+			&:hover {
+
+				a,
+				&::after {
+					color: $primary;
+				}
+			}
+		}
+
+		&.border-headline-link {
+			@extend %header-border;
+			cursor: pointer;
+			text-transform: uppercase;
+
+			&::after {
+				@extend %icon;
+				color: $primary;
+				content: "\e111";
+			}
+		}
+
+		&.background-headline {
+			@include font(21, 21, $meta, 600);
+			display: flex;
+			padding: em-calc(15 0, false, 21);
+			position: relative;
+			text-transform: uppercase;
+
+			&::before {
+				background-color: $color-bg-offset;
+				content: '';
+				height: 100%;
+				left: em-calc(-12, false, 18);
+				position: absolute;
+				top: 0;
+				width: 200vw;
+				z-index: 0;
+
+				@include ai-breakpoint(xl) {
+					left: calc((100vw - #{em-calc(1260, true)}) / -2);
+				}
+			}
+
+			a {
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
+}

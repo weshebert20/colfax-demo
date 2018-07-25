@@ -1,0 +1,53 @@
+//	Imported from wp-mason
+
+.image-attachment {
+
+	nav {
+		float: right;
+		margin: 0 0 1em 0;
+	}
+
+	div.entry-meta {
+		float: left;
+	}
+
+	.entry-content {
+		clear: both;
+
+		.entry-attachment {
+			background: #eee;
+			margin: 0 0 1em;
+			padding: 1em;
+			text-align: center;
+		}
+
+		.attachment {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
+
+img {
+
+	a & {
+		border: none;
+	}
+
+	p & {
+		margin-bottom: 0.5em; // a small bottom margin prevents content floating under images
+	}
+
+	// Resize images to fit the main content area.
+	// - Applies only to images uploaded via WordPress by targeting size-* classes.
+	// - Other images will be left alone. Use "size-auto" class to apply to other images.
+	&.size-auto,
+	&.size-full,
+	&.size-large,
+	&.size-medium,
+	.attachment &,
+	.widget-area & {
+		max-width: 100%; // When images are too wide for containing element, force them to fit.
+		height: auto; // Override height to match resized width for correct aspect ratio.
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"highlight-one": {
+		"image": "http://lorempixel.com/800/600/business",
+		"title": "Motorcyclist killed near Lake Mathews is identified",
+		"excerpt": "Voting rights groups, elections officials mobilize to fight any voter intimidation.",
+		"classes": "feature-medium",
+		"headerTag": "h3"
+	},
+	"styleguide": {
+		"image": "http://lorempixel.com/800/600/business",
+		"title": "Motorcyclist killed near Lake Mathews is identified",
+		"excerpt": "Voting rights groups, elections officials mobilize to fight any voter intimidation.",
+		"classes": "feature-medium",
+		"headerTag": "h3",
+		"wrappers": [
+			"landing-four-up",
+			"section-highlight"
+		]
+	}
+}

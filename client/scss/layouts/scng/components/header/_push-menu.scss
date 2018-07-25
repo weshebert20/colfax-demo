@@ -1,0 +1,29 @@
+// Push Menu
+//
+// styles for push-out menu
+//
+// markup: push-menu.hbs
+//
+// Styleguide header.push-menu
+
+.pushnav {
+
+	li > a {
+		@include font(18, 18, $meta, 700);
+	}
+
+	.menu-item-has-children:not(.nav-alt-links) {
+		height: em-calc(52);
+
+		> a {
+			height: em-calc(52, false, 18);
+		}
+
+		> ul {
+
+			a {
+				@include font(16, 16, $meta, 600);
+			}
+		}
+	}
+}

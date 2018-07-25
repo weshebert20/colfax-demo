@@ -1,0 +1,122 @@
+// Article header
+//
+// The header area at the top of the article.
+//
+// styleguide - modifier for use in styleguide
+//
+// markup: article-header.hbs
+//
+// data: article-header.json
+//
+// Styleguide article.header
+
+.article-header {
+	$header-height: calc(100% - #{em-calc(36)});
+	border-bottom: 3px solid transparent;
+	display: flex;
+	flex-wrap: wrap;
+	float: none;
+	justify-content: space-between;
+	margin: em-calc(32 0 -36);
+	padding: 0;
+	position: relative;
+
+	.disqus-comment-count {
+		@include ai-breakpoint(false, s) {
+			float: right;
+		}
+
+		@include ai-breakpoint(s) {
+			order: 1;
+		}
+
+		> a {
+			align-items: center;
+			display: flex;
+			height: $header-height;
+			justify-content: center;
+			margin-left: em-calc(16);
+			padding: em-calc(0 16);
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: em-calc(70);
+
+			@include ai-breakpoint(s) {
+				padding: 0;
+				width: em-calc(120);
+			}
+
+			&::before {
+				@extend %icon;
+				color: $primary;
+				content: "\f075";
+				font-size: em-calc(48);
+
+				@include ai-breakpoint(s) {
+					font-size: em-calc(60, true);
+				}
+			}
+
+			> span {
+				@extend %center;
+				@include font(15, 15, $meta, 700);
+				color: $gray-max;
+
+				@include ai-breakpoint(s) {
+					font-size: em-calc(18, true);
+				}
+
+			}
+		}
+	}
+}
+
+.header-title-area {
+	@include vertical-rhythm(0.5);
+	position: relative;
+	z-index: 1;
+
+	h1 {
+		font-size: em-calc(31);
+		line-height: 1.1;
+		font-weight: 700;
+		letter-spacing: -0.03em;
+
+		@include ai-breakpoint(s) {
+			font-size: em-calc(32, true);
+			line-height: 1.15;
+		}
+
+		@include ai-breakpoint(l) {
+			font-size: em-calc(36, true);
+		}
+	}
+
+	h2 {
+		font-size: em-calc(23);
+		line-height: 1.3;
+		font-weight: 500;
+		color: $gray-100;
+		letter-spacing: -0.023em;
+
+		@include ai-breakpoint(false, s) {
+			@include font(20, 25, $meta, 500);
+			letter-spacing: -0.01em;
+		}
+	}
+}
+
+.headline-area {
+	display: inline-block;
+	margin: 0;
+	width: 100%;
+
+	@include ai-breakpoint(false, s) {
+		display: block;
+	}
+}
+
+.breadcrumbs {
+	padding-top: em-calc(16);
+}

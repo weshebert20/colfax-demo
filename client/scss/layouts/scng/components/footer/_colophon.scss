@@ -1,0 +1,66 @@
+// Footer colophon
+//
+// The last part of the footer
+//
+// markup: colophon.html
+//
+// Styleguide footer.colophon
+
+.colophon {
+	@extend %container;
+	text-align: left;
+	width: 100%;
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		margin: 0 auto;
+		padding: em-calc(20 10);
+		width: 100%;
+	}
+
+	li {
+		margin-right: em-calc(16);
+
+		&:last-child {
+			margin: 0;
+		}
+
+		@include ai-breakpoint(false, m) {
+			margin: 0;
+			width: 100%;
+		}
+	}
+
+	a {
+		color: $gray-300;
+	}
+
+	// Add the logo to footer links only on desktop using a breakpoint
+	.scng-logo a {
+		@include ai-breakpoint(m) {
+			background-image: url('../../images/socal-logo-sm.png');
+			background-size: 124px 40px;
+			display: block;
+			width: 124px;
+			height: 40px;
+			overflow: hidden;
+			margin: 0 auto;
+			text-indent: -9999px;
+		}
+	}
+
+	.dfm-logo a {
+		@include ai-breakpoint(m) {
+			background-image: url('../../images/dfm-logo-sm.png');
+			background-size: 143px 40px;
+			display: block;
+			width: 143px;
+			height: 40px;
+			overflow: hidden;
+			margin: 0 auto;
+			text-indent: -9999px;
+		}
+	}
+}

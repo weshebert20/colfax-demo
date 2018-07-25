@@ -1,0 +1,124 @@
+// stylelint-disable declaration-no-important
+// Large Feature
+//
+// Large featured articles
+//
+// styleguide - modifier for use with styleguide
+//
+// markup: archive.hbs
+//
+// data: feature-large.json
+//
+// Styleguide article-archive.feature-large
+
+.feature-large {
+	@extend %slideshow-video-alt;
+
+	.feature-primary &,
+	.feature-section & {
+		border-bottom: 1px solid $gray-500;
+		padding-bottom: spacing();
+		text-align: center;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		@include ai-breakpoint(s, m) {
+			flex-direction: row;
+		}
+
+		@include ai-breakpoint(xl) {
+			flex-direction: row;
+		}
+
+		> figure {
+			@include ai-span(4, s);
+			@include ai-span(9, xl);
+			display: none;
+			order: 1;
+
+			@include ai-breakpoint(s, m) {
+				display: block;
+			}
+
+			@include ai-breakpoint(xl) {
+				display: block;
+			}
+		}
+
+		.article-slideshow,
+		.feature-video-wrapper {
+			@include ai-span(4, s);
+			@include ai-span(4, xl);
+			display: block;
+			position: relative;
+			order: 1;
+			text-align: left;
+			width: 100%;
+
+			@include ai-breakpoint(xl) {
+				width: 50%;
+			}
+
+		}
+
+		.article-slideshow {
+			.icon-enlarge {
+				display: none;
+			}
+		}
+
+		@include ai-breakpoint(xl) {
+			.feature-video-wrapper {
+				@include ai-span(10, xl);
+				padding-left: spacing();
+			}
+		}
+
+		header {
+
+			.entry-title {
+				@include font(25, 29, $heading, 700);
+				letter-spacing: -0.03em;
+				margin-bottom: em-calc(12, false, 33);
+
+				@include ai-breakpoint(s) {
+					font-size: em-calc(29);
+					line-height: 1.13;
+				}
+			}
+		}
+
+		> .article-info {
+			@include ai-span(4, s);
+			@include ai-span(7, xl);
+
+			figure {
+
+				@include ai-breakpoint(s, m) {
+					display: none;
+				}
+
+				@include ai-breakpoint(xl) {
+					display: none;
+				}
+			}
+		}
+
+		.excerpt {
+			@include font(15, 19, $body, 400);
+			margin-bottom: spacing();
+		}
+
+		.dfm-featured-top-flex-container {
+			width: 100%;
+		}
+	}
+
+	.ndn_embed,
+	.inform-embed,
+	.inform-video {
+		display: none !important;
+	}
+
+}
+/* stylelint-enable */

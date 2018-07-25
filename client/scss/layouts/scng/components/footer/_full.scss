@@ -1,0 +1,14 @@
+// SCNG Full Footer
+//
+// Global element, on the bottom of every page.
+//
+// markup: full.html
+//
+// Styleguide footer.full
+
+.site-footer {
+	background-color: $gray-max;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0;
+}

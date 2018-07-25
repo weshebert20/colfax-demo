@@ -1,0 +1,8 @@
+// SCNG Measured Vibrant: Grid variables
+
+// Used to determine at what point the header will
+// switch from desktop to mobile view
+$header-primary-bp: l !default; // 1040px
+
+// Grid
+$flexbox: true !default;

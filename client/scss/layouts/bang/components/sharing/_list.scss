@@ -1,0 +1,90 @@
+// Mercury News: Sharing List
+//
+// List of sharing links
+//
+// markup:
+// <ul class="sharing">
+// 	<li><a href="#" class="icon-facebook"><span class="label">Facebook</span></a></li>
+// 	<li><a href="#" class="icon-twitter"><span class="label">Twitter</span></a></li>
+// 	<li><a href="#" class="icon-instagram"><span class="label">Instagram</span></a></li>
+// 	<li><a href="#" class="icon-feed"><span class="label">RSS</span></a></li>
+// </ul>
+//
+// Styleguide sharing.list
+
+.sharing,
+.sharedaddy {
+	align-items: center;
+	display: flex;
+
+	ul {
+		align-items: center;
+		display: flex;
+	}
+
+	.footer-header & {
+		height: em-calc(34);
+		margin-left: auto;
+	}
+
+	.headline-list & {
+		z-index: 1;
+	}
+
+	.full-view &,
+	.headline-list & {
+
+		@include ai-breakpoint(false, s) {
+			float: none;
+			margin-top: em-calc(10);
+		}
+	}
+
+	.footer-header &,
+	.full-view &,
+	.headline-list & {
+
+		li {
+			margin: em-calc(0 5 0 0);
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+
+		[class^="icon"] {
+			@include icon-round(40, 20);
+			background-color: $primary;
+			border: 1px solid $gray-500;
+			position: static;
+			transition: background-color 100ms linear,
+				color 100ms linear;
+
+			&.icon-twitter {
+				background-color: $twitter;
+			}
+
+			&.icon-facebook {
+				background-color: $facebook;
+			}
+
+			&.icon-instagram {
+				background-color: $instagram;
+			}
+
+			&.icon-feed {
+				background-color: $feed;
+			}
+
+			&::before {
+				color: $gray-600;
+			}
+
+			&:hover {
+				&::before {
+					color: $gray-max;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,61 @@
+// Headline Only
+//
+// Articles displaying only the headline
+
+.headline-list {
+    list-style: none;
+
+    li {
+        margin-bottom: spacing();
+    }
+
+    .archive-view {
+    	width: 100%;
+    }
+
+    .feature-primary & {
+
+        &::before {
+            height: 100%;
+        }
+    }
+}
+
+.headline-only {
+	position: relative;
+
+	h5,
+	h6 {
+		display: inline-block;
+	}
+
+	> *:last-child {
+		margin-bottom: 1em;
+	}
+
+	&.video,
+	&.slideshow {
+
+		h5, h6 {
+			padding-left: px-to-em(30);
+		}
+	}
+
+	.breaking-bar & {
+		display: inline-block;
+		margin: em-calc(8 0 5);
+		padding-left: px-to-em(140);
+
+		h6 {
+			margin-right: px-to-em(10);
+		}
+
+		header {
+			margin: 0;
+		}
+
+		@include ai-breakpoint(false, s) {
+			padding-left: px-to-em(10);
+		}
+	}
+}

@@ -1,0 +1,32 @@
+// Denver Post: Author Feature
+//
+// Widget for featured authors on section landings
+//
+// markup:
+// <div class="author-feature">
+// 	<img src="http://lorempixel.com/85/85/people" alt="channel photo">
+// 	<h3>Thoughts from <strong>Charlie Walters</strong></h3>
+// </div>
+//
+// Styleguide modules.author-feature
+
+.author-feature {
+	background-color: $gray-max;
+	text-align: center;
+
+	img {
+		border-radius: 50%;
+		margin: 0 auto;
+		padding: em-calc(16 0);
+		position: static;
+	}
+
+	h3 {
+		@include font(16, 20, $widget, 400);
+		color: $gray-max;
+		float: none;
+		background-color: $secondary;
+		padding: em-calc(10 15);
+		width: auto;
+	}
+}

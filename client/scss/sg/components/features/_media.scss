@@ -1,0 +1,29 @@
+.feature-media {
+
+	.media-feature-primary {
+
+		.prototype-styleguide & {
+
+			h2 {
+
+				@include ai-breakpoint(false, m) {
+					@include font(24, 28, $heading, 600);
+				}
+			}
+		}
+	}
+
+	.media-feature-secondary {
+
+		.prototype-styleguide & {
+
+			h2 {
+				@include font(18, 22, $heading, 600);
+			}
+
+			@include ai-breakpoint(false, l) {
+				display: none;
+			}
+		}
+	}
+}

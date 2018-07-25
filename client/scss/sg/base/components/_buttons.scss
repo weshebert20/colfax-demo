@@ -1,0 +1,101 @@
+// Styleguide button styles
+
+.prototype-styleguide {
+
+	.load-more {
+		color: $gray-max;
+	}
+
+	.button {
+		display: inline-block;
+
+		&.default {
+			@include button();
+		}
+
+		&.social {
+			@include button($gray-300);
+		}
+
+		&.black {
+			@include button($gray-min);
+		}
+
+		&.read-more {
+			@include button($gray-max);
+			@extend %inverse-button;
+		}
+
+		&.vote {
+			@extend %rounded-button;
+		}
+	}
+}
+
+.styleguide-mercurynews {
+
+	.button {
+
+		&.default {
+			@extend %shadow-button;
+		}
+
+		&.alternate-button {
+			@extend %shadow-button;
+			background-color: $gray-100;
+
+			&:hover,
+		    &:focus {
+				background-color: $gray-200;
+			}
+		}
+	}
+}
+
+.styleguide-modernearthy,
+.styleguide-boldcoastal,
+.styleguide-measuredvibrant {
+
+	.button {
+
+		&.border {
+			@extend %border-button;
+		}
+
+		&.load-more {
+			color: $primary;
+		}
+	}
+}
+
+.styleguide-siliconvalley {
+
+	.button {
+
+		&.default {
+			@extend %border-button;
+		}
+
+		&.default-icon {
+			@extend %border-button;
+			display: flex;
+
+			&::after {
+				@extend %icon;
+				color: $gray-max;
+				content: "\e111";
+			}
+		}
+
+		&.black {
+			@extend %border-button;
+			background-color: $brown-100;
+
+			&:hover,
+		    &:focus {
+				background-color: $gray-min;
+				color: $gray-max;
+			}
+		}
+	}
+}

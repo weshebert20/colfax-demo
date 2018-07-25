@@ -1,0 +1,64 @@
+// Denver Post: Landing Layout
+
+.tag-name,
+.search-title {
+	@include font(32, 32, $meta, 600);
+	margin-top: spacing();
+}
+
+.author-header {
+	margin-top: spacing(2);
+}
+
+.search,
+.author.landing {
+	@extend %clearfix;
+	margin-bottom: spacing(3);
+}
+
+.feature-primary {
+	margin-top: spacing(2);
+}
+
+.primary-related {
+	list-style: none;
+
+	li {
+		margin-bottom: em-calc(10);
+		padding-left: em-calc(20);
+		position: relative;
+
+		&::before {
+			content: "•";
+			color: $gray-400;
+			height: em-calc(20, false, 20);
+			font-size: em-calc(20);
+			margin-left: em-calc(-20, false, 20);
+			position: absolute;
+		}
+
+		a {
+			@include font(17, 20, $heading, 700);
+			letter-spacing: -0.01em;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+
+		a,
+		time {
+			display: inline;
+		}
+	}
+
+	time {
+		@include font(12, 18, $meta);
+		color: $gray-400;
+		margin-left: em-calc(10, false, 12);
+	}
+
+	.section-highlight & {
+		display: none;
+	}
+}

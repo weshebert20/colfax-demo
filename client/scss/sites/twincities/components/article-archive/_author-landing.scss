@@ -1,0 +1,21 @@
+// Twin Cities: Author Article
+//
+// Articles appearing on author landing pages
+//
+// styleguide - modifier for use with styleguide
+//
+// markup: archive.hbs
+//
+// data: author.json
+//
+// Styleguide article-archive.author-landing
+
+.tag-content {
+	.dfm-featured-top-flex-container {
+		margin-bottom: spacing();
+	}
+}
+
+.simple-featured .dfm-featured-bottom-flex-container {
+	margin-bottom: spacing();
+}

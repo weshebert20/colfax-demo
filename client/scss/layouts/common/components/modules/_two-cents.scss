@@ -1,0 +1,197 @@
+// Two Cents
+//
+// Polling widget.
+
+// Note: this is named _poll.scss in Denver Post
+
+#two-cents {
+	overflow: hidden;
+
+	.PDS_Poll {
+		width: 100%;
+	}
+}
+
+// IDs used to override Polldaddy's style specificity
+#two-cents,
+#two-cents .PDS_Poll,
+#page .PDS_Poll {
+
+	.pds-box {
+		font-size: px-to-em(16, true);
+		width: auto;
+		border: none;
+	}
+
+	.pds-box-outer {
+		padding: 0;
+	}
+
+	.pds-box-top {
+
+		@include ai-breakpoint(false, xl) {
+			@include vertical-rhythm();
+		}
+	}
+
+	.pds-answer {
+
+		.pds-answer-label,
+		.pds-input-label,
+		.pds-feedback-label,
+		.pds-other-label {
+			font-size: px-to-em(16);
+		}
+
+		.pds-answer-input {
+			left: 0;
+			position: absolute;
+		}
+
+		.pds-input-label,
+		.pds-other-label {
+			display: inline-block;
+			width: auto;
+
+			span {
+				@include font(16, 24, $meta, 400);
+			}
+		}
+
+		.pds-answer-other {
+			display: block;
+			padding-left: px-to-em(25);
+			width: 100%;
+
+			.pds-textfield {
+				width: 100%;
+			}
+		}
+	}
+
+	.pds-feedback-group {
+
+		.pds-feedback-label {
+			@extend %clearfix;
+		}
+
+		.pds-answer-text,
+		.pds-feedback-result {
+			float: left;
+			width: 100%;
+		}
+
+		.pds-answer-text {
+			@include font(14, 18, $meta, 700);
+			text-transform: uppercase;
+		}
+
+		.pds-feedback-result {
+			display: inline-block;
+			line-height: 1.5;
+		}
+
+		.pds-feedback-per,
+		.pds-feedback-votes {
+			@include font(12, 18, $meta, 400);
+		}
+
+		.pds-answer-feedback {
+			border: none;
+			background: $gray-500;
+		}
+
+		.pds-answer-feedback-bar {
+			background: $primary-lighter;
+		}
+	}
+
+	.pds-total-votes {
+		@include font(18, 22, $heading, 700);
+
+		span {
+			color: $primary-lighter;
+		}
+	}
+
+	.pds-admin-bar {
+
+		a {
+			text-decoration: none;
+			font-weight: 400;
+
+			&:hover {
+				color: $primary-light;
+			}
+		}
+
+		span {
+			color: $text;
+		}
+	}
+
+	.pds-vote {
+		float: right;
+
+		.pds-links {
+			text-align: left;
+		}
+	}
+
+	.pds-vote-button {
+		@extend %rounded-button;
+		background-image: none;
+		display: inline-block;
+
+		span {
+			@include font(16, 16, $meta, 700);
+		}
+
+		&:hover {
+			border: none;
+		}
+	}
+
+	.poll-options,
+	.pds-answer,
+	.pds-vote {
+		border: none;
+		padding: 0;
+	}
+
+	.form-group,
+	.pds-answer-group {
+		position: relative;
+
+		@include ai-breakpoint(l) {
+			width: auto;
+			clear: left;
+		}
+	}
+
+	.question,
+	.pds-question {
+
+		h4,
+		.pds-question-top {
+
+			@include ai-breakpoint(false, m) {
+				clear: both;
+			}
+		}
+	}
+}
+
+#page .body-copy {
+
+	.PDS_superContainer {
+		display: none;
+	}
+
+	.PDS_Poll {
+		border-bottom: 1px solid $gray-500;
+		border-top: 1px solid $gray-500;
+		padding: spacing() 0;
+		width: 100%;
+	}
+}

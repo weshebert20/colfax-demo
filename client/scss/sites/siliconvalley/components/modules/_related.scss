@@ -1,0 +1,64 @@
+// Silicon Valley: Article Related
+//
+// Inline related post widget styles
+//
+// markup:
+// <aside class="related">
+//	<h2 class="widget-title">Related Articles</h2>
+// 	<ul>
+// 		<li><div data-huron-id="examples-headline" data-huron-modifier="one" data-huron-type="template"></div></li>
+// 		<li><div data-huron-id="examples-headline" data-huron-modifier="one" data-huron-type="template"></div></li>
+// 		<li><div data-huron-id="examples-headline" data-huron-modifier="one" data-huron-type="template"></div></li>
+// 		<li><div data-huron-id="examples-headline" data-huron-modifier="one" data-huron-type="template"></div></li>
+// 		<li><div data-huron-id="examples-headline" data-huron-modifier="one" data-huron-type="template"></div></li>
+// 	</ul>
+// </aside>
+//
+// Styleguide modules.related
+
+.related {
+	font-size: em-calc(16, true);
+	padding: em-calc(16 0);
+
+	ul {
+		list-style: none;
+	}
+
+	li {
+		border-bottom: 1px solid $gray-500;
+		margin-bottom: em-calc(10);
+		padding-bottom: em-calc(10);
+
+		&:last-child {
+			border: 0;
+			box-shadow: none;
+			padding: 0;
+		}
+
+		a {
+			border: 0;
+			font-weight: 700;
+
+			&:hover {
+				border: 0;
+			}
+		}
+	}
+
+	.widget-title {
+		@extend %section-highlight-border;
+		padding: em-calc(10 0 8);
+	}
+
+	.body-copy & {
+
+		h2 {
+			@include font(18, 24, $widget, 700);
+		}
+
+		h6 {
+			@include font(16, 20, $widget, 700);
+			margin: 0;
+		}
+	}
+}

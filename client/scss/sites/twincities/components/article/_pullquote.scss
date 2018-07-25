@@ -1,0 +1,52 @@
+// Twin Cities: Article Pullquote
+//
+// Inline pullquote
+//
+// markup:
+// <blockquote>
+// 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc. Maecenas eu semper augue. Aliquam erat volutpat. Cras varius ex sed metus finibus convallis. Maecenas bibendum velit a nisl eleifend porttitor
+// </blockquote>
+//
+// Styleguide article.pullquote
+
+blockquote {
+	color: $primary;
+	float: left;
+	padding-left: px-to-em(80, false, 28);
+
+	&::before {
+		content: "“";
+		float: left;
+		font-family: Georgia, Times, serif;
+		font-size: px-to-em(120, false, 28);
+		left: 0;
+		position: absolute;
+		top: px-to-em(-26, false, 120);
+	}
+
+ 	@include ai-breakpoint(xl) {
+		left: -( percentage( (2 * $column-width) / (8 * $column-width) ) );
+		width: percentage( (12 * $column-width) / (8 * $column-width));
+	}
+
+	@include ai-breakpoint(l, xl) {
+		left: -( percentage( (1 * $column-width) / (7 * $column-width) ) );
+		width: percentage( (9 * $column-width) / (7 * $column-width));
+	}
+
+	@include ai-breakpoint(m, l) {
+		left: -( percentage( (1 * $column-width) / (8 * $column-width) ) );
+		width: percentage( (10 * $column-width) / (8 * $column-width));
+	}
+
+	@include ai-breakpoint(false, m) {
+		padding-left: 0;
+		padding-top: px-to-em(60, false, 28);
+
+		&::before {
+			line-height: px-to-em(56, false, 120);
+			position: absolute;
+			top: px-to-em(34, false, 120);
+		}
+	}
+}

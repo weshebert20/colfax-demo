@@ -1,0 +1,105 @@
+// Print Styles
+//
+// Print styles for single article
+
+/* stylelint-disable */
+// Remove pseudo scroll
+@mixin no-pseudo-scroll {
+	height: auto;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+@page {
+  size: 8in 10.5in;
+}
+
+@media print {
+
+	#content {
+		display: block;
+		margin: 0;
+		max-width: none;
+		padding: 0.5in 1in;
+	}
+
+	.single-post {
+
+		#page {
+
+			.pushnav,
+			.header-banners,
+			.dfp-ad,
+			.lazy-ad-unit,
+			.breaking-bar,
+			.daily-deals-flyout,
+			.status-bar,
+			.site-header,
+			.header-placeholder,
+			.site-footer,
+			.article-share,
+			.article-sidebar,
+			.recirc,
+			#comments,
+			.related,
+			.article-slideshow,
+			.more-news,
+			#disqus_thread,
+			iframe {
+				display: none;
+			}
+
+			.full-view {
+
+				.header-features,
+				.article-body,
+				.article-footer,
+				.about-the-author {
+					margin: 0;
+					width: 100%;
+				}
+
+				.about-the-author {
+					background-color: transparent;
+					padding: 0;
+				}
+
+				.header-features,
+				.article-body,
+				.tags,
+				.meta {
+					margin-bottom: 0.25in;
+				}
+
+				.body-copy {
+					font-size: 14px;
+					position: relative;
+
+					> img,
+					.wp-caption {
+						margin-bottom: 0.125in;
+					}
+
+					p,
+					img,
+					figure,
+					ul,
+					ol {
+						break-inside: avoid;
+						display: block;
+						page-break-inside: avoid;
+						position: relative;
+					}
+				}
+			}
+
+			#content,
+			.site-footer,
+			.status-bar {
+				transform: none;
+			}
+		}
+	}
+}
+/* stylelint-enable */

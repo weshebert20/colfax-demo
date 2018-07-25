@@ -1,0 +1,53 @@
+// Mercury News: Simple Feature
+//
+// Featured area on a section or tag landing
+
+.takeover {
+
+	&.simple-featured {
+
+		.feature-large,
+		.feature-large-top {
+			@include ai-span(12, xl);
+			@include ai-span(9, l);
+			@include ai-span(6, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			margin-bottom: spacing();
+		}
+
+		.feature-bottom {
+			@include ai-span(12, xl);
+			@include ai-span(9, l);
+			@include ai-span(6, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			border-bottom: 1px solid $divider-alt;
+			margin-bottom: em-calc(32);
+			padding-bottom: em-calc(32);
+
+			@include ai-breakpoint(false, l) {
+				border-top: 0;
+			}
+		}
+
+		.feature-small {
+			@include ai-span(8, xl);
+			@include ai-span(6.5, l);
+			@include ai-span(10, m);
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			@include ai-breakpoint(false, s) {
+				@include archive-horizontal();
+			}
+		}
+
+		.dfp-ad {
+			@include ai-span(4, m);
+			@include ai-span(8, s);
+		}
+	}
+}

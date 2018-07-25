@@ -1,0 +1,24 @@
+{
+	"styleguide": {
+		"title": "Trump supporters plan to watch California polling places",
+		"image": "http://lorempixel.com/680/510/business",
+		"headerTag": "h5",
+		"sponsored": true,
+		"sponsoredBy": {
+			"name": "BASF",
+			"image": "http://placehold.it/60x20?text=Logo"
+		},
+		"classes": "feature-small sponsored-content"
+	},
+	"busy-feature": {
+		"classes": "sponsored-content feature-small",
+		"sponsored": true,
+		"sponsoredBy": {
+			"name": "BASF",
+			"image": "http://placehold.it/60x20?text=Logo"
+		},
+		"title": "Get those tickets; Powerball lottery jackpot grows to $217 million",
+		"image": "http://lorempixel.com/600/480/sports/1",
+		"headerTag": "h4"
+	}
+}

@@ -1,0 +1,51 @@
+// Author Events
+//
+// Events author is attending
+
+.author-events {
+	@extend %clearfix;
+	width: 100%;
+	float: left;
+	border: 1px solid $gray-400;
+
+	time {
+		@include font(13, 18, $meta, 400);
+		text-transform: uppercase;
+		color: $gray-200;
+	}
+
+	.widget-title {
+		@extend %blue-block;
+		@extend %center-hor;
+		text-transform: uppercase;
+	}
+
+	.event-content {
+		position: relative;
+		padding: em-calc(55 70 15);
+
+		@include ai-breakpoint(m, l) {
+			height: px-to-em(250);
+		}
+	}
+
+	.slick-list {
+
+		@include ai-breakpoint(m, l) {
+			margin-top: px-to-em(45);
+		}
+	}
+
+	.event-list {
+		@extend %clearfix;
+		text-align: center;
+	}
+
+	.event {
+		text-align: left;
+	}
+
+	.position {
+		@extend %ex-small;
+	}
+}

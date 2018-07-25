@@ -1,0 +1,17 @@
+// Mercury News: Fonts
+//
+// body - Body Copy: PT Serif
+// heading: Headings: PT Serif
+// widget - Widget Titles: PT Sans
+// meta - Meta: PT Sans
+//
+// markup:
+// <div  class="font {$modifiers}">{$modifiers}: The quick brown fox jumps over the lazy dog</div>
+//
+// Styleguide 1.2
+
+// Font families
+$body: 'PT Serif', Times, sans-serif;
+$heading: 'PT serif', Helvetica, sans-serif;
+$widget: 'PT Sans', Helvetica, sans-serif;
+$meta: 'PT Sans', Helvetica, sans-serif;

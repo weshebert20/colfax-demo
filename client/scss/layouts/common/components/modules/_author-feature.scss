@@ -1,0 +1,25 @@
+// Author Feature
+//
+// Widget for featured authors on section landings
+
+.author-feature {
+	@extend %clearfix;
+	position: relative;
+	min-height: px-to-em(87);
+	border: 1px solid $gray-500;
+	cursor: pointer;
+	transition: background-color 100ms linear;
+
+	img {
+		width: px-to-em(85);
+	}
+
+	h3 {
+		text-transform: uppercase;
+		transition: color 100ms linear;
+
+		a {
+			transition: color 100ms linear;
+		}
+	}
+}

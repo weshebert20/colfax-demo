@@ -1,0 +1,44 @@
+// Twin Cities: Article Related
+//
+// Inline related post widget styles
+//
+// markup:
+// <aside class="related">
+//	<h2 class="widget-title">Related Articles</h2>
+// 	<ul>
+// 		<li><a href="#"><strong>June 27:</strong> Tempora repudiandae, numquam repellat sapiente non eius, sunt soluta nostrum distinctio provident quis</a></li>
+// 		<li><a href="#"><strong>May 5:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+// 		<li><a href="#"><strong>Feb 20:</strong> Tempora repudiandae, numquam repellat sapiente non eius, sunt soluta nostrum distinctio provident quis</a></li>
+// 		<li><a href="#"><strong>Feb 17:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+// 		<li><a href="#"><strong>Feb 11:</strong> Tempora repudiandae, numquam repellat sapiente non eius, sunt soluta nostrum distinctio provident quis</a></li>
+// 	</ul>
+// </aside>
+//
+// Styleguide modules.related
+
+.related {
+
+	ul {
+		list-style: disc outside none;
+		padding-left: px-to-em(18);
+	}
+
+	.widget-title {
+		@extend %top-border;
+		float: left;
+		clear: both;
+		color: $primary-light;
+	}
+
+	.article-body & {
+
+		@include ai-breakpoint(false, m) {
+			margin: em-calc(0 0 48);
+			width: 100%;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}

@@ -1,0 +1,64 @@
+// Denver Post: Full Header - Article version
+//
+// Styles for site header on article pages (sticky only)
+//
+// markup:
+// <header class="site-header headroom--not-top headroom--pinned article">
+// 	<div class="nav-wrapper">
+// 		<div class="nav-primary">
+//			<div class="navigation-inner">
+// 				<a class="icon-hamburger"></a>
+// 				<h1 class="logo"><a href="/"></a></h1>
+//			</div>
+// 		</div>
+//		<h4>Looking for hope, Minnesotans begin using legalized medical marijuana</h4>
+// 		<div data-huron-id="sharing-article" data-huron-type="template"></div>
+// 	</div>
+// </header>
+//
+// sg-wrapper:
+// <div class="single-post">
+// 	 <sg-wrapper-content/>
+// </div>
+//
+// Styleguide header.full-article
+
+.site-header {
+
+	&.headroom--not-top {
+
+		.single-post &,
+		&.article.longform {
+
+			h4 {
+				@include font(21, 26, $heading, 700);
+				overflow: hidden;
+				max-height: em-calc(24, false, 21);
+				padding: em-calc(0 0 0 75, false, 21);
+				top: px-to-em(13, false, 24);
+				width: calc(100% - #{em-calc(275, false, 21)});
+
+				&::after {
+					background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  					content: '';
+  					height: 100%;
+  					position: absolute;
+  					right: 0;
+  					top: 0;
+  					width: em-calc(250, false, 21);
+				}
+			}
+
+			.nav-primary {
+
+				.logo {
+					top: 0;
+
+					@include ai-breakpoint(false, l) {
+						margin-left: em-calc(36);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,128 @@
+// Silicon Valley: Archive Article
+//
+// Artchive-style article generic styles
+//
+// markup:
+// <article class="archive-view">
+// 	<figure>
+// 		<a href="#">
+// 			<img src="http://lorempixel.com/640/360/cats" alt="article-image">
+// 		</a>
+// 	</figure>
+//	<div class="article-info">
+// 		<header>
+// 			<time datetime="2015-08-10 18:00">8/10/15 6:00 PM ET</time>
+// 			<h2><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+// 		</header>
+// 		<div class="excerpt">
+// 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloribus recusandae itaque iure quos dicta nostrum quibusdam, adipisci, sit officiis voluptates ipsam unde accusantium magnam odit voluptatem aliquid optio sunt!</p>
+// 		</div>
+//		<a href="#" class="read-more">Read More</a>
+//	</div>
+// </article>
+//
+// Styleguide article-archive.archive-article
+
+.archive-view {
+	display: flex;
+	font-size: em-calc(16, true);
+	justify-content: space-between;
+	position: relative;
+
+	header {
+		width: 100%;
+	}
+
+	.article-info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.article-comments {
+		align-items: center;
+		display: flex;
+		margin-top: spacing(0.5);
+		width: 100%;
+	}
+
+	.excerpt {
+		@include font(14, 17, $meta, 400);
+	}
+
+	.duration {
+		bottom: em-calc(5, false, 14);
+		font-size: em-calc(14);
+		right: em-calc(5, false, 14);
+	}
+
+	.slide-count {
+		bottom: em-calc(5);
+		font-size: em-calc(16);
+		right: em-calc(5);
+	}
+
+	.duration,
+	.slide-count {
+		background-color: $gray-min;
+		border-radius: em-calc(3);
+		color: $gray-max;
+		font-family: $meta;
+		padding: em-calc(2 5);
+		position: absolute;
+		text-transform: uppercase;
+
+		[class^="icon-"] {
+			background-color: transparent;
+			border: none;
+			display: inline-block;
+			height: auto;
+			position: static;
+			vertical-align: middle;
+			width: auto;
+		}
+	}
+
+	.icon-slideshow,
+	.icon-play-arrow {
+		height: em-calc(20);
+		width: em-calc(20);
+	}
+
+	.disqus-comment-count {
+		color: $gray-300;
+		align-items: center;
+		display: flex;
+		height: em-calc(14);
+		margin: em-calc(8 0 0 0);
+		justify-content: flex-start;
+
+		> a {
+			align-items: center;
+			display: flex;
+			height: 100%;
+			justify-content: center;
+			position: relative;
+
+			&::before {
+				@extend %icon;
+				color: $gray-300;
+				content: "\f075";
+			}
+
+			> span {
+				@include font(14, 21, $meta, 400);
+				color: $gray-300;
+				margin-left: em-calc(5, false, 14);
+			}
+		}
+	}
+
+	&:hover {
+
+		.icon-play-arrow,
+		.icon-slideshow {
+			background-color: $primary;
+			border-color: $link-hover;
+		}
+	}
+}

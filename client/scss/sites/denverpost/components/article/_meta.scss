@@ -1,0 +1,58 @@
+// Denver Post: Article Meta
+//
+// Article metadata, such a author name and date
+//
+// markup:
+// <div class="meta">
+// 	<a href="#" class="comments-link"><i class="icon-comment"></i>12 Comments</a>
+// 	<div class="byline">By <a class="author-name" href="#">Woody Paige</a> • <a href="mailto:wpaige@denverpost.com">wpaige@denverpost.com</a></div>
+// 	<div class="time"><time datetime="">Sept. 13, 2016 12:01 AM MST</time> •  UPDATED 5 days ago</div>
+// </div>
+//
+// Styleguide article.meta
+
+.meta {
+	border-top: 1px solid $gray-500;
+	border-bottom: 5px solid $gray-min;
+	margin: 0;
+	padding: em-calc(16 0);
+
+	.comments-link {
+		@extend %rounded-button-alt;
+
+		@include ai-breakpoint(false, m) {
+			float: left;
+			margin-bottom: px-to-em(16);
+		}
+
+		&:hover {
+			color: $primary;
+			border-color: $primary;
+		}
+
+		.icon-comment {
+			margin-right: em-calc(5);
+		}
+	}
+
+	.byline {
+
+		a,
+		.author-name {
+			color: $gray-min;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	.byline,
+	.time {
+
+		@include ai-breakpoint(false, m) {
+			display: inline-block;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,82 @@
+// Slow Layout
+//
+// Primary featured area on a slow news day
+
+.slow {
+	@extend %clearfix;
+	@include vertical-rhythm();
+	position: relative;
+
+	.feature-top,
+	.feature-bottom {
+		@include vertical-rhythm();
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.feature-top {
+
+		.feature-large {
+			@include ai-span(11, xl);
+			@include ai-span(9, l);
+			@include ai-span(6, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+
+		.feature-medium {
+			@include ai-span(5, xl, true);
+			@include ai-span(4, l, true);
+			@include ai-span(4, m, true);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+	}
+
+	.feature-bottom {
+		border-top: 1px solid $gray-400;
+		margin-top: spacing(2);
+		padding-top: spacing(2);
+
+		.feature-small {
+			@include ai-span(11, xl);
+			@include ai-span(9, l);
+			@include ai-span(6, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+
+		.headline-list {
+			@include ai-span(5, xl, true);
+			@include ai-span(4, l, true);
+			@include ai-span(4, m, true);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			float: right;
+		}
+	}
+
+	// the following style declaration keeps the Cube 1 ad in the right sidebar of the featured area,
+	// the direct child selector is required here to prevent breaking ads in a featured gallery 
+	// on the homepage slow layout
+	> .dfp-ad,
+	.lazy-ad-unit {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		float: right;
+
+		@include ai-breakpoint(false, l) {
+			float: left;
+			margin: 0 auto;
+			width: 100%;
+		}
+	}
+
+	.feature-bottom,
+	.feature-top {
+		@extend %clearfix;
+	}
+}

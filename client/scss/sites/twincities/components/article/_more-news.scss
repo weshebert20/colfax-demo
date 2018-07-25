@@ -1,0 +1,57 @@
+// Twin Cities: More News
+//
+// Large "More News" section at bottom of articles
+//
+// markup:
+// <div class="more-news">
+// 		<h2 class="widget-title">From Around the Web</h2>
+// 		<ul>
+// 			<li><div data-huron-id="article-archive-feature-medium" data-huron-modifier="more-news" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-feature-medium" data-huron-modifier="more-news" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-feature-medium" data-huron-modifier="more-news" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-feature-medium" data-huron-modifier="more-news" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-feature-medium" data-huron-modifier="more-news" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-feature-medium" data-huron-modifier="more-news" data-huron-type="template"></div></li>
+//		</ul>
+// </div>
+//
+// Styleguide article.more-news
+
+.more-news {
+	@extend %slideshow-video-large;
+	margin: 0 px-to-em(-10);
+
+	ul {
+		padding: 0 px-to-em(10);
+	}
+
+	.archive-view {
+		@include vertical-rhythm(0.5);
+	}
+
+	.widget-title {
+		background-color: $primary-light;
+		color: $gray-max;
+		margin-bottom: spacing();
+		padding: px-to-em(10);
+		text-transform: uppercase;
+		width: 100%;
+	}
+
+	header,
+	.excerpt {
+		@include ai-span(9, xl, true);
+		@include ai-span(7, l, true);
+		@include ai-span(5, m, true);
+		@include ai-span(4, s, true);
+		@include ai-span(4, xs);
+	}
+
+	figure {
+		@include ai-span(7, xl);
+		@include ai-span(6, l);
+		@include ai-span(5, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+	}
+}

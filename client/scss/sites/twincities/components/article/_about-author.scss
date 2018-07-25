@@ -1,0 +1,23 @@
+// Twin Cities: About the Author
+//
+// Info about the author in article footer
+//
+// markup:
+// <div class="about-the-author">
+// 	<img src="http://lorempixel.com/85/85/cats" alt="author avatar">
+// 	<p class="author-description"><span>Bob Shaw</span> dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc. Maecenas eu semper augue. Aliquam erat volutpat. Cras varius ex sed metus finibus convallis. Maecenas bibendum velit a nisl eleifend porttitor</p>
+// 	<a href="#" class="twitter-follow"><i class="icon-twitter"></i> Follow Bob <strong>@BShaw</strong></a>
+// </div>
+//
+// Styleguide article.about-the-author
+
+.about-the-author {
+
+	.author-description {
+
+		a:first-of-type {
+			color: $primary-light;
+			font-size: px-to-em(16, false, 14);
+		}
+	}
+}

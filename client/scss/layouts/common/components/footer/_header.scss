@@ -1,0 +1,26 @@
+// Footer Header
+//
+// Header bar for site footer
+
+.footer-header-wrapper {
+	@extend %container;
+	align-items: center;
+	display: flex;
+}
+
+.footer-links {
+	align-items: center;
+	display: flex;
+
+	li {
+		margin-right: em-calc(15);
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	a {
+		@include font(16, 17, $meta, 700);
+	}
+}

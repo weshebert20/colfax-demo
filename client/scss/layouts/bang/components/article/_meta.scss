@@ -1,0 +1,35 @@
+// Mercury News: Article Meta
+//
+// Article metadata, such a author name and date
+//
+// markup:
+// <div class="meta">
+// 	<div class="byline">By <a class="author-name" href="#">Curtis Pashelka</a> • <a href="mailto:wpaige@denverpost.com">cpashelka@bayareanewsgroup.com</a></div>
+// 	<div class="time"><time datetime="">Sept. 13, 2016 12:01 AM MST</time> •  UPDATED 3 hours ago</div>
+// </div>
+//
+// Styleguide article.meta
+
+.meta {
+	float: none;
+	margin: 0;
+	padding: em-calc(16 0);
+	position: relative;
+	z-index: 1;
+
+	.byline {
+
+		a,
+		.author-name {
+			color: $gray-min;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	.time {
+		@include font(12, 14, $meta, 400);
+	}
+}

@@ -1,0 +1,73 @@
+// Mercury News: About the Author
+//
+// Info about the author in article footer
+//
+// markup:
+// <div class="about-the-author">
+// 	<img src="http://lorempixel.com/85/85/cats" alt="author avatar">
+//	<div class="about-author-content">
+//		<h3 class="author vcard"><span class="fn"><a href="#">Curtis Pashelka</a></span></h3>
+// 		<p class="author-description"> dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc. Maecenas eu semper augue. Aliquam erat volutpat. Cras varius ex sed metus finibus convallis. Maecenas bibendum velit a nisl eleifend porttitor</p>
+// 		<a href="#" class="twitter-follow"><i class="icon-twitter"></i> Curtis <strong>@CurtisPashelka</strong></a>
+//	</div>
+// </div>
+//
+// Styleguide article.about-the-author
+
+.about-the-author {
+	background-color: $gray-max;
+	border: 1px solid #F0F0F0;
+	box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.15);
+	margin-bottom: spacing(2);
+	padding: 0;
+	margin-bottom: 3em;
+
+	.author-description,
+	h3 {
+		@include font(16, 20, $meta, 400);
+		display: inline;
+	}
+
+	img {
+		float: none;
+		max-height: em-calc(85);
+	}
+
+	.entry-author {
+		align-items: flex-start;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.author a {
+		color: $gray-min;
+		font-weight: 700;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	.about-author-content {
+		padding: em-calc(16 8);
+		width: 100%;
+	}
+
+	.author-description {
+		@include font(16, 22, $body, 400);
+	}
+
+	.twitter-follow {
+		@include font(14, 14, $meta, 400);
+		color: $twitter;
+		display: block;
+		padding-top: spacing();
+		position: static;
+		text-align: right;
+		width: 100%;
+
+		span {
+			font-weight: 700;
+		}
+	}
+}

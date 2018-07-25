@@ -1,0 +1,179 @@
+// Silicon Valley: Poll
+//
+// Polling widget
+//
+// markup:
+// <div id="two-cents">
+// 	<h2 class="widget-title">Poll</h2>
+// 	<div class="content">
+//		<div class="pds-question">
+// 			<div class="pds-question-top">Who should lead Amazon as CEO?</div>
+// 		</div>
+// 		<form class="two-cents-vote">
+//			<div class="pds-answer">
+//				<span id="pds-answer9463044">
+//					<span class="pds-answer-group">
+//						<span class="pds-answer-input">
+//							<input class="pds-radiobutton" type="radio" id="PDI_answer43178725" value="43178725" name="PDI_answer9463044">
+//						</span>
+//						<label for="PDI_answer43178725" class="pds-input-label">
+//							<span class="pds-answer-span">Trevor Siemian</span>
+//						</label>
+//						<span class="pds-clear"></span>
+//						<br>
+//					</span>
+//					<span class="pds-answer-group">
+//						<span class="pds-answer-input">
+//							<input class="pds-radiobutton" type="radio" id="PDI_answer43178724" value="43178724" name="PDI_answer9463044">
+//						</span>
+//						<label for="PDI_answer43178724" class="pds-input-label">
+//							<span class="pds-answer-span">Mark Sanchez</span>
+//						</label>
+//						<span class="pds-clear"></span>
+//						<br>
+//					</span>
+//				</span>
+//			</div>
+//			<div class="pds-vote">
+//				<div class="pds-votebutton-outer">
+// 					<input class="pds-vote-button" type="submit" value="vote" />
+//					<a href="#" class="pds-view-results">view results ></a>
+//				</div>
+//			</div>
+// 		</form>
+// 	</div>
+// </div>
+//
+// Styleguide modules.poll
+
+#two-cents {
+	background-color: $gray-max;
+	border: 1px solid #F0F0F0;
+	box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.15);
+	padding: em-calc(0 10 10);
+}
+
+#two-cents,
+.PDS_Poll {
+
+	> h2 {
+		@include font(16, 16, $meta, 400);
+		background-color: $primary-light;
+		color: $gray-max;
+		display: inline-block;
+		margin-bottom: spacing();
+		padding: em-calc(5 10);
+		position: relative;
+		left: em-calc(-10);
+	}
+}
+
+#two-cents,
+#two-cents .PDS_Poll,
+#page .PDS_Poll {
+
+	img {
+		height: auto;
+		margin-bottom: spacing();
+		width: 100%;
+	}
+
+	.content {
+		@include vertical-rhythm();
+	}
+
+	.pds-answer-group {
+		background-color: $color-bg-offset;
+		display: block;
+		padding: em-calc(5 10);
+		margin: em-calc(10 0);
+		width: 100%;
+
+		.pds-input-label,
+		.pds-other-label {
+
+			span {
+				font-size: em-calc(16);
+				font-weight: 700;
+			}
+		}
+
+		.pds-answer-input {
+			left: 0;
+			position: relative;
+		}
+	}
+
+	.pds-question {
+
+		a {
+			border-bottom: 1px dotted $secondary;
+			color: $secondary;
+			display: inline-block;
+
+			&:hover {
+				color: $primary;
+				border-bottom-color: $primary;
+			}
+		}
+
+		.pds-question-top {
+			@include font(21, 26, $meta, 700);
+		}
+	}
+
+	.pds-vote {
+		width: 100%;
+	}
+
+	.pds-votebutton-outer {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.pds-vote-button {
+		@extend %border-button;
+
+		&:hover {
+			background-color: $gray-min;
+		}
+	}
+
+	.pds-feedback-group {
+
+		.pds-answer-feedback-bar {
+			background: $primary;
+		}
+	}
+
+	.pds-total-votes {
+		@include font(16, 20, $meta, 700);
+		text-transform: uppercase;
+
+		span {
+			color: $primary;
+		}
+	}
+
+	.pds-view-results {
+		@include font(14, 14, $meta, 700);
+		color: $primary-light;
+		padding: 0;
+
+		&:hover {
+			color: $gray-min;
+		}
+	}
+}
+
+#page .body-copy {
+
+	.PDS_Poll {
+		background-color: $gray-max;
+		border: 1px solid #F0F0F0;
+		box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.15);
+		padding: em-calc(16);
+		position: relative;
+	}
+}

@@ -1,0 +1,23 @@
+.sg {
+
+	.sg-header {
+
+		.sg-title {
+
+			/* stylelint-disable */
+			h1 {
+				background-image: url('../../images/sv-logo.svg');
+				background-size: 295px 55px;
+				height: 55px;
+			    width: 295px;
+			}
+			/* stylelint-enable */
+		}
+	}
+}
+
+@import '../common-base/loader';
+@import '../themes/siliconvalley-theme/core/loader';
+@import '../themes/siliconvalley-theme/layout/loader';
+@import '../themes/siliconvalley-theme/utilities/loader';
+@import '../sg/loader';

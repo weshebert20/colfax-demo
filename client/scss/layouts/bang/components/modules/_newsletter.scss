@@ -1,0 +1,94 @@
+// Mercury News: Simple Sign Up
+//
+// Simple newsletter sign up prompt
+//
+// markup:
+// <div class="newsletter-simple">
+//	<div class="newsletter-item">
+//		<p class="prompt">Get the latest news delivered daily!</p>
+//		<a href="#">Subscribe</a>
+//	</div>
+// </div>
+//
+// sg-wrapper:
+// <div class="article-sidebar">
+//	<sg-wrapper-content/>
+// </div>
+//
+// Styleguide modules.newsletter
+
+.newsletter-simple {
+	margin-bottom: spacing();
+
+	a {
+		@extend %shadow-button;
+	}
+
+	.newsletter-item {
+		border-bottom: 1px solid $gray-max;
+		padding-bottom: em-calc(16);
+
+		@include ai-breakpoint(false, l) {
+			padding: em-calc(16 0);
+		}
+
+		@include ai-breakpoint(false, s) {
+			padding-top: 0;
+			text-align: center;
+		}
+	}
+
+	.article-sidebar & {
+		text-align: center;
+
+		.newsletter-item {
+			border: 0;
+			justify-content: center;
+			padding: 0;
+		}
+	}
+
+	.feature-section & {
+		margin-bottom: 0;
+
+		.newsletter-item {
+			align-items: center;
+			border-bottom: 0;
+			display: flex;
+
+			@include ai-breakpoint(false, l) {
+				justify-content: space-between;
+			}
+
+			@include ai-breakpoint(l) {
+				justify-content: center;
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+.prompt {
+	@include font(18, 16, $meta, 700, italic);
+	color: $gray-300;
+	margin-bottom: 0.7em;
+	position: relative;
+	width: 100%;
+
+	&:hover {
+		color: $primary;
+	}
+
+	.headline-list-footer & {
+		margin: em-calc(0 16 0 0);
+		width: auto;
+
+		@include ai-breakpoint(l) {
+			@include font(21, 24, $meta, 700, italic);
+		}
+	}
+
+	@include ai-breakpoint(false, s) {
+		text-align: center;
+	}
+}

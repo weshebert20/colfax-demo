@@ -1,0 +1,53 @@
+// Featured Image
+//
+// Article featured image styles
+
+figure {
+	font-size: px-to-em(16, true);
+
+	.photo-credit {
+		@extend %photo-credit;
+	}
+}
+
+.image-wrapper {
+	height: 0;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	img {
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.header-features {
+	.image-wrapper {
+		height: auto;
+		padding-bottom: 0;
+		overflow: visible;
+
+		img {
+			position: relative;
+		}
+	}
+
+	.article-slideshow {
+		.image-wrapper {
+			height: 0;
+			padding-bottom: 56.25%;
+			overflow: hidden;
+			min-height: 280px;
+
+			img {
+				position: absolute;
+				width: auto;
+				height: 100%;
+			}
+		}
+	}
+}

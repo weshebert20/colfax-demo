@@ -1,0 +1,15 @@
+// Los Angeles Daily News styleguide-only styles
+
+.styleguide-logo {
+	background-image: url('../../images/pe-logo.svg');
+	background-size: 165px 55px;
+	height: 55px;
+	width: 165px;
+}
+
+@import '../common-base/loader';
+@import '../themes/modernearthy-theme/core/loader';
+@import '../sites/dailynews/core/loader';
+@import '../themes/modernearthy-theme/layout/loader';
+@import '../themes/modernearthy-theme/utilities/loader';
+@import '../sg/loader';// Los Angeles Daily News styleguide-only styles

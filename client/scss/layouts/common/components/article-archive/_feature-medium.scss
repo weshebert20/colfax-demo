@@ -1,0 +1,23 @@
+// Medium Feature
+//
+// Medium featured articles
+
+.feature-medium {
+
+	figure {
+		margin-bottom: px-to-em(8);
+	}
+
+	.slow & {
+
+		figure {
+			@include ai-span(4, s);
+			@include ai-span(2, xs);
+		}
+
+		header {
+			@include ai-span(4, s, true);
+			@include ai-span(2, xs, true);
+		}
+	}
+}

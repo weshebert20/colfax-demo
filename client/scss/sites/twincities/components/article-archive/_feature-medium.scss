@@ -1,0 +1,15 @@
+// Twin Cities: Medium Feature
+//
+// Medium featured articles
+//
+// styleguide - modifier for use in styleguide
+//
+// markup: archive.hbs
+//
+// data: feature-medium.json
+//
+// Styleguide article-archive.feature-medium
+
+.feature-medium {
+	@extend %slideshow-video-small;
+}

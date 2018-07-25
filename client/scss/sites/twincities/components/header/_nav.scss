@@ -1,0 +1,171 @@
+// Twin Cities: Primary Navigation
+//
+// Styles for primary nav, logo and search
+//
+// markup:
+// <div class="nav-primary">
+// 	<a class="icon-hamburger"></a>
+// 	<h1 class="logo"><a href="/"></a></h1>
+//	<form class="search-form slide-search">
+//		<input type="text" placeholder="Search">
+//		<input type="submit" value="submit">
+//		<a href="#" class="icon-search"></a>
+//	</form>
+// 	<nav class="menu-main-navigation-container">
+// 		<ul class="menu">
+// 			<li class="menu-large"><a href="#">Home</a></li>
+// 			<li class="menu-large"><a href="#">News</a></li>
+// 			<li class="menu-large"><a href="#">Sports</a></li>
+// 			<li class="menu-large"><a href="#">Things to Do</a></li>
+// 			<li class="menu-large"><a href="#">Opinion</a></li>
+// 			<li class="menu-large"><a href="#">Obituaries</a></li>
+// 			<li class="menu-large"><a href="#">Classifieds</a></li>
+// 			<li class="editors-picks-nav">
+//				<a class="editors-picks" href="#">Editors Picks<span class="count">10</span></a>
+// 				<div class="hover-helper"></div>
+//			</li>
+//			<li class="trending-nav"><a href="#">Trending</a></li>
+// 			<li><a href="#" class="subscribe menu-small">Subscribe</a></li>
+// 		</ul>
+// 	</nav>
+// </div>
+//
+// Styleguide header.navigation
+
+.nav-primary {
+	@extend %container;
+
+	@include ai-breakpoint(m) {
+		height: em-calc(50);
+		text-align: left;
+	}
+
+	li {
+
+		@include ai-breakpoint($header-primary-bp) {
+
+			&:not(.menu-large) {
+				display: none;
+			}
+		}
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+
+			&.menu-large {
+				display: none;
+			}
+		}
+	}
+
+	.menu-main-navigation-container {
+
+		@include ai-breakpoint(false, m) {
+			background-color: $primary;
+			height: em-calc(42);
+		}
+
+		@include ai-breakpoint(l) {
+			margin-left: em-calc(-20);
+		}
+
+		@include ai-breakpoint(m, l) {
+			margin-left: em-calc(-10);
+		}
+
+		@include ai-breakpoint(m) {
+			clear: both;
+			float: left;
+			height: em-calc(50);
+			width: auto;
+		}
+
+		a[href$='allaccess'] {
+			@extend %mobile-subscriptions;
+		}
+	}
+
+	.menu {
+
+		> li {
+			@extend %nav-hover-gray;
+			margin-right: 0;
+
+			@include ai-breakpoint(false, m) {
+				height: em-calc(16);
+			}
+
+			&:hover, &.active {
+
+				> a {
+					color: $primary-light;
+				}
+			}
+
+			> a {
+				color: $gray-max;
+				padding: em-calc(20 0, false, 20);
+
+				@include ai-breakpoint(l) {
+					padding: em-calc(17 20);
+				}
+
+				@include ai-breakpoint(m, l) {
+					padding: em-calc(17 10);
+				}
+
+				@include ai-breakpoint(false, m) {
+					color: $gray-max;
+					font-size: em-calc(15);
+					padding: em-calc(15 10, false, 15);
+					line-height: 0.8;
+					margin-top: -13px;
+				}
+			}
+		}
+	}
+
+	.icon-search {
+
+		@include ai-breakpoint($header-primary-bp) {
+			color: $primary-lighter;
+			display: block;
+			position: absolute;
+			right: em-calc(10, false, 24);
+			top: em-calc(12, false, 24);
+		}
+	}
+}
+
+.headroom--top {
+
+	.nav-wrapper {
+
+		@include ai-breakpoint(m) {
+			background-color: $primary-darker;
+		}
+
+		.icon-search {
+
+			@include ai-breakpoint($header-primary-bp) {
+				right: em-calc(15, false, 24);
+			}
+		}
+	}
+}
+
+.headroom--not-top {
+
+	.nav-primary {
+
+		@include ai-breakpoint(m, l) {
+			text-align: center;
+		}
+	}
+
+	.icon-search {
+
+		@include ai-breakpoint($header-primary-bp) {
+			right: em-calc(20, false, 24);
+		}
+	}
+}

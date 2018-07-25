@@ -1,0 +1,67 @@
+// Denver Post: Article Single
+//
+// Styles for article layout
+
+.full-view {
+	padding: em-calc(0 16);
+
+	> header {
+		margin: em-calc(32 0 16);
+
+		h1 {
+			font-weight: 600;
+			line-height: 1.07;
+
+			@include ai-breakpoint(false, s) {
+				font-size: em-calc(33);
+				line-height: 1.15;
+			}
+		}
+
+		h2 {
+			@include font(24, 24, $meta, 500);
+			color: $gray-100;
+			letter-spacing: -0.017em;
+
+			@include ai-breakpoint(false, s) {
+				@include font(20, 25, $meta, 500);
+				letter-spacing: -0.01em;
+			}
+		}
+
+		.header-title-area {
+			@include vertical-rhythm(0.5);
+		}
+	}
+
+	.article-sidebar {
+		@include vertical-rhythm(2.5);
+
+		.widget-popular-stories {
+			@include ai-span(8, s);
+		}
+
+		.feature-video,
+		.sidebar-bottom {
+			@include ai-span(5, m, true);
+			@include ai-span(8, s);
+
+			@include ai-breakpoint(s, l) {
+				float: right;
+			}
+
+			@include ai-breakpoint(false, s) {
+				margin-left: em-calc(-26);
+				width: 100vw;
+			}
+		}
+	}
+
+	footer {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+}

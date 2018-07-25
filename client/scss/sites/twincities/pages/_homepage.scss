@@ -1,0 +1,62 @@
+// Twin Cities: Homepage
+//
+// Styles for homepage layout
+
+.homepage {
+
+	.hp-popular,
+	.hp-sections-a {
+		@extend %clearfix;
+	}
+
+	.hp-sections-a {
+		@include vertical-rhythm();
+
+		.section-highlight {
+			@include ai-span(6, xl);
+			@include ai-span(4.5, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.hp-center {
+			@include vertical-rhythm();
+			@include ai-span(4, xl);
+			@include ai-span(4, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+
+			@include ai-breakpoint(false, m) {
+				margin-bottom: 2em;
+			}
+		}
+
+		.events {
+			@include ai-span(6, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+		}
+
+		.lazy-ad-unit,
+		.dfp-ad {
+			@include ai-span(4, m, true);
+			@include ai-span(4, s, true);
+			@include ai-span(4, xs);
+		}
+	}
+
+	.dfm-sidebar-top-flex-container {
+		@include ai-span( 4, xl );
+		@include ai-span( 4, l );
+		@include ai-breakpoint(s) {
+			float: right;
+		}
+		margin-right: 0;
+	}
+}

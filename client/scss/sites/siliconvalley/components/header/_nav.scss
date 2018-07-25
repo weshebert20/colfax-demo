@@ -1,0 +1,330 @@
+// Silicon Valley: Primary Navigation
+//
+// Styles for primary nav, logo and search
+//
+// markup:
+// <div class="nav-primary">
+//	<div class="navigation-inner">
+// 		<a class="icon-hamburger"></a>
+// 		<h1 class="logo"><a href="/"></a></h1>
+// 		<div data-huron-id="header-status" data-huron-type="template"></div>
+//		<form class="search-form header-search">
+//			<input type="text" placeholder="Search">
+//			<input type="submit" value="submit">
+//		</form>
+//		<a class="icon-search"></a>
+// 		<nav class="menu-main-navigation-container">
+// 			<ul class="menu">
+// 				<li class="menu-item-has-children menu-large">
+//					<a href="#">News</a>
+//					<ul>
+//						<li><a href="#">Lorem Ipsum</a></li>
+//						<li><a href="#">Dolor Sit Amet</a></li>
+//					</ul>
+//				</li>
+// 				<li class="menu-item-has-children">
+//					<a href="#">Columnists</a>
+//					<ul>
+//						<li><a href="#">Lorem Ipsum</a></li>
+//						<li><a href="#">Dolor Sit Amet</a></li>
+//					</ul>
+//				</li>
+//				<li class="menu-item-has-children">
+//					<a href="#">Companies</a>
+//					<ul>
+//						<li><a href="#">Lorem Ipsum</a></li>
+//						<li><a href="#">Dolor Sit Amet</a></li>
+//					</ul>
+//				</li>
+//				<li class="menu-item-has-children menu-large">
+//					<a href="#">Special Reports</a>
+//					<ul>
+//						<li><a href="#">Lorem Ipsum</a></li>
+//						<li><a href="#">Dolor Sit Amet</a></li>
+//					</ul>
+//				</li>
+//				<li class="menu-large">
+//					<a href="#">SiliconBeat</a>
+//				</li>
+//				<li class="menu-large">
+//					<a href="#">MercuryNews.com</a>
+//				</li>
+// 			</ul>
+// 		</nav>
+//		<div class="dfp-ad dfp-Sponsorship_1">
+//			<img src="http://placehold.it/300x50?text=Fry%27s%20Sponsorship" />
+//		</div>
+//	</div>
+// </div>
+//
+// Styleguide header.nav
+
+.nav-primary {
+	max-width: none;
+
+	@include ai-breakpoint(l) {
+		border-bottom: 1px solid $gray-400;
+		border-top: 1px solid $gray-500;
+		padding: 0;
+		text-align: left;
+	}
+
+	@include ai-breakpoint(false, $header-primary-bp) {
+		overflow: visible;
+	}
+
+	.navigation-inner {
+		@extend %container;
+		align-items: center;
+		display: flex;
+		justify-content: flex-start;
+		position: relative;
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			flex-wrap: wrap;
+			padding: 0;
+		}
+	}
+
+	.menu-main-navigation-container {
+		height: em-calc(40);
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			border-top: 3px solid $gray-max;
+			margin: 0;
+			order: 3;
+			padding: em-calc(0 10);
+			width: 100%;
+		}
+	}
+
+	.menu {
+		padding: em-calc(10 0);
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			justify-content: flex-start;
+		}
+
+		> li {
+			margin: 0;
+
+			@include ai-breakpoint(false, $header-primary-bp) {
+				border: 0;
+
+				&.menu-large {
+					display: none;
+				}
+			}
+
+			> a {
+				@include font(15, 28, $meta, 600);
+				align-items: center;
+				display: flex;
+				text-transform: uppercase;
+
+				@include ai-breakpoint(false, xl) {
+					font-size: em-calc(14);
+				}
+
+				@include ai-breakpoint(l) {
+					padding: em-calc(0 15, false, 18);
+				}
+			}
+
+			&:hover,
+			&.active {
+
+				> a {
+					background-color: transparent;
+					color: $primary;
+				}
+			}
+
+			@include ai-breakpoint(l) {
+
+				&:first-child {
+
+					> a {
+						// See the padding on .nav-primary .menu > li > a
+						margin-left: em-calc(-15, false, 18);
+						padding-left: em-calc(15, false, 18);
+					}
+
+					.sub-menu {
+						margin-left: em-calc(-15, false, 19); // There is a weird one-pixel issue here
+						padding-left: em-calc(15, false, 18);
+					}
+				}
+			}
+		}
+
+		.menu-item-has-children {
+
+			ul {
+				background-color: $gray-100;
+
+				a {
+					border-bottom: 1px solid $gray-400;
+
+					&:hover,
+					&:focus {
+						border-bottom-color: $gray-max;
+					}
+				}
+			}
+
+			> a {
+
+				@include ai-breakpoint(false, $header-primary-bp) {
+
+					&::after {
+						display: none;
+					}
+				}
+
+				&::after {
+					content: '';
+					border-bottom: 7px solid transparent;
+					border-left: 5px solid transparent;
+					border-right: 5px solid transparent;
+					border-top: 7px solid $gray-400;
+					margin: em-calc(5 0 0 8, false, 20);
+				}
+			}
+
+			&.submenu-open {
+				background-color: $gray-200;
+
+				> a {
+					background-color: $gray-200;
+
+					&::after {
+						content: '';
+						border-top-color: transparent;
+						border-bottom-color: $gray-max;
+						margin: em-calc(-10 0 0 5, false, 20);
+					}
+				}
+			}
+		}
+	}
+
+	.icon-hamburger,
+	.icon-search {
+		position: static;
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			font-size: em-calc(22);
+		}
+	}
+
+	.icon-search {
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			margin: em-calc(0 10 0 auto);
+			order: 1;
+		}
+
+		@include ai-breakpoint($header-primary-bp) {
+			color: $gray-min;
+			display: block;
+			position: absolute;
+			right: em-calc(15, false, 24);
+			top: em-calc(10, false, 24);
+		}
+	}
+
+	.icon-hamburger {
+		margin: em-calc(0 10 0 0);
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			order: 2;
+		}
+	}
+
+	.headroom--not-top & {
+
+		@include ai-breakpoint($header-primary-bp) {
+			border: 0;
+		}
+
+		.menu-main-navigation-container {
+
+			@include ai-breakpoint($header-primary-bp) {
+				display: inline-block;
+				float: left;
+				height: em-calc(52);
+				padding: 0;
+				width: auto;
+			}
+		}
+
+		.menu {
+
+			@include ai-breakpoint($header-primary-bp) {
+				margin-left: 0;
+			}
+
+			> li {
+
+				> a {
+
+					@include ai-breakpoint($header-primary-bp) {
+						font-size: em-calc(12);
+						font-weight: 600;
+						padding: em-calc(0 7, false, 14);
+					}
+				}
+			}
+		}
+
+		.icon-search,
+		.icon-hamburger {
+			position: static;
+		}
+
+		.search-link {
+
+			@include ai-breakpoint($header-primary-bp) {
+				display: inline-block;
+			}
+		}
+
+		.icon-search {
+
+			@include ai-breakpoint($header-primary-bp) {
+				position: absolute;
+				top: em-calc(15, false, 24);
+			}
+		}
+	}
+}
+
+.headroom--not-top {
+
+	.nav-primary {
+
+		.menu {
+
+			> li > a {
+
+				@include ai-breakpoint(false, l) {
+					font-size: em-calc(13);
+					padding-left: em-calc(10, false, 13);
+					padding-right: em-calc(10, false, 13);
+				}
+			}
+		}
+	}
+
+	.nav-wrapper {
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			padding: em-calc(0 10);
+		}
+
+		@include ai-breakpoint($header-primary-bp) {
+			padding: 0;
+		}
+	}
+}

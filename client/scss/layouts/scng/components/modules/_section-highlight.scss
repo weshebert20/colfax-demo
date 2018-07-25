@@ -1,0 +1,281 @@
+// SCNG: Section Highlight
+//
+// Highlight for a section on the homepage
+//
+// markup: section-highlight.html
+//
+// Styleguide modules.section-highlight
+
+.section-highlight {
+
+	@include ai-breakpoint(false, m) {
+		margin-bottom: spacing(2);
+	}
+
+	> h2 {
+		@extend %scng-section-headline;
+	}
+
+	.section-highlight-content {
+		display: flex;
+	}
+
+	.section-feature {
+
+		@include ai-breakpoint(false, m) {
+			border-bottom: 1px solid $gray-500;
+		}
+
+		.entry-title {
+			font-size: em-calc(26, true);
+			letter-spacing: -0.035em;
+			margin-bottom: em-calc(2);
+			font-weight: 700;
+		}
+	}
+
+	.image-wrapper {
+		padding-bottom: 75%;
+	}
+
+	.headline-list {
+
+		header {
+			margin: 0;
+		}
+
+		li {
+			border-bottom: 1px solid $gray-500;
+			margin-bottom: spacing();
+			padding-bottom: spacing(0.75);
+
+			&:last-child {
+				border-bottom: 0;
+				margin: 0;
+				padding: 0;
+			}
+		}
+
+		.entry-title {
+			@include font(15, 19, $widget, 600);
+			letter-spacing: -0.01em;
+		}
+	}
+
+	.landing-four-up &,
+	.landing-three-up & {
+
+		.section-highlight-content {
+			flex-direction: column;
+		}
+
+		.feature-medium {
+			flex-direction: column;
+
+			.entry-title {
+				@include font(19, 24, $widget, 600);
+				margin-bottom: em-calc(12, false, 19);
+			}
+
+			.excerpt {
+				@include font(15, 19, $widget, 400);
+			}
+		}
+	}
+
+	.landing-four-up-hybrid & {
+
+		@include ai-breakpoint(m, xl) {
+			margin-bottom: spacing(2);
+
+			&:last-child {
+				border: 0;
+				margin: 0;
+				padding: 0;
+
+			}
+		}
+
+		.section-highlight-content {
+			justify-content: space-between;
+			flex-direction: column;
+
+			@include ai-breakpoint(m, l) {
+				display: block;
+			}
+
+			@include ai-breakpoint(m, xl) {
+				flex-direction: row;
+			}
+		}
+
+		.section-feature,
+		.feature-medium {
+
+			@include ai-breakpoint(m, l) {
+				display: inline;
+				float: none;
+
+				&::after {
+					display: none;
+				}
+			}
+
+			@include ai-breakpoint(xl) {
+				.entry-title {
+					font-size: em-calc(24, true);
+					letter-spacing: -0.035em;
+				}
+			}
+		}
+
+		.section-feature {
+			@include ai-span(16, xl);
+			@include ai-span(8, l);
+			@include ai-span(10, m);
+
+			@include ai-breakpoint(m) {
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+
+		.feature-medium {
+			flex-direction: column;
+
+			@include ai-breakpoint(m, xl) {
+				flex-direction: row;
+			}
+
+			figure {
+				@include ai-span(16, xl);
+				@include ai-span(6.5, l);
+				@include ai-span(5, m);
+
+				@include ai-breakpoint(m, l) {
+					float: left;
+					margin-right: em-calc(20);
+				}
+			}
+
+			.article-info {
+				@include ai-span(16, xl);
+				@include ai-span(6.5, l);
+				@include ai-span(5, m);
+				@include font(15, 19, $widget, 700);
+
+				@include ai-breakpoint(m, l) {
+					margin-bottom: spacing();
+				}
+			}
+		}
+
+		.headline-list {
+			@include ai-span(16, xl);
+			@include ai-span(5, l);
+			@include ai-span(5, m);
+
+			@include ai-breakpoint(xl) {
+				border-top: 1px solid $gray-500;
+				padding-top: spacing();
+			}
+
+			@include ai-breakpoint(m, l) {
+				border-top: 1px solid $gray-500;
+				float: right;
+				padding-top: spacing();
+			}
+		}
+	}
+
+	.landing-three-one & {
+
+		@include ai-breakpoint(m) {
+			margin-bottom: spacing(2);
+			padding-bottom: spacing(2);
+
+			&:last-child {
+				border: 0;
+				margin: 0;
+				padding: 0;
+
+			}
+		}
+
+		.section-highlight-content {
+			justify-content: space-between;
+
+			@include ai-breakpoint(m, l) {
+				display: block;
+			}
+
+			@include ai-breakpoint(false, m) {
+				flex-direction: column;
+			}
+		}
+
+		.section-feature,
+		.feature-medium {
+
+			@include ai-breakpoint(m, l) {
+				display: inline;
+				float: none;
+
+				&::after {
+					display: none;
+				}
+			}
+		}
+
+		.section-feature {
+			@include ai-span(11, xl);
+			@include ai-span(8, l);
+			@include ai-span(10, m);
+
+			@include ai-breakpoint(m) {
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+
+		.feature-medium {
+
+			@include ai-breakpoint(false, m) {
+				flex-direction: column;
+			}
+
+			figure {
+				@include ai-span(7, xl);
+				@include ai-span(6.5, l);
+				@include ai-span(5, m);
+
+				@include ai-breakpoint(m, l) {
+					float: left;
+					margin-right: em-calc(20);
+				}
+			}
+
+			.article-info {
+				@include ai-span(9, xl);
+				@include ai-span(6.5, l);
+				@include ai-span(5, m);
+
+				@include ai-breakpoint(m, l) {
+					margin-bottom: spacing();
+				}
+			}
+		}
+
+		.headline-list {
+			@include ai-span(5, xl);
+			@include ai-span(5, l);
+			@include ai-span(5, m);
+
+			@include ai-breakpoint(m, l) {
+				border-top: 1px solid $gray-500;
+				float: right;
+				padding-top: spacing();
+			}
+		}
+	}
+}

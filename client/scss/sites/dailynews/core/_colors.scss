@@ -1,0 +1,24 @@
+// Los Angeles Daily News: Colors
+//
+// text - Body Copy
+// primary - Brand Primary
+// secondary - Brand Secondary
+// tertiary - Brand Tertiary
+// gray-min - Minimum Gray
+// gray-200 - First Gray
+// gray-300 - Second Gray
+// gray-400 - Third Gray
+// gray-500 - Fourth Gray
+// gray-600 - Fifth Gray
+// gray-max - Maximum Gray
+//
+// markup: colors.hbs
+//
+// data: colors.json
+//
+// Styleguide core.colors
+
+// Only overriding this single color but including
+// the markup and data files because colors are hard-coded
+// in there.
+$primary: rgb(166, 26, 19); // #A61A13

@@ -1,0 +1,82 @@
+// Denver Post: Section Highlight
+//
+// Highlight for a section on the homepage
+//
+// markup:
+// <section class="section-highlight">
+// 	<h2><a href="#">Section <i class="icon-arrow-right"></i></a></h2>
+// 	<div class="section-feature">
+// 		<div data-huron-id="article-archive-feature-medium" data-huron-type="template"></div>
+// 	</div>
+// 	<ul class="headline-list">
+// 		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only-examples" data-huron-modifier="four" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 	</ul>
+//	<a href="#" class="view-all">View All <i class="icon-arrow-right"></i></a>
+// </section>
+//
+// Styleguide modules.section-highlight
+
+.section-highlight {
+	border-top: 5px solid $gray-min;
+	margin-bottom: spacing(2);
+
+	> h2 {
+		@extend %section-highlight-alt;
+	}
+
+	.section-feature {
+		@include shadow-border(bottom);
+	}
+
+	.view-all {
+		@include font(14, 20, $meta, 700);
+		color: $gray-400;
+		display: inline-block;
+		text-align: right;
+		text-transform: uppercase;
+		width: 100%;
+
+		&:hover {
+			color: $gray-min;
+		}
+
+		.icon-arrow-right {
+			display: inline-block;
+			font-size: em-calc(20, false, 14);
+			position: relative;
+			top: -1px;
+			vertical-align: middle;
+		}
+	}
+
+	.landing-three-one & {
+
+		.section-feature,
+		.feature-medium {
+			display: inline;
+			float: none;
+
+			&::after {
+				display: none;
+			}
+		}
+
+		.headline-list {
+			@include ai-span((16/3) * 2, xl, true);
+			@include ai-span(8, l, true);
+			@include ai-span(7, m, true);
+			@include ai-span(5, s, true);
+			@include ai-span(4, xs);
+			border-top: 1px solid $gray-500;
+			margin-top: spacing(2);
+			padding-top: spacing();
+
+			@include ai-breakpoint(s) {
+				float: right;
+			}
+		}
+	}
+}

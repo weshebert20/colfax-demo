@@ -1,0 +1,31 @@
+// Note: all variables should be unitless
+//
+// Variables:
+// $columns-max: Number of columns at largest breakpoint
+// $column-width: Used for calculation of static container sizes and breakpoints.
+// 		Because we are using calc() for column widths to make calculations easier, $column-width should include gutters.
+// $gutter-width: Size of gutters. This value is contained within $column-width for calc() purposes
+// $container: Max static container size and max breakpoint
+// $container-padding: Static padding of container. This value is incorporated into breakpoint sizes, if nonzero.
+// $base-unit: Base unit (generally corresponds to base font-size) for em and rem calculations
+
+$base-unit: 16 !default;
+$columns-max: 16 !default;
+$column-width: 80 !default;
+$gutter-width: 20 !default;
+$use-min: false !default;
+$container: $column-width * $columns-max !default; // 1280px
+$container-padding: 10 !default;
+$flexbox: false !default;
+
+// Used to determine at what point the header will
+// switch from desktop to mobile view
+$header-primary-bp: l !default; // 1040px
+
+$columns-map: (
+	xl: $columns-max, // 1280px
+	l: 13, // 1040px
+	m: 10, // 800px
+	s: 8, // 640px
+	xs: 4 // 320px
+);

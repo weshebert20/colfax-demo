@@ -1,0 +1,126 @@
+// Twin Cities: Featured Photos and Videos
+//
+// Styles for primary featured area on the homepage
+//
+// markup:
+// <section class="feature-media slideshow-landing">
+// 	<h2 class="widget-title"><a href="#">Photos & Videos <i class="icon-arrow-right"></i></a></h2>
+//  <a href="#" class="icon-arrow-left"></a>
+// 	<ul class="media-articles">
+// 		<li class="media-feature-primary"><div data-huron-id="article-archive-feature-large" data-huron-type="template"></div></li>
+// 		<li class="media-feature-secondary"><div data-huron-id="article-archive-feature-small" data-huron-type="template"></div></li>
+//		<li class="media-feature-secondary"><div data-huron-id="article-archive-feature-small" data-huron-type="template"></div></li>
+//		<li class="media-feature-secondary"><div data-huron-id="article-archive-feature-small" data-huron-type="template"></div></li>
+// 	</ul>
+// 	<a href="#" class="icon-arrow-right"></a>
+// </section>
+//
+// Styleguide features.media
+
+.feature-media {
+	background-color: $gray-min;
+	color: $gray-max;
+	padding: em-calc(24 10);
+
+	.media-content {
+		@extend %alt-arrows;
+		@extend %clearfix;
+	}
+
+	.widget-title {
+		text-transform: uppercase;
+		margin-bottom: spacing(1.5);
+
+		a {
+			color: $gray-max;
+
+			&:hover {
+				color: $primary-light;
+			}
+		}
+		
+		i {
+			display: inline-block;
+		}
+	}
+
+	.media-feature-primary {
+		@include ai-span(11, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		figure {
+			@include ai-span(10, xl);
+			@include ai-span(8, l);
+		}
+
+		header,
+		.excerpt {
+			@include ai-span(6, xl, last);
+			@include ai-span(5, l, last);
+		}
+	}
+
+	.media-feature-primary,
+	.media-feature-secondary {
+
+		figure {
+			@include ai-span(7, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+
+		header {
+
+			@include ai-breakpoint(false, s) {
+				margin-top: spacing();
+			}
+		}
+
+		header,
+		.excerpt {
+			@include ai-span(3, m, last);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+		}
+	}
+
+	.media-feature-secondary {
+		@include ai-span(5, xl, last);
+		@include ai-span(4, l, last);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(l) {
+			margin-bottom: spacing();
+		}
+
+		.icon-play-arrow {
+
+			@include ai-breakpoint(false, l) {
+	        	@include slideshow-video-icon(61, 40);
+        		bottom: px-to-em(10, false, 40);
+        		left: px-to-em(10, false, 40);
+	        }
+	    }
+
+	    .icon-slideshow {
+
+	    	@include ai-breakpoint(false, l) {
+	        	@include slideshow-video-icon(61, 30);
+        		bottom: px-to-em(10, false, 30);
+        		left: px-to-em(10, false, 30);
+        	}
+	    }
+
+		.image-wrapper {
+
+			@include ai-breakpoint(false, l) {
+				width: auto;
+			}
+		}
+	}
+}

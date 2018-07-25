@@ -1,0 +1,303 @@
+// Primary header
+//
+// Styles for primary nav, logo and search
+
+.nav-primary {
+	display: block;
+	position: relative;
+	text-align: center;
+	width: 100%;
+
+	@include ai-breakpoint(false, $header-primary-bp) {
+		overflow: hidden;
+	}
+
+	.menu-main-navigation-container {
+		font-family: $meta;
+		position: relative;
+		height: em-calc(60);
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			margin: 0 -10px;
+		}
+	}
+
+	.menu {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		padding: 0;
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			justify-content: center;
+		}
+
+		> li {
+			margin-right: em-calc(25);
+			font-size: em-calc(16, true);
+
+			@include ai-breakpoint(false, $header-primary-bp) {
+				border-right: 1px solid $gray-max;
+
+				&:last-child {
+					border: none;
+				}
+			}
+
+			> a {
+				@include font(16, 16, $meta, 700);
+				display: block;
+
+				@include ai-breakpoint(false, $header-primary-bp) {
+					border: none;
+					display: inline-block;
+					font-weight: 700;
+					padding-right: em-calc(10);
+				}
+			}
+		}
+
+		.menu-item-has-children {
+			position: relative;
+
+			> a {
+				align-items: center;
+				display: flex;
+
+				&::after {
+					@extend %icon;
+					align-items: center;
+					content: "\e10f";
+					display: flex;
+					justify-content: center;
+					margin-left: em-calc(3, false, 20);
+				}
+			}
+
+			ul {
+				background-color: $gray-min;
+				display: none;
+				flex-wrap: wrap;
+				flex-direction: column;
+				justify-content: flex-start;
+				padding: em-calc(16);
+				position: absolute;
+				top: 100%;
+				width: em-calc(450);
+				z-index: index($indices, pushnav);
+
+				li {
+					align-items: center;
+					display: flex;
+					max-height: em-calc(50);
+					width: calc(50% - #{em-calc(16)});
+				}
+
+				a {
+					border-bottom: 1px solid $gray-100;
+					color: $gray-max;
+					display: block;
+					padding: em-calc(16 0);
+					width: 100%;
+
+					&:hover,
+					&:focus {
+						border-bottom: 1px solid $gray-300;
+					}
+				}
+			}
+
+			&.submenu-open {
+				background-color: $gray-min;
+
+				> a {
+					color: $gray-max;
+
+					&::after {
+						color: $gray-max;
+						content: "\e209";
+					}
+				}
+
+				ul {
+					display: flex;
+				}
+
+				&.has-few-items {
+
+					ul {
+
+						li {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	li {
+		display: inline-block;
+
+		@include ai-breakpoint($header-primary-bp) {
+
+			&.editors-picks-nav {
+				display: inline-block;
+			}
+		}
+
+		&:hover {
+
+			> a {
+				color: $primary-light;
+			}
+		}
+
+		&.editors-picks-nav {
+			position: relative;
+			z-index: 1;
+
+			.hover-helper {
+				display: none;
+
+				@include ai-breakpoint(l) {
+					background-color: transparent;
+					height: em-calc(30);
+					left: em-calc(-90);
+					position: absolute;
+					top: 0;
+					width: em-calc(300);
+				}
+			}
+
+			&:hover,
+			&.active {
+
+				.hover-helper {
+
+					@include ai-breakpoint(l) {
+						display: block;
+					}
+				}
+			}
+		}
+
+		&.editors-picks-nav,
+		&.trending-nav {
+			@extend %nav-hover-gray;
+		}
+
+		&.todays-paper-nav {
+
+			@include ai-breakpoint(false, $header-primary-bp) {
+				display: none;
+			}
+		}
+	}
+
+	a {
+		color: $text;
+		text-decoration: none;
+	}
+
+	.icon-hamburger,
+	.icon-search {
+		display: none;
+		font-size: em-calc(32);
+		cursor: pointer;
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			display: block;
+			position: absolute;
+			top: em-calc(15, false, 32);
+		}
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	.icon-hamburger {
+		left: em-calc(10, false, 32);
+	}
+
+	.icon-search {
+		right: em-calc(10, false, 32);
+
+		@include ai-breakpoint($header-primary-bp) {
+			font-size: em-calc(24);
+			z-index: 2;
+		}
+	}
+}
+
+// Sticky styles
+.headroom--not-top {
+
+	.nav-primary {
+		padding-top: 0;
+
+		@include ai-breakpoint(false, m) {
+			margin: 0;
+		}
+
+		.menu-main-navigation-container {
+			display: inline-block;
+			margin-top: 0;
+			width: 100%;
+
+			@include ai-breakpoint(false, l) {
+				display: none;
+			}
+		}
+
+		.menu {
+			margin: 0;
+			justify-content: center;
+
+			> li {
+				margin: 0;
+
+				> a {
+					color: $text;
+
+					@include ai-breakpoint(false, xl) {
+						font-size: em-calc(16);
+						padding-left: em-calc(10, false, 17);
+						padding-right: em-calc(10, false, 17);
+					}
+				}
+			}
+		}
+
+		.icon-search,
+		.icon-hamburger {
+
+			@include ai-breakpoint(false, l) {
+				display: block;
+				position: absolute;
+			}
+		}
+
+		.icon-search {
+
+			@include ai-breakpoint(false, $header-primary-bp) {
+				top: em-calc(8, false, 32);
+				right: 0;
+			}
+		}
+
+		.icon-hamburger {
+
+			@include ai-breakpoint(false, l) {
+				top: em-calc(8, false, 32);
+				left: 0;
+			}
+		}
+	}
+
+	.nav-wrapper {
+		@extend %container;
+		position: relative;
+	}
+}

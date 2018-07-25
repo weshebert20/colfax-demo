@@ -1,0 +1,69 @@
+// Twin Cities: Section Highlight
+//
+// Highlight for a section on the homepage
+//
+// markup:
+// <section class="section-highlight">
+// 	<h2><a href="#">Section <i class="icon-arrow-right"></i></a></h2>
+// 	<div class="section-feature">
+// 		<div data-huron-id="article-archive-feature-large" data-huron-type="template"></div>
+// 	</div>
+// 	<ul class="headline-list">
+// 		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 	</ul>
+// </section>
+//
+// Styleguide modules.section-highlight
+
+.section-highlight {
+
+	> h2, > h5 {
+		@extend %section-highlight;
+	}
+
+	h5 {
+		letter-spacing: 0.035em;
+		margin-bottom: 1em;
+		padding-bottom: 0.3125em;
+		text-transform: uppercase;
+
+		.icon-arrow-right {
+			display: inline-block;
+			font-size: 1em;
+			line-height: 1.22222em;
+			vertical-align: top;
+		}
+	}
+
+	.icon-arrow-right {
+		display: inline-block;
+		font-size: 1em;
+		line-height: 1.22222em;
+		vertical-align: top;
+	}
+
+	.section-feature {
+		border-bottom: 1px solid $gray-400;
+	}
+
+	.landing-three-one & {
+
+		.headline-list {
+			@include ai-span(16/3, xl, true);
+			@include ai-span(5, l, true);
+		}
+
+		.section-feature {
+			@include ai-span((16/3) * 2, xl);
+			@include ai-span(8, l);
+
+			@include ai-breakpoint(l) {
+				border: none;
+				padding-bottom: 0;
+			}
+		}
+	}
+}

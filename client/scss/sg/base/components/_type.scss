@@ -1,0 +1,33 @@
+// Styleguide type styles
+
+.styleguide-twincities,
+.styleguide-denverpost {
+
+	.type-breadcrumb {
+		@extend %breadcrumb;
+	}
+
+	.type-highlights {
+		@extend %highlights;
+	}
+
+	.type-widget-title {
+		@extend .widget-title;
+	}
+
+	.type-highlights-text {
+		@extend %highlights-text;
+	}
+
+	.type-byline {
+		@extend %byline;
+	}
+
+	.type-date {
+		@extend %date;
+	}
+
+	.type-section {
+		@extend %section;
+	}
+}

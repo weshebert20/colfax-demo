@@ -1,0 +1,84 @@
+// Sponsored Content
+//
+// Sponsored articles
+//
+// styleguide - modifier for styleguide
+//
+// markup: archive.hbs
+//
+// data: sponsored.json
+//
+// Styleguide article-archive.sponsored
+
+.sponsored-content {
+
+	figure {
+
+		.sponsored-flag {
+			@include font(12, 12, $meta, 600);
+			background-color: $secondary;
+			bottom: 0;
+			color: $gray-min;
+			display: inline-block;
+			left: 0;
+			padding: em-calc(5);
+			position: absolute;
+			text-transform: uppercase;
+			top: auto;
+			width: auto;
+		}
+	}
+
+	.byline {
+		display: flex;
+		align-items: center;
+		margin-top: em-calc(10);
+
+		span {
+			@include font(12, 12, $meta);
+			color: $gray-300;
+			margin-right: spacing();
+		}
+
+		img {
+			display: inline-block;
+		}
+	}
+
+	.landing-item & {
+		margin-bottom: spacing(2);
+
+		figure {
+			display: none;
+		}
+
+		.sponsored-flag {
+			display: block;
+		}
+	}
+
+	.article-content & {
+		background-color: $gray-600;
+		padding: spacing();
+
+		figure {
+			margin-right: spacing();
+
+			.image-wrapper {
+				@extend %intrinsic-4-3;
+			}
+
+			.sponsored {
+				display: none;
+			}
+		}
+
+		.article-info {
+			justify-content: flex-start;
+		}
+
+		.sponsored-flag {
+			display: block;
+		}
+	}
+}

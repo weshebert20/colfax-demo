@@ -1,0 +1,62 @@
+// Denver Post: Breaking Bar
+//
+// Styles for breaking bar
+//
+// markup:
+// <section class="breaking-bar">
+//	<div class="breaking-bar-inner">
+// 		<h2 class="widget-title">Breaking News</h2>
+// 		<article class="archive-view headline-only">
+// 			<header>
+// 				<h6><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h6>
+// 				<time>5m ago</time>
+// 			</header>
+// 		</article>
+// 		<a href="#" class="icon-close"></a>
+//	</div>
+// </section>
+//
+// Styleguide header.breaking
+
+.breaking-bar {
+	background-color: $tertiary;
+	border: 0;
+	margin-bottom: 0;
+	padding: em-calc(15 0);
+	width: 100vw;
+
+	@include ai-breakpoint(false, xl) {
+		margin-left: em-calc(-10);
+	}
+
+	@include ai-breakpoint(xl) {
+		margin-left: calc((#{em-calc(16 * $column-width)} - 100vw) / 2);
+	}
+
+	h2 {
+		background-color: transparent;
+		font-size: em-calc(18);
+		padding: 0;
+		position: static;
+		text-transform: none;
+	}
+
+	.icon-close {
+		float: right;
+		position: static;
+
+		&::before {
+			color: $gray-max;
+		}
+
+		@include ai-breakpoint(false, m) {
+			position: absolute;
+			right: em-calc(15, false, 28);
+			top: em-calc(15, false, 28);
+		}
+	}
+
+	.breaking-bar-inner {
+		@extend %container;
+	}
+}

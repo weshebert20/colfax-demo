@@ -1,0 +1,19 @@
+// SCNG Measured Vibrant: Fonts
+//
+// body - Body Copy
+// heading - Headings
+// widget - Widget Titles
+// meta-data - Meta info
+//
+// markup: fonts.hbs
+//
+// data: fonts.json
+//
+// Styleguide core.fonts
+
+// URL https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Lora:400,400i,700,700i
+
+$body: 'Lato', Helvetica, sans-serif !default;
+$heading: 'Lora', Helvetica, sans-serif !default;
+$widget: 'Lora', Helvetica, sans-serif !default;
+$meta: 'Lato', Helvetica, sans-serif !default;

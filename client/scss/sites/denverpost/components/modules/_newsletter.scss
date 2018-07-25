@@ -1,0 +1,75 @@
+// Denver Post: Simple Sign Up
+//
+// Simple newsletter sign up prompt
+//
+// markup:
+// <div class="newsletter-simple">
+//	<div class="newsletter-item">
+// 		<a href="#" class="icon-email"></a>
+//		<a href="#" class="prompt"><strong>Sign up</strong> for newsletters and alerts</a>
+//	</div>
+//	<div class="newsletter-item">
+//		<a href="#" class="icon-exclaim"></a>
+//		<a href="#" class="prompt"><strong>Submit</strong> your news tips or photos</a>
+//	</div>
+// </div>
+//
+// Styleguide modules.newsletter
+
+.newsletter-simple {
+	@extend %white-bg;
+	padding-bottom: 0;
+
+	.newsletter-item {
+		align-items: center;
+		border-bottom: 1px solid $gray-500;
+		display: flex;
+		padding: em-calc(16 0);
+
+		@include ai-breakpoint(false, l) {
+			padding: em-calc(32 0);
+		}
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+
+	.prompt {
+		@include font(16, 16, $meta, 400);
+		display: inline-block;
+		position: relative;
+		text-transform: uppercase;
+		width: calc(100% - #{em-calc(60)});
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	[class^="icon-"] {
+		background-color: $primary;
+		border-radius: 50%;
+		color: $gray-max;
+		display: inline-block;
+		height: em-calc(42);
+		margin-right: em-calc(10);
+		text-align: center;
+		width: em-calc(42);
+
+		&::before {
+			font-size: em-calc(21);
+			line-height: 2;
+			vertical-align: middle;
+		}
+	}
+
+	.icon-exclaim {
+
+		&::before {
+			content: "!";
+			font-family: $meta;
+			font-weight: 700;
+		}
+	}
+}

@@ -1,0 +1,34 @@
+// Twin Cities: Author Feature
+//
+// Widget for featured authors on section landings
+//
+// markup:
+// <div class="author-feature">
+// 	<img src="http://lorempixel.com/85/85/cats" alt="channel photo">
+// 	<h3>Cat Sports Thoughts from Tomcat Powers</h3>
+// </div>
+//
+// Styleguide modules.author-feature
+
+.author-feature {
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	h3 {
+		@include font(20, 24, $widget, 400);
+		padding: em-calc(15 20 15 105, false, 20);
+		float: left;
+	}
+
+	&:hover {
+		background-color: $primary-light;
+
+		h3, h3 a {
+			color: $gray-max;
+		}
+	}
+}

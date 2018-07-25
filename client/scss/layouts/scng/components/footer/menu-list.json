@@ -1,0 +1,190 @@
+{
+	"default" : {
+		"menus" : [
+			{
+				"name" : "About Us",
+				"items" : [
+					{
+						"link" : "#",
+						"text" : "About Us"
+					},
+					{
+						"link" : "#",
+						"text" : "Policies"
+					},
+					{
+						"link" : "#",
+						"text" : "Contact Us"
+					},
+					{
+						"link" : "#",
+						"text" : "Work for us"
+					},
+					{
+						"link" : "#",
+						"text" : "About SCNG"
+					}
+				]
+			},
+			{
+				"name" : "Advertising sections",
+				"items" : [
+					{
+						"link": "#",
+						"text": "Autos"
+					},
+					{
+						"link" : "#",
+						"text" : "Classified"
+					},
+					{
+						"link" : "#",
+						"text" : "Directory"
+					},
+					{
+						"link" : "#",
+						"text" : "Jobs"
+					},
+					{
+						"link" : "#",
+						"text" : "Local Ads"
+					},
+					{
+						"link" : "#",
+						"text" : "Real Estate"
+					},
+					{
+						"link" : "#",
+						"text" : "Top Workplaces"
+					},
+					{
+						"link" : "#",
+						"text" : "Weekly Ads"
+					}
+				]
+			},
+			{
+				"name": "How to advertise with us",
+				"items": [
+					{
+						"link" : "#",
+						"text" : "Place an online ad"
+					},
+					{
+						"link" : "#",
+						"text" : "Place a print ad"
+					},
+					{
+						"link" : "#",
+						"text" : "Place a classified ad"
+					},
+					{
+						"link" : "#",
+						"text" : "Media Kit"
+					},
+					{
+						"link" : "#",
+						"text" : "Advertising contact info"
+					}
+				]
+			},
+			{
+				"name": "How to find us on other platforms",
+				"items": [
+					{
+						"link" : "#",
+						"text" : "Mobile apps"
+					},
+					{
+						"link" : "#",
+						"text" : "Email newsletter sign up"
+					},
+					{
+						"link" : "#",
+						"text" : "e-Edition"
+					},
+					{
+						"link" : "#",
+						"text" : "Breaking News Alerts"
+					},
+					{
+						"link" : "#",
+						"text" : "Social Media"
+					},
+					{
+						"link" : "#",
+						"text" : "Site map"
+					},
+					{
+						"link" : "#",
+						"text" : "RSS"
+					},
+					{
+						"link" : "#",
+						"text" : "Blogs"
+					}
+				]
+			},
+			{
+				"name": "Customer Service",
+				"items": [
+					{
+						"link" : "#",
+						"text" : "Subscriber Services"
+					},
+					{
+						"link" : "#",
+						"text" : "Subscribe"
+					}
+				]
+			},
+			{
+				"name": "Partners",
+				"items": [
+					{
+						"link" : "#",
+						"text" : "SB Sun"
+					},
+					{
+						"link" : "#",
+						"text" : "Redlands Daily Facts"
+					},
+					{
+						"link" : "#",
+						"text" : "The Cannifornian"
+					}
+				]
+			}
+		]
+	},
+	"styleguide": {
+		"wrapper": "site-footer",
+		"menus" : [
+			{
+				"name" : "About Us",
+				"items" : [
+					{
+						"link" : "#",
+						"text" : "About Us"
+					},
+					{
+						"link" : "#",
+						"text" : "Policies"
+					},
+					{
+						"link" : "#",
+						"text" : "Contact Us"
+					},
+					{
+						"link" : "#",
+						"text" : "Work for us"
+					},
+					{
+						"link" : "#",
+						"text" : "About SCNG"
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,70 @@
+// Twin Cities: Most Popular
+//
+// Widget for most popular articles
+//
+// .default - Default view
+// .images - Video article
+// .section - Different styles for section/tag landings
+//
+// markup:
+// <section class="popular widget-popular-stories {$modifiers}">
+//	<h2 class="widget-title"><span>Most Popular</span></h2>
+// 	<ol>
+// 		<li>
+// 			<img src="http://lorempixel.com/90/50" proto-skip>
+//			<a href="#">Tempora repudiandae, numquam repellat sapiente non eius, sunt soluta nostrum distinctio provident quis</a>
+//		</li>
+// 		<li>
+// 			<img src="http://lorempixel.com/90/50" proto-skip>
+//			<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+//		</li>
+// 		<li>
+//			<img src="http://lorempixel.com/90/50" proto-skip>
+//			<a href="#">Tempora repudiandae, numquam repellat sapiente non eius, sunt soluta nostrum distinctio provident quis</a>
+//		</li>
+// 		<li>
+//			<img src="http://lorempixel.com/90/50" proto-skip>
+//			<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+//		</li>
+// 		<li>
+//			<img src="http://lorempixel.com/90/50" proto-skip>
+//			<a href="#">Tempora repudiandae, numquam repellat sapiente non eius, sunt soluta nostrum distinctio provident quis</a>
+//		</li>
+// 		<li>
+//			<img src="http://lorempixel.com/90/50" proto-skip>
+//			<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+//		</li>
+// 	</ol>
+// </section>
+//
+// Styleguide modules.popular
+
+.popular {
+
+	li {
+		@include font(18, 26, $heading, 600);
+		padding-left: px-to-em(30);
+		padding-top: px-to-em(5);
+
+		&::before {
+			color: $primary-light;
+			content: counter(section) ".";
+			float: left;
+			font-size: px-to-em(30, false, 18);
+			font-weight: 700;
+			font-family: $widget;
+			left: 0;
+			line-height: px-to-em(18, false, 18);
+			position: absolute;
+			top: 0;
+			vertical-align: middle;
+		}
+
+		a {
+
+			span {
+				margin-left: 10px;
+			}
+		}
+	}
+}

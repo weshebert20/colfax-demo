@@ -1,0 +1,47 @@
+// Jetpack Sharing Email Styles
+//
+// Theme for the built-in Jetpack share-post-by-email form
+
+/* stylelint-disable declaration-no-important */
+#sharing_email {
+	background-color: $gray-max;
+	left: 50% !important;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50% !important;
+	width: px-to-em(400);
+	padding: px-to-em(24);
+	z-index: 100;
+	box-shadow: 0 px-to-em(1) spacing(2) rgba(0, 0, 0, 0.3);
+
+	@include ai-breakpoint(false, s) {
+		width: 100%;
+	}
+
+	h3 {
+		margin-bottom: spacing();
+	}
+
+	label,
+	input[type="text"],
+	input[type="email"] {
+		display: block;
+		width: 100%;
+	}
+
+	input[type="text"],
+	input[type="email"] {
+		margin-bottom: spacing(2);
+	}
+
+	label::after {
+		content: ":";
+	}
+
+	.sharing_cancel {
+		line-height: 2;
+		display: inline-block;
+		padding: px-to-em(5);
+	}
+}
+/* stylelint-enable */

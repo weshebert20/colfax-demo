@@ -1,0 +1,85 @@
+// SCNG Bold Coastal: Buttons
+//
+// Button styles
+//
+// load-more - article feed load more button
+// border - button with border
+//
+// markup: buttons.hbs
+//
+// data: buttons.json
+//
+// Styleguide utilities.buttons
+/* stylelint-disable declaration-no-important */
+
+.show-more-videos,
+.load-more {
+	@include font(16, 16, $meta, 700);
+	border-top: 1px solid $gray-500;
+	color: $primary;
+	cursor: pointer;
+	display: inline-block;
+	padding: em-calc(40 0);
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+
+	&:hover {
+		color: $gray-min;
+	}
+
+	&::before {
+		@extend %center-hor;
+		content: "";
+		background-color: $color-bg;
+		border-bottom: 1px solid $gray-500;
+		border-left: 1px solid $gray-500;
+		height: em-calc(35);
+		top: em-calc(-5);
+		transform: rotate(-45deg) translateY(-50%);
+		width: em-calc(35);
+	}
+}
+
+%border-button {
+	@include font(15, 15, $heading, 700);
+	letter-spacing: 0.07em;
+	background-color: $primary;
+	border-bottom: 2px solid darken($primary, 10%);
+	border-radius: 2px;
+	color: $gray-max;
+	letter-spacing: 0.05em;
+	padding: em-calc(13 17);
+	text-shadow: 0 0 1px darken($primary, 10%);
+	text-transform: uppercase;
+	transition: background-color 100ms linear,
+	color 100ms linear;
+
+	&:hover,
+	&:focus {
+		background-color: lighten($primary, 10%);
+		color: $gray-max;
+	}
+}
+
+@mixin sharing-button($color: $primary) {
+	@include icon-round(40, 20);
+	background-color: $color;
+	border-bottom: 2px solid darken($color, 10%);
+	color: $white;
+	display: flex;
+	position: static;
+	text-shadow: 0 0 1px darken($color, 10%);
+	transition: background-color 100ms linear,
+		color 100ms linear;
+
+	span::before {
+		color: $white!important; //needed to override JP styles
+		font-size: em-calc(15);
+	}
+
+	&:hover {
+		background-color: lighten($color, 10%);
+	}
+}

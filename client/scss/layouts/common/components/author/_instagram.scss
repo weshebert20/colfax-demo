@@ -1,0 +1,76 @@
+// Author Instagram
+//
+// Featured instagram image from the author
+
+.author-instagram {
+	@extend %clearfix;
+	padding: px-to-em(10);
+	background-color: $gray-min;
+
+	h2 {
+		width: 100%;
+		margin-bottom: px-to-em(16, false, 18);
+		text-transform: uppercase;
+
+		a,
+		.icon-instagram {
+			color: $gray-max;
+		}
+
+		&:hover {
+
+			a,
+			.icon-instagram {
+				color: $primary-light;
+			}
+		}
+	}
+
+	h2,
+	img {
+		float: left;
+	}
+
+	.icon-instagram {
+		position: relative;
+		top: px-to-em(-2, false, 28);
+		display: inline-block;
+		margin-right: px-to-em(10, false, 28);
+		font-size: px-to-em(28);
+		vertical-align: middle;
+	}
+
+	.responses {
+		width: px-to-em(40);
+		float: left;
+		margin-left: px-to-em(10);
+		padding-top: px-to-em(175);
+		text-align: center;
+
+		a,
+		span {
+			display: inline-block;
+			width: 100%;
+		}
+
+		a {
+			margin-bottom: px-to-em(5, false, 24);
+			font-size: px-to-em(24);
+			color: $gray-500;
+		}
+
+		span {
+			@include font(15, 18, $body, 400);
+			margin-bottom: px-to-em(5);
+			color: $gray-max;
+		}
+
+		&:hover {
+
+			a,
+			span {
+				color: $primary-light;
+			}
+		}
+	}
+}

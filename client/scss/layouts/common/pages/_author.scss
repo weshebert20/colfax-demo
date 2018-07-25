@@ -1,0 +1,110 @@
+// Author
+//
+// Styles for author landing pages
+
+.author.landing {
+	@include vertical-rhythm(2);
+
+	.staff-list {
+		@extend %small-meta;
+		float: left;
+		width: 100%;
+
+		&:hover {
+			color: $primary-light;
+		}
+
+		.icon-arrow-left {
+			position: relative;
+			top: px-to-em(1);
+		}
+	}
+
+	.author-header {
+		float: left;
+		width: 100%;
+
+		img {
+			height: auto;
+			max-width: px-to-em(85);
+		}
+	}
+
+	.info {
+		@include vertical-rhythm();
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		margin-bottom: px-to-em(48);
+	}
+
+	.header-sidebar {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(10, m, true);
+		@include ai-span(8, s, true);
+		@include ai-span(4, xs, true);
+	}
+
+	.twitter-feed {
+		@include ai-span(11, xl, true);
+		@include ai-span(8, l, true);
+		@include ai-span(10, m, true);
+		@include ai-span(8, s, true);
+		@include ai-span(4, xs, true);
+	}
+
+	.author-tweet {
+		@include ai-span(5, xl);
+		@include ai-span(5, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.author-featured-stories {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.author-instagram {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(4.5, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.author-events {
+		@include ai-span(16, xl);
+		@include ai-span(13, l);
+		@include ai-span(5.5, m, true);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.author-stories-feed {
+		float: left;
+		width: 100%;
+	}
+
+	.posts-navigation {
+		margin-top: spacing(2);
+	}
+
+	// prototype only
+	.prototype & {
+
+		> .box {
+
+			@include ai-breakpoint(m) {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,57 @@
+// Article Meta
+//
+// Article metadata, such a author name and date
+//
+// markup: meta.html
+//
+// Styleguide article.meta
+
+.meta {
+	border-bottom: 3px solid $gray-500;
+	padding-bottom: spacing(1);
+	margin-bottom: spacing(1);
+	float: none;
+
+	@include ai-breakpoint(false, s) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.comments-link {
+		@extend %border-button;
+		align-items: center;
+		display: flex;
+		font-size: em-calc(12, true);
+		margin-top: em-calc(5);
+
+		@include ai-breakpoint(false, s) {
+			justify-content: center;
+			order: 1;
+		}
+
+		@include ai-breakpoint(s) {
+			flex: 0 0 em-calc(200);
+			float: right;
+		}
+
+		.icon-comment {
+			margin-right: em-calc(7);
+		}
+	}
+
+	.byline {
+		font-size: em-calc(15);
+
+		.author-name {
+			color: $primary;
+
+			&:hover {
+				color: $primary-light;
+			}
+		}
+	}
+
+	.time {
+		font-size: em-calc(13, true);
+	}
+}

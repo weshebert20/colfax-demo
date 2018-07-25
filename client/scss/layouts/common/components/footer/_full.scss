@@ -1,0 +1,15 @@
+// Full Footer
+//
+// Styles for site footer as a whole
+
+.site-footer {
+	@extend %clearfix;
+	font-family: $meta;
+	margin-bottom: 1em;
+
+	.footer-menus {
+		@extend %container;
+		overflow: hidden;
+		transition: height 250ms ease-in-out;
+	}
+}

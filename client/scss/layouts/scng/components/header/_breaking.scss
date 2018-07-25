@@ -1,0 +1,117 @@
+// Breaking Bar
+//
+// Styles for breaking bar
+//
+// markup: breaking.html
+//
+// Styleguide header.breaking
+
+.breaking-bar {
+	align-items: center;
+	background-color: $secondary;
+	border: 0;
+	display: flex;
+	margin-bottom: spacing();
+	min-height: em-calc(35);
+	padding: em-calc(0 10);
+	width: 100%;
+
+	@include ai-breakpoint(false, m) {
+		display: inline;
+		padding: em-calc(10 10 5);
+	}
+
+	h2 {
+		background-color: transparent;
+		color: $gray-min;
+		font-size: em-calc(18);
+		flex: 0 0 em-calc(155, false, 18);
+		min-width: em-calc(160, false, 18);
+		padding: 0;
+		position: static;
+	}
+
+	.headline-only {
+		margin: 0;
+		padding: 0;
+
+		@include ai-breakpoint(false, m) {
+			display: inline;
+
+			.article-info,
+			.entry-title,
+			.entry-meta,
+			header {
+				display: inline;
+			}
+		}
+
+		@include ai-breakpoint(m) {
+			display: flex;
+			justify-content: flex-start;
+
+			.article-info,
+			.entry-title,
+			.entry-meta,
+			header {
+				align-items: center;
+				display: flex;
+				justify-content: flex-start;
+			}
+		}
+
+		.article-info {
+			flex-direction: row;
+			margin-top: em-calc(1);
+		}
+
+		.entry-title {
+			font-weight: 400;
+			margin-right: spacing();
+
+			a {
+				&:hover {
+					color: $gray-min;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		time {
+			color: $gray-200;
+			vertical-align: baseline;
+		}
+
+		&::after {
+			content: none;
+		}
+	}
+
+	.breaking-bar-inner {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		position: relative;
+		width: 100%;
+
+		@include ai-breakpoint(false, m) {
+			display: inline-block;
+			padding: em-calc(0 40 0 0);
+		}
+	}
+
+	.icon-close {
+		position: absolute;
+		right: 0;
+		top: 45%;
+		transform: translateY(-50%);
+
+		&::before {
+			color: $gray-min;
+		}
+	}
+
+	.prototype {
+		display: block;
+	}
+}

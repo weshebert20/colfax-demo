@@ -1,0 +1,122 @@
+// Denver Post: Headline Only
+//
+// markup:
+// <article class="archive-view headline-only">
+// 	<header>
+// 		<h6><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h6>
+// 	</header>
+// </article>
+//
+// Styleguide article-archive.headline-only
+
+.headline-list {
+
+	li {
+		@include shadow-border(bottom);
+	}
+
+	header {
+		display: inline-block;
+		width: 100%;
+	}
+
+	.section-highlight & {
+		margin-bottom: 0;
+	}
+
+	.feature-primary &,
+	.feature-section & {
+
+		@include ai-breakpoint(s) {
+			padding: em-calc(0 25);
+		}
+
+		li {
+
+			&:first-child {
+				@include font(18, 22, $meta, 600);
+				@include shadow-border(bottom);
+				border-top: 5px solid $text;
+				color: $primary;
+				padding: em-calc(15 0);
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+.headline-only {
+
+	time {
+		font-size: em-calc(14);
+		color: $gray-400;
+	}
+
+	h6,
+	.entry-meta {
+		display: inline;
+	}
+
+	.icon-play-arrow {
+		border: 1px solid $primary;
+		border-radius: 50%;
+	}
+
+	.icon-slideshow {
+		font-size: em-calc(20);
+	}
+
+	.icon-slideshow,
+	.icon-play-arrow {
+		color: $primary;
+		display: inline;
+		margin-left: 0;
+		position: relative;
+		text-align: center;
+		top: em-calc(2);
+		vertical-align: baseline;
+	}
+
+	&:hover {
+
+		.icon-slideshow,
+		.icon-play-arrow {
+			background-color: transparent;
+		}
+	}
+
+	&.video,
+	&.slideshow {
+
+		h5, h6 {
+			padding-left: px-to-em(5);
+		}
+	}
+
+	.related & {
+
+		header {
+			margin: 0;
+		}
+	}
+
+	.breaking-bar & {
+		padding-left: 0;
+
+		h6 {
+
+			a {
+				color: $gray-max;
+			}
+		}
+
+		h6 a,
+		time {
+			@include font(18, 18, $meta, 400);
+		}
+
+		time {
+			color: $gray-500;
+		}
+	}
+}

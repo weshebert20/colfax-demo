@@ -1,0 +1,58 @@
+// Denver Post: Article Related
+//
+// Inline related post widget styles
+//
+// markup:
+// <aside class="related">
+//	<h2 class="widget-title">Related Articles</h2>
+// 	<ul>
+// 		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 		<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 	</ul>
+// </aside>
+//
+// Styleguide modules.related
+
+.related {
+
+	ul {
+		list-style: none;
+	}
+
+	li {
+		@include shadow-border(bottom);
+		margin-bottom: em-calc(10);
+		padding-bottom: em-calc(10);
+
+		&:last-child {
+			border: 0;
+			padding: 0;
+		}
+
+		> span {
+			@include font(15, 22, $meta, 700);
+			color: $gray-400;
+			text-transform: uppercase;
+		}
+
+		a {
+			border: 0;
+			font-weight: 700;
+
+			&:hover {
+				border: 0;
+			}
+		}
+	}
+
+	.widget-title {
+		@extend %section-highlight;
+		border-bottom-color: $gray-500;
+		color: $primary;
+		font-size: em-calc(16);
+		font-weight: 600;
+	}
+}

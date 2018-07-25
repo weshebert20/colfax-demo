@@ -1,0 +1,184 @@
+// Denver Post: Article Sharing
+//
+// List of sharing links
+//
+// markup:
+// <div class="sharing article-share">
+// 	<div class="sharedaddy">
+//		<div class="sd-social-icon">
+// 			<div class="sd-content sharing-inner">
+// 				<ul>
+// 					<li class="share-facebook"><a href="#" class="share-facebook sd-button"><span></span></a></li>
+// 					<li class="share-twitter"><a href="#" class="share-twitter sd-button"><span></span></a></li>
+// 					<li class="share-email"><a href="#" class="share-email sd-button"><span></span></a></li>
+// 					<li class="share-sms"><a href="#" class="share-sms sd-button"><span></span></a></li>
+// 					<li class="share-print"><a href="#" class="share-print sd-button"><span></span></a></li>
+// 					<li>
+// 						<a href="#" class="share-more sd-button"><span></span></a>
+// 					</li>
+// 				</ul>
+// 				<div class="sharing-hidden">
+//					<div class="inner">
+// 						<ul>
+// 							<li class="share-pinterest"><a href="#" class="share-pinterest sd-button"><span></span></a></li>
+// 							<li class="share-tumblr"><a href="#" class="share-tumblr sd-button"><span></span></a></li>
+// 							<li class="share-linkedin"><a href="#" class="share-linkedin sd-button"><span></span></a></li>
+// 							<li class="share-stumbleupon"><a href="#" class="share-stumbleupon sd-buttons"><span></span></a></li>
+// 						</ul>
+//					</div>
+// 				</div>
+//			</div>
+//		</div>
+// 	</div>
+// 	<span class="share-alt"><a href="#" class="icon-share-alt"><span></span></a></span>
+// </div>
+//
+// Styleguide sharing.article
+
+.article-share {
+
+	.full-view & {
+		border-top: 1px solid $gray-500;
+		padding-top: em-calc(15);
+
+		> ul li,
+		.sd-content > ul li,
+		.sharing-inner > ul li {
+			@include icon-round(43, 21);
+		}
+
+		.sharing-hidden {
+			left: calc(100% - #{em-calc(10)});
+		}
+	}
+
+	.site-header & {
+
+		> ul li,
+		.sd-content > ul li,
+		.sharing-inner > ul li {
+			@include icon-round(38, 19);
+		}
+
+		.sharing-hidden {
+			right: em-calc(8);
+		}
+	}
+
+	.full-view &,
+	.site-header & {
+
+		.sd-social-icon .sd-content > ul li,
+		.share-alt {
+			background-color: $color-bg;
+			border: 1px solid $gray-500;
+			margin-right: px-to-em(5);
+			position: static;
+		}
+
+		.sd-social-icon .sd-content > ul li {
+
+			&::before {
+				color: $gray-100;
+			}
+
+			&:hover {
+				border-color: $gray-min;
+			}
+
+			&.share-sms {
+
+				span {
+					color: $sms;
+				}
+
+				&:hover {
+					border-color: $sms;
+				}
+			}
+
+			&.share-facebook {
+
+				span {
+					color: $facebook;
+				}
+
+				&:hover {
+					border-color: $facebook;
+				}
+			}
+
+			&.share-twitter {
+
+				span {
+					color: $twitter;
+				}
+
+				&:hover {
+					border-color: $twitter;
+				}
+			}
+
+			&.share-reddit {
+
+				span {
+					color: orangered;
+				}
+
+				&:hover {
+					border-color: orangered;
+				}
+			}
+		}
+
+		.sd-social-icon .sd-content ul li {
+
+			a.sd-button.share-more::before {
+				color: $gray-min;
+			}
+		}
+
+		.sd-content,
+		.sharing-inner,
+		.share-alt {
+
+			[class*='icon-'],
+			[class*='share-'] span {
+				color: $gray-100;
+				line-height: 2;
+			}
+		}
+
+		.sharing-hidden {
+
+			[class*='icon-'],
+			[class*='share-'] span {
+				color: $gray-min;
+
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	.headroom--not-top.site-header & {
+		right: em-calc(10);
+		top: em-calc(6);
+
+		.share-alt {
+
+			@include ai-breakpoint(false, s) {
+
+				&::after {
+					right: em-calc(-11);
+				}
+			}
+		}
+
+		.sharing-hidden {
+			height: em-calc(53);
+			top: em-calc(38);
+		}
+	}
+}

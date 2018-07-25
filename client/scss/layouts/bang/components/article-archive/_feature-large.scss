@@ -1,0 +1,148 @@
+// Mercury News: Large Feature
+//
+// Large featured articles
+//
+// markup:
+// <article class="archive-view feature-large">
+// 	<figure>
+// 		<a href="#"><img src="http://lorempixel.com/640/480/sports" alt="article-image"></a>
+// 	</figure>
+//  <div class="article-info">
+// 		<header>
+// 			<time datetime="2015-08-10 18:00" proto-skip>8/10/15 6:00 PM ET</time>
+// 			<h2><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+// 		</header>
+// 		<div class="excerpt">
+// 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloribus recusandae itaque iure quos dicta nostrum quibusdam, adipisci.</p>
+// 		</div>
+//		<ul class="primary-related">
+// 			<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+// 			<li><a href="#">Tempora repudiandae, numquam repellat sapiente non eius</a></li>
+//		</ul>
+// 	</div>
+// </article>
+//
+// sg-wrapper:
+// <div class="feature-primary">
+//	<sg-wrapper-content/>
+// </div>
+//
+// Styleguide article-archive.feature-large
+
+.feature-large,
+.feature-large-top {
+	@include slideshow-video-top();
+
+	h2 {
+		@include font(27, 30, $heading, 700);
+	}
+
+	figure {
+		margin: 0;
+	}
+
+	.primary-related {
+		margin-top: spacing();
+	}
+
+	.slow &,
+	.takeover & {
+		@extend %archive-box;
+
+		@include ai-breakpoint(false, s) {
+			@include archive-vertical();
+			width: 100%;
+		}
+	}
+
+	.feature-primary &,
+	.feature-section & {
+
+		@include ai-breakpoint(false, s) {
+			display: block;
+			width: 100%;
+		}
+
+		figure {
+			@include ai-span(8, xl);
+			@include ai-span(5.5, l);
+			@include ai-span(10/3, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			order: 1;
+
+			@include ai-breakpoint(false, s) {
+				float: right;
+				margin-left: em-calc(10);
+				width: em-calc(100);
+			}
+		}
+
+		.image-wrapper {
+			padding-bottom: 75%;
+		}
+
+		.article-info {
+			@include ai-span(8, xl);
+			@include ai-span(7.5, l);
+			@include ai-span((10/3) * 2, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+
+			@include ai-breakpoint(false, s) {
+				display: block;
+			}
+		}
+	}
+
+	.feature-media & {
+		flex-direction: column;
+
+		figure,
+		header,
+		.article-info {
+			width: 100%;
+		}
+
+		h2 {
+			@include font(17, 22, $heading, 700);
+
+			a {
+				color: $gray-max;
+			}
+		}
+	}
+
+	.landing-three-one & {
+		position: relative;
+
+		h4 {
+			@include font(33, 38, $heading, 700);
+		}
+
+		header,
+		.excerpt {
+			@include ai-span((16/3) * 2, xl, true);
+			@include ai-span(8, l, true);
+			@include ai-span(7, m, true);
+			@include ai-span(5, s, true);
+			@include ai-span(4, xs);
+
+			@include ai-breakpoint(s) {
+				float: right;
+			}
+		}
+
+		figure {
+			@include ai-span(16/3, xl);
+			@include ai-span(5, l);
+			@include ai-span(3, m);
+			@include ai-span(3, s);
+			@include ai-span(4, xs);
+
+			@include ai-breakpoint(s) {
+				position: absolute;
+			}
+		}
+	}
+}

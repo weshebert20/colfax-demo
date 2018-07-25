@@ -1,0 +1,25 @@
+// Styleguide-only styles
+.sg {
+
+	.sg-header {
+
+		.sg-title {
+
+			/* stylelint-disable */
+			h1 {
+				background-image: url('../../images/dp-logo.svg');
+				background-size: 300px 35px;
+				height: 35px;
+				width: 300px;
+			}
+			/* stylelint-enable */
+		}
+	}
+}
+
+// Core variables
+@import '../common-base/loader';
+@import '../themes/denverpost-theme/core/loader';
+@import '../themes/denverpost-theme/layout/loader';
+@import '../themes/denverpost-theme/utilities/loader';
+@import '../sg/loader';

@@ -1,0 +1,70 @@
+// Silicon Valley: Breaking Bar
+//
+// Styles for breaking bar
+//
+// markup:
+// <section class="breaking-bar">
+//	<div class="breaking-bar-inner">
+// 		<h2 class="widget-title">Breaking</h2>
+// 		<article class="archive-view headline-only">
+// 			<header>
+// 				<h6><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h6>
+// 			</header>
+// 		</article>
+// 		<a href="#" class="icon-close"></a>
+//	</div>
+// </section>
+//
+// Styleguide header.breaking
+
+.breaking-bar {
+	background-color: $tertiary;
+	border: 0;
+	border-bottom: 1px solid $gray-500;
+	margin-bottom: 0;
+	padding: 0;
+	width: calc(100vw + #{em-calc(10)});
+
+	@include ai-breakpoint(false, xl) {
+		margin-left: em-calc(-10);
+	}
+
+	@include ai-breakpoint(xl) {
+		margin-left: calc((100vw - #{em-calc(1260, true)}) / -2);
+	}
+
+	h2 {
+		background-color: transparent;
+		color: $gray-min;
+		font-size: em-calc(18);
+		margin-right: em-calc(10);
+		padding: em-calc(15);
+		position: static;
+
+		@include ai-breakpoint(false, m) {
+			border: 0;
+			font-size: em-calc(12);
+		}
+	}
+
+	.icon-close {
+		margin-left: auto;
+		position: static;
+
+		&::before {
+			color: $gray-min;
+		}
+
+		@include ai-breakpoint(false, m) {
+			position: absolute;
+			right: em-calc(15, false, 28);
+			top: em-calc(5, false, 28);
+		}
+	}
+
+	.breaking-bar-inner {
+		@extend %container;
+		display: flex;
+		padding-left: 0;
+	}
+}

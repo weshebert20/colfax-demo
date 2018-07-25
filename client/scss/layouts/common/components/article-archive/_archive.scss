@@ -1,0 +1,110 @@
+// Archive Article
+//
+// Artchive-style article generic styles
+
+.archive-view {
+	@extend %clearfix;
+	@include vertical-rhythm(0.5);
+
+	h2,
+	h3,
+	h4,
+	h5 {
+		margin-top: 0;
+	}
+
+	header {
+		margin-bottom: px-to-em(4);
+	}
+
+	time {
+		@include font(12, 18, $meta);
+		vertical-align: top;
+		color: $gray-300;
+		white-space: nowrap;
+	}
+
+	figure {
+		display: block;
+		position: relative;
+	}
+
+	.excerpt {
+		@include font(16, 22);
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	.icon-play-arrow,
+	.icon-slideshow {
+		z-index: 1;
+	}
+
+	&:hover {
+
+		.icon-play-arrow,
+		.icon-slideshow {
+			background-color: $link-hover;
+			border-color: $link-hover;
+		}
+
+		> .article-info {
+
+			> .entry-title {
+
+				a {
+					color: $link-hover;
+				}
+			}
+		}
+	}
+
+	// Articles in specific regions
+	.editors-picks-flyout & {
+		text-align: left;
+
+		header {
+
+			@include ai-breakpoint(false, l) {
+				width: 100%;
+				clear: both;
+				margin-top: px-to-em(10);
+			}
+
+			h5 {
+				@include ai-breakpoint(false, l) {
+					margin-top: 0;
+				}
+			}
+		}
+
+		time {
+			@include font(14, 20, $meta);
+			vertical-align: top;
+			color: $gray-300;
+		}
+	}
+
+	.breaking-bar & {
+		display: inline-block;
+
+		header {
+			margin: 0;
+		}
+
+		h2 {
+			display: inline-block;
+			float: left;
+			margin-right: px-to-em(10);
+			font-size: px-to-em(18);
+			line-height: 1.2;
+		}
+
+		time {
+			font-size: px-to-em(12);
+			line-height: px-to-em(25);
+			color: $gray-400;
+		}
+	}
+}

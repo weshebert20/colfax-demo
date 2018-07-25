@@ -1,0 +1,64 @@
+// Twin Cities: Full Header
+//
+// Styles for site header as a whole
+//
+// .default.headroom--top - static header styles
+// .headroom--not-top.headroom--pinned - sticky header styles
+//
+// markup:
+// <header class="site-header headroom--top">
+// 	<div class="nav-wrapper">
+//		<div data-huron-id="header-navigation" data-huron-type="template"></div>
+// 		<div data-huron-id="header-trending-nav" data-huron-type="template"></div>
+// 		<h4>Looking for hope, Minnesotans begin using legalized medical marijuana</h4>
+// 		<div data-huron-id="sharing-article" data-huron-type="template"></div>
+// 	</div>
+// 	<div path="../user">
+// 		<div data-huron-id="header-editors-picks" data-huron-type="template"></div>
+// 	</div>
+// </header>
+//
+// sg-wrapper:
+// <div class="header-wrapper {$modifiers}">
+// 	 <sg-wrapper-content/>
+// </div>
+//
+// Styleguide header.full
+
+.header-placeholder {
+	display: none;
+	height: 150px;
+
+	@include ai-breakpoint(false, $header-primary-bp) {
+		height: 141px;
+	}
+}
+
+.site-header {
+
+	&.daily-deals {
+		z-index: index($indices, header);
+	}
+
+	@include ai-breakpoint(false, m) {
+		height: em-calc(117);
+
+		&.headroom--not-top {
+			height: em-calc(50);
+		}
+	}
+
+	@include ai-breakpoint(false, m) {
+
+		&.search-open {
+			height: em-calc(177);
+		}
+
+		&.headroom--not-top {
+
+			&.search-open {
+				height: em-calc(110);
+			}
+		}
+	}
+}

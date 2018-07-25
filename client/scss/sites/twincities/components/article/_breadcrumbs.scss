@@ -1,0 +1,14 @@
+// Twin Cities: Article Breadcrumbs
+//
+// Article breadcrumb styles
+//
+// markup:
+// <div class="breadcrumbs">
+// 	<h6><a href="#">News</a></h6><span class="icon-arrow-right"></span><h6><a href="#">Business</a></h6>
+// </div>
+//
+// Styleguide article.breadcrumbs
+
+.breadcrumbs {
+	@extend %top-border;
+}

@@ -1,0 +1,53 @@
+.prototype-styleguide {
+
+	.section__modifier-content {
+
+		> .feature-large {
+			max-width: em-calc(960);
+		}
+
+		> .feature-medium {
+			max-width: em-calc(640);
+		}
+
+		> .feature-small {
+			max-width: em-calc(480);
+			width: 100%;
+		}
+
+		> .author-view,
+		> .feature-small,
+		> .styleguide-only {
+			justify-content: flex-start;
+
+			figure {
+				margin-right: em-calc(20);
+				width: em-calc(140);
+			}
+
+			.article-info {
+				width: calc(100% - #{em-calc(160)});
+			}
+		}
+	}
+}
+
+.styleguide-mercurynews,
+.styleguide-siliconvalley {
+
+	> .archive-view {
+		margin: 0 auto;
+		max-width: 640px;
+	}
+}
+
+.styleguide-mercurynews {
+
+	> .archive-view {
+
+		&:not(.tag-search-view):not(.author-view) {
+			@extend %archive-box;
+			@include archive-vertical();
+		}
+	}
+}

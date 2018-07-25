@@ -1,0 +1,37 @@
+// Article highlights
+//
+// Highlights section above article text
+//
+// markup:
+// <section class="highlights">
+// 	<h2 class="widget-title">Highlights</h2>
+// 	<ul>
+// 		<li><a href="#">Nam eu porttitor nisl. Cras consequat ultricies dignissim. Aliquam aliquam ex ac vulputate convallis. Sed quam libero, aliquet vitae aliquam in, aliquam non elit. Vestibulum convallis maximus interdum.</a></li>
+// 		<li><a href="#">Ut sed turpis ac ipsum mollis gravida. Nulla varius risus arcu, sit amet aliquet nunc iaculis ut. Mauris et pretium neque.</a></li>
+// 		<li><a href="#">Fusce molestie ipsum quis ornare pellentesque. Mauris diam odio, fringilla sed ultrices at, pellentesque at metus. Phasellus orci risus, mattis at sem a, ultricies efficitur enim.</a></li>
+// 	</ul>
+// </section>
+//
+// Styleguide article.highlights
+
+.highlights {
+	margin-bottom: spacing();
+	padding: em-calc(0 0 10);
+	border-top: none;
+
+	h2 {
+		color: $primary;
+		background-color: transparent;
+	}
+
+	li {
+		font-size: em-calc(14, true);
+		line-height: 1.4;
+	}
+
+	a {
+		text-decoration: none;
+		color: $gray-200;
+		font-family: $heading;
+	}
+}

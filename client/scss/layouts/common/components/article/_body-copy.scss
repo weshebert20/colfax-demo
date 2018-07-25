@@ -1,0 +1,193 @@
+// Body Copy
+//
+// Article body text
+
+.body-copy {
+	@extend %clearfix;
+
+	b,
+	strong {
+		font-weight: 700;
+	}
+
+	i,
+	em {
+		font-style: italic;
+	}
+
+	> ol, > ul {
+		position: relative;
+		left: px-to-em(24, false, 18);
+		padding: em-calc(10 5);
+
+		@include ai-breakpoint(false, m) {
+			width: calc(100% - 24px);
+		}
+	}
+
+	ul {
+		list-style: disc outside none;
+	}
+
+	ol {
+		list-style: decimal outside none;
+	}
+
+	figure {
+		@extend %clearfix;
+
+		> a {
+			display: block;
+		}
+	}
+
+	figcaption {
+		@extend %caption;
+		background-color: transparent;
+		border-bottom: 1px solid $gray-500;
+		float: left;
+		line-height: 1.4;
+		padding: em-calc(16 0);
+		text-align: left;
+		width: 100%;
+	}
+
+	.drop-cap,
+	.drop-cap p {
+
+		&::first-letter {
+			@include font(60, 30, $heading, 700);
+			display: inline-block;
+			margin: em-calc(15 3 0 0, false, 60);
+			float: left;
+		}
+	}
+
+	.wp-caption {
+		height: auto;
+		max-width: 100%;
+		padding: 0;
+		position: relative;
+
+		img, .wp-caption-text {
+			margin: 0;
+		}
+
+		> a {
+			border: 0;
+			text-decoration: none;
+		}
+
+		.byline {
+			@include font(12, 14, $meta, 400);
+			display: block;
+		}
+	}
+
+	.photo-credit {
+		@extend %photo-credit;
+		margin: 0;
+	}
+
+	.alignleft,
+	.alignright {
+
+		@include ai-breakpoint(false, s) {
+			display: block;
+			float: none;
+		}
+
+		&.size-article_inline_half,
+		&.size-article_inline_third {
+
+			@include ai-breakpoint(false, s) {
+				width: 100%;
+			}
+		}
+	}
+
+	.alignleft {
+
+		@include ai-breakpoint(s) {
+			float: left;
+			margin-right: px-to-em(20);
+		}
+	}
+
+	.alignright {
+
+		@include ai-breakpoint(s) {
+			float: right;
+			margin-left: px-to-em(20);
+		}
+	}
+
+	.size-article_inline_half {
+
+		@include ai-breakpoint(s) {
+			width: 50%;
+		}
+	}
+
+	.size-article_inline_third {
+
+		@include ai-breakpoint(s) {
+			width: 33%;
+		}
+	}
+
+	.size-article_fullbleed {
+		@include ai-span(24, xl);
+		@include ai-span(16.25, l);
+		@include ai-span(12.5, m);
+		max-width: none;
+		position: relative;
+
+		@include ai-breakpoint(xl) {
+			margin-left: percentage( (2 * $column-width) / (8 * $column-width) * -1 );
+		}
+
+		@include ai-breakpoint(l, xl) {
+			margin-left: percentage( (1 * $column-width) / (7 * $column-width) * -1 );
+		}
+
+		@include ai-breakpoint(m, l) {
+			margin-left: percentage( (1 * $column-width) / (8 * $column-width) * -1 );
+		}
+
+		@include ai-breakpoint(false, m) {
+			margin-left: px-to-em(-10);
+			width: 100vw;
+		}
+
+		img {
+			max-width: none;
+			width: 100%;
+		}
+
+		figcaption {
+
+			@include ai-breakpoint(false, m) {
+				padding: em-calc(0 10 16, false, 14);
+			}
+		}
+	}
+
+	.intrinsic-video,
+	.embed-youtube,
+	.embed-vimeo {
+		height: 0;
+		padding-bottom: 56.25%;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+
+		iframe {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+	}
+}

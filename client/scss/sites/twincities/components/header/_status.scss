@@ -1,0 +1,52 @@
+// Twin Cities: Status Bar
+//
+// Styles for status and log in bar located above primary header
+//
+// markup:
+// <div class="status-bar">
+// 	<div class="status-bar-wrapper">
+// 		<ul>
+// 			<li><a href="#" class="today">Today's Paper</a></li>
+// 			<li><a href="#" class="subscribe">Subscribe</a></li>
+// 			<li><a href="#" class="login">Newsletter</a></li>
+// 			<li><a href="#" class="daily-deals-nav">Daily Deals <span class="expand"></span></a></li>
+// 		</ul>
+// 	</div>
+// </div>
+//
+// Styleguide header.status-bar
+
+.status-bar {
+
+	ul {
+
+		.daily-deals-nav {
+			@include button($primary-dark);
+			margin-left: px-to-em(10);
+			position: relative;
+			font-weight: 700;
+			z-index: index($indices, daily-deals);
+
+			&.daily-deals {
+
+				.expand {
+					top: px-to-em(-3);
+					border-top-color: transparent;
+					border-bottom-color: $gray-max;
+				}
+			}
+		}
+	}
+
+	a {
+		margin-right: px-to-em(5);
+		padding-right: px-to-em(10);
+	}
+
+	a,
+	.subscribe,
+	.today {
+		border-right: 1px solid $gray-300;
+	}
+
+}

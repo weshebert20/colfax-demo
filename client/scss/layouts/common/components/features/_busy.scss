@@ -1,0 +1,67 @@
+// Busy Layout
+//
+// Primary featured area on a busy news day
+
+.busy {
+	@extend %clearfix;
+	@include vertical-rhythm();
+	position: relative;
+
+	.feature-left {
+		@include ai-span(8, xl);
+		@include ai-span(6, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		@include vertical-rhythm();
+	}
+
+	// the following style declaration keeps the Cube 1 ad in the right sidebar of the featured area,
+	// the direct child selector is required here to prevent breaking ads in a featured gallery
+	// on the homepage busy layout
+	> .dfp-ad,
+	.lazy-ad-unit {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+
+		@include ai-breakpoint(false, l) {
+			float: left;
+			width: 100%;
+		}
+	}
+
+	.headline-list {
+		@include ai-span(4, xl);
+		@include ai-span(3, l);
+		@include ai-span(4, m, true);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.feature-bottom {
+		@extend %clearfix;
+		@include vertical-rhythm();
+
+		.feature-small {
+			@include ai-span(16, xl);
+			@include ai-span(12, l);
+			@include ai-span(10, m);
+		}
+	}
+
+	.dfp-ad,
+	.lazy-ad-unit {
+
+		@include ai-breakpoint(false, m) {
+			border: none;
+		}
+	}
+
+	.feature-right {
+		@extend %clearfix;
+	}
+
+	.feature-top {
+		margin-bottom: spacing(2);
+	}
+}

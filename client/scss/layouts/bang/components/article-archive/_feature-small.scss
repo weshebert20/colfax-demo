@@ -1,0 +1,192 @@
+// Mercury News: Small Feature
+//
+// Small featured articles
+//
+// markup:
+// <article class="archive-view feature-small">
+// 	<figure>
+//		<div class="image-wrapper">
+// 			<a href="#"><img src="http://lorempixel.com/640/400/cats" alt="article-image"></a>
+//		</div>
+// 	</figure>
+// 	<div class="article-info">
+// 		<header>
+// 			<time datetime="2015-08-10 18:00" proto-skip>8/10/15 6:00 PM ET</time>
+// 			<h5><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h5>
+// 		</header>
+//	</div>
+// </article>
+//
+// Styleguide article-archive.feature-small
+
+.feature-small {
+	@extend %archive-box;
+	@include slideshow-video-top();
+
+	time {
+		padding: 0;
+	}
+
+	@include ai-breakpoint(false, s) {
+		min-width: 100%;
+
+		.busy &,
+		.slow & {
+
+			header {
+				width: 100%;
+			}
+		}
+	}
+
+	.headline-list & {
+
+		&.no-image {
+
+			figure {
+				display: none;
+			}
+
+			h5 {
+				@include font(21, 26, $heading, 700);
+				letter-spacing: -0.03em;
+			}
+		}
+	}
+
+	.section-highlight:not(.highlight-offset) & {
+		@include archive-horizontal();
+	}
+
+	.highlight-offset & {
+
+		@include ai-breakpoint(false, l) {
+			@include archive-horizontal();
+		}
+
+		@include ai-breakpoint(l) {
+			@include archive-vertical();
+		}
+	}
+
+	.takeover & {
+		justify-content: space-between;
+		margin-bottom: spacing();
+
+		figure {
+			margin-top: auto;
+			max-width: none;
+		}
+
+		@include ai-breakpoint(m) {
+			@include archive-vertical();
+		}
+
+		@include ai-breakpoint(false, m) {
+			@include archive-horizontal();
+		}
+	}
+
+	.feature-primary &,
+	.feature-section &,
+	.section-highlight & {
+		z-index: 1;
+
+		figure {
+			margin: 0;
+			order: 1;
+		}
+
+		h5 {
+			@include font(17, 20.5, $heading, 700);
+			letter-spacing: -0.01em;
+		}
+
+		time {
+			@include font(14, 14, $meta, 400);
+		}
+	}
+
+	.slow & {
+
+		@include ai-breakpoint(false, l) {
+			@include archive-horizontal();
+		}
+
+		@include ai-breakpoint(l) {
+			@include archive-vertical();
+		}
+	}
+
+	.busy &,
+	.feature-section .headline-list & {
+
+		@include ai-breakpoint(false, s) {
+			@include archive-horizontal();
+		}
+
+		@include ai-breakpoint(s) {
+			@include archive-vertical();
+		}
+
+		figure,
+		img {
+
+			@include ai-breakpoint(s) {
+				float: none;
+				max-width: none;
+				width: 100%;
+			}
+		}
+	}
+
+	.feature-section .feature-bottom & {
+
+		@include ai-breakpoint(xl) {
+			@include archive-horizontal();
+		}
+
+		@include ai-breakpoint(false, xl) {
+			@include archive-vertical();
+		}
+	}
+
+	.feature-media & {
+		@include archive-vertical();
+		background-color: transparent;
+		border: 0;
+		box-shadow: none;
+
+		figure {
+			margin-bottom: spacing(0.5);
+			order: 0;
+		}
+
+		h5 {
+			@include font(17, 22, $heading, 700);
+
+			a {
+				color: $gray-max;
+			}
+		}
+
+		.article-info {
+			padding: 0;
+		}
+	}
+
+	.more-news & {
+
+		h5 {
+			@include font(21, 26, $heading, 700);
+
+			@include ai-breakpoint(false, s) {
+				@include font(15, 19, $heading, 700);
+			}
+		}
+
+		.excerpt {
+			@include font(14, 18, $body, 400);
+		}
+	}
+}

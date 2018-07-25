@@ -1,0 +1,94 @@
+// Icons
+
+// Social colors
+$twitter: #00ACED;
+$facebook: #3B5998;
+$sms: #5BC236;
+$instagram: #125688;
+$feed: #ff6600;
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../../fonts/icomoon.eot');
+  src: url('../../fonts/icomoon.eot#iefix') format('embedded-opentype'),
+    url('../../fonts/icomoon.ttf') format('truetype'),
+    url('../../fonts/icomoon.woff') format('woff'),
+    url('../../fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+%icon {
+    align-items: center;
+    display: flex;
+    font-family: 'icomoon';
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+
+    /* Better Font Rendering =========== */
+    /* stylelint-disable */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* stylelint-enable */
+
+    &::before {
+        color: inherit;
+        font-size: inherit;
+    }
+}
+
+$icons: (
+    calendar: "\f073",
+    comment: "\f075",
+    share-more: "\e60a",
+    share-alt: "\f1e0",
+    twitter: "\f099",
+    facebook: "\f09a",
+    feed: "\f09e",
+    google-plus: "\f0d5",
+    email: "\e600",
+    instagram: "\f16d",
+    reddit: "\e608",
+    linkedin: "\e604",
+    stumbleupon: "\e60d",
+    tumblr: "\f173",
+    pinterest-p: "\f231",
+    sms: "\e60c",
+    play-arrow: "\e01b",
+    access-time: "\e08e",
+    arrow-down: "\e10f",
+    arrow-left: "\e110",
+    arrow-right: "\e111",
+    arrow-up: "\e112",
+    hamburger: "\e602",
+    print: "\e607",
+    search: "\e609",
+    enlarge: "\e601",
+    jump: "\e603",
+    minus: "\e605",
+    plus: "\e606",
+    slideshow: "\e60b",
+    close: "\e209",
+    phone: "\e900",
+    weather-snow: "\e901",
+    thermometer: "\e902",
+    mute: "\ea29",
+    unmute: "\ea2a",
+    next: "\ea24"
+);
+
+@each $name, $char in $icons {
+
+    .icon-#{$name} {
+        @extend %icon;
+
+        &::before {
+            content: $char;
+        }
+    }
+}

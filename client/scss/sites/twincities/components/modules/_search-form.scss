@@ -1,0 +1,24 @@
+// Twin Cities: Search Form
+
+.search-form {
+
+	&.header-search {
+
+		@include ai-breakpoint(m) {
+			margin-top: px-to-em(7);
+			width: px-to-em(160);
+		}
+
+		input[type="text"] {
+			border: none;
+			font-size: px-to-em(16);
+			height: px-to-em(35);
+			padding: em-calc(10 25 10 5);
+		}
+
+		.headroom--not-top & {
+			border: 1px solid $gray-min;
+			margin-top: 0;
+		}
+	}
+}

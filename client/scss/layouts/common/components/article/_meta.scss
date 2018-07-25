@@ -1,0 +1,38 @@
+// Article Meta
+//
+// Article metadata, such a author name and date
+
+.meta {
+	float: left;
+	font: px-to-em(16, true);
+	margin-bottom: px-to-em(48);
+	width: 100%;
+
+	.comments-link {
+		float: right;
+
+		@include ai-breakpoint(false, m) {
+			float: none;
+			clear: both;
+		}
+	}
+
+	.byline {
+		@include font(14, 24, $meta, 400);
+
+		.author-name {
+			color: $primary-light;
+			font-weight: 700;
+			line-height: 1.7;
+			text-transform: uppercase;
+
+			&:hover {
+				color: $primary-lighter;
+			}
+		}
+	}
+
+	.time {
+		@include font(14, 20, $meta, 400);
+	}
+}

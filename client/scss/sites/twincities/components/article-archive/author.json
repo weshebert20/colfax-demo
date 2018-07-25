@@ -1,0 +1,13 @@
+{
+	"styleguide": {
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo rerum temporibus fuga! Ea sed eligendi deleniti voluptates.",
+		"image": "http://lorempixel.com/680/510/business",
+		"classes": "author-view",
+		"wrapper": "author-stories-feed"
+	},
+	"stories": {
+		"title": "Explicabo rerum temporibus fuga! Ea sed eligendi deleniti voluptates.",
+		"image": "http://lorempixel.com/680/510/business",
+		"classes": "author-view"
+	}
+}

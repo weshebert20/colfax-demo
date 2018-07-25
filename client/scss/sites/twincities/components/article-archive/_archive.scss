@@ -1,0 +1,27 @@
+// Twin Cities: Archive Article
+//
+// Artchive-style article generic styles
+//
+// markup: archive.hbs
+//
+// data: archive.json
+//
+// Styleguide article-archive.archive-article
+
+.archive-view {
+
+	.feature-media & {
+
+		h2,
+		h5 {
+
+			a {
+				color: $gray-max;
+
+				&:hover {
+					color: $primary-light;
+				}
+			}
+		}
+	}
+}

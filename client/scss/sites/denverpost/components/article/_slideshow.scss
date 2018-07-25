@@ -1,0 +1,71 @@
+// Denver Post: Article Slideshow
+//
+// Style for slideshows appearing on article pages
+//
+// markup:
+// <div class="article-slideshow">
+//	<button class="icon-close"></button>
+// 	<ul>
+//		<li>
+// 			<img src="http://lorempixel.com/940/528/cats" alt="article featured image">
+// 			<p class="slide-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc. Maecenas eu semper augue. Aliquam erat volutpat. Cras varius ex sed metus finibus convallis. Maecenas bibendum velit a nisl eleifend porttitor</p>
+//			<p class="slide-credit">Photo by Bob Johnson</p>
+// 		</li>
+//		<li>
+// 			<img src="http://lorempixel.com/940/528/cats" alt="article featured image">
+// 			<p class="slide-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc. Maecenas eu semper augue.</p>
+// 		</li>
+//		<li>
+// 			<img src="http://lorempixel.com/940/528/cats" alt="article featured image">
+// 			<p class="slide-caption">Integer diam tortor, aliquet ut porta non, aliquet sed nunc. Maecenas eu semper augue.</p>
+//			<p class="slide-credit">Photo by Jim Jarmusch</p>
+// 		</li>
+// 	</ul>
+// 	<div class="caption">
+//		<div class="slideshow-credit">Joe Amon, Denver Post</div>
+// 		<div class="slide-count"><span class="current">1</span> of <span class="total">20</span></div>
+// 		<p class="slideshow-caption">Denver Broncos quarterback Peyton Manning speaking during a press conference to announce his retirement March 7, 2016 at Dove Valley in Englewood.</p>
+// 		<a href="#" class="icon-enlarge"><span>Expand</span></a>
+// 	</div>
+// </div>
+//
+// sg-wrapper:
+// <article class="full-view">
+// 	 <sg-wrapper-content/>
+// </article>
+//
+// Styleguide article.slideshow
+
+.article-slideshow {
+
+	.caption {
+		@include vertical-rhythm(0.5);
+		padding: em-calc(10 0, false, 14);
+		position: relative;
+	}
+
+	.slide-count {
+		color: $gray-min;
+		font-weight: 700;
+	}
+
+	.icon-enlarge {
+		background-color: $primary;
+		top: em-calc(20, true);
+
+		&:hover {
+			background-color: $gray-min;
+		}
+	}
+
+	&.fullscreen {
+
+		.caption {
+			@extend %white-bg;
+
+			.slide-count {
+				font-size: 14px;
+			}
+		}
+	}
+}

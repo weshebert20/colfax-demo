@@ -1,0 +1,59 @@
+// Denver Post: Archive Article
+//
+// Artchive-style article generic styles
+//
+// markup:
+// <article class="archive-view">
+// 	<figure>
+// 		<a href="#">
+// 			<img src="http://lorempixel.com/640/360/cats" alt="article-image">
+// 		</a>
+// 	</figure>
+// 	<header>
+// 		<time datetime="2015-08-10 18:00">8/10/15 6:00 PM ET</time>
+// 		<h2><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+// 	</header>
+// 	<div class="excerpt">
+// 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloribus recusandae itaque iure quos dicta nostrum quibusdam, adipisci, sit officiis voluptates ipsam unde accusantium magnam odit voluptatem aliquid optio sunt!</p>
+// 	</div>
+//	<a href="#" class="read-more">Read More</a
+// </article>
+//
+// Styleguide article-archive.archive-article
+
+.archive-view {
+
+	.excerpt {
+		@include font(17, 24, $body, 400);
+	}
+
+	.duration {
+		background-color: $gray-min;
+		bottom: em-calc(10);
+		color: $gray-max;
+		font-family: $meta;
+		padding: em-calc(2 5);
+		position: absolute;
+		right: em-calc(10);
+		text-transform: uppercase;
+
+		.icon-play-arrow {
+			background-color: transparent;
+			border: none;
+			display: inline-block;
+			height: auto;
+			position: static;
+			vertical-align: middle;
+			width: auto;
+		}
+	}
+
+	&:hover {
+
+		.icon-play-arrow,
+		.icon-slideshow {
+			background-color: $primary;
+			border-color: $link-hover;
+		}
+	}
+}

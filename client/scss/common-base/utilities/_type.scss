@@ -1,0 +1,110 @@
+// Type Variations
+
+%breadcrumb {
+	@include font(16, 22, $widget, 700);
+	text-transform: uppercase;
+}
+
+%highlights {
+	@extend .widget-title;
+	color: $primary-light;
+	text-transform: uppercase;
+}
+
+%highlights-text {
+	@include font(16, 20, $body, 400);
+}
+
+%byline {
+	@include font(14, 24, $meta, 400);
+}
+
+%date {
+	@include font(12, 18, $meta);
+	color: $gray-200;
+}
+
+%body-copy {
+	@include font(17, 30, $body, 400);
+
+	 > * {
+        margin-bottom: 1.5em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+%body-copy-alt {
+	@include font(18.5, 26.5, $body, 400);
+
+	 > * {
+        margin-bottom: 1.25em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+%body-copy-three {
+	@include font(17.5, 27, $body, 400);
+
+	 > * {
+        margin-bottom: 1em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+%body-copy-four {
+	@include font(16.5, 27, $body, 400);
+	letter-spacing: -0.01em;
+
+	 > * {
+        margin-bottom: 1em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+%caption {
+	@include font(14, 18, $body, 400);
+	color: $gray-200;
+}
+
+%pullquote {
+	@include font(28, 38, $meta, 700);
+	color: $primary;
+}
+
+%small-meta {
+	@include font(14, 18, $meta, 700);
+	text-transform: uppercase;
+}
+
+%section {
+	@include font(12, 12, $widget, 700);
+	color: $primary-light;
+	text-transform: uppercase;
+}
+
+%small-label {
+	@include font(10, 14, $meta, 400);
+	color: $gray-500;
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+%photo-credit {
+	@include font(12, 14, $meta, 400);
+	color: $gray-300;
+	display: inline-block;
+	text-align: right;
+	width: 100%;
+}

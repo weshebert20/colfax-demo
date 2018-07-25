@@ -1,0 +1,42 @@
+// Recirculation Widgets
+//
+// Content recirculation widgets provided by Outbrain, etc.
+
+/* stylelint-disable declaration-no-important */
+.recirc {
+	@extend %clearfix;
+	clear: both;
+
+	> div {
+		@include vertical-rhythm();
+	}
+
+	img {
+		margin-bottom: 0;
+	}
+
+	.OUTBRAIN {
+		@extend %clearfix;
+
+		.AR_1,
+		.AR_2 {
+			@extend %clearfix;
+			min-width: 0;
+
+			.ob-dynamic-rec-link {
+				cursor: pointer;
+			}
+
+			h1,
+			.ob-widget-header {
+				font: 600 px-to-em(16)/1.25 $widget !important;
+				color: $text;
+				margin: em-calc(0 0 16 0);
+				padding-bottom: 0;
+				text-transform: uppercase;
+				width: 100%;
+			}
+		}
+	}
+}
+/* stylelint-enable */

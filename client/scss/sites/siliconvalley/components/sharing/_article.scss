@@ -1,0 +1,311 @@
+// Silicon Valley: Article Sharing
+//
+// List of sharing links
+//
+// markup:
+// <div class="sharing article-share">
+// 	<div class="sharedaddy">
+//		<div class="sd-social-icon">
+// 			<div class="sd-content sharing-inner">
+// 				<ul>
+// 					<li class="share-facebook"><a href="#" class="share-facebook sd-button"><span></span></a></li>
+// 					<li class="share-twitter"><a href="#" class="share-twitter sd-button"><span></span></a></li>
+// 					<li class="share-email"><a href="#" class="share-email sd-button"><span></span></a></li>
+// 					<li class="share-sms"><a href="#" class="share-sms sd-button"><span></span></a></li>
+// 					<li class="share-print"><a href="#" class="share-print sd-button"><span></span></a></li>
+// 					<li>
+// 						<a href="#" class="share-more sd-button"><span></span></a>
+// 					</li>
+// 				</ul>
+// 				<div class="sharing-hidden">
+//					<div class="inner">
+// 						<ul>
+// 							<li class="share-pinterest"><a href="#" class="share-pinterest sd-button"><span></span></a></li>
+// 							<li class="share-tumblr"><a href="#" class="share-tumblr sd-button"><span></span></a></li>
+// 							<li class="share-linkedin"><a href="#" class="share-linkedin sd-button"><span></span></a></li>
+// 							<li class="share-stumbleupon"><a href="#" class="share-stumbleupon sd-buttons"><span></span></a></li>
+// 						</ul>
+//					</div>
+// 				</div>
+//			</div>
+//		</div>
+// 	</div>
+// 	<span class="share-alt"><a href="#" class="icon-share-alt"><span></span></a></span>
+// </div>
+//
+// sg-wrapper:
+// <article class="full-view">
+// 	 <sg-wrapper-content/>
+// </article>
+//
+// Styleguide sharing.article
+
+.article-share {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+
+	.full-view & {
+		padding-top: em-calc(15);
+
+		> ul li,
+		.sd-content > ul li,
+		.sharing-inner > ul li {
+			@include icon-round(43, 21);
+		}
+
+		.sharing-hidden {
+			left: calc(100% - #{em-calc(10)});
+		}
+
+		.sd-social-icon .sd-content > ul li {
+
+			&.share-facebook {
+				width: em-calc(57);
+				height: em-calc(57);
+
+				a.sd-button {
+
+					span {
+						font-size: em-calc(26);
+					}
+				}
+			}
+		}
+
+		&.sharing {
+
+			.sharing-hidden {
+				@extend %center-vert;
+				height: 50%;
+
+				@include ai-breakpoint(false, s) {
+					top: 92%;
+					transform: translate(-95%, 0);
+
+					.inner::before {
+						left: auto;
+						right: em-calc(25);
+						top: em-calc(-2);
+						transform: rotate(45deg) translate(0, -50%);
+					}
+				}
+			}
+		}
+	}
+
+	.site-header & {
+
+		> ul li,
+		.sd-content > ul li,
+		.sharing-inner > ul li {
+			@include icon-round(38, 19);
+		}
+
+		.sharing-hidden {
+			right: em-calc(8);
+		}
+	}
+
+	.full-view &,
+	.site-header & {
+
+		.sd-social-icon .sd-content > ul li,
+		.share-alt {
+			background-color: $color-bg;
+			margin-right: px-to-em(5);
+			position: static;
+		}
+
+		.sd-social-icon .sd-content > ul li {
+			border: 1px solid rgba(0,0,0,0.15);
+		    transition: background-color 100ms linear,
+		    	color 100ms linear;
+
+		    span {
+		    	 text-shadow: 1px -1px 0 rgba(0, 0, 0, 0.04);
+		    }
+
+			a.sd-button {
+
+				&.share-more {
+					background-color: $gray-100;
+					border-radius: 50%;
+
+					@include ai-breakpoint(false, l) {
+						display: flex;
+					}
+
+					&::before {
+						color: $gray-max;
+					}
+
+					&:hover {
+						background-color: $gray-500;
+
+						&::before {
+							color: $gray-100;
+						}
+					}
+				}
+			}
+
+			&::before {
+				color: $gray-100;
+			}
+
+			&:hover {
+				background-color: $gray-min;
+
+				a span {
+					color: $gray-max;
+				}
+			}
+
+			&.share-sms {
+				background-color: $sms;
+
+				span {
+					color: $gray-max;
+				}
+
+				&:hover {
+					background-color: $gray-max;
+
+					span {
+						color: $sms;
+					}
+				}
+			}
+
+			&.share-facebook {
+				background-color: $facebook;
+
+				span {
+					color: $gray-max;
+				}
+
+				&:hover {
+					background-color: $gray-max;
+
+					span {
+						color: $facebook;
+					}
+				}
+			}
+
+			&.share-twitter {
+				background-color: $twitter;
+
+				span {
+					color: $gray-max;
+				}
+
+				&:hover {
+					background-color: $gray-max;
+
+					span {
+						color: $twitter;
+					}
+				}
+			}
+
+			&.share-reddit {
+				background-color: orangered;
+
+				span {
+					color: $gray-max;
+				}
+
+				&:hover {
+					background-color: $gray-max;
+
+					span {
+						color: orangered;
+					}
+				}
+			}
+
+			&.share-email,
+			&.share-print {
+				background-color: $gray-100;
+
+				span {
+					color: $gray-max;
+				}
+
+				&:hover {
+					background-color: $gray-500;
+
+					span {
+						color: $gray-100;
+					}
+				}
+			}
+		}
+
+		li:last-of-type:not(.share-end) {
+
+			@include ai-breakpoint(false, l) {
+				display: block;
+			}
+		}
+
+		.sd-content,
+		.sharing-inner,
+		.share-alt {
+
+			[class*='icon-'],
+			[class*='share-'] span {
+				color: $gray-100;
+				line-height: 2;
+			}
+		}
+
+		.sharing-hidden {
+
+			[class*='icon-'],
+			[class*='share-'] span {
+				color: $gray-min;
+
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	.headroom--not-top.site-header & {
+		top: em-calc(6);
+
+		@include ai-breakpoint(false, l) {
+			right: em-calc(40);
+		}
+
+		@include ai-breakpoint(l) {
+			right: em-calc(10);
+		}
+
+		.share-alt {
+			height: 100%;
+
+			a {
+				height: 100%;
+			}
+
+			@include ai-breakpoint(false, s) {
+
+				&::after {
+					left: em-calc(40);
+					right: auto;
+					width: em-calc(50);
+				}
+			}
+		}
+
+		.sharing-hidden {
+			height: em-calc(53);
+			top: em-calc(38);
+		}
+	}
+}

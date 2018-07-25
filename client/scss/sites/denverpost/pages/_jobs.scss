@@ -1,0 +1,27 @@
+
+// Denver Post: Jobs
+//
+// Styles for the Jobs Page
+
+.dp-jobs {
+
+	.article-body-jobs {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(8, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+	.article-sidebar-jobs {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		float: right;
+		position: relative;
+	}
+	.nc-console-container .dp-nc-employer-column.nc-employer-column {
+		height: auto;
+	}
+}

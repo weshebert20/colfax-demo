@@ -1,0 +1,22 @@
+// More Stories
+//
+// Full feed of stories from the author
+
+.author-stories-feed {
+	@extend %clearfix;
+	@include vertical-rhythm();
+	margin-bottom: spacing(1.5);
+
+	article {
+
+		&:last-of-type {
+			border-bottom: 0;
+		}
+	}
+
+	.house {
+		top: auto;
+		padding-bottom: spacing();
+		border-bottom: 1px solid $gray-500;
+	}
+}

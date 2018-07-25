@@ -1,0 +1,29 @@
+// Article Breadcrumbs
+//
+// Article breadcrumb styles
+
+.breadcrumbs {
+	float: left;
+	clear: both;
+	text-transform: uppercase;
+
+	h6 {
+		@include font(16, 22, $meta, 700);
+		display: inline-block;
+
+		a {
+
+			&:hover {
+				color: $link-hover;
+			}
+		}
+	}
+
+	.icon-arrow-right {
+		display: inline-block;
+		font-size: px-to-em(20);
+		line-height: 1;
+		vertical-align: top;
+		color: $gray-500;
+	}
+}

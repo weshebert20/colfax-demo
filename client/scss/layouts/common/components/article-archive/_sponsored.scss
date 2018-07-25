@@ -1,0 +1,51 @@
+// Sponsored Content
+//
+// Sponsored articles
+
+.sponsored-content {
+
+	figure {
+
+		.sponsored-flag {
+			left: 0;
+			position: absolute;
+			top: 0;
+		}
+	}
+
+	header {
+
+		.sponsored-flag {
+			width: auto;
+			margin-bottom: spacing(0.5);
+		}
+	}
+
+	.sponsored-flag {
+		@extend %sponsored-flag;
+		display: inline-block;
+		z-index: 1;
+	}
+
+	.landing-three-one > & {
+
+		figure {
+			@include ai-span(2, m);
+		}
+
+		header,
+		.excerpt {
+			@include ai-span(8, m, true);
+		}
+	}
+
+	.headline-list & {
+
+		.sponsored-flag {
+			position: static;
+			width: auto;
+			float: left;
+			margin-bottom: px-to-em(5, false, 12);
+		}
+	}
+}

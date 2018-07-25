@@ -1,0 +1,31 @@
+// Article Pullquote
+//
+// Inline pullquote
+//
+// markup:
+// <blockquote>
+// 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc.
+// 	<cite>- Quote Source</cite>
+// </blockquote>
+//
+// Styleguide article.pullquote
+
+blockquote {
+	border-top: 3px solid $primary-light;
+	padding-top: spacing(0.5);
+	margin-top: spacing(1);
+	font-size: em-calc(28, true);
+	line-height: 1.235;
+	letter-spacing: -0.035em;
+	font-weight: 700;
+
+	cite {
+		font-size: em-calc(16, true);
+		display: block;
+		font-family: $body;
+		font-weight: 400;
+		letter-spacing: 0;
+		margin-top: spacing(0.75);
+		color: $gray-100;
+	}
+}

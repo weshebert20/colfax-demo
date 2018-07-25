@@ -1,0 +1,45 @@
+// Full Header - Article version
+//
+// Styles for site header on article pages (sticky only)
+
+.site-header {
+
+	&.headroom--not-top {
+
+		.single-post & {
+
+			h4 {
+				@include font(21, 30, $heading, 700);
+				overflow: hidden;
+				max-height: em-calc(30, false, 21);
+				padding: em-calc(0 0 0 85, false, 21);
+				top: px-to-em(13, false, 24);
+				width: calc(100% - #{em-calc(275, false, 21)});
+
+				&::after {
+					background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  					content: '';
+  					height: 100%;
+  					position: absolute;
+  					right: 0;
+  					top: 0;
+  					width: em-calc(250, false, 21);
+				}
+			}
+
+			.nav-primary {
+
+				.logo {
+					margin: 0;
+					padding: em-calc(5 10);
+					top: 0;
+				}
+
+				.icon-hamburger {
+					margin: 0 0 0 auto;
+					z-index: 2;
+				}
+			}
+		}
+	}
+}

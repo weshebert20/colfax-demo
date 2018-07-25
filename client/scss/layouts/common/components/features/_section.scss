@@ -1,0 +1,86 @@
+// Section Feature
+//
+// Featured area on a section landing page
+
+.feature-section {
+	@extend %clearfix;
+	@include vertical-rhythm(2);
+	position: relative;
+
+	.feature-right {
+		@include ai-span(8, xl, true);
+		@include ai-span(7.5, l, true);
+		@include ai-span(4, m, true);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(m) {
+			min-height: em-calc(600);
+		}
+	}
+
+	.feature-top,
+	.feature-bottom {
+		@include ai-span(8, xl);
+		@include ai-span(5.5, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		margin-bottom: spacing(2);
+	}
+
+	.feature-bottom {
+		@include vertical-rhythm();
+		clear: left;
+
+		.feature-small {
+			float: left;
+			width: 100%;
+
+			&:last-child {
+				margin-right: 0;
+				border-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.dfp-ad {
+		@include ai-span(8, xl, true);
+		@include ai-span(8, l, true);
+		float: right;
+		margin: 0 auto spacing() auto;
+		text-align: center;
+
+		@include ai-breakpoint(false, l) {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	.headline-list {
+		@include ai-span(8, xl);
+		@include ai-span(5, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(false, l) {
+			margin-bottom: spacing();
+		}
+	}
+
+	.feature-right-flex {
+		@include ai-span(8, xl, true);
+		@include ai-span(8, l, true);
+		float: right;
+		@include ai-breakpoint(false, l) {
+			float: none;
+			width: 100%;
+		}
+		.dfp-ad {
+			float: none;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+// Denver Post: Author Header
+//
+// Author name, image, social, and title
+//
+// markup:
+// <header class="author-header">
+// 	<img src="http://lorempixel.com/80/80/cats" alt="author avatar">
+// 	<div class="author-meta">
+// 		<a href="#" class="title">Reporter</a>
+// 		<h3>Charlie Walters</h3>
+// 	</div>
+// 	<div data-huron-id="sharing-author" data-huron-type="template"></div>
+// </header>
+//
+// Styleguide author.header
+
+.author-header {
+
+	h3 {
+		@include font(36, 40, $meta, 700);
+		letter-spacing: -0.025em;
+	}
+
+	.author-meta {
+		padding-left: em-calc(110);
+	}
+}

@@ -1,0 +1,83 @@
+// Silicon Valley: More News
+//
+// Large "More News" section at bottom of articles
+//
+// markup:
+// <div class="more-news">
+// 		<h2 class="widget-title">More News</h2>
+// 		<ul>
+// 			<li><div data-huron-id="examples-feature-small" data-huron-modifier="eight" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="examples-feature-small" data-huron-modifier="eight" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="examples-feature-small" data-huron-modifier="eight" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="examples-feature-small" data-huron-modifier="eight" data-huron-type="template"></div></li>
+//		</ul>
+// </div>
+//
+// Styleguide article.more-news
+
+.more-news {
+	margin-bottom: spacing(2);
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	li {
+		@include ai-span(4, xl);
+		@include ai-span(3.25, l);
+		@include ai-span(5, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(l) {
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		@include ai-breakpoint(s, l) {
+
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.widget-title {
+		@extend %section-highlight-border;
+
+		&::before {
+			background-color: transparent;
+			border-bottom: 3px solid $primary;
+		}
+	}
+
+	.archive-view {
+		@include archive-vertical();
+		margin-bottom: spacing(0.5);
+
+		time {
+		    bottom: auto;
+		    margin: em-calc(10 10 5 0);
+		    position: relative;
+		    right: auto;
+		}
+
+		img {
+			margin-bottom: spacing(0.5);
+		}
+	}
+
+	.entry-title {
+		@include font(21, 23, $heading, 700);
+		letter-spacing: em-calc(-0.25);
+
+		@include ai-breakpoint(m, l) {
+			@include font(27, 28, $heading, 700);
+			letter-spacing: em-calc(-0.5);
+		}
+	}
+}

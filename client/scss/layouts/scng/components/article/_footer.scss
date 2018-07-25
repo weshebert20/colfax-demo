@@ -1,0 +1,25 @@
+// Article footer
+//
+// The footer of an article
+//
+// markup: footer.html
+//
+// Styleguide article.footer
+
+.article-footer {
+	margin-top: spacing(2);
+	padding: em-calc(20 0);
+
+	.footer-meta {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.footer-meta-content {
+		@include ai-breakpoint(m) {
+			margin-right: em-calc(20);
+			width: calc(100% - #{em-calc(320)});
+		}
+	}
+}

@@ -1,0 +1,104 @@
+// Utility mixins, placeholders and functions
+// -------------------------------------------
+// styleguide:ignore:start
+
+$base-unit: 16 !default;
+
+.clearfix {
+
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+// Hide text for screen readers
+.hide {
+    display: inline-block;
+    height: 0;
+    position: fixed;
+    visibility: hidden;
+    width: 0;
+}
+
+// Center element horizontally and vertically
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Center element horizontally
+.center-hor {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+// Establish a vertical rhythm in a container
+.vertical-rhythm {
+
+    > * {
+        margin-bottom: 2rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Convert px to em or rem
+// Unitless values are assumed to be in px
+//
+// $px: pixel value, can be unitless
+// $rem: should output be in rem units?
+// $base-value: font size from which calculations are made
+/* stylelint-disable */
+@function px-to-em( $px, $rem: false, $base-value: $base-unit) {
+    @if ( 'px' == unit( $px ) ) {
+        $px: $px / 1px;
+    }
+
+    @if $rem == true {
+        @return $px / $base-value * 1rem;
+    } @else {
+        @return $px / $base-value * 1em;
+    }
+}
+
+// Convert a list of unitless values (or px) to rem or em
+//
+// $values: single value or list of values
+// $rem: should output be in rem units?
+// $base-value: font size from which calculations are made
+@function em-calc($values, $rem: false, $base-value: $base-unit) {
+    $max: length($values);
+    $em-values: ();
+    @if $max == 1 {
+        @return px-to-em(nth($values, 1), $rem, $base-value);
+    }
+    @for $i from 1 through $max {
+        $value: nth($values, $i);
+        // It's 'auto'
+        @if (string == type-of($value)) {
+             $em-values: append($em-values, $value);
+        } @else if (number == type-of($value)) {
+            $em-values: append($em-values, px-to-em(nth($values, $i), $rem, $base-value));
+        }
+    }
+    @return $em-values;
+}
+
+/* stylelint-enable */
+
+// styleguide:ignore:end
+
+// Module with a white background
+.white-bg {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.085);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.05);
+    padding: em-calc(0 20 20);
+}

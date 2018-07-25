@@ -1,0 +1,134 @@
+// Editors Picks Carousel
+//
+// Styles for editors picks flyout
+
+.editors-picks-nav {
+	position: relative;
+
+	.count {
+		background-color: $primary-lighter;
+		border-radius: 50%;
+		color: $gray-max;
+		display: inline-block;
+		font-size: px-to-em(10);
+		font-weight: 700;
+		height: px-to-em(20, false, 10);
+		line-height: px-to-em(21, false, 10);
+		padding-right: px-to-em(2, false, 10);
+		position: absolute;
+		right: px-to-em(10, false, 10);
+		text-align: center;
+		top: px-to-em(5, false, 10);
+		width: px-to-em(20, false, 10);
+
+		@include ai-breakpoint(false, l) {
+			right: 0;
+		}
+
+		@include ai-breakpoint(s, m) {
+			right: px-to-em(0, false, 10);
+			top: px-to-em(-12, false, 10);
+		}
+
+		@include ai-breakpoint(false, s) {
+			top: px-to-em(-10, false, 10);
+			right: px-to-em(-6, false, 10);
+		}
+	}
+
+	.icon-access-time {
+		display: inline-block;
+		font-size: px-to-em(24);
+		position: relative;
+		top: -3px;
+		vertical-align: middle;
+
+		@include ai-breakpoint(false, m) {
+			display: none;
+		}
+	}
+
+	.sticky & {
+
+		.count {
+
+			@include ai-breakpoint(m, xl) {
+				right: px-to-em(-10);
+			}
+		}
+	}
+
+	.pushnav & {
+		display: none;
+	}
+}
+
+.editors-picks-flyout-wrapper {
+	display: none;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index: index($indices, editors-picks);
+
+	@include ai-breakpoint(m) {
+		top: px-to-em(90);
+	}
+
+	@include ai-breakpoint(false, m) {
+		top: px-to-em(116);
+	}
+}
+
+.editors-picks-inner {
+	@extend %container;
+	position: relative;
+}
+
+.editors-picks-flyout {
+	background-color: $gray-600;
+	padding: em-calc(24 0);
+
+	ul {
+		@extend %clearfix;
+		margin: em-calc(0 70);
+	}
+
+	.articles {
+
+		text-align: center;
+
+		.slick-track {
+
+			li {
+
+				@include ai-breakpoint(false, s) {
+					margin-right: 0;
+				}
+			}
+
+			.image-wrapper {
+
+				@include ai-breakpoint(false, s) {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.headroom--not-top {
+
+	.editors-picks-flyout-wrapper {
+		top: 50px;
+	}
+
+	.editors-picks-nav {
+
+		.count {
+
+			@include ai-breakpoint(l, xl) {
+				right: px-to-em(-6);
+			}
+		}
+	}
+}

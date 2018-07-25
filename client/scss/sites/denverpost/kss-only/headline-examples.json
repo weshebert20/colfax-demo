@@ -1,0 +1,26 @@
+{
+	"one": {
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "50m ago"
+		}
+	},
+	"two": {
+		"sponsored": true,
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "52m ago"
+		},
+		"classes": "sponsored-content"
+	},
+	"three": {
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"video": true
+	},
+	"four": {
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"slideshow": true
+	}
+}

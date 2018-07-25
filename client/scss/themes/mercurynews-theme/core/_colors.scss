@@ -1,0 +1,67 @@
+// Mercury News: Colors
+//
+// text - Body Copy
+// primary - Brand Primary
+// secondary - Brand Secondary
+// secondary-light - Brand secondary light
+// tertiary - Brand Tertiary
+// primary-lighter - Lighter Primary shade
+// primary-light - Light Primary shade
+// primary-dark - Dark Primary shade
+// primary-darker - Darker Primary shade
+// brown-100 - Darkest brown
+// brown-200 - Second brown
+// brown-300 - Third brown
+// brown-400 - fourth brown
+// gray-min - Minimum Gray
+// gray-200 - First Gray
+// gray-300 - Second Gray
+// gray-400 - Third Gray
+// gray-500 - Fourth Gray
+// gray-max - Maximum Gray
+//
+// markup:
+// <div  class="color {$modifiers}"><span>{$modifiers}</span></div>
+//
+// Styleguide 1.1
+
+// Brand colors
+$primary: rgb(0, 144, 217); // #0090D9
+$secondary: rgb(205, 39, 7); // #CD2707
+$secondary-light: rgb(224, 96, 25); // #E16019
+$tertiary: rgb(255, 197, 24); // #a13b1e
+
+// Brand variations
+$primary-lighter: rgb(160, 208, 237); // #A0D0ED
+$primary-light: rgb(86, 183, 242); // #56B7F2
+$primary-dark: rgb(49, 168, 240); // #31A8F0
+$primary-darker: rgb(14, 123, 189); // #0E7BBD
+
+// Browns
+$brown-100: rgb(56, 50, 42); // #38322A
+$brown-200: rgb(125, 117, 105); // #7D7569
+$brown-300: rgb(234, 230, 225); // #EAE6E1
+$brown-400: rgb(251, 251, 251); // #FBFBFB
+
+// Grays
+$gray-min: rgb(26, 26, 26); // #1a1a1a
+$gray-100: rgb(35, 35, 35); // #232323
+$gray-200: rgb(67, 67, 67); // #666666
+$gray-300: rgb(125, 125, 125); // #7D7D7D
+$gray-400: rgb(200, 200, 200); // #C8C8C8
+$gray-500: rgb(225, 225, 225); // #cdcdcd
+$gray-600: rgb(250, 250, 250); // #fafafa
+$gray-max: rgb(255, 255, 255); // #ffffff
+
+// Location colors
+$text: rgb(26, 26, 26);
+$link-hover: $primary;
+$button: $primary;
+$pushnav-bg: $gray-min;
+$pushnav-border: $gray-100;
+$divider: rgb(183, 180, 176); // #B7B4B0
+$divider-alt: #F1EFEB;
+
+// Background colors
+$color-bg: $brown-400;
+$color-bg-offset: $brown-300;

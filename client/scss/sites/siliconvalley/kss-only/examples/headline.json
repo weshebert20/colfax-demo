@@ -1,0 +1,20 @@
+{
+	"one" : {
+		"classes" : "",
+		"title" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"time" : {
+			"datetime" : "2015-08-10 18:00",
+			"ago" : "50m ago"
+		}
+	},
+	"two" : {
+		"classes" : "sponsored-content has-comments",
+		"sponsored" : true,
+		"comments" : "51",
+		"title" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"time" : {
+			"datetime" : "2015-08-10 18:00",
+			"ago" : "50m ago"
+		}
+	}
+}

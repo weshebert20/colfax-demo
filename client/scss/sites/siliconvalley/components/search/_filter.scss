@@ -1,0 +1,123 @@
+// Silicon Valley: Search Filter
+//
+// Filter search results
+//
+// markup:
+// <a href="#" class="filter-expand" proto-skip><span class="expand"></span> Refine</a>
+// <div class="filter filter-open">
+// 	<form class="filter-form">
+//		<div class="filter-section">
+// 			<h5>Date</h5>
+// 			<div class="option">
+// 				<input type="radio" name="date" id="date-all" value="date-all">
+// 				<label for="date-all">All</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="date" id="date-today" value="today">
+// 				<label for="date-today">Today</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="date" id="date-month" value="month">
+// 				<label for="date-month">Less than a month old</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="date" id="date-three-month" value="three-month">
+// 				<label for="date-three-month">Less than 3 months old</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="date" id="date-year" value="year">
+// 				<label for="date-year">Less than a year old</label>
+// 			</div>
+// 			<div class="date-start">
+// 				<label for="date-start">Start Date</label>
+// 				<input type="text" name="date-start" id="date-start">
+// 				<i class="icon-calendar"></i>
+// 			</div>
+// 			<div class="date-end">
+// 				<label for="date-start">End Date</label>
+// 				<input type="text" name="date-end" id="date-end">
+// 				<i class="icon-calendar"></i>
+// 			</div>
+// 		</div>
+//		<div class="filter-section">
+// 			<h5>Content Types</h5>
+// 			<div class="option">
+// 				<input type="radio" name="content" id="content-all" value="content-all">
+// 				<label for="content-all">All (2771)</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="content" id="content-articles" value="articles">
+// 				<label for="content-articles">Articles (1574)</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="content" id="content-videos" value="videos">
+// 				<label for="content-videos">Videos (412)</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="content" id="content-slideshows" value="slideshows">
+// 				<label for="content-slideshows">Slideshows (785)</label>
+// 			</div>
+// 		</div>
+//		<div class="filter-section">
+// 			<h5>Categories</h5>
+// 			<div class="option">
+// 				<input type="radio" name="categories" id="categories-sports" value="sports">
+// 				<label for="categories-sports">Sports (7618)</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="categories" id="categories-ap" value="ap">
+// 				<label for="categories-ap">AP categories (2005)</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="categories" id="categories-news" value="news">
+// 				<label for="categories-news">News (212)</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="categories" id="categories-business" value="business">
+// 				<label for="categories-business">Business (75)</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="categories" id="categories-state" value="state">
+// 				<label for="categories-state">State (74)</label>
+// 			</div>
+// 			<div class="option">
+// 				<input type="radio" name="categories" id="categories-twins" value="twins">
+// 				<label for="categories-twins">Twins (58)</label>
+// 			</div>
+// 			<a href="#" class="see-all">See All <span class="expand"></span></a>
+// 		</div>
+// 	</form>
+// </div>
+//
+// Styleguide search.filter
+
+.filter-expand {
+	border: 1px solid rgba(56, 6, 14, 0.35);
+	border-radius: em-calc(3);
+	font-size: em-calc(14);
+}
+
+.filter {
+	background: $color-bg;
+	border: 1px solid $gray-500;
+	border-left: 0;
+	padding-right: em-calc(15);
+
+	.filter-form {
+		@include vertical-rhythm(2);
+	}
+
+	.filter-section {
+		border-bottom: 1px solid $gray-500;
+		padding-bottom: spacing(2);
+
+		h5 {
+			@include font(18, 22, $meta, 700);
+		}
+	}
+
+	[type="text"] {
+		border: 1px solid $gray-500;
+		border-radius: 3px;
+	}
+}

@@ -1,0 +1,157 @@
+// Headlines
+
+.widget-title {
+	@include font(18, 22, $widget, 700);
+}
+
+.tag-name,
+.search-title,
+.section-title {
+	@include font(30, 30, $widget, 400);
+	display: inline-block;
+	margin-bottom: px-to-em(32, false, 30);
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+%ex-small {
+	@include font(14, 18, $heading, 400);
+}
+
+%section-highlight-alt {
+	@include font(18, 22, $widget, 600);
+	letter-spacing: -0.017em;
+	margin-bottom: 0;
+	padding: em-calc(16 0, false, 18);
+	text-transform: uppercase;
+
+	a,
+	.icon-arrow-right {
+		color: $primary;
+	}
+
+	&:hover {
+
+		a,
+		.icon-arrow-right {
+			color: $gray-min;
+		}
+	}
+}
+
+%section-highlight {
+	@include font(18, 22, $widget, 700);
+	border-bottom: 1px solid $gray-min;
+	border-top: 3px solid $gray-min;
+	padding: em-calc(8 0);
+	text-transform: uppercase;
+}
+
+%section-highlight-border {
+	@include font(16, 18, $widget, 700);
+	border-bottom: 1px solid $gray-400;
+	border-top: 4px solid $gray-300;
+	color: $gray-300;
+	display: flex;
+	margin-bottom: spacing();
+	padding: em-calc(15 0, false, 22);
+	text-transform: uppercase;
+}
+
+%section-highlight-arrow {
+
+	.icon-arrow-right {
+		display: inline-block;
+		font-size: px-to-em(18, false, 18);
+		line-height: px-to-em(22, false, 18);
+		vertical-align: top;
+	}
+}
+
+%section-highlight-scng {
+	@include font(19, 24, $widget, 700);
+	color: $primary;
+	margin-bottom: em-calc(12, false, 19);
+	text-transform: uppercase;
+
+	a {
+		display: flex;
+	}
+
+	.icon-arrow-right {
+		display: flex;
+		font-size: em-calc(24);
+		height: em-calc(24, true);
+	}
+}
+
+%blue-block {
+	background-color: $primary-light;
+	color: $gray-max;
+	display: inline-block;
+	padding: em-calc(10 15);
+	text-transform: uppercase;
+}
+
+%sponsored-flag {
+	@include font(12, 12, $widget, 700);
+	background-color: $primary-light;
+	color: $gray-max;
+	display: block;
+	padding: em-calc(5 10);
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+%top-border {
+	border-top: 3px solid $primary-light;
+	font-family: $widget;
+	padding-top: px-to-em(5);
+	text-transform: uppercase;
+}
+
+%breaking {
+	@extend .widget-title;
+	background-color: $secondary;
+	color: $gray-max;
+	font-size: px-to-em(16);
+	line-height: 1;
+	padding: px-to-em(10);
+	text-transform: uppercase;
+}
+
+%header-border {
+    @include font(21, 36, $meta, 600);
+    color: $primary;
+    display: flex;
+    margin-top: spacing(2);
+    position: relative;
+    text-align: left;
+    text-transform: none;
+
+    &:hover {
+
+		a,
+		&::after {
+			color: $gray-min;
+		}
+	}
+
+    &::before {
+        background-color: transparent;
+        border-bottom: 3px solid $primary;
+        content: '';
+        height: 100%;
+        left: em-calc(-12, false, 18);
+        position: absolute;
+        top: 0;
+        width: 200vw;
+        z-index: 0;
+
+        @include ai-breakpoint(xl) {
+            left: calc((100vw - #{em-calc(1260, true)}) / -2);
+        }
+    }
+}

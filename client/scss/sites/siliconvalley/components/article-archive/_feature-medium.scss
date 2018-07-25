@@ -1,0 +1,134 @@
+// Silicon Valley: Medium Feature
+//
+// Medium featured articles
+//
+// markup:
+// <article class="archive-view feature-medium has-comments">
+// 	<figure>
+//		<div class="image-wrapper">
+// 			<a href="#"><img src="http://lorempixel.com/400/300/business" alt="article-image"></a>
+//		</div>
+// 	</figure>
+//	<div class="article-info">
+// 		<header>
+// 			<time datetime="2015-08-10 18:00" proto-skip>8/10/15 6:00 PM ET</time>
+// 			<h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
+//			<div class="disqus-comment-count">
+//				<a><span>51</span></a>
+//			</div>
+// 		</header>
+// 		<div class="excerpt">
+// 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+// 		</div>
+//	</div>
+// </article>
+//
+// sg-wrapper:
+// <div class="section-highlight">
+//	<sg-wrapper-content/>
+// </div>
+//
+// Styleguide article-archive.feature-medium
+
+.feature-medium {
+	@include slideshow-video-top();
+
+	h4 {
+		@include font(27, 31, $heading, 700);
+	}
+
+	.article-comments {
+		margin-top: spacing();
+	}
+
+	.feature-primary & {
+
+		.entry-title {
+			font-size: em-calc(16, true);
+			letter-spacing: -0.018em;
+			line-height: 1.35;
+
+			@include ai-breakpoint(s) {
+				font-size: em-calc(22, true);
+				letter-spacing: -0.028em;
+				line-height: 1.2;
+			}
+
+			@include ai-breakpoint(m) {
+				font-size: em-calc(20, true);
+				letter-spacing: -0.023em;
+			}
+
+			@include ai-breakpoint(l) {
+				font-size: em-calc(27, true);
+				line-height: 1.15;
+			}
+		}
+	}
+
+	.slow & {
+		flex-direction: column;
+
+		header,
+		figure {
+			width: 100%;
+		}
+	}
+
+	.landing-three-one & {
+
+		.entry-title {
+			font-size: em-calc(24, true);
+			letter-spacing: -0.032em;
+			line-height: 1.2;
+
+			@include ai-breakpoint(s) {
+				font-size: em-calc(22, true);
+				letter-spacing: -0.028em;
+			}
+
+			@include ai-breakpoint(m) {
+				font-size: em-calc(24, true);
+				letter-spacing: -0.032em;
+			}
+		}
+
+		img {
+			width: 100%;
+		}
+
+		figure {
+			@include ai-span(16/3, xl);
+			@include ai-span(5, l);
+			@include ai-span(3, m);
+			@include ai-span(3, s);
+			@include ai-span(4, xs);
+			float: left;
+		}
+
+		.article-info {
+			@include ai-span((16/3) * 2, xl);
+			@include ai-span(8, l);
+			@include ai-span(7, m);
+			@include ai-span(5, s);
+			@include ai-span(4, xs);
+			float: right;
+		}
+	}
+
+	.landing-four-up & {
+		flex-direction: column;
+
+		.entry-title {
+			font-size: em-calc(24, true);
+			letter-spacing: -0.032em;
+			line-height: 1.2;
+
+			@include ai-breakpoint(m, xl) {
+				font-size: em-calc(20, true);
+				line-height: 1.15;
+				letter-spacing: -0.023em;
+			}
+		}
+	}
+}

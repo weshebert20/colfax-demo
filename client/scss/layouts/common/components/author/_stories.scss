@@ -1,0 +1,24 @@
+// Author Stories
+//
+// Author's featured stories
+
+.author-featured-stories {
+	@extend %clearfix;
+
+	.author-view {
+		@extend %slideshow-video-small;
+		@include ai-span(16/3, xl);
+		@include ai-span(13/3, l);
+		@include ai-span(10/3, m);
+		@include ai-span(8/3, s);
+		@include ai-span(4, xs);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	@include ai-breakpoint(false, m) {
+		@include vertical-rhythm();
+	}
+}

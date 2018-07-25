@@ -1,0 +1,44 @@
+// Twin Cities: Article Meta
+//
+// Article metadata, such a author name and date
+//
+// markup:
+// <div class="meta">
+// 	<a href="#" class="comments-link"><i class="icon-comment"></i>12 Comments</a>
+// 	<div class="byline">By <a class="author-name" href="#">Bob Shaw</a> | <a href="mailto:bshaw@gmail.com">bshaw@pioneerpress.com</a></div>
+// 	<div class="time"><time datetime="">07/19/2015 12:01:00 AM CDT</time> | UPDATED: 11 HRS AGO</div>
+// </div>
+//
+// Styleguide article.meta
+
+.meta {
+
+	.comments-link {
+		@include font(14, 24, $meta, 400);
+		display: inline-block;
+		text-transform: uppercase;
+
+		.icon-comment {
+			display: inline-block;
+			margin-right: px-to-em(5);
+			font-size: px-to-em(18);
+			color: $primary-light;
+		}
+
+		&:hover {
+			color: $primary-light;
+		}
+	}
+
+	.byline {
+		@include font(14, 24, $meta, 400);
+	}
+
+	.time {
+		@include font(12, 20, $meta, 400);
+
+		@include ai-breakpoint(false, m) {
+			margin-bottom: px-to-em(16, false, 12);
+		}
+	}
+}

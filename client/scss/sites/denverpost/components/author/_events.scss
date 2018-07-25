@@ -1,0 +1,69 @@
+// Denver Post: Author Events
+//
+// Events author is attending
+//
+// markup:
+// <div class="author-events" >
+// 	<h2 class="widget-title">My Events</h2>
+// 	<div class="event-content slideshow-landing">
+// 		<a href="#" class="icon-arrow-left"></a>
+// 		<ul class="event-list">
+// 			<div aria-live="polite" class="slick-list draggable">
+//				<div class="slick-track" role="listbox">
+// 					<li class="event">
+// 						<time>Sept. 5 2015</time>
+// 						<h6><a href="#">Smart Reader Seminar</a></h6>
+// 						<p class="position">Featured Speaker</p>
+// 					</li>
+// 					<li class="event">
+// 						<time>Oct. 24 2015</time>
+// 						<h6><a href="#">Sports News Seminar</a></h6>
+// 					</li>
+// 					<li class="event">
+// 						<time>Nov. 15 2015</time>
+// 						<h6><a href="#">ONA15 Conference</a></h6>
+// 						<p class="position">Featured Speaker</p>
+// 					</li>
+// 					<li class="event">
+// 						<time>Nov. 20-21 2015</time>
+// 						<h6><a href="#">SABEW New York Fall Conference</a></h6>
+// 					</li>
+// 					<li class="event">
+// 						<time>Dec. 2-5 2015</time>
+// 						<h6><a href="#">Northeast/New York City Regional Connection</a></h6>
+// 					</li>
+// 				</div>
+// 			</div>
+// 			<ul class="slick-dots" role="tablist" style="display: block;">
+//				<li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation00" id="slick-slide00">
+//					<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">1</button>
+//				</li>
+//				<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation01" id="slick-slide01">
+//					<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">2</button>
+//				</li>
+//				<li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation02" id="slick-slide02">
+//					<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">3</button>
+//				</li>
+//			</ul>
+// 		</ul>
+// 		<a href="#" class="icon-arrow-right"></a>
+// 	</div>
+// </div>
+//
+// Styleguide author.events
+
+.author-events {
+	border: 1px solid $gray-500;
+	text-align: center;
+
+	.widget-title {
+		background-color: $gray-min;
+		display: inline-block;
+		font-size: em-calc(16);
+		font-weight: 600;
+	}
+
+	.event-content {
+		text-align: left;
+	}
+}

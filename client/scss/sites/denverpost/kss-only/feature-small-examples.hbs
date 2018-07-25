@@ -1,0 +1,22 @@
+<article class="archive-view feature-small {{ classes }}">
+	<figure>
+		{{#if sponsored}}
+			<span class="sponsored-flag">Sponsored</span>
+		{{/if}}
+		{{#if image}}
+			<a href="#">
+				<div class="image-wrapper">
+					<img src="{{ image }}" alt="article-image">
+				</div>
+			</a>
+		{{/if}}
+		{{#if videoTime}}
+			<time class="duration"><span class="icon-play-arrow"></span> {{ videoTime }}</time>
+		{{/if}}
+	</figure>
+	<div class="article-info">
+		<header>
+			<h5><a href="#">{{ title }}</a></h5>
+		</header>
+	</div>
+</article>

@@ -1,0 +1,117 @@
+{
+	"breaking": {
+		"title": "Follow live local coverage of the Nov. 8 election",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "30m ago"
+		}
+	},
+	"busy-one": {
+		"title": "Newly sworn-in citizens can still vote today",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "30m ago"
+		}
+	},
+	"busy-two": {
+		"title": "Election Day to be heated – literally, weather forecasters say",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "42m ago"
+		}
+	},
+	"busy-three": {
+		"title": "Need a reminder of the key moments in the 2016 presidential campaign?",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "55m ago"
+		}
+	},
+	"busy-four": {
+		"title": "Why Riverside’s annual Salute to Veterans parade is moving to the fall",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "55m ago"
+		}
+	},
+	"busy-five": {
+		"title": "NASA calling all kinds of artists for mission to send work into orbit",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "55m ago"
+		}
+	},
+	"busy-six": {
+		"title": "Where fans turned out for Thomas the Tank Engine",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "55m ago"
+		}
+	},
+	"busy-seven": {
+		"title": "Alexander: Where would L.A. be without a quarterback controversy?",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "55m ago"
+		}
+	},
+	"busy-eight": {
+		"title": "How to celebrate Veterans Day in the Inland area",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "55m ago"
+		}
+	},
+	"busy-related-one": {
+		"title": "How’s early voting going in SoCal compared to 2012",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "55m ago"
+		}
+	},
+	"busy-related-two": {
+		"title": "No ballot selfies in California — at \bleast for now",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "55m ago"
+		}
+	},
+	"busy-related-three": {
+		"title": "Latino advocates ask Justice Department",
+		"time": {
+			"datetime": "2015-08-10 18:00",
+			"ago": "55m ago"
+		}
+	},
+	"highlight-one": {
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+	},
+	"highlight-two": {
+		"title": "Inseparable barn buddies to stay together in new home "
+	},
+	"highlight-three": {
+		"title": "Lake Elsinore program aims to help harried parents"
+	},
+	"highlight-four": {
+		"title": "Norco College again among nation’s best for veterans"
+	},
+	"sponsored": {
+		"classes" : "sponsored-content has-comments headline-only",
+		"sponsored" : true,
+		"comments" : "51",
+		"title" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"time" : {
+			"datetime" : "2015-08-10 18:00",
+			"ago" : "50m ago"
+		}
+	},
+	"styleguide": {
+		"classes" : "has-comments headline-only",
+		"comments" : "51",
+		"title" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+		"time" : {
+			"datetime" : "2015-08-10 18:00",
+			"ago" : "50m ago"
+		}
+	}
+}

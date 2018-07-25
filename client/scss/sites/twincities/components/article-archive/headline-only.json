@@ -1,0 +1,10 @@
+{
+	"styleguide": {
+		"title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo rerum temporibus fuga!",
+		"classes": "headline-only"
+	},
+	"busy": {
+		"title": "Aliquam quae assumenda odit neque, sit blanditiis est autem.",
+		"classes": "headline-only"
+	}
+}

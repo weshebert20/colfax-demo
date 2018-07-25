@@ -1,0 +1,71 @@
+// Denver Post: Logo
+
+.logo {
+
+	@include ai-breakpoint(l) {
+		margin-bottom: 0;
+		position: absolute;
+		text-align: center;
+		top: -70px;
+		width: 100%;
+	}
+
+	@include ai-breakpoint(false, l) {
+		margin: em-calc(20 auto);
+	}
+
+	a {
+		background-image: url('../../images/dp-logo.svg');
+		background-size: 360px 43px;
+		display: inline-block;
+		height: 43px;
+		width: 360px;
+
+		@include ai-breakpoint(s, l) {
+			background-size: 300px 35px;
+			height: 35px;
+			width: 300px;
+		}
+
+		@include ai-breakpoint(false, s) {
+			background-size: 170px 20px;
+			height: 20px;
+			width: 170px;
+		}
+	}
+}
+// Sticky styles
+.headroom--not-top {
+
+	.logo {
+		height: em-calc(50);
+		padding: em-calc(13 0);
+
+		@include ai-breakpoint(false, l) {
+			margin: 0 auto;
+		}
+
+		@include ai-breakpoint(l) {
+			border-right: 1px solid $gray-500;
+			float: left;
+			left: 0;
+			margin: em-calc(0 5 0 -10);
+			padding: em-calc(10 10 10 0);
+			position: static;
+			width: auto;
+		}
+
+		a {
+			background-size: 170px 20px;
+			height: 20px;
+			width: 170px;
+
+			@include ai-breakpoint(l) {
+				background-image: url('../../images/dp-logo-sm.svg');
+				background-size: 50px 30px;
+				height: 30px;
+				width: 50px;
+			}
+		}
+	}
+}

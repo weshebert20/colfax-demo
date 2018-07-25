@@ -1,0 +1,59 @@
+// Author Article
+//
+// Articles appearing on author landing pages
+
+.author-view {
+
+	.author-stories-feed & {
+		@extend %slideshow-video-small;
+		padding-bottom: spacing();
+		border-bottom: 1px solid $gray-500;
+
+		time {
+			text-transform: uppercase;
+		}
+
+		h5 {
+			@include ai-breakpoint(false, m) {
+				@include font(20, 23, $heading, 700);
+			}
+		}
+
+		figure {
+			float: left;
+			margin-bottom: 0;
+
+			@include ai-breakpoint(false, s) {
+				display: none;
+			}
+		}
+
+		header {
+			width: calc(100% - 10em);
+			float: left;
+			padding-left: spacing();
+
+			@include ai-breakpoint(false, s) {
+				width: auto;
+				padding-left: 0;
+			}
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
+
+		.image-wrapper {
+			width: px-to-em(140);
+			height: auto;
+		}
+	}
+}
+
+.author-stories-feed {
+
+	.load-more-wrapper {
+		@include vertical-rhythm();
+	}
+}

@@ -1,0 +1,42 @@
+// More News
+//
+// Large "More News" section at bottom of articles
+
+.more-news {
+	@extend %clearfix;
+
+	ul {
+		@include vertical-rhythm(1.5);
+	}
+
+	li {
+		@extend %clearfix;
+	}
+
+	time {
+		display: inline-block;
+		margin-bottom: spacing(0.5);
+	}
+
+	.excerpt {
+
+		@include ai-breakpoint(l) {
+			@include font(18, 28, $body, 400);
+		}
+
+		@include ai-breakpoint(false, l) {
+			@include font(16, 22, $body, 400);
+		}
+	}
+
+	.read-more {
+		@include button($gray-max, 10);
+		@extend %inverse-button;
+		@include font(16, 16, $widget, 700);
+		float: left;
+	}
+
+	.archive-view {
+		@extend %slideshow-video-alt;
+	}
+}

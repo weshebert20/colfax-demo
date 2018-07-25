@@ -1,0 +1,204 @@
+// Section Feature
+//
+// Featured area on a section landing page
+//
+// markup: section.html
+//
+// Styleguide features.section
+
+.feature-section {
+	display: flex;
+	justify-content: space-between;
+
+	@include ai-breakpoint(false, m) {
+		flex-direction: column;
+	}
+
+	.section-title {
+		@extend %scng-section-headline;
+		@include font(30, 32, $body, 700);
+		border-bottom: 4px solid $primary;
+		padding-bottom: em-calc(5);
+		text-align: left;
+	}
+
+	.feature-wrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: em-calc(0 20 32 0);
+		@include ai-span(12, xl);
+		@include ai-span(8, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.feature-bottom {
+		width: 100%;
+	}
+
+	.archive-view {
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.feature-top {
+		border-bottom: 1px solid $gray-500;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: spacing(1.5);
+		width: 100%;
+
+		@include ai-breakpoint(false, l) {
+			flex-direction: column;
+		}
+
+		.feature-large,
+		.feature-large-top {
+			@include ai-span(11, xl);
+			@include ai-span(8, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			border-bottom: 0;
+		}
+	}
+
+	.feature-bottom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.feature-small {
+
+			figure {
+				width: 25%;
+			}
+
+			.article-info {
+				width: calc(75% - #{spacing()});
+			}
+
+			@include ai-breakpoint(false, s) {
+
+				figure,
+				.article-info {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.feature-right {
+		@include ai-span(5, xl);
+		@include ai-span(5, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		display: flex;
+		justify-content: flex-start;
+		min-height: 0;
+
+		@include ai-breakpoint(false, s) {
+			flex-direction: column;
+		}
+
+		@include ai-breakpoint(l) {
+			flex-direction: column;
+			padding: em-calc(0 16);
+		}
+
+		@include ai-breakpoint(s, l) {
+			justify-content: space-between;
+		}
+
+		.feature-small {
+			flex-wrap: wrap;
+			margin-bottom: spacing();
+			width: 100%;
+
+			@include ai-breakpoint(s, l) {
+				width: calc(50% - #{em-calc(10)});
+			}
+
+			figure {
+				width: 100%;
+			}
+
+			.photo-credit {
+				display: none;
+			}
+		}
+	}
+
+	.dfp-ad {
+		flex: 0 0 em-calc(300);
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: em-calc(60);
+
+		&.box {
+			display: none;
+		}
+
+		@include ai-breakpoint(false, m) {
+
+			&.portrait {
+				display: none;
+			}
+
+			&.box {
+				border-top: 1px solid $gray-400;
+				display: block;
+				margin-top: 0;
+				padding: em-calc(16 0);
+				width: 100%;
+			}
+		}
+	}
+
+	.swappable {
+		width: 100%;
+
+		@include ai-breakpoint(m) {
+			width: auto;
+			margin: 0 auto;
+		}
+	}
+
+	.landing-secondary-left {
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(false, l) {
+			order: 1;
+		}
+	}
+
+	.landing-secondary-main {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.landing-page-list {
+		width: 100%;
+	}
+}
+
+.landing-page-list-title {
+	@extend %scng-section-headline;
+	width: 100%;
+	margin-bottom: spacing();
+}

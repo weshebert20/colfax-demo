@@ -1,0 +1,30 @@
+// Denver Post: Status Bar
+//
+// Styles for status and log in bar located above primary header
+//
+// markup:
+// <div class="status-bar">
+// 	<div class="status-bar-wrapper">
+// 		<ul>
+// 			<li><a href="#" class="today">Today</a></li>
+// 			<li><a href="#" class="subscribe">Subscribe</a></li>
+// 			<li><a href="#" class="login">Newsletter</a></li>
+// 		</ul>
+// 	</div>
+// </div>
+//
+// Styleguide header.status-bar
+
+.status-bar {
+
+	ul {
+
+		li {
+			@include font(14, 38, $meta, 400);
+		}
+	}
+
+	a {
+		padding: em-calc(10, false, 14);
+	}
+}

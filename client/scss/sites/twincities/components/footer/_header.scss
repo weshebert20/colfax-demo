@@ -1,0 +1,49 @@
+// Twin Cities: Footer Header
+//
+// Header bar for site footer
+//
+// markup:
+// <header class="footer-header">
+// 	<div class="footer-header-wrapper">
+//		<ul class="footer-links">
+// 			<li href="#"><a href="#">Today's Paper</a></li>
+// 			<li href="#"><a href="#">Subscribe</a></li>
+//		</ul>
+//		<div data-huron-id="sharing-list" data-huron-type="template"></div>
+// 	</div>
+// </header>
+//
+// Styleguide footer.header
+
+.footer-header {
+	padding: px-to-em(10) 0;
+	background-color: $gray-100;
+}
+
+.footer-links {
+
+	li {
+
+		&:first-child {
+			border-right: 1px solid $gray-max;
+			margin-right: px-to-em(5);
+			padding-right: px-to-em(5);
+		}
+	}
+
+	a {
+		color: $gray-max;
+
+		&:hover {
+			color: $primary-lighter;
+		}
+
+		@include ai-breakpoint(false, m) {
+			font-size: px-to-em(14);
+		}
+	}
+
+	a[href$='allaccess'] {
+		@extend %mobile-subscriptions;
+	}
+}

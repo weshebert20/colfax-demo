@@ -1,0 +1,99 @@
+// Takeover Layout
+//
+// Primary featured area takeover
+//
+// markup: takeover.html
+//
+// Styleguide features.takeover
+
+.takeover {
+	@include vertical-rhythm();
+	@extend %clearfix;
+	margin-bottom: spacing();
+	overflow: visible;
+	position: relative;
+
+	.feature-large,
+	.feature-large-top {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, s);
+	}
+
+	.feature-bottom {
+		@include vertical-rhythm();
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, s);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.feature-small {
+			@include ai-span(8, xl);
+			@include ai-span(6.5, l);
+			@include ai-span(5, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+			justify-content: space-between;
+
+			&:last-child {
+				margin-bottom: spacing();
+			}
+
+			@include ai-breakpoint(false, l) {
+				flex-direction: column;
+
+				figure,
+				.article-info {
+					width: 100%;
+				}
+			}
+
+			@include ai-breakpoint(l) {
+				flex-direction: row;
+
+				figure {
+					width: 25%;
+					margin: 0;
+				}
+
+				.article-info {
+					width: calc(75% - #{em-calc(20)});
+				}
+
+				&:nth-child(2) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	.feature-large,
+	.feature-large-top,
+	.feature-bottom {
+		@include ai-breakpoint(m) {
+			float: left;
+		}
+	}
+
+	.sidebar-ad-container {
+		//@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(4, m, true);
+		//@include ai-span(4, s);
+		//@include ai-span(4, xs);
+
+		@include ai-breakpoint(m) {
+			float: right;
+		}
+	}
+
+	.two-cents-swap {
+		display: none;
+	}
+}

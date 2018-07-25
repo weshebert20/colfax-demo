@@ -1,0 +1,66 @@
+// Events Calendar
+//
+// Styles for events calendar. Note: using jQuery UI datepicker markup for now
+
+.events {
+	border: 1px solid $gray-300;
+
+	header {
+		@extend %clearfix;
+		padding: px-to-em(10);
+	}
+
+	.widget-title {
+		float: left;
+		text-transform: uppercase;
+	}
+
+	.see-all {
+		@include font(14, 14, $meta, 700);
+		position: relative;
+		top: px-to-em(10);
+		float: right;
+		text-transform: uppercase;
+		color: $primary-light;
+	}
+
+	.event-text {
+		padding: px-to-em(10);
+		border-top: 1px solid $gray-300;
+
+		time {
+			display: inline-block;
+			margin-right: px-to-em(10);
+		}
+
+		a {
+			@include font(13, 24, $meta, 400);
+		}
+
+		@include ai-breakpoint(m, l) {
+			position: relative;
+			top: px-to-em(-35);
+		}
+	}
+
+	.homepage & {
+
+		.event-text {
+			@include ai-span(4, m, true);
+
+			@include ai-breakpoint(m, l) {
+				border: none;
+			}
+		}
+
+		header,
+		#datepicker {
+			@include ai-span(6, m);
+
+			@include ai-breakpoint(m, l) {
+				margin-right: 0;
+				border-right: 1px solid $gray-300;
+			}
+		}
+	}
+}

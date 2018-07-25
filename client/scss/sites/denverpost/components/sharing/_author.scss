@@ -1,0 +1,22 @@
+// Denver Post: Author Social
+//
+// Author profile and contact links
+//
+// markup:
+// <ul class="author-social">
+// 	<li><a href="#"><i class="icon-twitter"></i> @Charley_Walters</a></li>
+// 	<li><a href="#"><i class="icon-email"></i> cwalters@pioneerpress.com</a></li>
+// </ul>
+//
+// Styleguide sharing.author
+
+.author-social {
+
+	@include ai-breakpoint(s) {
+		padding-left: px-to-em(110);
+	}
+
+	i {
+		font-size: em-calc(20);
+	}
+}

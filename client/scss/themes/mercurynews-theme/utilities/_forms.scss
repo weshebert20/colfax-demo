@@ -1,0 +1,38 @@
+// Mercury News: Forms
+
+form {
+
+	label {
+		@include font(14, 16, $meta, 600);
+		color: $primary;
+		text-transform: uppercase;
+	}
+
+	input {
+
+		&[type="radio"],
+		&[type="checkbox"] {
+			left: 0;
+			line-height: 1.5;
+			margin: em-calc(0 10 0 0);
+			top: px-to-em(3);
+		}
+
+		&[type="submit"] {
+			@extend %rounded-button;
+			font-family: $meta;
+		}
+	}
+}
+
+.radio-group,
+.checkbox-group {
+
+	label {
+		padding-left: px-to-em(10);
+	}
+}
+
+.form-group {
+	margin-bottom: spacing(0.5);
+}

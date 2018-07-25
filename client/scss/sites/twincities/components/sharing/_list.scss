@@ -1,0 +1,39 @@
+// Twin Cities: Sharing List
+//
+// List of sharing links
+//
+// markup:
+// <ul class="sharing">
+// 	<li><a href="#" class="icon-facebook"><span class="label">Facebook</span></a></li>
+// 	<li><a href="#" class="icon-twitter"><span class="label">Twitter</span></a></li>
+// 	<li><a href="#" class="icon-instagram"><span class="label">Instagram</span></a></li>
+// 	<li><a href="#" class="icon-feed"><span class="label">RSS</span></a></li>
+// </ul>
+//
+// Styleguide sharing.list
+
+.sharing,
+.sharedaddy {
+
+	.footer-header & {
+
+		li {
+			display: inline-block;
+			margin-right: 0;
+			margin-left: px-to-em(20);
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+
+		a {
+			color: $gray-max;
+			font-size: px-to-em(17);
+
+			&:hover {
+				color: $primary-lighter;
+			}
+		}
+	}
+}

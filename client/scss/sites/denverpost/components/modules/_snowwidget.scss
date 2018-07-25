@@ -1,0 +1,195 @@
+// Denver Post: Snow Widget
+
+// snowwidget colors
+$sw-outline: #999;
+$sw-header-footer-bg: #E3E8F2;
+$sw-headline-icon-color: #04bacf;
+$sw-label-bg: #01acd8;
+$sw-label-color: white;
+$sw-primary-text-color: #053a82;
+$sw-tab-bg: #60b0d7;
+$sw-tab-bg-active: #3d7097;
+$sw-tweet-bg: #F0F8FF;
+
+.icon-weather-snow {
+	display: inline-block;
+}
+
+#snowReportLogo {
+	float: left;
+}
+
+.snowwidget-container {
+	width: 300px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	outline: 1px $sw-outline solid;
+}
+
+.snowwidget-headline {
+	font-size: 13px;
+	clear: both;
+}
+
+.snowwidget-headline-label {
+	background: $sw-label-bg;
+	color: $sw-label-color;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 4px 0 4px 25px;
+}
+
+.snowwidget-tagline {
+	padding: 2px 0 8px 15px;
+	margin: 4px;
+	border-bottom: 1px dotted gray;
+}
+
+.snowwidget-tagline-icon {
+	color: $sw-headline-icon-color;
+	font-size: 21px;
+	font-weight: 700;
+	margin-right: 8px;
+	vertical-align: bottom;
+}
+
+.snowwidget-tagline-label {
+	color: $sw-primary-text-color;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.snowwidget-pane-container {
+	height: 250px;
+	border-right: $sw-label-bg 3px solid;
+	border-left: $sw-label-bg 3px solid;
+	border-top: $sw-label-bg 3px solid;
+}
+
+.snowwidget-pane {
+	display: none;
+	height: 100%;
+
+	&:first-child {
+		display: block;
+	}
+}
+
+.snowwidget-pane-list {
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	// accommodate top banner on forecast pane
+	.snowwidget-pane-forecast & {
+		height: 215px;
+		line-height: 1.2;
+	}
+}
+
+.snowwidget-pane-list-label {
+	background: $sw-label-bg;
+	color: $sw-label-color;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 4px 0;
+
+	a:hover {
+		color: $sw-label-color;
+	}
+}
+
+.snowwidget-pane-data {
+	color: $sw-primary-text-color;
+}
+
+.snowwidget-pane-newsnow-data {
+	padding: 5px 0 5px 35px;
+}
+
+.snowwidget-pane-forecast-data {
+	display: flex;
+	text-align: center;
+	padding: 8px 10px;
+}
+
+.snowwidget-pane-forecast-data-item {
+	width: percentage( 1/3 );
+	font-weight: 700;
+
+	&:first-child {
+		font-weight: 400;
+	}
+}
+
+.snowwidget-pane-data-icon {
+	font-weight: 700;
+	font-size: 14px;
+	float: left;
+	line-height: 1.4;
+}
+
+.snowwidget-pane-data-text {
+	line-height: 1.4;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.snowwidget-pane-tweet {
+	background: $sw-tweet-bg;
+	margin: 5px;
+	display: flex;}
+
+.snowwidget-pane-twitter-avatar {
+	min-width: 48px;
+	height: 48px;
+	display: block;
+}
+
+.snowwidget-pane-tweet-text {
+	margin: 4px 10px 5px 20px;
+}
+
+.snowwidget-tabs {
+	height: 35px;
+	display: flex;
+}
+
+.snowwidget-tabs-btn {
+	flex-grow: 1;
+	height: 100%;
+	background-color: $sw-tab-bg;
+	color: white;
+	cursor: pointer;
+	font-weight: 700;
+	padding: 0 5px;
+
+	&:hover,
+	&.is-active {
+		background-color: $sw-tab-bg-active;
+	}
+}
+
+.snowwidget-tab-icon,
+.snowwidget-tab-text {
+	float: left;
+}
+
+.snowwidget-tab-icon {
+	font-size: 22px;
+	line-height: 1.5;
+	padding: 0 5px;
+}
+
+.snowwidget-tab-text {
+	line-height: 2.8;
+	float: left;
+}
+
+.snowwidget-footer {
+	background-color: $sw-header-footer-bg;
+	height: 80px;
+	width: 100%;
+}

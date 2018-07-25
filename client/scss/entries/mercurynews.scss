@@ -1,0 +1,24 @@
+// Core Variables
+@import '../themes/mercurynews-theme/core/loader';
+@import '../common-base/loader';
+
+// Theme utilities
+@import '../themes/mercurynews-theme/layout/loader';
+@import '../themes/mercurynews-theme/utilities/loader';
+
+// Common Modules
+@import '../layouts/common/components/article/loader';
+@import '../layouts/common/components/article-archive/loader';
+@import '../layouts/common/components/author/loader';
+@import '../layouts/common/components/footer/loader';
+@import '../layouts/common/components/header/loader';
+@import '../layouts/common/components/modules/loader';
+@import '../layouts/common/components/search/loader';
+@import '../layouts/common/components/sharing/loader';
+@import '../layouts/common/pages/loader';
+
+// BANG layout
+@import '../layouts/bang/loader';
+
+// Mercury News specific styles
+@import '../sites/mercurynews/loader';

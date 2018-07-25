@@ -1,0 +1,45 @@
+// SCNG Modern Earthy: Colors
+//
+// text - Body Copy
+// primary - Brand Primary
+// secondary - Brand Secondary
+// tertiary - Brand Tertiary
+// gray-min - Minimum Gray
+// gray-200 - First Gray
+// gray-300 - Second Gray
+// gray-400 - Third Gray
+// gray-500 - Fourth Gray
+// gray-600 - Fiffth Gray
+// gray-max - Maximum Gray
+//
+// markup: colors.hbs
+//
+// data: colors.json
+//
+// Styleguide core.colors
+
+// Brand colors
+$primary: rgb(216, 67, 21) !default; // #D84315
+$secondary: rgb(238, 255, 65) !default; // #EEFF41
+$tertiary: rgb(255, 87, 34) !default; // #FF5722
+$primary-light: $tertiary !default;
+
+// Grays
+$gray-min: rgb(20, 20, 20) !default; //#141414
+$gray-100: rgb(31, 30, 30) !default; // #1F1E1E
+$gray-200: rgb(93, 91, 90) !default; // #5D5B5A
+$gray-300: rgb(157, 154, 152) !default; // #9D9A98
+$gray-400: rgb(170, 167, 164) !default; // #AAA7A4
+$gray-500: rgb(221, 216, 213) !default; // #ddd8d5
+$gray-600: rgb(236, 237, 231) !default; // #ecede7
+$gray-max: rgb(255, 255, 255) !default; // #ffffff
+
+// Location colors
+$text: rgb(26, 26, 26) !default;
+$link-hover: $primary !default;
+$button: $primary !default;
+$pushnav-bg: $gray-min !default;
+$pushnav-border: $gray-100 !default;
+$divider: $gray-500 !default;
+$divider-alt: #F1EFEB !default;
+$background: #fafafa !default;

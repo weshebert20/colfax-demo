@@ -1,0 +1,22 @@
+// Featured Videos
+//
+// Styles for featured videos
+
+.feature-video {
+
+	ul {
+		@extend %clearfix;
+	}
+
+	.landing-three-one & {
+		margin-bottom: 2em;
+	}
+}
+
+/* stylelint-disable declaration-no-important */
+.ndn_embed,
+.inform-embed,
+.inform-video {
+	display: none !important;
+}
+/* stylelint-enable */

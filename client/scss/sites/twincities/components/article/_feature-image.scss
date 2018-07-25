@@ -1,0 +1,22 @@
+// Twin Cities: Featured Image
+//
+// Article featured image styles
+//
+// full-view - default image at top of article
+// body-copy - inline image in article body
+//
+// markup: featured-image.hbs
+//
+// data: featured-image.json
+//
+// Styleguide article.feature-image
+
+figcaption,
+.caption {
+
+	.full-view & {
+		@extend %caption;
+		padding: em-calc(10, false, 14);
+		background-color: $gray-600;
+	}
+}

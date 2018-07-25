@@ -1,0 +1,13 @@
+.prototype-styleguide {
+
+	.section__markup-content {
+
+		> .status-bar {
+			position: static;
+
+			.status-bar-wrapper {
+				width: 125px;
+			}
+		}
+	}
+}

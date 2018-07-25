@@ -1,0 +1,70 @@
+// BANG: Logo
+
+// NOTE: Your site should"
+// 		* Explicitly define logo source and set as background image for .logo a
+//		* Explicitly define background size, width and height of the .logo a selector
+//			(this may differ at different breakpoints)
+
+.logo {
+	align-items: center;
+	display: flex;
+
+	@include ai-breakpoint(false, $header-primary-bp) {
+		margin-left: em-calc(10);
+	}
+
+	@include ai-breakpoint(l) {
+		margin-bottom: 0;
+		position: absolute;
+		text-align: left;
+		top: -70px;
+		width: 100%;
+	}
+
+	a {
+		display: inline-block;
+		margin: em-calc(0 10);
+
+		@include ai-breakpoint(s, l) {
+			margin: em-calc(18 0);
+		}
+
+		@include ai-breakpoint(false, s) {
+			margin: em-calc(14 0 10 0);
+		}
+	}
+}
+
+// Sticky styles
+.headroom--not-top {
+
+	.logo {
+		height: em-calc(50);
+		padding: em-calc(15 0);
+
+		@include ai-breakpoint(false, l) {
+			margin: 0;
+		}
+
+		@include ai-breakpoint(l) {
+			border-right: 1px solid $gray-500;
+			margin-right: em-calc(10);
+			padding: em-calc(5 10);
+			position: static;
+			width: auto;
+		}
+
+		a {
+			margin: 0;
+		}
+
+		&.custom-logo {
+
+			img {
+				@include ai-breakpoint(l) {
+					display: none;
+				}
+			}
+		}
+	}
+}

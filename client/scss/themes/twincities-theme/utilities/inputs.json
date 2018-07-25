@@ -1,0 +1,9 @@
+{
+	"default": {},
+	"focus": {},
+	"search-form": {},
+	"search-form-large": {
+		"classes": "search-form large"
+	},
+	"datepicker": {}
+}

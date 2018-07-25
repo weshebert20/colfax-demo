@@ -1,0 +1,22 @@
+// Section Highlight
+//
+// Highlight for a section on the homepage
+
+.section-highlight {
+	@extend %clearfix;
+
+	> h2, > h5 {
+		@extend %section-highlight-arrow;
+		margin-bottom: spacing();
+	}
+
+	.section-feature {
+		@extend %clearfix;
+		padding-bottom: spacing();
+		margin-bottom: spacing();
+	}
+
+	.section-float & {
+		@include ai-span(10, m);
+	}
+}

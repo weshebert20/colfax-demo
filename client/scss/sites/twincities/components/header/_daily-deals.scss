@@ -1,0 +1,106 @@
+// Twin Cities: Daily Deals
+//
+// Styles for daily deals flyout
+//
+// markup:
+// <div class="daily-deals-flyout">
+// 	<div class="daily-deals-flyout-wrapper">
+// 		<div class="daily-deal">
+// 			<img src="http://placehold.it/100x50">
+//			<h3><a href="#">Today's Deal: Up to 72% Off a Silver or Platinum Level Detailing Package for an Interior or Full Detail! Only $39</a></h3>
+// 		</div>
+// 		<a class="add-to-cart">Add to Cart</a>
+// 	</div>
+// </div>
+//
+// Styleguide header.daily-deals
+
+.daily-deals-flyout {
+	background-color: $primary-dark;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+	height: px-to-em(160);
+	left: 0;
+	padding: px-to-em(10) 0;
+	position: absolute;
+	top: 0;
+	transform: translate(0, em-calc(-160));
+	transition: transform 250ms ease-in-out;
+	width: 100%;
+	z-index: index($indices, daily-deals);
+
+	@include ai-breakpoint(false, m) {
+		display: none;
+	}
+
+	h3 {
+
+		a {
+			color: $gray-max;
+
+			&:hover {
+				color: $primary-light;
+			}
+		}
+
+		@include ai-breakpoint(false, l) {
+			@include font(18, 22, $heading, 600);
+		}
+
+		@include ai-breakpoint(l, xl) {
+			@include font(20, 24, $heading, 600);
+		}
+	}
+
+	img {
+		margin: em-calc(0 16 16 0);
+		float: left;
+	}
+
+	.daily-deal {
+		width: 100%;
+		padding-right: px-to-em(200);
+	}
+
+	.add-to-cart {
+		@include font(26, 52, $meta, 700);
+		position: absolute;
+		display: inline-block;
+		top: 0;
+		right: px-to-em(10, false, 26);
+		width: px-to-em(180, false, 26);
+		float: right;
+		text-align: center;
+		text-transform: uppercase;
+		color: $gray-max;
+		background-color: $primary;
+	}
+
+	.daily-deals-flyout-wrapper {
+		@extend %container;
+		@extend %clearfix;
+		max-height: 100%;
+		overflow: hidden;
+		padding: em-calc(0 25);
+		position: relative;
+	}
+
+	&.daily-deals {
+		transform: translate(0, 0);
+	}
+}
+
+.status-bar {
+
+	.daily-deals-nav {
+		transition: transform 250ms ease-in-out;
+		transform: translate(0, 0);
+	}
+
+	&.daily-deals {
+
+		.daily-deals-nav {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+			transform: translate(0, em-calc(160, false, 14));
+		}
+	}
+}

@@ -1,0 +1,73 @@
+// Twin Cities: Footer Menu
+//
+// Menu section for footer
+//
+// markup:
+// <li class="menu-item-has-children">
+// 	<a href="#">Home</a>
+// 	<span class="expander"><a class="icon-minus"></a></span>
+// 	<ul class="footer-menu">
+// 		<li><a href="#">News</a></li>
+// 		<li><a href="#">Sports</a></li>
+// 		<li><a href="#">Things to Do</a></li>
+// 		<li><a href="#">Opinion</a></li>
+// 		<li><a href="#">Obituaries</a></li>
+// 		<li><a href="#">Classifieds</a></li>
+//	</ul>
+// </li>
+//
+// Styleguide footer.menu
+
+.site-footer {
+
+	.menu-item-has-children {
+		margin-top: px-to-em(20);
+		text-align: center;
+
+		@include ai-breakpoint(false, s) {
+			margin-top: 0;
+		}
+
+		&:hover {
+
+			> a,
+			.expander > a {
+				color: $primary-light;
+			}
+		}
+
+		> a {
+
+			@include ai-breakpoint(false, s) {
+				background-color: $gray-max;
+			}
+		}
+
+		> a,
+		li {
+			margin-bottom: px-to-em(25);
+
+			@include ai-breakpoint(false, s) {
+				margin: 0;
+				border-bottom: 1px solid $gray-300;
+			}
+		}
+
+		> a,
+		li > a {
+
+			@include ai-breakpoint(false, s) {
+				display: inline-block;
+				padding: em-calc(15 10);
+				width: 100%;
+			}
+		}
+
+		li > a {
+
+			@include ai-breakpoint(false, s) {
+				background-color: $gray-600;
+			}
+		}
+	}
+}

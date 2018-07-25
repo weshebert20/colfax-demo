@@ -1,0 +1,55 @@
+// Footer header
+//
+// The top of the footer
+//
+// markup: header.hbs
+//
+// data: header.json
+//
+// Styleguide footer.header
+
+.footer-header {
+	border-top: 1px solid $gray-600;
+	border-bottom: 5px solid $gray-min;
+}
+
+.footer-header-wrapper {
+	display: flex;
+	padding: em-calc(10);
+
+	@include ai-breakpoint(false, s) {
+		align-items: center;
+		flex-direction: column;
+	}
+}
+
+.footer-links {
+	display: flex;
+
+	@include ai-breakpoint(false, s) {
+		align-items: center;
+		flex-direction: column;
+	}
+
+	li {
+		@include font(16, 17, $meta, 600);
+		color: $gray-min;
+		line-height: 2;
+		margin-right: em-calc(20);
+
+		@include ai-breakpoint(false, s) {
+			display: block;
+			font-size: em-calc(12);
+			text-align: center;
+			width: 100%;
+		}
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		&:hover {
+			color: $gray-min;
+		}
+	}
+}

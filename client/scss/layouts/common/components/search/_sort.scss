@@ -1,0 +1,20 @@
+// Search Sort
+//
+// Sort search results
+
+.sort {
+	@include font(16, 20, $meta, 700);
+
+	.deselected {
+		font-weight: 400;
+	}
+
+	a {
+		display: inline-block;
+		margin-right: px-to-em(5);
+
+		&:hover {
+			color: $primary-light;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+// SCNG: Author
+//
+// Styles for author landing pages
+
+.author.landing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: spacing(2);
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: spacing(1.5);
+  }
+}

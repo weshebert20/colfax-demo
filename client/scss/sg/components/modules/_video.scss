@@ -1,0 +1,11 @@
+.feature-video {
+
+	.video-feature-secondary {
+
+		.prototype-styleguide & {
+			@include ai-breakpoint(false, m) {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,129 @@
+// Mercury News:  Landing Layout
+
+.tag-name,
+.search-title {
+	@extend %header-border;
+	font-size: em-calc(32);
+	line-height: 1.25;
+
+	.error-404 & {
+		text-align: center;
+
+		&::before {
+			content: none;
+		}
+	}
+}
+
+.search,
+.author.landing {
+	@extend %clearfix;
+	margin-bottom: spacing(3);
+}
+
+.feature-primary {
+	margin-top: spacing(2);
+}
+
+.landing-three-one,
+.landing-three-up,
+.landing-four-up {
+	display: flex;
+	justify-content: space-between;
+}
+
+.landing-three-one,
+.landing-four-up {
+	flex-wrap: wrap;
+}
+
+.landing-three-one {
+
+	.three-one-right {
+		order: 1;
+		position: relative;
+		z-index: 1;
+
+		@include ai-breakpoint(false, l) {
+			margin: em-calc(32 0 16 0);
+		}
+
+		.feature-video {
+			width: 100%;
+		}
+	}
+
+	&:not(.three-one-feature-left) {
+
+		.three-one-right {
+
+			@include ai-breakpoint(l) {
+				top: em-calc(66);
+				padding-bottom: em-calc(66);
+			}
+		}
+	}
+
+	&.three-one-feature-left {
+
+		.three-one-right {
+
+			@include ai-breakpoint(l) {
+				top: spacing(0.5);
+			}
+		}
+	}
+
+	&.three-one-multi {
+
+		.three-one-right {
+
+			@include ai-breakpoint(l) {
+				top: em-calc(42);
+				padding-bottom: em-calc(42);
+			}
+		}
+	}
+}
+
+.primary-related {
+	list-style: none;
+
+	li {
+		margin-bottom: em-calc(12);
+		padding-left: em-calc(20);
+		position: relative;
+
+		&::before {
+			content: "•";
+			height: em-calc(20, false, 20);
+			font-size: em-calc(20);
+			margin-left: em-calc(-20, false, 20);
+			position: absolute;
+		}
+
+		a {
+			@include font(14, 17, $heading, 700);
+			letter-spacing: -0.01em;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+
+		a,
+		time {
+			display: inline;
+		}
+	}
+
+	time {
+		@include font(12, 18, $meta);
+		color: $gray-400;
+		margin-left: em-calc(10, false, 12);
+	}
+
+	.section-highlight & {
+		display: none;
+	}
+}

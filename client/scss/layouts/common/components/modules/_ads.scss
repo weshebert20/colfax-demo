@@ -1,0 +1,210 @@
+// Advertisements
+//
+// Styles for ads
+
+// Ad Layers breakpoints
+//
+// Media queries to sync with settings for DFM ad layers and DFP setup
+$ad-mq-desktop: "min-width: 1040px";
+$ad-mq-tablet: "min-width: 750px";
+$ad-mq-mobile: "min-width: 300px";
+
+/* stylelint-disable declaration-no-important */
+.dfp-ad {
+	@extend %clearfix;
+	display: block;
+	font-size: px-to-em(16, true);
+	margin: 0 auto;
+	overflow: hidden; // Add block formatting
+	position: relative;
+	text-align: center;
+
+	span {
+		@extend %small-label;
+		width: 100%;
+		text-align: center;
+	}
+
+	img,
+	iframe {
+		display: inline-block;
+	}
+
+	> div {
+		text-align: center;
+		width: 100%;
+	}
+
+	&.dfp-top_leaderboard,
+	&.dfp-bottom_leaderboard {
+		clear: both;
+		margin: 0 auto px-to-em(24);
+		top: 0;
+		width: 100%;
+	}
+
+	&.banner {
+
+		img,
+		iframe {
+			width: 768px;
+		}
+
+		.article-body & {
+			border-bottom: 1px solid $gray-500;
+			border-top: 1px solid $gray-500;
+			padding-bottom: px-to-em(10);
+			position: relative;
+			text-align: center;
+			top: auto;
+
+			span {
+				background-color: $gray-max;
+				display: inline-block;
+				padding: 0 px-to-em(5, false, 10);
+				position: relative;
+				top: px-to-em(-16, false, 10);
+				width: auto;
+			}
+
+			img,
+			iframe {
+				position: relative;
+				top: px-to-em(-10);
+			}
+
+			@include ai-breakpoint(xl) {
+				width: percentage( ( 12 * $column-width ) / ( 8 * $column-width ) );
+			}
+
+			@include ai-breakpoint(l, xl) {
+				width: percentage( ( 11 * $column-width ) / ( 7 * $column-width ) );
+			}
+
+			@include ai-breakpoint(m, l) {
+				width: percentage( ( 10 * $column-width ) / ( 8 * $column-width ) );
+				left: -( percentage( ( 1 * $column-width ) / ( 8 * $column-width ) ) );
+			}
+		}
+	}
+
+	.body-copy &,
+	.article-sidebar & {
+		top: 0;
+		margin: 0 auto spacing(1.5);
+	}
+
+	.article-sidebar & {
+
+		&.lower-ad {
+
+			@include ai-breakpoint(l) {
+				display: inline-block;
+				margin-top: px-to-em(100);
+				position: absolute;
+				right: 0;
+				text-align: center;
+				width: 100%;
+
+				&.static {
+					margin-top: 0;
+					position: static;
+				}
+			}
+		}
+	}
+
+	.takeover & {
+		top: 0;
+	}
+
+	.ad-mobile & {
+		width: 100%;
+	}
+
+	@include ai-breakpoint(false, m) {
+
+		.feature-primary &,
+		.feature-section & {
+			padding-bottom: spacing();
+		}
+	}
+
+	.prototype & {
+		margin-bottom: em-calc(32);
+	}
+}
+
+.header-banners {
+
+	// DFP mobile breakpoint
+	@media (max-width: 750px) {
+		box-sizing: content-box;
+		left: -10px;
+		padding: 0 10px;
+		position: relative;
+	}
+}
+
+.lazy-ad-unit {
+
+	// DFP mobile breakpoint
+	// Used to hold space for lazy ads and prevent the herky-jerky
+	@media (max-width: 750px) {
+
+		&.dfp-top_leaderboard {
+			position: relative;
+			left: -10px;
+		}
+
+		&.dfp-top_leaderboard {
+			width: 320px;
+			height: 50px;
+		}
+
+		&.dfp-Cube1_RRail_ATF,
+		&.dfp-Cube2_RRail_mid,
+		&.box {
+			height: 250px;
+		}
+	}
+}
+
+#stick-trigger {
+	background-color: transparent;
+	display: block;
+	height: 0;
+	margin: 0;
+	width: 100%;
+}
+
+// Sticky ad (using ID so the ad can be either async or sync ad-layers ad)
+.single-post #div-gpt-ad-Cube2_RRail_mid {
+
+	@include ai-breakpoint(l) {
+		margin: em-calc(24 auto);
+		position: static;
+		z-index: index($indices, trending);
+
+		&.stick {
+			position: fixed;
+
+			iframe {
+				display: block;
+			}
+		}
+	}
+}
+
+.ut_container {
+	transition: opacity 250ms ease-in-out,
+		top 250ms ease-in-out;
+}
+
+// Prevent ndn video overlay from overlapping sticky header
+.ndn_startOverlayContainer,
+.ndn_pauseOverlayContainer,
+.ndn_infoOverlayContainer {
+	z-index: 6 !important;
+}
+/* stylelint-enable */

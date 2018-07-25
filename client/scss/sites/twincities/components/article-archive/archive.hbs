@@ -1,0 +1,41 @@
+{{#if wrapper}}
+	<div class="{{ wrapper }}">
+{{/if}}
+<article class="archive-view {{ classes }}">
+	<figure>
+		{{#if sponsored}}
+			<span class="sponsored-flag">Sponsored</span>
+		{{/if}}
+		{{#if image}}
+			<a href="#">
+				<div class="image-wrapper">
+					<img src="{{ image }}" alt="article-image">
+				</div>
+			</a>
+		{{/if}}
+		{{#if videoTime}}
+			<time class="duration"><span class="icon-play-arrow"></span> {{ videoTime }}</time>
+		{{/if}}
+		{{#if video}}
+			<span class="icon-play-arrow"></span>
+		{{/if}}
+		{{#if slideshow}}
+			<span class="icon-slideshow"></span>
+		{{/if}}
+		{{#if credit}}
+			<span class="photo-credit">PHOTO CREDIT</span>
+		{{/if}}
+	</figure>
+	<div class="article-info">
+		<header>
+			<h6 class="entry-title"><a href="#">{{ title }}</a></h6>
+			<div class="excerpt">{{ excerpt }}</div>
+		</header>
+		{{#if readmore }}
+			<a href="#" class="read-more">Read More</a>
+		{{/if}}
+	</div>
+</article>
+{{#if wrapper}}
+	</div>
+{{/if}}

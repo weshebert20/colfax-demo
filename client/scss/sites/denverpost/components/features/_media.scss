@@ -1,0 +1,160 @@
+// Denver Post: Featured Photos and Videos
+//
+// Styles for primary featured area on the homepage
+//
+// markup:
+// <section class="feature-media slideshow-landing">
+// 	<h2 class="widget-title"><a href="#">Videos <i class="icon-arrow-right"></i></a></h2>
+// 	<ul class="media-articles">
+// 		<li class="media-feature-primary"><div data-huron-id="article-archive-feature-large-example-one" data-huron-type="template"></div></li>
+// 		<li class="media-feature-secondary"><div data-huron-id="article-archive-feature-small-examples" data-huron-modifier="one" data-huron-type="template"></div></li>
+//		<li class="media-feature-secondary"><div data-huron-id="article-archive-feature-small-examples" data-huron-modifier="two" data-huron-type="template"></div></li>
+//		<li class="media-feature-secondary"><div data-huron-id="article-archive-feature-small-examples" data-huron-modifier="three" data-huron-type="template"></div></li>
+// 		<li class="media-feature-secondary"><div data-huron-id="article-archive-feature-small-examples" data-huron-modifier="four" data-huron-type="template"></div></li>
+//		<li class="media-feature-secondary"><div data-huron-id="article-archive-feature-small-examples" data-huron-modifier="five" data-huron-type="template"></div></li>
+//		<li class="media-feature-secondary"><div data-huron-id="article-archive-feature-small-examples" data-huron-modifier="six" data-huron-type="template"></div></li>
+// 	</ul>
+//	<button class="show-more-videos">Show More Videos</button>
+// </section>
+//
+// Styleguide features.media
+
+.feature-media {
+	border-top: 5px solid $gray-min;
+
+	ul {
+		@extend %clearfix;
+	}
+
+	.widget-title {
+		@extend %section-highlight-alt;
+		@extend %section-highlight-arrow;
+	}
+
+	.media-feature-primary {
+		@include ai-span(10, xl);
+		@include ai-span(8, l);
+
+		.icon-play-arrow {
+			@include slideshow-video-icon(104, 75, true);
+			@extend %center;
+			opacity: 0.85;
+			transition: background 100ms linear;
+		}
+
+		.read-story {
+			@include font(14, 18, $meta, 700);
+			border-bottom: 1px dotted $gray-min;
+			display: inline-block;
+			text-transform: uppercase;
+
+			.icon-arrow-right {
+				display: inline-block;
+			}
+
+			&:hover {
+				color: $primary;
+				border-color: $primary;
+
+				.icon-play-arrow {
+
+					&::before {
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+
+	.media-feature-secondary {
+		@include shadow-border(bottom);
+		@include ai-span(6, xl, true);
+		@include ai-span(5, l, true);
+		@include ai-span(5, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+		margin-bottom: spacing();
+		padding-bottom: spacing(0.5);
+
+		@include ai-breakpoint(s, l) {
+
+			&:nth-child(2n + 1) {
+				margin-right: 0;
+			}
+
+			&:nth-child(6) {
+				border-bottom: 0;
+				margin-bottom: 0;
+			}
+		}
+
+		@include ai-breakpoint(l) {
+			clear: right;
+			float: right;
+		}
+
+		&:last-child {
+			border-bottom: 0;
+			margin-bottom: 0;
+		}
+
+		header,
+		figure {
+			float: left;
+		}
+
+		figure {
+			margin-right: em-calc(15);
+			width: em-calc(90);
+		}
+
+		header {
+			width: calc(100% - #{em-calc(105)});
+		}
+	}
+
+	.more-videos {
+		padding: em-calc(14 0);
+		display: none;
+
+		@include ai-breakpoint(false, l) {
+			padding: em-calc(0 0 10);
+		}
+	}
+
+	.media-feature-more {
+		@include ai-span(4, xl);
+		@include ai-span(13/4, l);
+		@include ai-span(5, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+		padding-bottom: em-calc(20);
+
+		@include ai-breakpoint(l) {
+
+			&:nth-child(4n + 1) {
+				clear: left;
+			}
+
+			&:nth-child(4n) {
+				margin-right: 0;
+			}
+		}
+
+		@include ai-breakpoint(false, l) {
+			margin-bottom: spacing(2);
+
+			&:nth-child(2n + 1) {
+				clear: left;
+			}
+
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+
+		figure {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+// Colors
+$text: rgb(0, 0, 0) !default;
+$primary: rgb(0, 111, 183) !default;
+$secondary: rgb(215, 0, 0) !default;
+$tertiary: rgb(255, 197, 24) !default; // #a13b1e
+
+// Brand variations
+$primary-lighter: rgb(71, 182, 255) !default;
+$primary-light: rgb(0, 147, 245) !default;
+$primary-dark: rgb(0, 86, 143) !default;
+$primary-darker: rgb(0, 61, 102) !default;
+$secondary-light: rgb(230, 15, 15) !default;
+
+// Browns
+$brown-100: rgb(56, 50, 42) !default; // #38322A
+$brown-200: rgb(125, 117, 105) !default; // #7D7569
+$brown-300: rgb(234, 230, 225) !default; // #EAE6E1
+$brown-400: rgb(251, 251, 251) !default; // #FBFBFB
+
+// Grays
+$gray-min: rgb(0, 0, 0) !default;
+$gray-100: rgb(51, 51, 51) !default;
+$gray-200: rgb(102, 102, 102) !default;
+$gray-300: rgb(167, 168, 172) !default;
+$gray-400: rgb(184, 184, 184) !default;
+$gray-500: rgb(204, 204, 204) !default;
+$gray-600: rgb(238, 238, 238) !default;
+$gray-max: rgb(255, 255, 255) !default;
+$white: rgb(255, 255, 255) !default;
+$divider-alt: #F1EFEB !default;
+
+// Location Colors
+$button: $primary !default;
+$link-hover: $primary-light !default;
+$color-bg: $brown-400 !default;
+$color-bg-offset: $brown-300 !default;

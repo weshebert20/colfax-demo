@@ -1,0 +1,42 @@
+// Author Feature
+//
+// Widget for featured authors on section landings
+//
+// markup: author-feature.hbs
+//
+// one
+// two
+// three
+//
+// data: author-feature.json
+//
+// Styleguide modules.author-feature
+
+.author-features {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	@include ai-breakpoint(false, l) {
+		@include vertical-rhythm();
+		flex-direction: column;
+	}
+}
+
+.author-feature {
+	border: 0;
+	margin-bottom: spacing();
+	text-align: center;
+
+	img {
+		height: auto;
+		width: em-calc(85);
+		margin: em-calc(0 auto 8 auto);
+	}
+
+	h3 {
+		@include font(17, 19, $widget, 400);
+		text-transform: none;
+		width: 100%;
+	}
+}

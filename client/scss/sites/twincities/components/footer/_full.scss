@@ -1,0 +1,28 @@
+// Twin Cities: Full Footer
+//
+// Styles for site footer as a whole
+//
+// markup:
+// <footer class="site-footer">
+// 	<div data-huron-id="footer-instagram" data-huron-type="template"></div>
+//	<div data-huron-id="footer-header" data-huron-type="template"></div>
+// 	<ul class="footer-menus">
+//		<div data-huron-id="footer-menu" data-huron-type="template"></div>
+//		<div data-huron-id="footer-menu" data-huron-type="template"></div>
+//		<div data-huron-id="footer-menu" data-huron-type="template"></div>
+//		<div data-huron-id="footer-menu" data-huron-type="template"></div>
+// 	</ul>
+// 	<div data-huron-id="footer-colophon data-huron-type="template"></div>
+// </footer>
+//
+// Styleguide footer.full
+
+.site-footer {
+
+	.footer-menus {
+
+		@include ai-breakpoint(false, m) {
+			margin: 0 -10px 2em;
+		}
+	}
+}

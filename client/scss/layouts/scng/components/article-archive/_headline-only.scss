@@ -1,0 +1,23 @@
+// Headline Only
+//
+// Article archive view with headline only
+//
+// styleguide - modifier for use with styleguide
+//
+// markup: headline-only.hbs
+//
+// data: headline-only.json
+//
+// Styleguide article-archive.headline-only
+
+.headline-only {
+
+	h5,
+	h6 {
+		display: inline-block;
+	}
+}
+
+h1.entry-title {
+	display: inline-block;
+}

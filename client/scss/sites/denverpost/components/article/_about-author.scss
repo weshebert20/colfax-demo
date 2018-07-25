@@ -1,0 +1,45 @@
+// Denver Post: About the Author
+//
+// Info about the author in article footer
+//
+// markup:
+// <div class="about-the-author">
+// 	<img src="http://lorempixel.com/85/85/cats" alt="author avatar">
+//	<h3 class="author vcard"><span class="fn"><a href="#">Woodrow Wilson "Woody" Paige, Jr.</a></span></h3>
+// 	<p class="author-description"> dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc. Maecenas eu semper augue. Aliquam erat volutpat. Cras varius ex sed metus finibus convallis. Maecenas bibendum velit a nisl eleifend porttitor</p>
+// 	<a href="#" class="twitter-follow"><i class="icon-twitter"></i> Woody <strong>@ATHChalkboard</strong></a>
+// </div>
+//
+// Styleguide article.about-the-author
+
+.about-the-author {
+	background-color: $gray-max;
+	border: 1px solid $gray-500;
+
+	.author-description {
+		@include font(16, 20, $meta, 400);
+		display: inline;
+	}
+
+	h3 {
+		@include font(18, 20, $meta, 700);
+		display: block;
+	}
+
+	.author a {
+		color: $gray-min;
+		font-weight: 700;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	.twitter-follow {
+		@include font(14, 14, $meta, 400);
+
+		span {
+			font-weight: 700;
+		}
+	}
+}

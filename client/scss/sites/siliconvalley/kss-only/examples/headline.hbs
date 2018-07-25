@@ -1,0 +1,25 @@
+<article class="archive-view headline-only {{classes}}">
+	{{#if sponsored}}
+	<span class="sponsored-flag">
+		Sponsored
+	</span>
+	{{/if}}
+
+	<header class="article-info">
+		<h6 class="entry-title">
+			<a href="#">
+				{{title}}
+			</a>
+		</h6>
+
+		{{#if comments}}
+		<div class="article-comments">
+			<a href="#" class="icon-comment">{{comments}}</a>
+		</div>
+		{{/if}}
+
+		{{#if time}}
+		<time datetime="{{time.datetime}}">{{time.ago}}</time>
+		{{/if}}
+	</header>
+</article>

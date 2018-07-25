@@ -1,0 +1,38 @@
+// Breaking Bar
+//
+// Styles for breaking bar
+
+.breaking-bar {
+	display: none;
+	@extend %clearfix;
+	border: 1px solid $gray-500;
+	margin-bottom: spacing(1.5);
+	min-height: px-to-em(38);
+	padding-right: spacing(1.5);
+	position: relative;
+
+	h2 {
+		@extend %breaking;
+		display: inline-block;
+		left: 0;
+		margin-right: px-to-em(10);
+		position: absolute;
+		top: 0;
+
+		@include ai-breakpoint(false, s) {
+			position: static;
+		}
+	}
+
+	.icon-close {
+		color: $gray-300;
+		font-size: px-to-em(28);
+		position: absolute;
+		right: px-to-em(5, false, 28);
+		top: px-to-em(5, false, 28);
+
+		&:hover {
+			color: $primary-light;
+		}
+	}
+}

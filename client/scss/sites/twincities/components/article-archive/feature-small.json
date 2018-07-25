@@ -1,0 +1,19 @@
+{
+	"styleguide": {
+		"title": "What resorts in San Bernardino, San Gabriel mountains are doing to prepare for ski season",
+		"image": "http://lorempixel.com/800/450/business/1",
+		"credit": "PHOTO CREDIT",
+		"classes": "feature-small"
+	},
+	"busy": {
+		"title": "Optio sequi voluptas reiciendis ullam, esse assumenda ab sint accusamus iure dolor cum nihil quasi ad atque",
+		"image": "http://lorempixel.com/800/450/business/1",
+		"classes": "feature-small"
+	},
+	"media-two": {
+		"title": "Photos of the Soboba Inter-Tribal Pow Wow",
+		"image": "http://lorempixel.com/800/450/business/6",
+		"slideshow": true,
+		"classes": "feature-small"
+	}
+}

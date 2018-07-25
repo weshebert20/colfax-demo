@@ -1,0 +1,126 @@
+// Buttons
+
+%basic-button {
+	color: $gray-max;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+}
+
+%inverse-button {
+	@extend %basic-button;
+	border: 1px solid $primary-light;
+	color: $primary-light;
+	cursor: pointer;
+	font-weight: 800;
+	text-transform: uppercase;
+	transition: background-color 100ms linear,
+		color 100ms linear;
+
+	&:hover {
+		background-color: $primary-light;
+		color: $gray-max;
+	}
+}
+
+%rounded-button {
+	@include font(16, 16, $meta, 700);
+	background-color: $button;
+	border: none;
+	border-radius: 3px;
+	color: $gray-max;
+	cursor: pointer;
+	min-width: em-calc(110);
+	outline: none;
+	padding: em-calc(10 15);
+	text-align: center;
+	text-transform: uppercase;
+	transition: background-color 100ms linear,
+		color 100ms linear;
+
+	&:focus {
+		outline: 1px solid $primary-lighter;
+	}
+}
+
+%rounded-button-alt {
+	@include font(16, 16, $meta, 700);
+	align-items: center;
+	border: 1px solid $gray-500;
+	border-radius: 3px;
+	display: flex;
+	padding: em-calc(15 10);
+}
+
+%shadow-button {
+	@include font(14, 17, $meta, 600);
+    background-color: #0090D9;
+    box-shadow: inset 0 -0.15rem 0 rgba(0,0,0,0.35);
+    border-radius: 3px;
+    color: $gray-max;
+    letter-spacing: -0.01em;
+    padding: em-calc(10 15);
+    text-shadow: 1px -1px 0 rgba(0, 0, 0, 0.07);
+    text-transform: uppercase;
+    transition: background-color 100ms linear,
+    	color 100ms linear;
+
+    &:hover,
+    &:focus {
+		background-color: $primary-light;
+		color: $gray-max;
+	}
+}
+
+%border-button {
+	@include font(13, 13, $heading, 400);
+	background-color: $button;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 2px;
+    color: $gray-max;
+    letter-spacing: -0.01em;
+    padding: em-calc(12 17);
+    text-shadow: 1px -1px 0 rgba(0, 0, 0, 0.04);
+    text-transform: uppercase;
+    transition: background-color 100ms linear,
+    	color 100ms linear;
+
+    &:hover,
+    &:focus {
+		background-color: $primary-light;
+		color: $gray-max;
+	}
+}
+
+// styleguide:ignore:start
+@mixin border-arrow($color, $direction: top) {
+	border: 5px solid transparent;
+	border-#{$direction}-color: $color;
+	display: inline-block;
+ 	height: 0;
+ 	margin-left: em-calc(5);
+ 	position: relative;
+ 	top: em-calc(3);
+ 	width: 0;
+}
+// styleguide:ignore:end
+
+@mixin button($background: $primary-light, $padding: 10px 15px) {
+	@extend %basic-button;
+	background-color: $background;
+	padding: em-calc($padding);
+}
+
+.posts-navigation {
+
+	> h2,
+	.nav-next {
+		display: none;
+	}
+
+	.nav-links
+	.nav-previous {
+		width: 100%;
+	}
+}

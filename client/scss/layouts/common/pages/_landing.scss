@@ -1,0 +1,305 @@
+// Landing Page
+//
+// Styles for generic landing pages
+
+.landing-bundle {
+	@extend %clearfix;
+
+	.widget-popular-stories,
+	> .popular,
+	.section-highlight {
+		@include ai-span(8, xl);
+		@include ai-span(5, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.hp-center {
+		@include vertical-rhythm();
+		@include ai-span(4, xl);
+		@include ai-span(4, l);
+		@include ai-span(4, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+	}
+
+	.feature-video {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(6, m, true);
+		@include ai-span(4, s, true);
+		@include ai-span(4, xs, true);
+
+		@include ai-breakpoint(false, m) {
+			float: right;
+		}
+	}
+
+	.newsletter-swap {
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	@include ai-breakpoint(false, l) {
+		@include vertical-rhythm(2);
+	}
+}
+
+.landing-three-one {
+	@extend %clearfix;
+
+	@include ai-breakpoint(false, l) {
+		@include vertical-rhythm(2);
+	}
+
+	.three-one-left {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+	}
+
+	.three-one-left,
+	.three-one-right {
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.three-one-right {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include vertical-rhythm(2);
+
+		@include ai-breakpoint(l) {
+			float: right;
+		}
+
+		> div {
+			@include ai-span(16, xl);
+			@include ai-span(13, l);
+			@include ai-span(5, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+
+			@include ai-breakpoint(s, l) {
+
+				&:nth-child(2n) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	&.three-one-multi {
+
+		.three-one-left {
+			display: flex;
+			justify-content: space-between;
+
+			@include ai-breakpoint(false, m) {
+				@include vertical-rhythm();
+				flex-direction: column;
+			}
+
+			.landing-item {
+				@include ai-span(16/3, xl);
+				@include ai-span(13/3, l);
+				@include ai-span(10/3, m);
+				@include ai-span(8, s);
+				@include ai-span(4, xs);
+			}
+		}
+
+		.three-one-right {
+
+			@include ai-breakpoint(s, l) {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+
+			> div {
+				@include ai-span(16, xl);
+				@include ai-span(13, l);
+				@include ai-span(5, m);
+				@include ai-span(4, s);
+				@include ai-span(4, xs);
+			}
+		}
+	}
+}
+
+.landing-row {
+	@extend %clearfix;
+}
+
+.landing-two-up {
+	@extend %clearfix;
+
+	.landing-item {
+		@include ai-span(8, xl);
+		@include ai-span(6.5, l);
+		@include ai-span(5, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.landing-three-up {
+
+	.landing-item {
+		@include ai-span(16/3, xl);
+		@include ai-span(13/3, l);
+		@include ai-span(10/3, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.landing-four-up {
+
+	.landing-item {
+		@include ai-span(4, xl);
+		@include ai-span(13/4, l);
+		@include ai-span(5, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(l) {
+
+			&:nth-child(4n) {
+				margin-right: 0;
+			}
+		}
+
+		@include ai-breakpoint(false, l) {
+			margin-bottom: spacing(2);
+
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.landing-four-up-hybrid {
+	@extend %clearfix;
+
+	@include ai-breakpoint(xl) {
+		display: flex;
+		justify-content: space-between;
+
+		&::after {
+			content: none;
+		}
+	}
+
+	.landing-item {
+
+		&:nth-child(n + 2) {
+			@include ai-span(4, xl);
+			@include ai-span(9.75, l);
+			@include ai-span(6, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			float: left;
+
+			@include ai-breakpoint(xl) {
+				float: none;
+			}
+		}
+
+		&:first-child {
+			@include ai-span(4, xl);
+			@include ai-span(13/4, l);
+			@include ai-span(4, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+			float: right;
+
+			@include ai-breakpoint(xl) {
+				order: 1;
+				float: none;
+			}
+		}
+	}
+}
+
+.tag,
+.tax-location,
+.category {
+
+	.content-wrapper {
+		@extend %clearfix;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		position: relative;
+
+		@include ai-breakpoint(false, l) {
+			@include vertical-rhythm(2);
+		}
+	}
+
+	.tag-content {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+		margin-bottom: spacing(3);
+	}
+
+	aside {
+		@include vertical-rhythm(2);
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+
+		.widget-popular-stories,
+		> .popular {
+			@include ai-span(6, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+
+			@include ai-breakpoint(l) {
+				padding-top: px-to-em(300);
+			}
+		}
+	}
+}
+
+.feature-headline {
+
+	.icon-arrow-right {
+		display: none
+	}
+
+	.headline-list {
+
+		&.more-content-to-show {
+			display: none;
+			margin-top: em-calc(16);
+			margin-bottom: em-calc(12);
+		}
+	}
+}
+
+.btn-show-more-headlines {
+	@extend %rounded-button;
+	display: block;
+	margin: em-calc(16) auto 0;
+	position: relative;
+	z-index: 1;
+}

@@ -1,0 +1,27 @@
+// Twin Cities: More Stories
+//
+// Full feed of stories from the author
+//
+// markup:
+// <div class="author-stories-feed">
+// 	<h2 class="widget-title">All Stories</h2>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-modifier="stories" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-modifier="stories" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-modifier="stories" data-huron-type="template"></div>
+//	<div data-huron-id="ad-samples-banner" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-modifier="stories" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-modifier="stories" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-modifier="stories" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-modifier="stories" data-huron-type="template"></div>
+// 	<a class="load-more">Load More</a>
+// </div>
+//
+// Styleguide author.more-stories
+
+.author-stories-feed {
+
+	> h2 {
+		@extend %section-highlight;
+		margin-bottom: px-to-em(16, false, 18);
+	}
+}

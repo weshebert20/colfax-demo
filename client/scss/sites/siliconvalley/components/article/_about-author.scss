@@ -1,0 +1,78 @@
+// Silicon Valley: About the Author
+//
+// Info about the author in article footer
+//
+// markup:
+// <div class="about-the-author">
+// 	<img src="http://lorempixel.com/85/85/people" alt="author avatar">
+//	<div class="about-author-content">
+//		<h3 class="author vcard"><span class="fn"><a href="#">Marisa Kendall</a></span></h3>
+// 		<p class="author-description">Marisa Kendall covers startups and venture capital. Integer diam tortor, aliquet ut porta non, aliquet sed nunc. Maecenas eu semper augue. Aliquam erat volutpat. Cras varius ex sed metus finibus convallis. Maecenas bibendum velit a nisl eleifend porttitor</p>
+// 		<a href="#" class="twitter-follow"><i class="icon-twitter"></i> Marisa <strong>@marisakendall</strong></a>
+//	</div>
+// </div>
+//
+// Styleguide article.about-the-author
+
+.about-the-author {
+	background-color: $gray-max;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: spacing();
+    padding: 0;
+    margin-bottom: 3em;
+
+	.author-description,
+	h3 {
+		@include font(16, 20, $meta, 400);
+		display: inline;
+	}
+
+	img {
+		border-radius: 100%;
+		float: none;
+		margin-right: spacing();
+		max-height: em-calc(85);
+	}
+
+	.about-author-content {
+		flex-grow: 2;
+	}
+
+	.entry-author {
+		align-items: flex-start;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.author a {
+		color: $gray-min;
+		font-weight: 700;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	.vcard {
+		display: inline;
+	}
+
+	.author-description {
+		@include font(16, 22, $body, 400);
+		display: inline;
+	}
+
+	.twitter-follow {
+		@include font(14, 14, $meta, 400);
+		color: $twitter;
+		display: block;
+		padding-top: spacing();
+		position: static;
+		width: 100%;
+
+		span {
+			font-weight: 700;
+		}
+	}
+}

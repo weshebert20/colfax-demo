@@ -1,0 +1,55 @@
+// Mercury News: Sharing List with label
+//
+// List of sharing links
+//
+// markup:
+// <div class="share-with-prompt">
+// 	<span class="prompt">Follow Us</span>
+// 	<ul class="sharing">
+// 		<li><a href="#" class="icon-facebook"><span class="label">Facebook</span></a></li>
+// 		<li><a href="#" class="icon-twitter"><span class="label">Twitter</span></a></li>
+// 		<li><a href="#" class="icon-instagram"><span class="label">Instagram</span></a></li>
+// 		<li><a href="#" class="icon-feed"><span class="label">RSS</span></a></li>
+// 	</ul>
+// </div>
+//
+// sg-wrapper:
+// <div class="full-view">
+// <sg-wrapper-content/>
+// </div>
+//
+// Styleguide sharing.list-with-label
+
+.share-with-prompt {
+	align-items: center;
+	display: flex;
+
+	@include ai-breakpoint(false, l) {
+		justify-content: space-between;
+	}
+
+	@include ai-breakpoint(l) {
+		justify-content: center;
+	}
+
+	@include ai-breakpoint(false, s) {
+		margin-top: 0;
+		border-top: none;
+	}
+
+	.full-view & {
+		border-top: 1px solid $divider;
+		padding-top: em-calc(20);
+		margin-top: em-calc(20);
+		text-align: center;
+	}
+
+	.feature-primary &,
+	.full-view & {
+		flex-direction: column;
+
+		@include ai-breakpoint(s) {
+			align-items: flex-start;
+		}
+	}
+}

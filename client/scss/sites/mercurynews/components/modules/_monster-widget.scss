@@ -1,0 +1,10 @@
+.nc-console-container {
+
+	div.nc-employer-column {
+		position: relative;
+
+		@include ai-breakpoint(s, m) {
+			position: absolute;
+		}
+	}
+}

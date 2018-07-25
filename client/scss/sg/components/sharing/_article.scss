@@ -1,0 +1,26 @@
+// Article Sharing
+//
+// List of sharing links
+
+/* stylelint-disable declaration-no-important */
+.article-share {
+
+	.full-view &,
+	.site-header & {
+
+		.sharing-hidden {
+
+			.prototype-styleguide & {
+				display: block;
+			}
+		}
+	}
+}
+/* stylelint-enable */
+
+.share-with-prompt {
+
+	.prototype-styleguide & {
+		align-items: center;
+	}
+}

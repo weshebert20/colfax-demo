@@ -1,0 +1,48 @@
+// Silicon Valley: Sharing List with label
+//
+// List of sharing links
+//
+// markup:
+// <div class="share-with-prompt">
+// 	<span class="prompt">Follow Us</span>
+// 	<ul class="sharing">
+// 		<li><a href="#" class="icon-facebook"><span class="label">Facebook</span></a></li>
+// 		<li><a href="#" class="icon-twitter"><span class="label">Twitter</span></a></li>
+// 		<li><a href="#" class="icon-instagram"><span class="label">Instagram</span></a></li>
+// 		<li><a href="#" class="icon-feed"><span class="label">RSS</span></a></li>
+// 	</ul>
+// </div>
+//
+// Styleguide sharing.list-with-label
+
+.share-with-prompt {
+	align-items: center;
+	display: flex;
+
+	@include ai-breakpoint(false, l) {
+		justify-content: space-between;
+	}
+
+	@include ai-breakpoint(l) {
+		justify-content: center;
+	}
+
+	.prompt {
+		@include font(16, 18, $widget, 700);
+		letter-spacing: -0.04em;
+	}
+
+	.feature-primary &,
+	.full-view & {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.article-sidebar .sign-up-follow & {
+		flex-direction: column;
+
+		.sharing {
+			margin-bottom: 0;
+		}
+	}
+}

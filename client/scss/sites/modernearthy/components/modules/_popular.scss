@@ -1,0 +1,29 @@
+// Modern Earthy: Most Popular Module
+
+.popular {
+
+	li {
+
+		a {
+
+			&::before {
+				padding-top: em-calc(5, true);
+			}
+		}
+	}
+
+	&.section {
+
+		li {
+
+			a {
+
+				&::before {
+					padding-top: 0;
+				}
+			}
+
+		}
+	}
+
+}

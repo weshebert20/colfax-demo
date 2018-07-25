@@ -1,0 +1,48 @@
+.feature-large,
+.feature-large-top {
+
+	.styleguide-twincities &,
+	.styleguide-denverpost & {
+
+		time {
+			display: none;
+		}
+
+		.sponsored-flag {
+			display: none;
+		}
+
+		.icon-slideshow,
+		.icon-play-arrow {
+			display: none;
+		}
+
+		&.video {
+
+			.icon-play-arrow {
+				display: inline-block;
+			}
+		}
+
+		&.slideshow {
+
+			.icon-slideshow {
+				display: inline-block;
+			}
+		}
+	}
+
+	.styleguide-mercurynews > & {
+		@extend %archive-box;
+	}
+
+	.styleguide-mercurynews > &,
+	.styleguide-siliconvalley > & {
+		margin: 0 auto;
+		max-width: 960px;
+
+		time {
+			display: none;
+		}
+	}
+}

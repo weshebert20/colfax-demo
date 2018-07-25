@@ -1,0 +1,135 @@
+// Twin Cities: Article Sharing
+//
+// List of sharing links
+//
+// markup:
+// <div class="sharing article-share">
+// 	<div class="sharedaddy">
+//		<div class="sd-social-icon">
+// 			<div class="sd-content sharing-inner">
+// 				<ul>
+// 					<li class="share-facebook"><a href="#" class="share-facebook"><span></span></a></li>
+// 					<li class="share-twitter"><a href="#" class="share-twitter"><span></span></a></li>
+// 					<li class="share-reddit"><a href="#" class="share-reddit"><span></span></a></li>
+// 					<li class="share-sms"><a href="#" class="share-sms"><span></span></a></li>
+// 					<li class="share-email"><a href="#" class="share-email"><span></span></a></li>
+// 					<li class="share-print"><a href="#" class="share-print"><span></span></a></li>
+// 					<li>
+// 						<a href="#" class="share-more"><span></span></a>
+// 					</li>
+// 				</ul>
+// 				<div class="sharing-hidden">
+//					<div class="inner">
+// 						<ul>
+// 							<li class="share-pinterest"><a href="#" class="share-pinterest"><span></span></a></li>
+// 							<li class="share-tumblr"><a href="#" class="share-tumblr"><span></span></a></li>
+// 							<li class="share-linkedin"><a href="#" class="share-linkedin"><span></span></a></li>
+// 							<li class="share-stumbleupon"><a href="#" class="share-stumbleupon"><span></span></a></li>
+// 						</ul>
+//					</div>
+// 				</div>
+//			</div>
+//		</div>
+// 	</div>
+// 	<span class="share-alt"><a href="#" class="icon-share-alt"><span></span></a></span>
+// </div>
+//
+// sg-wrapper:
+// <article class="full-view">
+// 	 <sg-wrapper-content/>
+// </article>
+//
+// Styleguide sharing.article
+
+.article-share {
+
+	.full-view & {
+
+		.sharing-hidden {
+			left: calc(100% - #{em-calc(5)});
+		}
+	}
+
+	.headroom--not-top.site-header & {
+
+		.sharing-hidden {
+			height: em-calc(50);
+			top: em-calc(36);
+		}
+	}
+
+	.full-view &,
+	.site-header & {
+
+		> ul li,
+		.sd-content > ul li,
+		.sharing-inner > ul li,
+		.share-alt {
+			background-color: $primary-light;
+
+			@include ai-breakpoint(l) {
+				height: px-to-em(35);
+				width: px-to-em(35);
+			}
+
+			@include ai-breakpoint(s, l) {
+				height: px-to-em(40);
+				width: px-to-em(72);
+			}
+
+			&:hover {
+				background-color: $primary-lighter;
+			}
+		}
+
+		> ul li,
+		.sd-content > ul li,
+		.sharing-inner > ul li {
+
+			@include ai-breakpoint(false, s) {
+				height: px-to-em(40);
+				width: px-to-em(60);
+			}
+		}
+
+		.share-alt {
+
+			@include ai-breakpoint(false, s) {
+				height: px-to-em(40);
+				width: px-to-em(40);
+			}
+		}
+
+		.sd-content,
+		.sharing-inner,
+		.share-alt {
+
+			[class*='icon-'],
+			[class*='share-'] span {
+				color: $gray-max;
+
+				@include ai-breakpoint(l) {
+					font-size: px-to-em(18);
+					line-height: px-to-em(35, false, 18);
+				}
+
+				@include ai-breakpoint(false, l) {
+					font-size: px-to-em(20);
+					line-height: px-to-em(40, false, 20);
+				}
+			}
+		}
+
+		.sharing-hidden {
+
+			[class*='icon-'],
+			[class*='share-'] span {
+				color: $gray-300;
+
+				&:hover {
+					color: $primary-light;
+				}
+			}
+		}
+	}
+}

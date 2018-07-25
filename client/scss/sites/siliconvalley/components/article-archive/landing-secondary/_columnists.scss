@@ -1,0 +1,50 @@
+// Silicon Valley: Landing Columnists
+//
+// Landing Sidebar Columnists
+//
+// markup:
+// <div class="author-features">
+// 	<ul class="landing-page-list">
+//		<li class="columnists-header landing-page-list-title">
+//			<span>Columnists</span>
+//		</li>
+// 		<li class="landing-list-item">
+// 			<div data-huron-id="modules-author-feature" data-huron-type="template"></div>
+// 		</li>
+// 		<li class="landing-list-item">
+// 			<div data-huron-id="modules-author-feature" data-huron-type="template"></div>
+// 		</li>
+// 		<li class="landing-list-item">
+// 			<div data-huron-id="modules-author-feature" data-huron-type="template"></div>
+// 		</li>
+// 	</ul>
+// </div>
+//
+// Styleguide article-archive.landing-secondary.columnists
+
+.author-features {
+
+	@include ai-breakpoint(false, m) {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: em-calc(540);
+	}
+
+	@include ai-breakpoint(m, l) {
+
+		.landing-page-list {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		li {
+			@include ai-span(10/3, m);
+			border-bottom: none;
+		}
+
+		.columnists-header {
+			width: 100%;
+		}
+	}
+}

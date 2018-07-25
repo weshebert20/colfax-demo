@@ -1,0 +1,42 @@
+// Mercury News: Buttons
+//
+// .default - default button
+// .alternate-button - load more button
+//
+// markup:
+// <button  href="#" class="button {$modifiers}"><span>{$modifiers}</span></button>
+//
+// Styleguide 1.5
+
+.show-more-videos,
+.load-more {
+	@include font(16, 16, $meta, 700);
+	background-color: $primary;
+	color: $gray-max;
+	cursor: pointer;
+	display: inline-block;
+	padding: em-calc(30 0);
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	transition: background-color 100ms linear,
+		color 100ms linear;
+	width: 100%;
+
+	&::before {
+		@extend %center-hor;
+		content: "";
+		background-color: $brown-400;
+		height: em-calc(20);
+		top: em-calc(-3);
+		transform: rotate(-45deg) translateY(-50%);
+		width: em-calc(20);
+	}
+
+	.feature-media & {
+
+		&::before {
+			background-color: $brown-100;
+		}
+	}
+}

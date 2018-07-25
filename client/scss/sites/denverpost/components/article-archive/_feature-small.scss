@@ -1,0 +1,71 @@
+// Denver Post: Small Feature
+//
+// Small featured articles
+//
+// markup:
+// <article class="archive-view feature-small">
+// 	<figure>
+//		<div class="image-wrapper">
+// 			<a href="#"><img src="http://lorempixel.com/640/400/cats" alt="article-image"></a>
+//		</div>
+//		<span class="photo-credit">AAron Ontineroz, The Denver Post</span>
+// 	</figure>
+// 	<header>
+// 		<time datetime="2015-08-10 18:00" proto-skip>8/10/15 6:00 PM ET</time>
+// 		<h5><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h5>
+// 	</header>
+// </article>
+//
+// Styleguide article-archive.feature-small
+
+.feature-small {
+	@extend %slideshow-video-alt;
+
+	.duration {
+		bottom: em-calc(3, false, 12);
+		font-size: em-calc(12);
+		right: em-calc(3, false, 12);
+	}
+
+	.busy & {
+
+		@include ai-breakpoint(false, l) {
+			@include shadow-border(bottom);
+			padding-bottom: spacing();
+
+			&:last-child {
+				border: 0;
+				box-shadow: none;
+			}
+		}
+
+		h5 {
+			@include font(21, 26, $heading, 700);
+		}
+	}
+
+	.feature-media & {
+
+		&:hover {
+
+			.icon-play-arrow {
+				background-color: transparent;
+			}
+		}
+
+		h5 {
+			@include font(14, 18, $heading, 700);
+		}
+	}
+
+	.more-news & {
+
+		figure {
+			width: auto;
+		}
+
+		.excerpt {
+			@include font(14, 18, $body, 400);
+		}
+	}
+}

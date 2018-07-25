@@ -1,0 +1,95 @@
+// Trending Nav
+//
+// Styles for trending and special topics bar at bottom of header
+//
+// markup:
+// <div class="trending-bar trending">
+// 	<div class="trending-bar-wrapper">
+// 		<p class="label">Trending</p>
+// 		<nav>
+// 			<ul>
+// 				<li><a href="#">Memorial Day Weather</a></li>
+// 				<li><a href="#">Beware the snakes</a></li>
+// 				<li><a href="#">Clinton in Oakland</a></li>
+// 				<li><a href="#">Newsom vs. Trans gun fans</a></li>
+// 				<li><a href="#">Missing teen</a></li>
+// 			</ul>
+// 		</nav>
+// 	</div>
+// </div>
+//
+// Styleguide header.trending
+
+.trending-bar {
+	bottom: em-calc(-17);
+	position: absolute;
+	width: 100vw;
+
+	@include ai-breakpoint(l, xl) {
+		width: calc(100vw - #{em-calc(20)});
+		left: em-calc(10);
+	}
+
+	nav {
+		float: none;
+		padding: em-calc(8 0);
+	}
+
+	ul {
+
+		@include ai-breakpoint($header-primary-bp) {
+			align-items: center;
+			display: flex;
+			flex-wrap: wrap;
+			height: px-to-em(18);
+			justify-content: flex-start;
+			overflow: hidden;
+		}
+	}
+
+	li {
+		line-height: 1.15;
+		padding-right: em-calc(25);
+		position: relative;
+	}
+
+	a {
+		color: $gray-100;
+		font-size: em-calc(15);
+		font-family: $body;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	a,
+	.trending-bar-wrapper p {
+		font-size: em-calc(15);
+	}
+
+	.trending-bar-wrapper {
+		@extend %container;
+		align-items: center;
+		display: flex;
+		padding: em-calc(0 5);
+
+		@include ai-breakpoint(xl) {
+			max-width: em-calc(1280);
+		}
+
+		> p {
+			color: $primary;
+			display: block;
+			font-size: em-calc(14);
+			padding-right: em-calc(25);
+			position: static;
+			text-transform: uppercase;
+			min-width: 130px;
+		}
+	}
+
+	.headroom--not-top & {
+		display: none;
+	}
+}

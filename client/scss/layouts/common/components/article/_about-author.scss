@@ -1,0 +1,49 @@
+// About the Author
+//
+// Info about the author in article footer
+
+.about-the-author {
+	@extend %clearfix;
+	position: relative;
+	padding: em-calc(20 20 40 20);
+	background-color: $gray-600;
+
+	img {
+		float: left;
+		margin: em-calc(0 10 10 0);
+		max-width: px-to-em(85);
+	}
+
+	.author-description {
+		@include font(14, 22, $body, 400);
+
+		@include ai-breakpoint(false, m) {
+			margin-bottom: spacing(2);
+		}
+
+		a:first-of-type {
+			font-weight: 700;
+		}
+	}
+
+	.twitter-follow {
+		position: absolute;
+		right: px-to-em(20);
+		bottom: px-to-em(20);
+		font-size: px-to-em(12);
+
+		span {
+			color: $link-hover;
+		}
+
+		.icon-twitter,
+		.icon-facebook {
+			display: inline-block;
+			color: $twitter;
+		}
+
+		.author-social-url:hover {
+			color: $link-hover;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+// Featured Photos and Videos
+//
+// Styles for primary featured area on the homepage
+
+.feature-media {
+	@extend %clearfix;
+
+	.media-feature-primary {
+		margin-bottom: spacing();
+	}
+
+	.media-content {
+
+		> .icon-arrow-right,
+		> .icon-arrow-left {
+
+			@include ai-breakpoint(l) {
+				display: none;
+			}
+		}
+	}
+}

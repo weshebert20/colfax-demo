@@ -1,0 +1,31 @@
+// Twin Cities: Article Single
+//
+// Styles for article layout
+
+.full-view {
+
+	.header-features {
+		@include vertical-rhythm(2);
+	}
+
+	.article-sidebar {
+		@include vertical-rhythm(4);
+	}
+
+	footer {
+		@include ai-span(8, xl);
+		@include ai-offset(2, margin, xl);
+		@include ai-span(7, l);
+		@include ai-offset(1, margin, l);
+		@include ai-span(8, m);
+		@include ai-offset(1, margin, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.dfp-ad.dfp-bottom_leaderboard {
+		@include ai-breakpoint(m) {
+			min-width: em-calc(728);
+		}
+	}
+}

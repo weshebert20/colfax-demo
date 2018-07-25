@@ -1,0 +1,46 @@
+.author-events {
+
+	.prototype-styleguide & {
+
+		.event {
+			@include ai-span(16/5, xl);
+			@include ai-span(3, l);
+			@include ai-span(5, m);
+			@include ai-span(4, s);
+			@include ai-span(4, xs);
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			@include ai-breakpoint(false, xl) {
+
+				&:nth-child(4) {
+					margin-right: 0;
+				}
+
+				&:nth-child(5) {
+					display: none;
+				}
+			}
+
+			@include ai-breakpoint(false, l) {
+
+				&:nth-child(2) {
+					margin-right: 0;
+				}
+
+				&:nth-child(4), &:nth-child(3) {
+					display: none;
+				}
+			}
+
+			@include ai-breakpoint(false, s) {
+
+				&:nth-child(2) {
+					display: none;
+				}
+			}
+		}
+	}
+}

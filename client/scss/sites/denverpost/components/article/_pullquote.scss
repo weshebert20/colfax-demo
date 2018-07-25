@@ -1,0 +1,27 @@
+// Denver Post: Article Pullquote
+//
+// Inline pullquote
+//
+// markup:
+// <blockquote>
+// 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer diam tortor, aliquet ut porta non, aliquet sed nunc.
+// 	<cite>- Quote Source</cite>
+// </blockquote>
+//
+// Styleguide article.pullquote
+
+blockquote {
+	@include font(37, 44, $body, 600);
+	font-size: em-calc(37, false, 20);
+	border-top: 2px solid $gray-min;
+	padding: em-calc(20 0, false, 37);
+
+	cite {
+		display: inline-block;
+		font-size: em-calc(14, false, 37);
+		font-style: italic;
+		font-weight: 400;
+		text-align: right;
+		width: 100%;
+	}
+}

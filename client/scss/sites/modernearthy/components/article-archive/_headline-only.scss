@@ -1,0 +1,66 @@
+// Twin Cities: Headline Only
+//
+// Articles displaying only the headline
+//
+// styleguide - modifier for use in styleguide
+//
+// markup: archive.hbs
+//
+// data: headline-only.json
+//
+// Styleguide article-archive.headline-only
+
+.headline-list {
+
+	li {
+
+		&:last-child {
+			border: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	.landing-three-one & {
+
+		li {
+
+			&:last-child {
+
+				@include ai-breakpoint(false, l) {
+					border-bottom: 1px solid $gray-400;
+					margin-bottom: 1em;
+				}
+			}
+		}
+	}
+}
+
+.headline-only {
+
+	.icon-play-arrow {
+		height: px-to-em(20);
+		line-height: 1.25;
+		width: px-to-em(20);
+	}
+
+	.icon-slideshow {
+		font-size: px-to-em(12);
+		height: px-to-em(20, false, 12);
+		line-height: 1.7;
+		width: px-to-em(20, false, 12);
+	}
+
+	.icon-slideshow,
+	.icon-play-arrow {
+		background-color: $gray-min;
+		border-radius: 50%;
+		color: $gray-max;
+		display: inline-block;
+		left: 0;
+		margin-right: px-to-em(5);
+		position: absolute;
+		text-align: center;
+		top: 0;
+	}
+}

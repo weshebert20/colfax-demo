@@ -1,0 +1,79 @@
+// Denver Post: Large Feature
+//
+// Large featured articles
+//
+// markup:
+// <article class="archive-view feature-large">
+// 	<figure>
+// 		<a href="#"><img src="http://lorempixel.com/1280/720/sports" alt="article-image"></a>
+//		<span class="photo-credit">AAron Ontineroz, The Denver Post</span>
+// 	</figure>
+// 	<header>
+// 		<time datetime="2015-08-10 18:00" proto-skip>8/10/15 6:00 PM ET</time>
+// 		<h2><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+// 	</header>
+// 	<div class="excerpt">
+// 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit doloribus recusandae itaque iure quos dicta nostrum quibusdam, adipisci, sit officiis voluptates ipsam unde accusantium magnam odit voluptatem aliquid optio sunt!</p>
+// 	</div>
+// </article>
+//
+// Styleguide article-archive.feature-large
+
+.feature-large,
+.feature-large-top {
+	@extend %slideshow-video-alt;
+
+	.duration {
+		font-size: em-calc(18);
+	}
+
+	.busy & {
+		margin-bottom: spacing(0.5);
+
+		h2,
+		.excerpt {
+			margin-bottom: spacing(0.5);
+		}
+	}
+
+	.feature-media & {
+
+		h2 {
+			@include font(33, 38, $heading, 700);
+			margin-bottom: em-calc(32, false, 33);
+		}
+	}
+
+	.landing-three-one .section-highlight & {
+		position: relative;
+
+		h4 {
+			@include font(33, 38, $heading, 700);
+		}
+
+		header,
+		.excerpt {
+			@include ai-span((16/3) * 2, xl, true);
+			@include ai-span(8, l, true);
+			@include ai-span(7, m, true);
+			@include ai-span(5, s, true);
+			@include ai-span(4, xs);
+
+			@include ai-breakpoint(s) {
+				float: right;
+			}
+		}
+
+		figure {
+			@include ai-span(16/3, xl);
+			@include ai-span(5, l);
+			@include ai-span(3, m);
+			@include ai-span(3, s);
+			@include ai-span(4, xs);
+
+			@include ai-breakpoint(s) {
+				position: absolute;
+			}
+		}
+	}
+}

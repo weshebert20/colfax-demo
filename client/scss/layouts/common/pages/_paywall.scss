@@ -1,0 +1,132 @@
+// @todo: Evaluate if we still need this file.
+// If so, should colors be moved into _colors.scss ?
+
+.page-template-page-allaccess {
+
+	#paywall-content {
+		font-family: $meta;
+		text-align: center;
+	}
+
+	#paywall-content div {
+		text-align: center;
+	}
+
+	#bottom-line-columns .complex-listing-box {
+		float: left;
+		margin-bottom: 22px;
+		margin-left: 83px;
+		overflow: hidden;
+		padding-right: 26px;
+		width: 196px;
+	}
+
+	#bottom-line-dummy-ad {
+		height: 0 !important; /* stylelint-disable-line declaration-no-important */
+	}
+
+	.paywall-break {
+		height: 10px;
+		border: none;
+		background-color: #a7a9ac;
+	}
+
+	#pre-main-image {
+		text-transform: uppercase;
+		padding: 10px;
+		font-weight: 900;
+		text-align: center;
+		background-color: #345276;
+		color: white;
+	}
+
+	#header-block {
+		font-size: 3.2em;
+		font-weight: 700;
+		text-align: center;
+		padding: 0;
+	}
+
+	#header-block img {
+		vertical-align: bottom;
+		margin-top: 25px;
+	}
+
+	#media-block img {
+		display: inline;
+	}
+
+	#big-text {
+		color: #0072b4;
+		font-size: 7.5em;
+		font-weight: 700;
+		margin-top: 45px;
+	}
+
+	#under-big-text {
+		color: black;
+		font-size: 1.2em;
+		margin-bottom: 20px;
+		margin-top: 40px;
+	}
+
+	.pricing-block {
+		cursor: pointer;
+		font-size: 0.9em;
+		font-weight: 700;
+		border-radius: 15px;
+		background-color: #a7a9ac;
+		width: 120px;
+		height: 90px;
+		margin-right: 5px;
+		margin-left: 5px;
+		padding-top: 10px;
+		line-height: 17px;
+		background-image: linear-gradient(to top, rgb(167, 169, 172) 0%, rgb(255, 255, 255) 95%);
+		display: inline-block;
+	}
+
+	.per-week {
+		font-size: 0.7em;
+		font-weight: 400;
+		display: block;
+	}
+
+	#need-help {
+		background-color: #0072b4;
+		width: 200px;
+		border-radius: 15px;
+		text-align: center;
+		color: #fff;
+		padding: 10px;
+		margin-left: 10px;
+	}
+
+	.app-link, .app-link a {
+		color: #000;
+		text-decoration: none;
+		font-size: 1em;
+		display: inline-block;
+		margin: 5px 5px 5px 0;
+	}
+
+	#app-info div {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.app-image img {
+		width: 100px;
+		height: auto;
+		display: inline;
+	}
+
+	#paywall-target {
+		margin-bottom: 30px;
+	}
+
+	#fine-print p {
+		margin: 5px auto;
+	}
+
+}

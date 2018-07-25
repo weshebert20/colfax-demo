@@ -1,0 +1,61 @@
+// Footer Colophon
+//
+// Logo, copyright, privacy, etc.
+
+.colophon {
+	text-align: center;
+
+	ul {
+		align-items: center;
+		display: inline-flex;
+		margin-top: px-to-em(20);
+
+		@include ai-breakpoint(false, m) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	li {
+		display: inline-block;
+		line-height: 1.5;
+
+		@include ai-breakpoint(false, m) {
+			margin: 0;
+			width: 100%;
+		}
+		
+		&.copyright {
+
+			@include ai-breakpoint(false, s) {
+				display: block;
+				border: none;
+			}
+		}
+
+		&:last-child {
+			border: none;
+		}
+
+		a {
+
+		  @include ai-breakpoint(false, s) {
+			margin-top: px-to-em(20);
+			display: block;
+		  }
+
+		}
+
+	}
+
+	a[href="http://www.bayareanewsgroup.com"] {
+		background-image: url('../../images/banglogo_small.png');
+		background-size: 180px 86.5px;
+		display: block;
+		height: 86.5px;
+		overflow: hidden;
+		margin: 0 auto;
+		text-indent: -9999px;
+		width: 180px;
+	}
+}

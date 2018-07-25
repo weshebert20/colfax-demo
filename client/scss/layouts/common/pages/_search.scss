@@ -1,0 +1,87 @@
+// Search
+//
+// Styles for search page
+
+.search {
+
+	> header {
+		@extend %clearfix;
+		border-bottom: 1px solid $text;
+	}
+
+	.no-results {
+		margin: em-calc(32 0 24);
+	}
+
+	.sort {
+		position: relative;
+		top: px-to-em(10);
+		float: right;
+	}
+
+	.search-form.large {
+		@extend %top-search-form;
+	}
+
+	.sort-filter {
+		@extend %clearfix;
+		width: 100%;
+		float: left;
+		padding-bottom: spacing();
+	}
+
+	.content-wrapper {
+		@extend %clearfix;
+		min-height: px-to-em(500);
+		position: relative;
+
+		> .dfp-ad,
+		> .lazy-ad-unit {
+			top: auto;
+			width: 100%;
+			float: left;
+			margin-top: spacing(2);
+		}
+	}
+
+	#adcontainer1 {
+		margin-bottom: 2em;
+	}
+
+	.search-content {
+		width: 100%;
+		padding: em-calc(32 0 48 0);
+
+		.dfp-ad,
+		.lazy-ad-unit {
+			margin-bottom: spacing(1.5);
+			padding-bottom: spacing(1.5);
+			border-bottom: 1px solid $gray-400;
+		}
+
+		&.filter-open {
+
+			@include ai-breakpoint(m) {
+				padding-left: px-to-em(390);
+			}
+		}
+
+		@include ai-breakpoint(m) {
+			transition: padding 250ms ease-in-out;
+		}
+	}
+
+	// prototype only
+	.prototype & {
+
+		.search-content {
+
+			.box {
+
+				@include ai-breakpoint(m) {
+					display: none;
+				}
+			}
+		}
+	}
+}

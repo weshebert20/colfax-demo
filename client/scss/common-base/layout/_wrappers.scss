@@ -1,0 +1,103 @@
+// Layout wrappers
+//
+// Styles for content containers
+
+%pseudo-scroll {
+	height: 100%;
+	overflow-x: hidden;
+	position: absolute;
+	width: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+
+	// Fullscreen galleries and other elements
+	&.fullscreen {
+
+		#page {
+
+			#content {
+				transform: none;
+				transition: none;
+			}
+		}
+	}
+
+	&.admin-bar {
+
+		@media (min-width: 783px) {
+			padding-top: px-to-em(32);
+		}
+
+		@media (min-width: 600px) and (max-width: 783px) {
+			padding-top: px-to-em(46);
+		}
+	}
+}
+
+html,
+body {
+	-webkit-overflow-scrolling: touch;
+
+	&.push {
+		overflow: hidden;
+	}
+}
+
+// template only start
+#page {
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	#content,
+	.site-footer,
+	.status-bar {
+
+		@include ai-breakpoint(false, l) {
+			// 2D transforms for IE9
+			backface-visibility: hidden;
+			transition: transform 250ms ease-in-out;
+
+			&.push-from-right {
+				transform: translate(em-calc(-260), 0);
+			}
+
+			&.push-from-left {
+				transform: translate(em-calc(260), 0);
+			}
+		}
+	}
+}
+
+// template only end
+
+#content {
+	@extend %container;
+	margin-bottom: 1em;
+}
+
+.page-content {
+	@include vertical-rhythm(3);
+}
+
+.page.type-page {
+	@extend %clearfix;
+	margin: em-calc(32 0);
+	width: 100%;
+}
+
+%header-float-small {
+
+	figure {
+		float: left;
+		margin: em-calc(0 20 0 0);
+		max-width: px-to-em(140);
+	}
+
+	header {
+		float: left;
+		width: calc(100% - 160px);
+	}
+}

@@ -1,0 +1,39 @@
+// Twin Cities: Busy Layout
+//
+// Primary featured area on a busy news day
+//
+// markup:
+// <section class="feature-primary busy">
+// 	<div class="feature-left">
+// 		<div class="feature-top">
+// 			<div data-huron-id="article-archive-feature-large" data-huron-modifier="busy-feature" data-huron-type="template"></div>
+// 		</div>
+//  	<div class="feature-bottom">
+//			<div data-huron-id="article-archive-feature-small" data-huron-modifier="busy" data-huron-type="template"></div>
+//			<div data-huron-id="article-archive-feature-small" data-huron-modifier="busy" data-huron-type="template"></div>
+// 		</div>
+// 	</div>
+// 	<ul class="headline-list">
+// 		<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy" data-huron-type="template"></div></li>
+// 		<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only" data-huron-modifier="busy" data-huron-type="template"></div></li>
+// 	</ul>
+// 	<div data-huron-id="ad-samples-portrait" data-huron-type="template"></div>
+// 	<div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+// </section>
+//
+// Styleguide features.busy
+
+.busy {
+
+	.feature-bottom {
+		border-top: 1px solid $gray-400;
+		padding-top: spacing(1.5);
+	}
+}

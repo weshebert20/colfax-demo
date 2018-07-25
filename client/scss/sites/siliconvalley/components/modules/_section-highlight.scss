@@ -1,0 +1,104 @@
+// Silicon Valley: Section Highlight
+//
+// Highlight for a section on the homepage
+//
+// markup:
+// <section class="section-highlight">
+// 	<h2><a href="#">Section</a></h2>
+// 	<div class="section-feature">
+// 		<div data-huron-id="article-archive-feature-medium" data-huron-type="template"></div>
+// 	</div>
+//	<div class="headline-list">
+// 		<ul>
+// 			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 		</ul>
+//	</div>
+// </section>
+//
+// Styleguide modules.section-highlight
+
+.section-highlight {
+	margin-bottom: spacing(2);
+
+	> h2 {
+		@include font(16, 16, $meta, 600);
+		margin: 0;
+		padding: em-calc(10 0);
+		text-transform: uppercase;
+
+		a {
+			color: $primary;
+
+			&:hover {
+				color: $text;
+			}
+		}
+	}
+
+	.view-all {
+		@include font(14, 20, $meta, 700);
+		color: $gray-400;
+		display: inline-block;
+		text-align: right;
+		text-transform: uppercase;
+		width: 100%;
+
+		&:hover {
+			color: $gray-min;
+		}
+
+		.icon-arrow-right {
+			display: inline-block;
+			font-size: em-calc(20, false, 14);
+			position: relative;
+			top: -1px;
+			vertical-align: middle;
+		}
+	}
+
+	.landing-four-up &,
+	.landing-three-up & {
+
+		.section-feature {
+			border-bottom: 1px solid $gray-400;
+			margin-bottom: spacing();
+			padding-bottom: spacing();
+		}
+	}
+
+	.landing-three-one & {
+		margin-bottom: 0;
+
+		.feature-medium,
+		.section-feature {
+			display: inline;
+
+			&::after {
+				display: none;
+			}
+
+			@include ai-breakpoint(false, s) {
+				display: block;
+			}
+		}
+
+		.headline-list {
+			@include ai-span((16/3) * 2, xl, true);
+			@include ai-span(8, l, true);
+			@include ai-span(7, m, true);
+			@include ai-span(5, s, true);
+			@include ai-span(4, xs);
+			border-top: 1px solid $gray-400;
+			float: right;
+			margin-top: spacing();
+			padding-top: spacing();
+
+			@include ai-breakpoint(false, s) {
+				width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+// Sharing List
+//
+// List of sharing links
+
+.sharing,
+.sharedaddy {
+
+	.label {
+		@extend %hide;
+	}
+
+	li {
+		display: inline-block;
+		margin-right: px-to-em(20);
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	.footer-header & {
+		float: right;
+		margin-left: auto;
+	}
+
+	.body-copy & {
+		display: none;
+	}
+}

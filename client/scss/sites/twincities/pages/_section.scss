@@ -1,0 +1,14 @@
+// Twin Cities: Section
+//
+// Styles for section landing layout
+
+.section {
+
+	.author-feature {
+		@include ai-span(16/3, xl);
+		@include ai-span(13/3, l);
+		@include ai-span(10/3, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+}

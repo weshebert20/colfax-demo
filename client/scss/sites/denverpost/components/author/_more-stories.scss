@@ -1,0 +1,30 @@
+// Denver Post: More Stories
+//
+// Full feed of stories from the author
+//
+// markup:
+// <div class="author-stories-feed">
+// 	<h2 class="widget-title">All Stories</h2>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-type="template"></div>
+//	<div data-huron-id="ad-samples-banner" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-type="template"></div>
+// 	<div data-huron-id="article-archive-author-landing" data-huron-type="template"></div>
+// </div>
+// <a class="load-more">Load More</a>
+//
+// Styleguide author.more-stories
+
+.author-stories-feed {
+
+	> h2 {
+		@extend %section-highlight-alt;
+		border-bottom: 0;
+		border-top: 5px solid $gray-min;
+		color: $primary;
+		margin-bottom: spacing(0.5);
+	}
+}

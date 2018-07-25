@@ -1,0 +1,16 @@
+.more-news {
+
+	.prototype-styleguide & {
+
+		article {
+
+			.read-more {
+				display: block;
+			}
+
+			time {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.prototype-styleguide {
+
+	.headroom--not-top {
+		margin-bottom: spacing(2);
+
+		.status-bar {
+			display: none;
+		}
+	}
+
+	.site-header {
+
+		h4,
+		.article-share,
+		.editors-picks {
+			display: none;
+		}
+
+		&.headroom--not-top {
+			position: static;
+		}
+	}
+}

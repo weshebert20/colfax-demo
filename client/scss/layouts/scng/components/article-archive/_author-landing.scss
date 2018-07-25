@@ -1,0 +1,18 @@
+// Author Article
+//
+// Articles appearing on author landing pages
+//
+// styleguide - modifier for styleguide
+//
+// markup: archive.hbs
+//
+// data: author-landing.json
+//
+// Styleguide article-archive.author-landing
+
+.archive-view.author-view {
+	.excerpt {
+		padding-left: spacing();
+		clear: both;
+	}
+}

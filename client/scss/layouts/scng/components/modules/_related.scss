@@ -1,0 +1,72 @@
+// Article Related
+//
+// Inline related post widget styles
+//
+// markup: related.html
+//
+// Styleguide modules.related
+
+.related {
+	font-size: em-calc(16, true);
+	padding: em-calc(16 0);
+	border-bottom: 1px solid $gray-500;
+
+	ul {
+		list-style: none;
+	}
+
+	li {
+		border-bottom: 1px solid $gray-500;
+		margin-bottom: em-calc(10);
+		padding-bottom: em-calc(10);
+
+		&:last-child {
+			border: 0;
+			box-shadow: none;
+			padding: 0;
+		}
+
+		> span {
+			color: $primary;
+			font-family: $meta;
+			font-weight: 600;
+		}
+
+		a {
+			border: 0;
+			font-weight: 600;
+
+			&:hover {
+				border: 0;
+			}
+		}
+	}
+
+	.widget-title {
+		@include font(15, 18, $widget, 600);
+		border-bottom: 3px solid $primary;
+		border-top: 0;
+		color: $primary;
+		text-transform: uppercase;
+		padding-bottom: em-calc(5);
+	}
+
+	.headline-only {
+
+		header {
+			margin: 0;
+		}
+	}
+
+	.body-copy & {
+
+		h2 {
+			@include font(18, 24, $widget, 600);
+		}
+
+		h6 {
+			@include font(14, 19, $widget, 600);
+			margin: 0;
+		}
+	}
+}

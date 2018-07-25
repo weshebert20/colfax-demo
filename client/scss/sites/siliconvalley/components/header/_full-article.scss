@@ -1,0 +1,74 @@
+// Silicon Valley: Full Header - Article version
+//
+// Styles for site header on article pages (sticky only)
+//
+// markup:
+// <header class="site-header headroom--not-top headroom--pinned article">
+// 	<div class="nav-wrapper">
+// 		<div class="nav-primary">
+//			<div class="navigation-inner">
+// 				<a class="icon-hamburger"></a>
+// 				<h1 class="logo"><a href="/"></a></h1>
+//			</div>
+// 		</div>
+//		<h4>Looking for hope, Minnesotans begin using legalized medical marijuana</h4>
+// 		<div data-huron-id="sharing-article" data-huron-type="template"></div>
+// 	</div>
+// </header>
+//
+// sg-wrapper:
+// <div class="single-post">
+// 	 <sg-wrapper-content/>
+// </div>
+//
+// Styleguide header.full-article
+
+.site-header {
+
+	&.headroom--not-top {
+
+		.single-post &,
+		&.article.longform {
+			height: em-calc(50);
+
+			h4 {
+				overflow: hidden;
+				max-height: em-calc(32, false, 24);
+				padding: em-calc(0 0 0 75, false, 24);
+				top: px-to-em(8, false, 24);
+				width: calc(100% - #{em-calc(275, false, 24)});
+
+				&::after {
+					background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  					content: '';
+  					height: 100%;
+  					position: absolute;
+  					right: 0;
+  					top: 0;
+  					width: em-calc(250, false, 24);
+				}
+			}
+
+			.nav-primary {
+
+				.logo {
+					align-items: center;
+					display: flex;
+					justify-content: flex-start;
+					margin: em-calc(0 10 0 0);
+					padding: 0;
+					top: 0;
+
+					@include ai-breakpoint(l) {
+						padding: em-calc(0 9);
+					}
+				}
+
+				.icon-hamburger {
+					margin: 0 0 0 auto;
+					z-index: 2;
+				}
+			}
+		}
+	}
+}

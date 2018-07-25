@@ -1,0 +1,110 @@
+// Article Single
+//
+// Styles for article layout
+
+.full-view {
+
+	.article-content {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.article-content-wrapper {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.header-features {
+		padding: em-calc(48 0 32);
+		width: 100%;
+		.dfm-featured-top-flex-container:not(:empty) {
+			margin-bottom: spacing();
+		}
+	}
+
+	.article-body {
+		@include ai-span(12, xl);
+		@include ai-offset(2, margin, xl);
+		@include ai-span(11, l);
+		@include ai-offset(1, margin, l);
+		@include ai-span(8, m);
+		@include ai-offset(1, margin, m);
+		@include ai-span(8, s);
+		@include ai-span(4, xs);
+	}
+
+	.article-sidebar {
+
+		@include ai-breakpoint(l) {
+			margin-top: em-calc(48);
+		}
+
+		.sidebar-content {
+			@include vertical-rhythm(2.5);
+		}
+
+		.widget-popular-stories,
+		.sign-up-follow,
+		.dfp-ad {
+			@include ai-span(5, m);
+			@include ai-span(8, s);
+		}
+
+		.widget-popular-stories,
+		.sign-up-follow {
+
+			@include ai-breakpoint(s, l) {
+				float: left;
+			}
+		}
+
+		.dfp-ad {
+
+			@include ai-breakpoint(s, l) {
+				float: right;
+			}
+		}
+
+		.sharing {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			width: 100%;
+			margin-bottom: em-calc(32);
+		}
+
+		.swap-ad {
+
+			@include ai-breakpoint(false, m) {
+				margin-top: spacing(2);
+				width: 100%;
+			}
+		}
+
+		> *:empty {
+			margin-bottom: 0;
+		}
+	}
+
+	.sign-up-follow {
+		background-color: $gray-600;
+		padding: em-calc(16 0);
+	}
+
+	.dfp-Sponsorship_2 {
+		margin-top: spacing(2);
+
+		@include ai-breakpoint(false, xl) {
+			margin-right: em-calc(-10);
+		}
+
+		@include ai-breakpoint(xl) {
+			margin-right: calc((100vw - #{em-calc(1260, true)}) / -2);
+		}
+	}
+}

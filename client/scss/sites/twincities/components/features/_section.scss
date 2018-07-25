@@ -1,0 +1,43 @@
+// Twin Cities: Section Feature
+//
+// Featured area on a section landing page
+//
+// markup:
+// <section class="feature-section">
+//	<div class="feature-top">
+// 		<div data-huron-id="article-archive-feature-large" data-huron-type="template"></div>
+//	</div>
+// 	<div class="feature-right">
+//		<div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+// 		<ul class="headline-list">
+// 			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+//			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="article-archive-headline-only" data-huron-type="template"></div></li>
+// 		</ul>
+// 	</div>
+// 	<div class="feature-bottom">
+// 		<div data-huron-id="article-archive-feature-small" data-huron-type="template"></div>
+// 		<div data-huron-id="article-archive-feature-small" data-huron-type="template"></div>
+// 	</div>
+// </section>
+//
+// Styleguide features.section
+
+.feature-section {
+
+	.feature-right {
+
+		@include ai-breakpoint(m) {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+}

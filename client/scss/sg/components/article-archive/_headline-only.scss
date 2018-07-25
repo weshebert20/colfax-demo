@@ -1,0 +1,44 @@
+.headline-only {
+
+	.prototype-styleguide & {
+
+		figure {
+			display: none;
+		}
+	}
+
+	.styleguide-denverpost &,
+	.styleguide-twincities & {
+		margin-bottom: spacing();
+
+		figure, time, .excerpt {
+			display: none;
+		}
+
+		.icon-slideshow,
+		.icon-play-arrow {
+			display: none;
+		}
+
+		.breaking-bar & {
+
+			time {
+				display: none;
+			}
+		}
+
+		&.video {
+
+			.icon-play-arrow {
+				display: inline-block;
+			}
+		}
+
+		&.slideshow {
+
+			.icon-slideshow {
+				display: inline-block;
+			}
+		}
+	}
+}

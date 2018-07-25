@@ -1,0 +1,75 @@
+// Advertisements
+//
+// Styles for ads
+//
+// box - Box ad (300x250)
+// portrait - Portrait ad (300x600)
+// banner - Banner ad (728x90)
+// house - In-house box ad (300x250)
+// ndn - NDN video placeholder (300x250)
+// promo - Promotional ad (screen width x 300)
+//
+// markup: ads.hbs
+//
+// data: ads.json
+//
+// Styleguide modules.ads
+
+.dfp-ad {
+
+	&.dfp-Sponsorship_2,
+	&.dfp-Sponsorship_3,
+	&.dfp-Sponsorship_4 {
+		overflow: hidden;
+		width: calc(100vw + #{em-calc(10)});
+
+		@include ai-breakpoint(false, xl) {
+			margin-left: em-calc(-10);
+		}
+
+		@include ai-breakpoint(xl) {
+			margin-left: calc((100vw - #{em-calc(1260, true)}) / -2);
+		}
+
+		.category & {
+			margin-bottom: spacing(2);
+		}
+
+		.prototype & {
+			align-items: center;
+			background-color: $gray-300;
+			display: flex;
+			height: em-calc(300);
+			justify-content: center;
+
+			p {
+				@include font(24, 28, $meta, 400);
+				color: $gray-max;
+			}
+		}
+	}
+
+	&.leaderboard,
+	&.dfp-top_leaderboard {
+		width: 100vw;
+		background-color: $gray-600;
+		padding: em-calc(5 0 1);
+		margin-left: em-calc(-10);
+
+		@include ai-breakpoint(xl) {
+			margin-left: calc((80em - 100vw) / 2);
+		}
+
+		> * {
+			margin-bottom: 0;
+		}
+	}
+
+	.prototype .leaderboard &,
+	.prototype .dfp-bottom_leaderboard & {
+
+		&.banner {
+			margin-bottom: 0;
+		}
+	}
+}

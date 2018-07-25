@@ -1,0 +1,38 @@
+// Twin Cities: Small Feature
+//
+// Small featured articles
+//
+// styleguide - Default display (for styleguide)
+//
+// markup: archive.hbs
+//
+// data: feature-small.json
+//
+// Styleguide article-archive.feature-small
+
+.feature-small {
+	@extend %header-float-small;
+	@extend %slideshow-video-small;
+
+	@include ai-breakpoint(false, l) {
+		border-bottom: 1px solid $gray-400;
+		margin-bottom: spacing();
+		padding-bottom: spacing();
+	}
+
+	.feature-right & {
+		figure {
+			max-width: 100%;
+		}
+	}
+
+	.feature-media & {
+
+		figure {
+
+			@include ai-breakpoint(false, m) {
+				margin-bottom: spacing();
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+// Mercury News & Eastbay Times
+//
+// Flexible content area styling
+.feature-primary {
+	.dfm-featured-top-flex-container {
+		margin-bottom: spacing();
+	}
+	&.busy .dfm-featured-bottom-flex-container {
+		margin-bottom: -30px;
+		margin-top: 80px;
+	}
+}
+
+.feature-section {
+	.dfm-featured-top-flex-container {
+		@include ai-breakpoint(l) {
+			margin-top: em-calc(20);
+		}
+		@include ai-breakpoint(xs, l) {
+			margin-bottom: spacing();
+		}
+	}
+	.dfm-featured-bottom-flex-container {
+		@include ai-breakpoint(xs, l) {
+			margin-bottom: spacing();
+		}
+	}
+}
+
+.tag.landing {
+	.dfm-featured-top-flex-container {
+		margin-bottom: spacing();
+	}
+}

@@ -1,0 +1,82 @@
+// Mercury News: More News
+//
+// Large "More News" section at bottom of articles
+//
+// markup:
+// <div class="more-news">
+// 		<h2 class="widget-title">More News</h2>
+// 		<ul>
+// 			<li><div data-huron-id="examples-feature-small" data-huron-modifier="three" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="examples-feature-small" data-huron-modifier="eight" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="examples-feature-small" data-huron-modifier="eight" data-huron-type="template"></div></li>
+// 			<li><div data-huron-id="examples-feature-small" data-huron-modifier="eight" data-huron-type="template"></div></li>
+//		</ul>
+// </div>
+//
+// Styleguide article.more-news
+
+.more-news {
+	margin-bottom: spacing(2);
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+
+	li {
+		@include ai-span(4, xl);
+		@include ai-span(3.25, l);
+		@include ai-span(5, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+		margin-right: em-calc(20);
+
+		@include ai-breakpoint(l) {
+
+			&:nth-child(4n) {
+				margin-right: 0;
+				margin-bottom: 1.5em;
+			}
+		}
+
+		@include ai-breakpoint(s, l) {
+
+			&:nth-child(even) {
+				margin-right: 0;
+				margin-bottom: 1.5em;
+			}
+		}
+	}
+
+	.widget-title {
+		@extend %offset-background;
+		@include font(21, 26, $meta, 600);
+		color: $primary;
+		margin-bottom: spacing();
+		padding: em-calc(20 10, false, 20);
+		text-transform: uppercase;
+
+		&::before {
+			background-color: transparent;
+			border-bottom: 3px solid $primary;
+		}
+	}
+
+	.archive-view {
+		@extend %archive-box;
+
+		.entry-title {
+			font-size: em-calc(18);
+		}
+
+		@include ai-breakpoint(false, s) {
+			@include archive-horizontal();
+		}
+
+		@include ai-breakpoint(s) {
+			@include archive-vertical();
+			height: 100%;
+		}
+	}
+}

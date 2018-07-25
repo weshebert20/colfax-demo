@@ -1,0 +1,54 @@
+// Silicon Valley: Author Feature
+//
+// Widget for featured authors on section landings
+//
+// markup:
+// <div class="author-feature">
+//  <img src="http://lorempixel.com/85/85/people" alt="channel photo">
+//  <h3>Columnist Name</h3>
+// </div>
+//
+// Styleguide modules.author-feature
+
+.author-features {
+
+	.landing-page-list {
+		@include vertical-rhythm();
+		width: 100%;
+	}
+}
+
+.author-feature {
+	align-items: center;
+	border: none;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 100%;
+
+	> a {
+		justify-content: center;
+		border-radius: 50%;
+		display: inline-flex;
+		height: em-calc(85);
+		margin-bottom: spacing(0.5);
+		overflow: hidden;
+		text-align: center;
+		width: em-calc(85);
+	}
+
+	img {
+		display: inline;
+		object-fit: cover;
+		height: 100%;
+		max-width: initial;
+		width: auto;
+	}
+
+	h3 {
+		@include font(17, 20, $widget, 700);
+		color: $gray-min;
+		text-transform: none;
+		width: 100%;
+	}
+}

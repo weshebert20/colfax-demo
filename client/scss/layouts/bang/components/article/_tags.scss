@@ -1,0 +1,45 @@
+// Mercury News: Article Tags
+//
+// Article tags
+//
+// markup:
+// <ul class="tags">
+//	<li>More:&nbsp</li>
+// 	<li><a href="#">Sharks</a></li>
+// </ul>
+//
+// Styleguide article.tags
+
+.tags {
+	align-items: center;
+	border-top: none;
+	display: flex;
+	padding: 0;
+
+	ul {
+		position: relative;
+		z-index: 1;
+	}
+
+	li:first-child,
+	a {
+		text-transform: none;
+	}
+
+	li {
+		margin-right: 0;
+
+		&:first-child {
+			@include font(16, 16, $meta, 400);
+		}
+	}
+
+	a {
+		@include font(16, 16, $meta, 700);
+		color: $primary;
+
+		&:hover {
+			color: $gray-min;
+		}
+	}
+}

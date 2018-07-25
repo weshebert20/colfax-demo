@@ -1,0 +1,106 @@
+// Full Header
+//
+// Styles for site header as a whole.
+//
+// default - static header styles
+// sticky - sticky header styles
+// article - article sticky header styles
+//
+// markup: full.hbs
+//
+// data: full.json
+//
+// Styleguide header.full
+
+.header-placeholder {
+	display: none;
+
+	@include ai-breakpoint(false, s) {
+		height: 120px;
+	}
+
+	@include ai-breakpoint(s, l) {
+		height: 146px;
+	}
+
+	@include ai-breakpoint(l) {
+		height: 185px;
+	}
+}
+
+.site-header {
+	background-color: transparent;
+
+	@include ai-breakpoint(false, s) {
+		padding-top: 0;
+		height: em-calc(120);
+	}
+
+	@include ai-breakpoint(false, l) {
+		padding: 0;
+		height: em-calc(125);
+		margin-bottom: 0;
+	}
+
+	@include ai-breakpoint(l) {
+		margin-bottom: spacing(1.5);
+		padding: em-calc(80 0 17 0);
+	}
+
+	.dfp-Sponsorship_1 {
+		display: none;
+
+		@include ai-breakpoint($header-primary-bp) {
+			position: absolute;
+			right: em-calc(10);
+			top: em-calc(-68);
+		}
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			position: static;
+			margin-left: auto;
+		}
+
+		@media (#{$ad-mq-desktop}) {
+			display: block;
+		}
+	}
+
+	&.headroom--not-top {
+		background-color: $gray-max;
+		border-bottom: 0;
+
+		@include ai-breakpoint(false, l) {
+			height: em-calc(50);
+		}
+
+		.dfp-Sponsorship_1 {
+			display: none;
+		}
+	}
+
+	&.headroom--top {
+
+		&.search-open {
+
+			@include ai-breakpoint(false, s) {
+				height: em-calc(180);
+			}
+
+			@include ai-breakpoint(s, l) {
+				height: em-calc(206);
+			}
+		}
+	}
+
+	// Sticky header
+	&.headroom--not-top {
+
+		&.search-open {
+
+			@include ai-breakpoint(false, l) {
+				height: em-calc(110);
+			}
+		}
+	}
+}

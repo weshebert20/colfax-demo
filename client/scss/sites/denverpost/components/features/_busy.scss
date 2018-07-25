@@ -1,0 +1,51 @@
+// Denver Post: Busy Layout
+//
+// Primary featured area on a busy news day
+//
+// markup:
+// <section class="feature-primary busy">
+// 	<div class="feature-left">
+// 		<div class="feature-top">
+// 			<div data-huron-id="article-archive-feature-large" data-huron-type="template"></div>
+//			<ul class="primary-related">
+// 				<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+// 				<li><a href="#">Tempora repudiandae, numquam repellat sapiente non eius, sunt soluta nostrum distinctio provident quis</a></li>
+// 				<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a></li>
+//			</ul>
+// 		</div>
+//  	<div class="feature-bottom">
+//			<div data-huron-id="article-archive-feature-small-examples" data-huron-modifier="seven" data-huron-type="template"></div>
+//			<div data-huron-id="article-archive-feature-small" data-huron-type="template"></div>
+// 		</div>
+// 	</div>
+// 	<ul class="headline-list">
+//		<li>Latest Stories</li>
+// 		<li><div data-huron-id="article-archive-headline-only-examples" data-huron-modifier="one" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only-examples" data-huron-modifier="two" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only-examples" data-huron-modifier="one" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only-examples" data-huron-modifier="one" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only-examples" data-huron-modifier="one" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only-examples" data-huron-modifier="one" data-huron-type="template"></div></li>
+// 		<li><div data-huron-id="article-archive-headline-only-examples" data-huron-modifier="one" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only-examples" data-huron-modifier="one" data-huron-type="template"></div></li>
+//		<li><div data-huron-id="article-archive-headline-only-examples" data-huron-modifier="one" data-huron-type="template"></div></li>
+// 	</ul>
+// 	<div data-huron-id="ad-samples-portrait" data-huron-type="template"></div>
+// 	<div data-huron-id="ad-samples-box" data-huron-type="template"></div>
+// </section>
+//
+// Styleguide features.busy
+
+.busy {
+
+	.feature-bottom {
+		@extend %clearfix;
+		@include shadow-border(top);
+		margin: em-calc(0 15);
+		padding: em-calc(24 0);
+
+		@include ai-breakpoint(false, s) {
+			padding-bottom: 0;
+		}
+	}
+}

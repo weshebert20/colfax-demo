@@ -1,0 +1,46 @@
+// Twin Cities: Push Menu
+//
+// styles for push-out menu
+//
+// markup:
+// <nav class="pushnav">
+// 	<ul>
+// 		<li><a href="#">Home</a></li>
+// 		<li><a href="#">News</a></li>
+// 		<li><a href="#">Sports</a></li>
+// 		<li><a href="#">Things to Do</a></li>
+// 		<li><a href="#">Opinion</a></li>
+// 		<li><a href="#">Obituaries</a></li>
+// 		<li><a href="#">Classifieds</a></li>
+//		<li><a href="#">Daily Deals</a></li>
+// 	</ul>
+// </nav>
+//
+// Styleguide header.push-menu
+
+.pushnav {
+
+	li > a {
+		@include font(17, 17, $meta, 700);
+	}
+
+	.menu-item-has-children:not(.nav-alt-links) {
+		height: em-calc(48);
+
+		> a {
+			height: em-calc(48, false, 17);
+		}
+
+		> ul {
+
+			a {
+				@include font(16, 16, $meta, 400);
+			}
+		}
+	}
+
+	a[href$='allaccess'] {
+		@extend %mobile-subscriptions;
+	}
+}
+

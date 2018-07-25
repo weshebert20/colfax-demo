@@ -1,0 +1,51 @@
+// Mercury News:  Search Form
+
+.search-form {
+
+	&.large,
+	&.slide-search {
+
+		input[type="text"] {
+			border: 1px solid $gray-500;
+			border-radius: 3px;
+		}
+	}
+
+	&.slide-search,
+	&.header-search {
+
+		input[type="text"] {
+
+			&::placeholder {
+				font-style: italic;
+			}
+
+			@include ai-breakpoint(m) {
+				border: 1px solid $gray-500;
+				border-radius: 3px;
+			}
+		}
+	}
+
+	&.header-search {
+		margin-top: 0;
+		position: static;
+		order: 2;
+
+		@include ai-breakpoint(false, xl) {
+			width: 20vw;
+		}
+
+		@include ai-breakpoint(xl) {
+			width: em-calc(300);
+		}
+	}
+
+	&.slide-search {
+
+		.icon-search {
+			top: em-calc(22);
+			right: em-calc(15);
+		}
+	}
+}

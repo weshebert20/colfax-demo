@@ -1,0 +1,34 @@
+// Silicon Valley: Simple Feature
+//
+// Featured area on a section or tag landing
+
+.takeover {
+
+	&.simple-featured {
+
+		.feature-bottom {
+			border-bottom: 1px solid $gray-500;
+			border-top: 2px solid $gray-max;
+        	box-shadow: 0 -1px 0 0 $gray-500,
+        		0 2px 0 0 $gray-max;
+			margin-top: spacing();
+			padding-top: spacing(2);
+
+			@include ai-breakpoint(false, l) {
+				border-top: 0;
+			}
+
+			.feature-small {
+
+				@include ai-breakpoint(false, l) {
+
+					&:first-child {
+						border-bottom: 1px solid $gray-500;
+						margin-bottom: spacing(1.5);
+						padding-bottom: spacing(1.5);
+					}
+				}
+			}
+		}
+	}
+}

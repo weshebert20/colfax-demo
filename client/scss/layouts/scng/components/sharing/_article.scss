@@ -1,0 +1,152 @@
+// Article Sharing
+//
+// List of sharing links
+//
+// markup: article.html
+//
+// Styleguide sharing.article
+
+/* stylelint-disable declaration-no-important */
+.article-share {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+
+	.full-view & {
+		padding-top: em-calc(5);
+
+		> ul li,
+		.sd-content > ul li,
+		.sharing-inner > ul li {
+			@include icon-round(43, 21);
+		}
+	}
+
+	.site-header & {
+
+		> ul li,
+		.sd-content > ul li,
+		.sharing-inner > ul li {
+			@include icon-round(38, 19);
+		}
+	}
+
+	.full-view &,
+	.site-header & {
+
+		.sd-social-icon .sd-content > ul li {
+			@include sharing-button();
+		}
+
+		.sd-social-icon .sd-content > ul li {
+
+			a.sd-button {
+
+				@include ai-breakpoint(xs, xl) {
+					margin-right: 0.75em;
+				}
+
+				&.share-more {
+					background-color: $gray-max;
+					border-radius: 50%;
+					border-style: solid;
+					border-width: em-calc(2);
+
+					@include ai-breakpoint(false, l) {
+						display: flex;
+					}
+				}
+			}
+
+			&.share-sms {
+				@include sharing-button($sms);
+
+				@include ai-breakpoint(l) {
+					display: none;
+				}
+			}
+
+			&.share-facebook {
+				@include sharing-button($facebook);
+			}
+
+			&.share-twitter {
+				@include sharing-button($twitter);
+			}
+
+			&.share-reddit {
+				@include sharing-button(orangered);
+			}
+
+			&.share-end {
+				display: none;
+			}
+		}
+
+		li:last-of-type {
+
+			@include ai-breakpoint(false, l) {
+				display: block;
+			}
+		}
+
+		.sd-social-icon .sd-content ul li {
+
+			a.sd-button.share-more {
+				border: em-calc(2) solid $primary;
+
+				&::before {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	.headroom--not-top.site-header & {
+		top: em-calc(6);
+		margin-top: 0;
+
+		@include ai-breakpoint(false, l) {
+			right: em-calc(40);
+		}
+
+		@include ai-breakpoint(l) {
+			right: em-calc(10);
+		}
+
+		.sharedaddy {
+			@include ai-breakpoint(false, s) {
+				-webkit-transform: translateX(5em);
+				-ms-transform: translateX(5em);
+				transform: translateX(5em);
+			}
+		}
+
+		.share-alt {
+			height: 100%;
+
+			a {
+				height: 100%;
+			}
+
+			@include ai-breakpoint(false, s) {
+
+				&::after {
+					left: em-calc(40);
+					right: auto;
+					width: em-calc(50);
+				}
+			}
+		}
+
+		&.open {
+
+			.sharedaddy {
+				-webkit-transform: translateX(-100%);
+				-ms-transform: translateX(-100%);
+				transform: translateX(-100%);
+			}
+		}
+	}
+}
+/* stylelint-enable */

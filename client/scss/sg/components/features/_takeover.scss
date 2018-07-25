@@ -1,0 +1,23 @@
+.takeover {
+
+	.prototype-styleguide & {
+
+		> .box, {
+			display: none;
+			border-bottom: 0;
+
+			@include ai-breakpoint(false, l) {
+				display: block;
+				margin: 0 auto;
+			}
+		}
+
+		> .portrait {
+			display: none;
+
+			@include ai-breakpoint(l) {
+				display: block;
+			}
+		}
+	}
+}

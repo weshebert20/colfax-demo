@@ -1,0 +1,126 @@
+// Search Form
+//
+// Search form styles
+
+%top-search-form {
+	display: block;
+	margin-bottom: spacing(2);
+
+	@include ai-breakpoint(m) {
+		width: px-to-em(780);
+	}
+
+	@include ai-breakpoint(false, m) {
+		width: 100%;
+	}
+}
+
+.search-form {
+	@extend %form-icon;
+	display: inline-block;
+	position: relative;
+
+	@include ai-breakpoint(false, $header-primary-bp) {
+		padding: em-calc(10);
+	}
+
+	input[type="submit"] {
+		display: inline-block;
+		width: px-to-em(180, false, 11);
+	}
+
+	.results {
+		@include font(14, 18, $meta, 400);
+		display: inline-block;
+		margin-top: px-to-em(10, false, 14);
+	}
+
+	&.large,
+	&.slide-search,
+	&.header-search {
+		clear: both;
+		margin: 0 auto;
+
+		input[type="text"] {
+			@include font(18, 22, $meta, 400);
+			height: em-calc(55, false, 18);
+			width: 100%;
+		}
+	}
+
+	&.slide-search,
+	&.header-search {
+		height: px-to-em(60);
+
+		input[type="submit"] {
+			display: none;
+		}
+
+		input[type="text"] {
+			height: 100%;
+
+			&:focus {
+				border-color: $primary;
+			}
+		}
+	}
+
+	&.large {
+
+		.icon-search {
+			font-size: em-calc(30);
+			right: em-calc(15, false, 30);
+
+			@include ai-breakpoint($header-primary-bp) {
+				top: em-calc(15, false, 30);
+			}
+
+			@include ai-breakpoint(false, $header-primary-bp) {
+				top: em-calc(23, false, 30);
+			}
+		}
+	}
+
+	&.header-search {
+		display: none;
+		height: px-to-em(40);
+		margin-top: px-to-em(10);
+		position: absolute;
+		right: em-calc(10);
+		width: px-to-em(175);
+		z-index: 1;
+
+		@include ai-breakpoint($header-primary-bp) {
+			display: block;
+		}
+
+		.headroom--not-top & {
+			top: em-calc(5);
+		}
+	}
+
+	// Primary nav search form
+	&.slide-search {
+		@extend %clearfix;
+		display: none;
+		position: absolute;
+		width: 100%;
+
+		@include ai-breakpoint(false, $header-primary-bp) {
+			display: block;
+			top: 0;
+		}
+
+		@include ai-breakpoint(xs, s) {
+			float: none;
+			width: 100%;
+		}
+
+		.headroom--not-top & {
+
+			input[type="text"] {
+				height: px-to-em(40, false, 18);
+			}
+		}
+	}
+}

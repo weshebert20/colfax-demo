@@ -1,0 +1,34 @@
+// Mercury News: Author Stories
+//
+// Author's featured stories
+//
+// markup:
+// <div class="author-featured-stories">
+// 	<h2>Section</h2>
+//	<div class="featured-stories-content">
+// 		<div data-huron-id="article-archive-author-landing" data-huron-type="template"></div>
+// 		<div data-huron-id="article-archive-author-landing" data-huron-type="template"></div>
+// 		<div data-huron-id="article-archive-author-landing" data-huron-type="template"></div>
+//	</div>
+// </div>
+//
+// Styleguide author.stories
+
+.author-featured-stories {
+
+	> h2 {
+		@extend %header-border;
+		margin-bottom: spacing();
+	}
+
+	.featured-stories-content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.author-view {
+		float: left;
+		margin-right: 1.25rem;
+	}
+}

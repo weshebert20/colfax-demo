@@ -1,0 +1,60 @@
+// Article Related
+//
+// Inline related post widget styles
+
+.related {
+	@include vertical-rhythm();
+	@extend %clearfix;
+	padding-bottom: spacing(1.5);
+	padding-top: spacing(1);
+	font-size: px-to-em(16, true);
+	border-bottom: 1px solid $gray-500;
+
+	ul {
+		@include vertical-rhythm(0.5);
+		float: left;
+		left: auto;
+		position: static;
+		width: 100%;
+	}
+
+	li {
+		@include font(16, 22, $heading, 400);
+
+		> span {
+			font-weight: 700;
+
+			&::after {
+				content: ": ";
+			}
+		}
+
+		a {
+			color: $text;
+
+			&:hover {
+				color: $link-hover;
+			}
+		}
+	}
+
+	.article-body & {
+		width: px-to-em(300);
+
+		@include ai-breakpoint(false, s) {
+			width: 100%;
+		}
+	}
+
+	&.right {
+		float: right;
+		margin-right: 0;
+		margin-left: px-to-em(20);
+	}
+
+	&.left {
+		float: left;
+		margin-left: 0;
+		margin-right: px-to-em(20);
+	}
+}

@@ -1,0 +1,15 @@
+// Simple Feature
+//
+// Featured area on a section or tag landing
+
+.simple-featured {
+
+	&.feature-primary.takeover {
+		.sidebar-ad-container {
+			display: block;
+			@include ai-span(4, xl);
+			@include ai-span(4, l);
+			@include ai-span(4, m);
+		}
+	}
+}

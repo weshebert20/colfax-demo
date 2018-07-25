@@ -1,0 +1,71 @@
+// Takeover Layout
+//
+// Primary featured area takeover
+
+.takeover {
+	@extend %clearfix;
+	@include vertical-rhythm();
+	position: relative;
+
+	.feature-large,
+	.feature-large-top {
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(10, m);
+		@include ai-span(8, s);
+		@include ai-span(4, s);
+	}
+
+	.feature-bottom {
+		@include vertical-rhythm();
+		@include ai-span(12, xl);
+		@include ai-span(9, l);
+		@include ai-span(6, m);
+		@include ai-span(8, s);
+		@include ai-span(4, s);
+
+		.feature-small {
+			@include ai-span(8, xl);
+			@include ai-span(13/2, l);
+			@include ai-span(10, m);
+			@include ai-span(8, s);
+			@include ai-span(4, xs);
+
+			&:last-child {
+				margin-right: 0;
+				border-bottom: 0;
+				padding-bottom: 0;
+			}
+
+			@include ai-breakpoint(l) {
+
+				&:nth-child(2) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	// the following style declaration keeps the Cube 1 ad in the right sidebar of the featured area,
+	// the direct child selector is required here to prevent breaking ads in a featured gallery 
+	// on the homepage takeover layout
+	> .dfp-ad {
+		@include ai-span(4, xl, true);
+		@include ai-span(4, l, true);
+		@include ai-span(4, m, true);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+
+		@include ai-breakpoint(m) {
+			float: right;
+		}
+
+		@include ai-breakpoint(false, s) {
+			margin: 0 auto;
+		}
+	}
+
+	.two-cents-swap {
+		@include ai-span(4, s);
+	}
+}

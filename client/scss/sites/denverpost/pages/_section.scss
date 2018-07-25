@@ -1,0 +1,35 @@
+// Denver Post: Section
+//
+// Styles for section landing layout
+
+.section {
+
+	#content {
+		@include vertical-rhythm(2);
+	}
+
+	.feature-section {
+		margin-top: spacing(2);
+	}
+
+	.landing-three-one {
+		@include vertical-rhythm(2);
+	}
+
+	.section-title {
+		@extend %section-title;
+	}
+
+	.author-feature {
+		@include ai-span(8, xl);
+		@include ai-span(6.5, l);
+		@include ai-span(5, m);
+		@include ai-span(4, s);
+		@include ai-span(4, xs);
+	}
+}
+
+.tag-name.tag-name-simple-featured {
+	@extend %section-title;
+	text-align: center;
+}

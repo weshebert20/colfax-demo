@@ -1,0 +1,50 @@
+{
+	"text": {
+		"name": "Body Copy",
+		"color": "rgb(31, 30, 28)"
+	},
+	"primary": {
+		"name": "Brand Primary",
+		"color": "rgb(63, 81, 181)"
+	},
+	"secondary": {
+		"name": "Brand Secondary",
+		"color": "rgb(238, 255, 65)"
+	},
+	"tertiary": {
+		"name": "Brand Tertiary",
+		"color": "rgb(48, 63, 159)"
+	},
+	"gray-min": {
+		"name": "Minimum Gray / Black",
+		"color": "rgb(31, 30, 28)"
+	},
+	"gray-100": {
+		"name": "First Gray",
+		"color": "rgb(72, 70, 66)"
+	},
+	"gray-200": {
+		"name": "Second Gray",
+		"color": "rgb(117, 114, 106)"
+	},
+	"gray-300": {
+		"name": "Third Gray",
+		"color": "rgb(157, 154, 152)"
+	},
+	"gray-400": {
+		"name": "Fourth Gray",
+		"color": "rgb(170, 167, 164)"
+	},
+	"gray-500": {
+		"name": "Fiffth Gray",
+		"color": "rgb(245, 238, 222)"
+	},
+	"gray-600": {
+		"name": "Sixth Gray",
+		"color": "rgb(245, 243, 240)"
+	},
+	"gray-max": {
+		"name": "Maximum Gray / White",
+		"color": "rgb(255, 255, 255)"
+	}
+}

@@ -1,0 +1,341 @@
+// Article Slideshow
+//
+// Style for slideshows appearing on article pages
+
+.article-slideshow {
+	@extend %slideshow;
+	@extend %alt-arrows;
+	position: relative;
+	font-size: em-calc(16, true);
+
+	@include ai-breakpoint(false, m) {
+		font-size: em-calc(14, true);
+	}
+
+	ul {
+		@extend %clearfix;
+	}
+
+	.slideshow-ad-slide,
+	.slideshow-ad-video, {
+		background-color: #000;
+	}
+
+	.slideshow-ad-wrapper {
+		min-height: 290px;
+	}
+
+	.slideshow-ad {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+		min-height: 280px;
+	}
+	
+	// hide <video> if there is no source
+	#ad-video-element:not([src]) {
+		height: 0;
+	}
+
+	#ad-video-element {
+		@include ai-breakpoint(false, m) {
+			width: 100%;
+		}
+	}
+
+	.video-ad {
+		width: 640px;
+		margin: auto;
+	}
+	
+	/* stylelint-disable */
+	.video-ad:first-child div {
+		position: relative !important; //overwritting absolute position
+	}
+	/* stylelint-enable */
+
+	.slideshow-ad-video:hover {
+		.video-ad-controls {
+			opacity: 1;
+		}
+	}
+
+	.video-ad-controls {
+		opacity: 0;
+		height: 50px;
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+		color: white;
+		line-height: 50px;
+		font-size: 18px;
+		font-family: 'Arial';
+		padding: 0 40px;
+		transition: opacity 0.5s ease;
+
+		@include ai-breakpoint(false, m) {
+			font-size: 16px;
+		}
+
+		@include ai-breakpoint(false, m) {
+			height: auto;
+		}
+		
+		.button {
+			border: 1px solid white;
+			border-radius: 6px;
+			padding: 0 30px;
+			cursor: pointer;
+			transition: background-color 0.5s ease;
+
+			@include ai-breakpoint(false, m) {
+				padding: 0 12px;
+				display: block;
+			}
+
+			&:hover {
+				background: white;
+				color: black;
+			}
+		}
+
+		.volume-ad {
+			float: left;
+
+			&::before {
+				display: inline-flex;
+				@extend .icon-mute;
+			}
+		}
+
+		.unmute-video {
+			&::before {
+				display: inline-flex;
+				@extend .icon-unmute;
+			}
+		}
+
+		.countdown {
+			float: right;
+			display: none;
+
+			@include ai-breakpoint(false, m) {
+				font-size: 12px;
+				display: block;
+				width: 100%;
+			}
+		}
+
+		#countdownTimer {
+			margin: 0 5px;
+		}
+
+	}
+
+	// Custom colors when slide arrows are disabled
+	.slick-arrow:disabled,
+	.slick-arrow[disabled] {
+		/* stylelint-disable */
+		opacity: 0.2 !important;
+		/* stylelint-enable */
+		transition: opacity 0.5s ease;
+	}
+
+	.slide-caption,
+	.slide-credit {
+		display: none;
+	}
+
+	.caption {
+		font-size: em-calc(14, true);
+		font-family: $meta;
+		min-height: em-calc(75);
+		position: relative;
+
+		p {
+			padding-right: em-calc(60);
+		}
+	}
+
+	.slideshow-credit {
+		@extend %photo-credit;
+		position: absolute;
+		right: em-calc(10, false, 12);
+		top: em-calc(3, false, 12);
+	}
+
+	.slide-count {
+		color: $link-hover;
+	}
+
+	.icon-enlarge {
+		@include slideshow-video-icon(44, 28);
+		top: em-calc(20, false, 28);
+		right: em-calc(16, false, 28);
+		left: auto;
+		border: none;
+
+		span {
+			@extend %hide;
+		}
+
+		&:hover {
+			color: $gray-max;
+		}
+	}
+
+	.icon-close {
+		@include slideshow-video-icon(32, 20);
+		cursor: pointer;
+		display: none;
+		left: auto;
+		line-height: 1;
+		right: em-calc(10, false, 20);
+		padding: 0;
+		position: absolute;
+		top: em-calc(10, false, 20);
+		z-index: 1;
+
+		&:hover {
+			background-color: $primary-light;
+			border: none;
+		}
+	}
+
+	> .icon-arrow-right,
+	> .icon-arrow-left,
+	.slick-slider > .slick-arrow {
+		overflow: hidden;
+	}
+
+	.image-wrapper {
+
+		img {
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&.fullscreen {
+		background-color: $gray-min;
+		height: 100%;
+		left: 0;
+		top: 0;
+		max-height: 100vh;
+		max-width: 100vw;
+		position: fixed;
+		width: 100%;
+		z-index: index($indices, slideshow);
+
+		li {
+			height: 100%;
+			padding: em-calc(5);
+			position: relative;
+			width: 100%;
+
+			@include ai-breakpoint(m) {
+				padding: em-calc(30 20);
+			}
+		}
+
+		.slick-slider {
+			position: relative;
+			width: 100%;
+			height: calc(100% - #{em-calc(30)});
+		}
+
+		.slick-list {
+			height: 100%;
+			position: relative;
+			width: 100%;
+		}
+
+		.slick-track {
+			height: 100%;
+		}
+
+		.caption {
+			bottom: auto;
+			font-family: $meta;
+			left: 0;
+			min-height: em-calc(100);
+			padding: em-calc(10, false, 14);
+			position: absolute;
+			top: 100%;
+			transition: transform 250ms ease-in-out;
+			transform: translateY(#{em-calc(-26, false, 12)});
+			width: 100%;
+
+			@include ai-breakpoint(m) {
+				font-size: em-calc(18, true);
+				padding: em-calc(10, false, 18);
+			}
+
+			@include ai-breakpoint(false, m) {
+				font-size: em-calc(14, true);
+				padding: em-calc(5 10, false, 14);
+			}
+
+			.slideshow-credit {
+				right: em-calc(15, false, 12);
+				top: em-calc(10, false, 12);
+			}
+
+			.slide-count {
+				// Using px for iOS Safari sake.
+				font-size: 13px;
+				font-weight: 700;
+				line-height: 1;
+				margin-bottom: em-calc(12, true);
+			}
+
+			.caption-expand {
+				background-color: $gray-600;
+				cursor: pointer;
+				height: em-calc(40, false, 12);
+				font-family: $meta;
+				font-size: em-calc(12, true);
+				font-weight: 700;
+				opacity: 0.75;
+				padding: em-calc(10 15, false, 12);
+				position: absolute;
+				right: 0;
+				text-align: center;
+				text-transform: uppercase;
+				top: em-calc(-40, false, 12);
+			}
+
+			&.expand {
+				transform: translateY(-100%);
+			}
+		}
+
+		.image-wrapper {
+			height: 100%;
+			padding-bottom: 0;
+			overflow: visible;
+			position: relative;
+			text-align: center;
+			width: 100%;
+		}
+
+		.icon-close {
+			display: block;
+		}
+
+		.icon-enlarge {
+			display: none;
+		}
+	}
+}
+
+// Hide the ndn widget when the slideshow is fullscreen.
+.fullscreen .ndn_embed {
+	display: none;
+}

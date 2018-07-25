@@ -1,0 +1,17 @@
+<article class="archive-view headline-only {{ classes }}">
+	{{#if sponsored}}
+		<span class="sponsored-flag">Sponsored</span>
+	{{/if}}
+	<header>
+		<h6 class="entry-title"><a href="#">{{ title }}</a></h6>
+		{{#if time}}
+			<time datetime="{{ time.datetime }}">{{ time.ago }}</time>
+		{{/if}}
+		{{#if video}}
+			<a href="#" class="icon-play-arrow"></a>
+		{{/if}}
+		{{#if slideshow}}
+			<a href="#" class="icon-slideshow"></a>
+		{{/if}}
+	</header>
+</article>
