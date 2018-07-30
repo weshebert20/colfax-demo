@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
@@ -33,8 +34,9 @@ const sites = {
 
 // Plugins for all entries
 const plugins = [
-    new webpack.ProvidePlugin( {
-        $: 'jquery'
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery'
     }),
     new StyleLintPlugin( {
         configFile: path.join( __dirname, './stylelint.config.js' ),
@@ -92,10 +94,10 @@ if ( !isHot ) {
     entryBase.polyfills = path.join( client, 'app/polyfills.js' )
 
     plugins.push(
-        new webpack.optimize.CommonsChunkPlugin( {
-            names: ['common'],
-            minChunks: 2
-        } ),
+        // new webpack.optimize.CommonsChunkPlugin( {
+        //     names: ['common'],
+        //     minChunks: 2
+        // } ),
         new MiniCssExtractPlugin( cssTemplate ),
         // new ExtractTextPlugin( cssTemplate ),
         new LiveReloadPlugin( { appendScriptTag: true } ),
@@ -116,7 +118,7 @@ if ( entry === 'all' || typeof entry === 'undefined' ) {
 }
 
 module.exports = {
-    entry: { sites },
+    entry: sites,
     output: {
         path: path.resolve( __dirname, '../../static' ),
         publicPath: path.resolve( __dirname, '../../static' ),
@@ -126,6 +128,12 @@ module.exports = {
     resolve: {
         modules: [ appRoot, extVendor, 'node_modules']
     },
+
+    externals: {
+        'jquery': 'jQuery'
+    },
+
+    plugins: plugins,
 
     module: {
         rules: [

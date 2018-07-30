@@ -294,6 +294,7 @@ $global-gutter-width: $gutter-width;
     }
 }
 
+
 // Generate span width styles. Can use this or directly @extend placeholders.
 //
 // $columns (required): number of columns to span. Can be any number, even a fraction.
@@ -303,6 +304,7 @@ $global-gutter-width: $gutter-width;
 // $gutter-width: custom gutter width
 @mixin ai-span( $columns: $columns-max, $breakpoint: false, $last: false, $column-width: $global-column-width, $gutter-width: $global-gutter-width ) {
 	$columns-total: $columns-max;
+
 
 	@if ( false != $breakpoint ) {
 		$columns-total: map-get( $columns-map, $breakpoint );
@@ -365,7 +367,7 @@ $global-gutter-width: $gutter-width;
 		$extend: $extend + '-' + $push-type;
 
 		@if ( null != index( $extends, $extend ) and $global-column-width == $column-width and $global-gutter-width == $gutter-width ) {
-			@extend %#{$extend};
+			@extend %$extend;
 		} @else {
 			@if ( false != $breakpoint ) {
 				$breakpoint-string: map-get($breakpoints, $breakpoint);
