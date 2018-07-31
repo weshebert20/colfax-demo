@@ -367,7 +367,7 @@ $global-gutter-width: $gutter-width;
 		$extend: $extend + '-' + $push-type;
 
 		@if ( null != index( $extends, $extend ) and $global-column-width == $column-width and $global-gutter-width == $gutter-width ) {
-			@extend %$extend;
+			@extend %#{$extend};
 		} @else {
 			@if ( false != $breakpoint ) {
 				$breakpoint-string: map-get($breakpoints, $breakpoint);
