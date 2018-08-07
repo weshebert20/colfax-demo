@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -31,6 +31,7 @@ const sites = {
     boldcoastal: [ path.join( client, 'app/sites/entry/boldcoastal.js' ) ],
     dailynews: [ path.join( client, 'app/sites/entry/dailynews.js' ) ]
 }
+
 
 // Plugins for all entries
 const plugins = [
